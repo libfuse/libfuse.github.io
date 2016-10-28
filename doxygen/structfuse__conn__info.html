@@ -56,10 +56,10 @@ Data Fields</h2></td></tr>
 <tr class="separator:a69c606abe81d16214d14ab58bad60062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a99196bc17f9b91622f6c1353da5f85"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a7a99196bc17f9b91622f6c1353da5f85">proto_minor</a></td></tr>
 <tr class="separator:a7a99196bc17f9b91622f6c1353da5f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c9b670226641a2ccdb6bd0c74082b6"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a25c9b670226641a2ccdb6bd0c74082b6">async_read</a></td></tr>
-<tr class="separator:a25c9b670226641a2ccdb6bd0c74082b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5009eace718861580e1260d241432d9"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#ad5009eace718861580e1260d241432d9">max_write</a></td></tr>
 <tr class="separator:ad5009eace718861580e1260d241432d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5a50d718e9253514da2e1c2013827c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a6a5a50d718e9253514da2e1c2013827c">max_read</a></td></tr>
+<tr class="separator:a6a5a50d718e9253514da2e1c2013827c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb560435478ca7bfb3dbf7df4c0f2dfe"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#acb560435478ca7bfb3dbf7df4c0f2dfe">max_readahead</a></td></tr>
 <tr class="separator:acb560435478ca7bfb3dbf7df4c0f2dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a1c61f5d7cc14249fb6971165bb958e"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">capable</a></td></tr>
@@ -70,26 +70,15 @@ Data Fields</h2></td></tr>
 <tr class="separator:a5f9e695735727343448ae1e1a86dfa03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce707ca8bfd6f6669557db7f37bb1ad"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a2ce707ca8bfd6f6669557db7f37bb1ad">congestion_threshold</a></td></tr>
 <tr class="separator:a2ce707ca8bfd6f6669557db7f37bb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac036677ef99574c0faba807b0cfee0de"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#ac036677ef99574c0faba807b0cfee0de">reserved</a> [23]</td></tr>
-<tr class="separator:ac036677ef99574c0faba807b0cfee0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a72f4702cf256e4861cc2b98486d08c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a0a72f4702cf256e4861cc2b98486d08c">time_gran</a></td></tr>
+<tr class="separator:a0a72f4702cf256e4861cc2b98486d08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b74a62be5ba5b4f4cf503dbfbd5a9f"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a26b74a62be5ba5b4f4cf503dbfbd5a9f">reserved</a> [22]</td></tr>
+<tr class="separator:a26b74a62be5ba5b4f4cf503dbfbd5a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Connection information, passed to the -&gt;init() method</p>
 <p>Some of the elements are read-write, these can be changed to indicate the value requested by the filesystem. The requested value must usually be smaller than the indicated value. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a25c9b670226641a2ccdb6bd0c74082b6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned fuse_conn_info::async_read</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Is asynchronous read supported (read-write) </p>
-
-</div>
-</div>
 <a class="anchor" id="a8a1c61f5d7cc14249fb6971165bb958e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -99,7 +88,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Capability flags, that the kernel supports </p>
+<p>Capability flags that the kernel supports (read-only) </p>
 
 </div>
 </div>
@@ -126,6 +115,20 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Maximum number of backgrounded requests </p>
+
+</div>
+</div>
+<a class="anchor" id="a6a5a50d718e9253514da2e1c2013827c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned fuse_conn_info::max_read</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maximum size of read requests. A value of zero indicates no limit. However, even if the filesystem does not specify a limit, the maximum size of read requests will still be limited by the kernel.</p>
+<p>NOTE: For the time being, the maximum size of read requests must be set both here <em>and</em> passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> using the <code>-o max_read=&lt;n&gt;</code> mount option. At some point in the future, specifying the mount option will no longer be necessary. </p>
 
 </div>
 </div>
@@ -181,16 +184,30 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac036677ef99574c0faba807b0cfee0de"></a>
+<a class="anchor" id="a26b74a62be5ba5b4f4cf503dbfbd5a9f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned fuse_conn_info::reserved[23]</td>
+          <td class="memname">unsigned fuse_conn_info::reserved[22]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>For future use. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0a72f4702cf256e4861cc2b98486d08c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned fuse_conn_info::time_gran</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Time granularity if kernel is responsible for setting times (in nsec)</p>
+<p>Should be power of 10. A zero (default) value is equivalent to 1000000000 (1sec). </p>
 
 </div>
 </div>
@@ -203,7 +220,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Capability flags, that the filesystem wants to enable </p>
+<p>Capability flags that the filesystem wants to enable.</p>
+<p>libfuse attempts to initialize this field with reasonable default values before calling the init() handler. </p>
 
 </div>
 </div>
@@ -213,7 +231,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

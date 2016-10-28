@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: Main Page</title>
+<title>fuse: FUSE API documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,13 +36,457 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">fuse Documentation</div>  </div>
+<div class="title">FUSE API documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#section1">How FUSE works</a></li>
+<li class="level1"><a href="#section2">Kernel</a></li>
+<li class="level1"><a href="#section_examples">examples</a></li>
+<li class="level1"><a href="#section_links">links</a></li>
+<li class="level1"><a href="#section_todo">todo</a></li>
+<li class="level1"><a href="#section_thanks">thanks</a></li>
+</ul>
+</div>
+<div class="textblock"><p>Filesystem in Userspace (FUSE) is a loadable kernel module for Unix-like computer operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in user space while the FUSE module provides only a "bridge" to the actual kernel interfaces.</p>
+<p>(c) Wikipedia</p>
+<h1><a class="anchor" id="section1"></a>
+How FUSE works</h1>
+<div class="image">
+<img src="490px-FUSE_structure.svg.png" alt="490px-FUSE_structure.svg.png"/>
+<div class="caption">
+Structural diagramm of Filesystem in Userspace from http://en.wikipedia.org/wiki/File:FUSE_structure.svg</div></div>
+ <div class="fragment"></div><!-- fragment --><h1><a class="anchor" id="section2"></a>
+Kernel</h1>
+<div class="fragment"><div class="line">Definitions</div>
+<div class="line">~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">Userspace filesystem:</div>
+<div class="line"></div>
+<div class="line">  A filesystem in which data and metadata are provided by an ordinary</div>
+<div class="line">  userspace process.  The filesystem can be accessed normally through</div>
+<div class="line">  the kernel interface.</div>
+<div class="line"></div>
+<div class="line">Filesystem daemon:</div>
+<div class="line"></div>
+<div class="line">  The process(es) providing the data and metadata of the filesystem.</div>
+<div class="line"></div>
+<div class="line">Non-privileged mount (or user mount):</div>
+<div class="line"></div>
+<div class="line">  A userspace filesystem mounted by a non-privileged (non-root) user.</div>
+<div class="line">  The filesystem daemon is running with the privileges of the mounting</div>
+<div class="line">  user.  NOTE: this is not the same as mounts allowed with the &quot;user&quot;</div>
+<div class="line">  option in /etc/fstab, which is not discussed here.</div>
+<div class="line"></div>
+<div class="line">Filesystem connection:</div>
+<div class="line"></div>
+<div class="line">  A connection between the filesystem daemon and the kernel.  The</div>
+<div class="line">  connection exists until either the daemon dies, or the filesystem is</div>
+<div class="line">  umounted.  Note that detaching (or lazy umounting) the filesystem</div>
+<div class="line">  does _not_ break the connection, in this case it will exist until</div>
+<div class="line">  the last reference to the filesystem is released.</div>
+<div class="line"></div>
+<div class="line">Mount owner:</div>
+<div class="line"></div>
+<div class="line">  The user who does the mounting.</div>
+<div class="line"></div>
+<div class="line">User:</div>
+<div class="line"></div>
+<div class="line">  The user who is performing filesystem operations.</div>
+<div class="line"></div>
+<div class="line">What is FUSE?</div>
+<div class="line">~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">FUSE is a userspace filesystem framework.  It consists of a kernel</div>
+<div class="line">module (fuse.ko), a userspace library (libfuse.*) and a mount utility</div>
+<div class="line">(fusermount).</div>
+<div class="line"></div>
+<div class="line">One of the most important features of FUSE is allowing secure,</div>
+<div class="line">non-privileged mounts.  This opens up new possibilities for the use of</div>
+<div class="line">filesystems.  A good example is sshfs: a secure network filesystem</div>
+<div class="line">using the sftp protocol.</div>
+<div class="line"></div>
+<div class="line">The userspace library and utilities are available from the FUSE</div>
+<div class="line">homepage:</div>
+<div class="line"></div>
+<div class="line">  https:<span class="comment">//github.com/libfuse/libfuse/</span></div>
+<div class="line"></div>
+<div class="line">Filesystem type</div>
+<div class="line">~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">The filesystem type given to mount(2) can be one of the following:</div>
+<div class="line"></div>
+<div class="line">&#39;fuse&#39;</div>
+<div class="line"></div>
+<div class="line">  This is the usual way to mount a FUSE filesystem.  The first</div>
+<div class="line">  argument of the mount system call may contain an arbitrary <span class="keywordtype">string</span>,</div>
+<div class="line">  which is not interpreted by the kernel.</div>
+<div class="line"></div>
+<div class="line">&#39;fuseblk&#39;</div>
+<div class="line"></div>
+<div class="line">  The filesystem is block device based.  The first argument of the</div>
+<div class="line">  mount system call is interpreted as the name of the device.</div>
+<div class="line"></div>
+<div class="line">Mount options</div>
+<div class="line">~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">See mount.fuse(8).</div>
+<div class="line"></div>
+<div class="line">Control filesystem</div>
+<div class="line">~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">There&#39;s a control filesystem for FUSE, which can be mounted by:</div>
+<div class="line"></div>
+<div class="line">  mount -t fusectl none /sys/fs/fuse/connections</div>
+<div class="line"></div>
+<div class="line">Mounting it under the &#39;/sys/fs/fuse/connections&#39; directory makes it</div>
+<div class="line">backwards compatible with earlier versions.</div>
+<div class="line"></div>
+<div class="line">Under the fuse control filesystem each connection has a directory</div>
+<div class="line">named by a unique number.</div>
+<div class="line"></div>
+<div class="line">For each connection the following files exist within this directory:</div>
+<div class="line"></div>
+<div class="line"> &#39;waiting&#39;</div>
+<div class="line"></div>
+<div class="line">  The number of requests which are waiting to be transferred to</div>
+<div class="line">  userspace or being processed by the filesystem daemon.  If there is</div>
+<div class="line">  no filesystem activity and &#39;waiting&#39; is non-zero, then the</div>
+<div class="line">  filesystem is hung or deadlocked.</div>
+<div class="line"></div>
+<div class="line"> &#39;abort&#39;</div>
+<div class="line"></div>
+<div class="line">  Writing anything into this file will abort the filesystem</div>
+<div class="line">  connection.  This means that all waiting requests will be aborted an</div>
+<div class="line">  error returned for all aborted and new requests.</div>
+<div class="line"></div>
+<div class="line">Only the owner of the mount may read or write these files.</div>
+<div class="line"></div>
+<div class="line">Interrupting filesystem operations</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">If a process issuing a FUSE filesystem request is interrupted, the</div>
+<div class="line">following will happen:</div>
+<div class="line"></div>
+<div class="line">  1) If the request is not yet sent to userspace AND the signal is</div>
+<div class="line">     fatal (SIGKILL or unhandled fatal signal), then the request is</div>
+<div class="line">     dequeued and returns immediately.</div>
+<div class="line"></div>
+<div class="line">  2) If the request is not yet sent to userspace AND the signal is not</div>
+<div class="line">     fatal, then an &#39;interrupted&#39; flag is set for the request.  When</div>
+<div class="line">     the request has been successfully transferred to userspace and</div>
+<div class="line">     this flag is set, an INTERRUPT request is queued.</div>
+<div class="line"></div>
+<div class="line">  3) If the request is already sent to userspace, then an INTERRUPT</div>
+<div class="line">     request is queued.</div>
+<div class="line"></div>
+<div class="line">INTERRUPT requests take precedence over other requests, so the</div>
+<div class="line">userspace filesystem will receive queued INTERRUPTs before any others.</div>
+<div class="line"></div>
+<div class="line">The userspace filesystem may ignore the INTERRUPT requests entirely,</div>
+<div class="line">or may honor them by sending a reply to the _original_ request, with</div>
+<div class="line">the error set to EINTR.</div>
+<div class="line"></div>
+<div class="line">It is also possible that there&#39;s a race between processing the</div>
+<div class="line">original request and it&#39;s INTERRUPT request.  There are two possibilities:</div>
+<div class="line"></div>
+<div class="line">  1) The INTERRUPT request is processed before the original request is</div>
+<div class="line">     processed</div>
+<div class="line"></div>
+<div class="line">  2) The INTERRUPT request is processed after the original request has</div>
+<div class="line">     been answered</div>
+<div class="line"></div>
+<div class="line">If the filesystem cannot find the original request, it should wait for</div>
+<div class="line">some timeout and/or a number of new requests to arrive, after which it</div>
+<div class="line">should reply to the INTERRUPT request with an EAGAIN error.  In case</div>
+<div class="line">1) the INTERRUPT request will be requeued.  In case 2) the INTERRUPT</div>
+<div class="line">reply will be ignored.</div>
+<div class="line"></div>
+<div class="line">Aborting a filesystem connection</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">It is possible to get into certain situations where the filesystem is</div>
+<div class="line">not responding.  Reasons for this may be:</div>
+<div class="line"></div>
+<div class="line">  a) Broken userspace filesystem implementation</div>
+<div class="line"></div>
+<div class="line">  b) Network connection down</div>
+<div class="line"></div>
+<div class="line">  c) Accidental deadlock</div>
+<div class="line"></div>
+<div class="line">  d) Malicious deadlock</div>
+<div class="line"></div>
+<div class="line">(For more on c) and d) see later sections)</div>
+<div class="line"></div>
+<div class="line">In either of these cases it may be useful to abort the connection to</div>
+<div class="line">the filesystem.  There are several ways to do this:</div>
+<div class="line"></div>
+<div class="line">  - Kill the filesystem daemon.  Works in case of a) and b)</div>
+<div class="line"></div>
+<div class="line">  - Kill the filesystem daemon and all users of the filesystem.  Works</div>
+<div class="line">    in all cases except some malicious deadlocks</div>
+<div class="line"></div>
+<div class="line">  - Use forced umount (umount -f).  Works in all cases but only if</div>
+<div class="line">    filesystem is still attached (it hasn&#39;t been lazy unmounted)</div>
+<div class="line"></div>
+<div class="line">  - Abort filesystem through the FUSE control filesystem.  Most</div>
+<div class="line">    powerful method, always works.</div>
+<div class="line"></div>
+<div class="line">How do non-privileged mounts work?</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">Since the mount() system call is a privileged operation, a helper</div>
+<div class="line">program (fusermount) is needed, which is installed setuid root.</div>
+<div class="line"></div>
+<div class="line">The implication of providing non-privileged mounts is that the mount</div>
+<div class="line">owner must not be able to use this capability to compromise the</div>
+<div class="line">system.  Obvious requirements arising from this are:</div>
+<div class="line"></div>
+<div class="line"> A) mount owner should not be able to get elevated privileges with the</div>
+<div class="line">    help of the mounted filesystem</div>
+<div class="line"></div>
+<div class="line"> B) mount owner should not get illegitimate access to information from</div>
+<div class="line">    other users&#39; and the super user&#39;s processes</div>
+<div class="line"></div>
+<div class="line"> C) mount owner should not be able to induce undesired behavior in</div>
+<div class="line">    other users&#39; or the super user&#39;s processes</div>
+<div class="line"></div>
+<div class="line">How are requirements fulfilled?</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line"> A) The mount owner could gain elevated privileges by either:</div>
+<div class="line"></div>
+<div class="line">     1) creating a filesystem containing a device file, then opening</div>
+<div class="line">        this device</div>
+<div class="line"></div>
+<div class="line">     2) creating a filesystem containing a suid or sgid application,</div>
+<div class="line">        then executing this application</div>
+<div class="line"></div>
+<div class="line">    The solution is not to allow opening device files and ignore</div>
+<div class="line">    setuid and setgid bits when executing programs.  To ensure this</div>
+<div class="line">    fusermount always adds &quot;nosuid&quot; and &quot;nodev&quot; to the mount options</div>
+<div class="line">    for non-privileged mounts.</div>
+<div class="line"></div>
+<div class="line"> B) If another user is accessing files or directories in the</div>
+<div class="line">    filesystem, the filesystem daemon serving requests can record the</div>
+<div class="line">    exact sequence and timing of operations performed.  This</div>
+<div class="line">    information is otherwise inaccessible to the mount owner, so this</div>
+<div class="line">    counts as an information leak.</div>
+<div class="line"></div>
+<div class="line">    The solution to this problem will be presented in point 2) of C).</div>
+<div class="line"></div>
+<div class="line"> C) There are several ways in which the mount owner can induce</div>
+<div class="line">    undesired behavior in other users&#39; processes, such as:</div>
+<div class="line"></div>
+<div class="line">     1) mounting a filesystem over a file or directory which the mount</div>
+<div class="line">        owner could otherwise not be able to modify (or could only</div>
+<div class="line">        make limited modifications).</div>
+<div class="line"></div>
+<div class="line">        This is solved in fusermount, by checking the access</div>
+<div class="line">        permissions on the mountpoint and only allowing the mount if</div>
+<div class="line">        the mount owner can do unlimited modification (has write</div>
+<div class="line">        access to the mountpoint, and mountpoint is not a &quot;sticky&quot;</div>
+<div class="line">        directory)</div>
+<div class="line"></div>
+<div class="line">     2) Even if 1) is solved the mount owner can change the behavior</div>
+<div class="line">        of other users&#39; processes.</div>
+<div class="line"></div>
+<div class="line">         i) It can slow down or indefinitely delay the execution of a</div>
+<div class="line">           filesystem operation creating a DoS against the user or the</div>
+<div class="line">           whole system.  For example a suid application locking a</div>
+<div class="line">           system file, and then accessing a file on the mount owner&#39;s</div>
+<div class="line">           filesystem could be stopped, and thus causing the system</div>
+<div class="line">           file to be locked forever.</div>
+<div class="line"></div>
+<div class="line">         ii) It can present files or directories of unlimited length, or</div>
+<div class="line">           directory structures of unlimited depth, possibly causing a</div>
+<div class="line">           system process to eat up diskspace, memory or other</div>
+<div class="line">           resources, again causing DoS.</div>
+<div class="line"></div>
+<div class="line">        The solution to this as well as B) is not to allow processes</div>
+<div class="line">        to access the filesystem, which could otherwise not be</div>
+<div class="line">        monitored or manipulated by the mount owner.  Since if the</div>
+<div class="line">        mount owner can ptrace a process, it can do all of the above</div>
+<div class="line">        without using a FUSE mount, the same criteria as used in</div>
+<div class="line">        ptrace can be used to check if a process is allowed to access</div>
+<div class="line">        the filesystem or not.</div>
+<div class="line"></div>
+<div class="line">        Note that the ptrace check is not strictly necessary to</div>
+<div class="line">        prevent B/2/i, it is enough to check if mount owner has enough</div>
+<div class="line">        privilege to send signal to the process accessing the</div>
+<div class="line">        filesystem, since SIGSTOP can be used to get a similar effect.</div>
+<div class="line"></div>
+<div class="line">I think these limitations are unacceptable?</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">If a sysadmin trusts the users enough, or can ensure through other</div>
+<div class="line">measures, that system processes will never enter non-privileged</div>
+<div class="line">mounts, it can relax the last limitation with a &quot;user_allow_other&quot;</div>
+<div class="line">config option.  If this config option is set, the mounting user can</div>
+<div class="line">add the &quot;allow_other&quot; mount option which disables the check for other</div>
+<div class="line">users&#39; processes.</div>
+<div class="line"></div>
+<div class="line">Kernel - userspace interface</div>
+<div class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+<div class="line"></div>
+<div class="line">The following diagram shows how a filesystem operation (in this</div>
+<div class="line">example unlink) is performed in FUSE.</div>
+<div class="line"></div>
+<div class="line">NOTE: everything in this description is greatly simplified</div>
+<div class="line"></div>
+<div class="line"> |  &quot;rm /mnt/fuse/file&quot;               |  FUSE filesystem daemon</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |                                    |  &gt;sys_read()</div>
+<div class="line"> |                                    |    &gt;fuse_dev_read()</div>
+<div class="line"> |                                    |      &gt;request_wait()</div>
+<div class="line"> |                                    |        [sleep on fc-&gt;waitq]</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |  &gt;sys_unlink()                     |</div>
+<div class="line"> |    &gt;fuse_unlink()                  |</div>
+<div class="line"> |      [get request from             |</div>
+<div class="line"> |       fc-&gt;unused_list]             |</div>
+<div class="line"> |      &gt;request_send()               |</div>
+<div class="line"> |        [queue req on fc-&gt;pending]  |</div>
+<div class="line"> |        [wake up fc-&gt;waitq]         |        [woken up]</div>
+<div class="line"> |        &gt;request_wait_answer()      |</div>
+<div class="line"> |          [sleep on req-&gt;waitq]     |</div>
+<div class="line"> |                                    |      &lt;request_wait()</div>
+<div class="line"> |                                    |      [remove req from fc-&gt;pending]</div>
+<div class="line"> |                                    |      [copy req to read buffer]</div>
+<div class="line"> |                                    |      [add req to fc-&gt;processing]</div>
+<div class="line"> |                                    |    &lt;fuse_dev_read()</div>
+<div class="line"> |                                    |  &lt;sys_read()</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |                                    |  [perform unlink]</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |                                    |  &gt;sys_write()</div>
+<div class="line"> |                                    |    &gt;fuse_dev_write()</div>
+<div class="line"> |                                    |      [look up req in fc-&gt;processing]</div>
+<div class="line"> |                                    |      [remove from fc-&gt;processing]</div>
+<div class="line"> |                                    |      [copy write buffer to req]</div>
+<div class="line"> |          [woken up]                |      [wake up req-&gt;waitq]</div>
+<div class="line"> |                                    |    &lt;fuse_dev_write()</div>
+<div class="line"> |                                    |  &lt;sys_write()</div>
+<div class="line"> |        &lt;request_wait_answer()      |</div>
+<div class="line"> |      &lt;request_send()               |</div>
+<div class="line"> |      [add request to               |</div>
+<div class="line"> |       fc-&gt;unused_list]             |</div>
+<div class="line"> |    &lt;fuse_unlink()                  |</div>
+<div class="line"> |  &lt;sys_unlink()                     |</div>
+<div class="line"></div>
+<div class="line">There are a couple of ways in which to deadlock a FUSE filesystem.</div>
+<div class="line">Since we are talking about unprivileged userspace programs,</div>
+<div class="line">something must be done about these.</div>
+<div class="line"></div>
+<div class="line">Scenario 1 -  Simple deadlock</div>
+<div class="line">-----------------------------</div>
+<div class="line"></div>
+<div class="line"> |  &quot;rm /mnt/fuse/file&quot;               |  FUSE filesystem daemon</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |  &gt;sys_unlink(&quot;/mnt/fuse/file&quot;)     |</div>
+<div class="line"> |    [acquire inode semaphore        |</div>
+<div class="line"> |     for &quot;file&quot;]                    |</div>
+<div class="line"> |    &gt;fuse_unlink()                  |</div>
+<div class="line"> |      [sleep on req-&gt;waitq]         |</div>
+<div class="line"> |                                    |  &lt;sys_read()</div>
+<div class="line"> |                                    |  &gt;sys_unlink(&quot;/mnt/fuse/file&quot;)</div>
+<div class="line"> |                                    |    [acquire inode semaphore</div>
+<div class="line"> |                                    |     for &quot;file&quot;]</div>
+<div class="line"> |                                    |    *DEADLOCK*</div>
+<div class="line"></div>
+<div class="line">The solution for this is to allow the filesystem to be aborted.</div>
+<div class="line"></div>
+<div class="line">Scenario 2 - Tricky deadlock</div>
+<div class="line">----------------------------</div>
+<div class="line"></div>
+<div class="line">This one needs a carefully crafted filesystem.  It&#39;s a variation on</div>
+<div class="line">the above, only the call back to the filesystem is not explicit,</div>
+<div class="line">but is caused by a pagefault.</div>
+<div class="line"></div>
+<div class="line"> |  Kamikaze filesystem thread 1      |  Kamikaze filesystem thread 2</div>
+<div class="line"> |                                    |</div>
+<div class="line"> |  [fd = open(&quot;/mnt/fuse/file&quot;)]     |  [request served normally]</div>
+<div class="line"> |  [mmap fd to &#39;addr&#39;]               |</div>
+<div class="line"> |  [close fd]                        |  [FLUSH triggers &#39;magic&#39; flag]</div>
+<div class="line"> |  [read a byte from addr]           |</div>
+<div class="line"> |    &gt;do_page_fault()                |</div>
+<div class="line"> |      [find or create page]         |</div>
+<div class="line"> |      [lock page]                   |</div>
+<div class="line"> |      &gt;fuse_readpage()              |</div>
+<div class="line"> |         [queue READ request]       |</div>
+<div class="line"> |         [sleep on req-&gt;waitq]      |</div>
+<div class="line"> |                                    |  [read request to buffer]</div>
+<div class="line"> |                                    |  [create reply header before addr]</div>
+<div class="line"> |                                    |  &gt;sys_write(addr - headerlength)</div>
+<div class="line"> |                                    |    &gt;fuse_dev_write()</div>
+<div class="line"> |                                    |      [look up req in fc-&gt;processing]</div>
+<div class="line"> |                                    |      [remove from fc-&gt;processing]</div>
+<div class="line"> |                                    |      [copy write buffer to req]</div>
+<div class="line"> |                                    |        &gt;do_page_fault()</div>
+<div class="line"> |                                    |           [find or create page]</div>
+<div class="line"> |                                    |           [lock page]</div>
+<div class="line"> |                                    |           * DEADLOCK *</div>
+<div class="line"></div>
+<div class="line">Solution is basically the same as above.</div>
+<div class="line"></div>
+<div class="line">An additional problem is that while the write buffer is being copied</div>
+<div class="line">to the request, the request must not be interrupted/aborted.  This is</div>
+<div class="line">because the destination address of the copy may not be valid after the</div>
+<div class="line">request has returned.</div>
+<div class="line"></div>
+<div class="line">This is solved with doing the copy atomically, and allowing abort</div>
+<div class="line">while the page(s) belonging to the write buffer are faulted with</div>
+<div class="line">get_user_pages().  The &#39;req-&gt;locked&#39; flag indicates when the copy is</div>
+<div class="line">taking place, and abort is delayed until this flag is unset.</div>
+</div><!-- fragment --><h1><a class="anchor" id="section_examples"></a>
+examples</h1>
+<p>have a look at the examples listed in the example directory, which can be found here: <a href="files.html">files.html</a>.</p>
+<ul>
+<li><a class="el" href="hello_8c.html">hello.c</a> - minimal FUSE example featuring fuse_main usage</li>
+<li><a class="el" href="hello__ll_8c.html">hello_ll.c</a> - FUSE: Filesystem in Userspace</li>
+<li>null.c - FUSE: Filesystem in Userspace</li>
+<li>cusexmp.c - CUSE example: Character device in Userspace</li>
+<li>fioc.c - FUSE fioc: FUSE ioctl example</li>
+<li>fioclient.c - FUSE fioclient: FUSE ioctl example client</li>
+<li>fsel.c - FUSE fsel: FUSE select example</li>
+<li>fselclient.c - FUSE fselclient: FUSE select example client</li>
+<li>fusexmp.c - FUSE: Filesystem in Userspace</li>
+<li>fusexmp_fh.c - FUSE: Filesystem in Userspace</li>
+</ul>
+<h1><a class="anchor" id="section_links"></a>
+links</h1>
+<p><a href="http://sourceforge.net/apps/mediawiki/fuse/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/fuse/index.php?title=Main_Page</a> - the fuse wiki</p>
+<p><a href="http://en.wikipedia.org/wiki/Filesystem_in_Userspace">http://en.wikipedia.org/wiki/Filesystem_in_Userspace</a> - FUSE on wikipedia</p>
+<h1><a class="anchor" id="section_todo"></a>
+todo</h1>
+<p>general:</p>
+<ul>
+<li><a class="el" href="fuse__lowlevel_8h.html">fuse_lowlevel.h</a>, describe:<ul>
+<li>a channel (or communication channel) is created by fuse_mount(..)</li>
+<li>a fuse session is associated with a channel and a signal handler and runs until the assigned signal handler shuts the session down, see fuse_session_loop(se) and <a class="el" href="hello__ll_8c.html">hello_ll.c</a></li>
+</ul>
+</li>
+<li><a href="http://www.cs.nmsu.edu/~pfeiffer/fuse-tutorial/">http://www.cs.nmsu.edu/~pfeiffer/fuse-tutorial/</a></li>
+<li><a href="http://cinwell.wordpress.com/">http://cinwell.wordpress.com/</a></li>
+<li><a href="http://sourceforge.net/apps/mediawiki/fuse/index.php?title=FuseProtocolSketch">http://sourceforge.net/apps/mediawiki/fuse/index.php?title=FuseProtocolSketch</a></li>
+<li><a href="http://muratbuffalo.blogspot.de/2011/05/refuse-to-crash-with-re-fuse.html">http://muratbuffalo.blogspot.de/2011/05/refuse-to-crash-with-re-fuse.html</a></li>
+</ul>
+<p>examples:</p><ul>
+<li>demonstrate the effect of single vs multithreaded -&gt; fuse_loop fuse_loop_mt</li>
+<li>add comments and source form all existing examples</li>
+<li>also add examples form here: <a href="http://sourceforge.net/apps/mediawiki/fuse/index.php?title=Main_Page#How_should_threads_be_startedx3f">http://sourceforge.net/apps/mediawiki/fuse/index.php?title=Main_Page#How_should_threads_be_startedx3f</a></li>
+<li>add this new example: <a href="http://fuse.996288.n3.nabble.com/Create-multiple-filesystems-in-same-process-td9292.html">http://fuse.996288.n3.nabble.com/Create-multiple-filesystems-in-same-process-td9292.html</a></li>
+</ul>
+<h1><a class="anchor" id="section_thanks"></a>
+thanks</h1>
+<ul>
+<li>Mark Glines, <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'k@'+'gli'+'ne'+'s.o'+'rg'; return false;">mark@<span style="display: none;">.nosp@m.</span>glin<span style="display: none;">.nosp@m.</span>es.or<span style="display: none;">.nosp@m.</span>g</a> for his coments on <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> and <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a>.</li>
+<li>Wikipedia - copied the FUSE introduction from the Filesystem in userspace article. </li>
+</ul>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

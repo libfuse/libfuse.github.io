@@ -54,6 +54,7 @@
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
@@ -74,6 +75,9 @@
 <div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div>
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>ac_attr_timeout_set
+: <a class="el" href="structfuse__config.html#a78e7211a6acc2e8875b8e56b1808b9ee">fuse_config</a>
+</li>
 <li>access
 : <a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a2248db35e200265f7fb9a18348229858">fuse_operations</a>
@@ -87,14 +91,15 @@
 <li>argv
 : <a class="el" href="structfuse__args.html#a6f90bec2356aff03de79baaca65276b6">fuse_args</a>
 </li>
-<li>async_read
-: <a class="el" href="structfuse__conn__info.html#a25c9b670226641a2ccdb6bd0c74082b6">fuse_conn_info</a>
-</li>
 <li>attr
 : <a class="el" href="structfuse__entry__param.html#adcdee37c96ad18380a47cdbe96a323b9">fuse_entry_param</a>
 </li>
 <li>attr_timeout
-: <a class="el" href="structfuse__entry__param.html#aa797a9f4152cae506ba479af8bbe2eb7">fuse_entry_param</a>
+: <a class="el" href="structfuse__config.html#aeba85551d9498ca85fa2bf13b5e78eda">fuse_config</a>
+, <a class="el" href="structfuse__entry__param.html#aa797a9f4152cae506ba479af8bbe2eb7">fuse_entry_param</a>
+</li>
+<li>auto_cache
+: <a class="el" href="structfuse__config.html#a9db154b1f75284dd4fccc0248be71f66">fuse_config</a>
 </li>
 </ul>
 
@@ -115,10 +120,10 @@
 : <a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info</a>
 </li>
 <li>chmod
-: <a class="el" href="structfuse__operations.html#a7e75d299efe3a401e8473af7028e5cc5">fuse_operations</a>
+: <a class="el" href="structfuse__operations.html#ac0dc9c3d84129b30d63d00e59c6851d5">fuse_operations</a>
 </li>
 <li>chown
-: <a class="el" href="structfuse__operations.html#a40421f8a43e903582c49897894f4692d">fuse_operations</a>
+: <a class="el" href="structfuse__operations.html#abfb391676f601fda80cc866dcc977b83">fuse_operations</a>
 </li>
 <li>congestion_threshold
 : <a class="el" href="structfuse__conn__info.html#a2ce707ca8bfd6f6669557db7f37bb1ad">fuse_conn_info</a>
@@ -135,34 +140,25 @@
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>destroy
-: <a class="el" href="structfuse__chan__ops.html#a5df2257938552c436142f1c790667f74">fuse_chan_ops</a>
-, <a class="el" href="structfuse__lowlevel__ops.html#a963181c33f58859fd060b0ccde2f5ec3">fuse_lowlevel_ops</a>
+: <a class="el" href="structfuse__lowlevel__ops.html#a963181c33f58859fd060b0ccde2f5ec3">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#ac41d37ab860204fe4bd7612f9fb036c5">fuse_operations</a>
-, <a class="el" href="structfuse__session__ops.html#afee317cbaa077d50fd19245924ddfff3">fuse_session_ops</a>
 </li>
 <li>direct_io
-: <a class="el" href="structfuse__file__info.html#a03b59a10e62963d9affa34ad78bd144a">fuse_file_info</a>
+: <a class="el" href="structfuse__config.html#ae335bab50dfddef49b0ed81671066fa8">fuse_config</a>
+, <a class="el" href="structfuse__file__info.html#a03b59a10e62963d9affa34ad78bd144a">fuse_file_info</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>entry_timeout
-: <a class="el" href="structfuse__entry__param.html#a281b39b72e7ec574ba40d7341fd22c1d">fuse_entry_param</a>
-</li>
-<li>exit
-: <a class="el" href="structfuse__session__ops.html#aeb6548d5e59314ae6c83b905993710e3">fuse_session_ops</a>
-</li>
-<li>exited
-: <a class="el" href="structfuse__session__ops.html#a6307bc12276d867dcb06ade8744cf02b">fuse_session_ops</a>
+: <a class="el" href="structfuse__config.html#a9bc2e3b1d8a4410215cd620553e61b62">fuse_config</a>
+, <a class="el" href="structfuse__entry__param.html#a281b39b72e7ec574ba40d7341fd22c1d">fuse_entry_param</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>factory
-: <a class="el" href="structfuse__module.html#a433d1857217f025aaf561fb95ffadae5">fuse_module</a>
-</li>
 <li>fallocate
 : <a class="el" href="structfuse__lowlevel__ops.html#a5d0ddef3583d645ccf957bdef9291047">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a4fa8203e4bfa71d62c15deb5dffe4867">fuse_operations</a>
@@ -170,26 +166,8 @@
 <li>fd
 : <a class="el" href="structfuse__buf.html#a62b2ae82904ac4355142984b9dd90d68">fuse_buf</a>
 </li>
-<li>fgetattr
-: <a class="el" href="structfuse__operations.html#a573d79862df591c98e1685225a4cd3a5">fuse_operations</a>
-</li>
 <li>fh
 : <a class="el" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fuse_file_info</a>
-</li>
-<li>fh_old
-: <a class="el" href="structfuse__file__info.html#a62d0083192d16484ac3136af3710cc11">fuse_file_info</a>
-</li>
-<li>flag_nopath
-: <a class="el" href="structfuse__operations.html#abd0d90b9b500f6607f9aad9ae07784d8">fuse_operations</a>
-</li>
-<li>flag_nullpath_ok
-: <a class="el" href="structfuse__operations.html#acf5f08abeb39ab627fe1043d9a67cc09">fuse_operations</a>
-</li>
-<li>flag_reserved
-: <a class="el" href="structfuse__operations.html#ab54bb9753d457ceff8240f67b1b6b72d">fuse_operations</a>
-</li>
-<li>flag_utime_omit_ok
-: <a class="el" href="structfuse__operations.html#a0ca87db7234e774e39de7b323e03455d">fuse_operations</a>
 </li>
 <li>flags
 : <a class="el" href="structfuse__buf.html#a1928e204554f2d37cb8dac28a8a2f28c">fuse_buf</a>
@@ -205,7 +183,7 @@
 , <a class="el" href="structfuse__operations.html#ad4ec9c309072a92dd82ddb20efa4ab14">fuse_operations</a>
 </li>
 <li>forget
-: <a class="el" href="structfuse__lowlevel__ops.html#a5a9112cb58497e68b7b197951c059d1e">fuse_lowlevel_ops</a>
+: <a class="el" href="structfuse__lowlevel__ops.html#a97de3962fc55f136c6bd48183705dbe8">fuse_lowlevel_ops</a>
 </li>
 <li>forget_multi
 : <a class="el" href="structfuse__lowlevel__ops.html#a17808183820bb58dcc17db639511a2cb">fuse_lowlevel_ops</a>
@@ -218,9 +196,6 @@
 : <a class="el" href="structfuse__lowlevel__ops.html#ab2e3a9ad8b264daec4c254f5b064dfb3">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#aba5cc1fe9a63ec152ceb19656f243256">fuse_operations</a>
 </li>
-<li>ftruncate
-: <a class="el" href="structfuse__operations.html#a1e492882859740f13cbf3344cf963c70">fuse_operations</a>
-</li>
 <li>fuse
 : <a class="el" href="structfuse__context.html#a8872cbd7e8d0269fb5cbd1ed40e60a19">fuse_context</a>
 </li>
@@ -229,11 +204,11 @@
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>generation
-: <a class="el" href="structfuse__entry__param.html#a6481786ffc9fcf968df41953d3f0bf98">fuse_entry_param</a>
+: <a class="el" href="structfuse__entry__param.html#a4c673ec62c76f7d63d326407beb1b463">fuse_entry_param</a>
 </li>
 <li>getattr
 : <a class="el" href="structfuse__lowlevel__ops.html#a994c316fa7a1ca33525a4540675f6b47">fuse_lowlevel_ops</a>
-, <a class="el" href="structfuse__operations.html#a7a4c5d8eaf7179d819618c0cf3f73724">fuse_operations</a>
+, <a class="el" href="structfuse__operations.html#a60144dbd1a893008d9112e949300eb77">fuse_operations</a>
 </li>
 <li>getlk
 : <a class="el" href="structfuse__lowlevel__ops.html#a709d41ca0cde37dbd4d4d06c89f6906a">fuse_lowlevel_ops</a>
@@ -249,16 +224,29 @@
 </ul>
 
 
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>hard_remove
+: <a class="el" href="structfuse__config.html#af32ff56fa1131da899756cc352718101">fuse_config</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>idx
 : <a class="el" href="structfuse__bufvec.html#a41cc18cb303ee16d20b3ae1ebb0ef830">fuse_bufvec</a>
 </li>
 <li>init
 : <a class="el" href="structfuse__lowlevel__ops.html#ab6fa0b9edb5b002cd1502c969c887329">fuse_lowlevel_ops</a>
-, <a class="el" href="structfuse__operations.html#adc6dc71274f185de72217e38d62142c4">fuse_operations</a>
+, <a class="el" href="structfuse__operations.html#a6e26243be285c8e65b2f417192b54c76">fuse_operations</a>
 </li>
 <li>ino
 : <a class="el" href="structfuse__entry__param.html#a285ba89754871772d940fa4fb736bce3">fuse_entry_param</a>
+</li>
+<li>intr
+: <a class="el" href="structfuse__config.html#a9d833bcdb023a49fe81f260a92ed9d05">fuse_config</a>
+</li>
+<li>intr_signal
+: <a class="el" href="structfuse__config.html#a9d5326236eb4191c9f4cf72c6e55dba8">fuse_config</a>
 </li>
 <li>ioctl
 : <a class="el" href="structfuse__lowlevel__ops.html#a399da4f164985be5f5b93ef5b33551da">fuse_lowlevel_ops</a>
@@ -270,6 +258,9 @@
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>keep_cache
 : <a class="el" href="structfuse__file__info.html#a23a64eaecbf83f99aba8ee79e6de2780">fuse_file_info</a>
+</li>
+<li>kernel_cache
+: <a class="el" href="structfuse__config.html#ac055a1643c6c7aa7fb19341cf7f39aad">fuse_config</a>
 </li>
 </ul>
 
@@ -299,6 +290,9 @@
 <li>max_background
 : <a class="el" href="structfuse__conn__info.html#a5f9e695735727343448ae1e1a86dfa03">fuse_conn_info</a>
 </li>
+<li>max_read
+: <a class="el" href="structfuse__conn__info.html#a6a5a50d718e9253514da2e1c2013827c">fuse_conn_info</a>
+</li>
 <li>max_readahead
 : <a class="el" href="structfuse__conn__info.html#acb560435478ca7bfb3dbf7df4c0f2dfe">fuse_conn_info</a>
 </li>
@@ -320,11 +314,14 @@
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>name
-: <a class="el" href="structfuse__module.html#abc7b2bc3480bbb94a4eb9c1d910a0385">fuse_module</a>
+<li>negative_timeout
+: <a class="el" href="structfuse__config.html#ab4205f7343afe6e20edfbfb64cb90248">fuse_config</a>
 </li>
 <li>nonseekable
 : <a class="el" href="structfuse__file__info.html#a272022c57a6a79dd8f98ef597786e154">fuse_file_info</a>
+</li>
+<li>nullpath_ok
+: <a class="el" href="structfuse__config.html#adc93fd1ac03d7f016d6b0bfab77f3863">fuse_config</a>
 </li>
 </ul>
 
@@ -359,14 +356,14 @@
 : <a class="el" href="structfuse__lowlevel__ops.html#a50abf8a54b6c73a5a40123b6cf63c71e">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a2c02838d30391c09dd5213edc61e106a">fuse_operations</a>
 </li>
+<li>poll_events
+: <a class="el" href="structfuse__file__info.html#a51b0d5928ec6112456d2aa50f2c35001">fuse_file_info</a>
+</li>
 <li>pos
 : <a class="el" href="structfuse__buf.html#a8de23b7869b06b9a9caef6beb7c9e88e">fuse_buf</a>
 </li>
 <li>private_data
 : <a class="el" href="structfuse__context.html#a198911619cb8ee1a0b11302b94b6027e">fuse_context</a>
-</li>
-<li>process
-: <a class="el" href="structfuse__session__ops.html#a8ed15bc86f9e32444cd0b80d605f227f">fuse_session_ops</a>
 </li>
 <li>proto_major
 : <a class="el" href="structfuse__conn__info.html#a69c606abe81d16214d14ab58bad60062">fuse_conn_info</a>
@@ -387,14 +384,17 @@
 </li>
 <li>readdir
 : <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">fuse_lowlevel_ops</a>
-, <a class="el" href="structfuse__operations.html#a0f634deda31d1e1c42664585ae820076">fuse_operations</a>
+, <a class="el" href="structfuse__operations.html#adc01d3622754fc7de8e643249e73268d">fuse_operations</a>
+</li>
+<li>readdir_ino
+: <a class="el" href="structfuse__config.html#ad52f9834fd3cefd03803d0929ac54fa4">fuse_config</a>
+</li>
+<li>readdirplus
+: <a class="el" href="structfuse__lowlevel__ops.html#af621ef96ffc2a71af8c7768c109b880e">fuse_lowlevel_ops</a>
 </li>
 <li>readlink
 : <a class="el" href="structfuse__lowlevel__ops.html#ae1032649069ae28d46bde76a40743fcf">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#ab4ce6e6d69dfde3ec550f22d932c5633">fuse_operations</a>
-</li>
-<li>receive
-: <a class="el" href="structfuse__chan__ops.html#a622c80d319253941c6f71963261bff39">fuse_chan_ops</a>
 </li>
 <li>release
 : <a class="el" href="structfuse__lowlevel__ops.html#abc49c6310cd0eaddf116988426ca21d2">fuse_lowlevel_ops</a>
@@ -404,16 +404,19 @@
 : <a class="el" href="structfuse__lowlevel__ops.html#abfc54ffe5fa5778fc273a6666494d802">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a729e53d36acc05a7a8985a1a3bbfac1e">fuse_operations</a>
 </li>
+<li>remember
+: <a class="el" href="structfuse__config.html#a0931441fab2526e8dd875c7a36315087">fuse_config</a>
+</li>
 <li>removexattr
 : <a class="el" href="structfuse__lowlevel__ops.html#a15be6632986e6be8660071e1d71ffe51">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a5e54de801a0e0d7019e4579112ecc477">fuse_operations</a>
 </li>
 <li>rename
-: <a class="el" href="structfuse__lowlevel__ops.html#aff3670fecb2b4bf45543c191c9d70c02">fuse_lowlevel_ops</a>
-, <a class="el" href="structfuse__operations.html#aa777cbddc91887b117ac414e9a2d3cb5">fuse_operations</a>
+: <a class="el" href="structfuse__lowlevel__ops.html#a46d76dee9cf1741c364e5be955885248">fuse_lowlevel_ops</a>
+, <a class="el" href="structfuse__operations.html#a61f17888d4c5208ec5629fb8b257546d">fuse_operations</a>
 </li>
 <li>reserved
-: <a class="el" href="structfuse__conn__info.html#ac036677ef99574c0faba807b0cfee0de">fuse_conn_info</a>
+: <a class="el" href="structfuse__conn__info.html#a26b74a62be5ba5b4f4cf503dbfbd5a9f">fuse_conn_info</a>
 </li>
 <li>retrieve_reply
 : <a class="el" href="structfuse__lowlevel__ops.html#a1c1d7ad0c1fb40d7180660e7f3f7f089">fuse_lowlevel_ops</a>
@@ -426,8 +429,14 @@
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>send
-: <a class="el" href="structfuse__chan__ops.html#a5dadbc392d24d80a53c71d50daa0b59c">fuse_chan_ops</a>
+<li>set_gid
+: <a class="el" href="structfuse__config.html#a3e84d36c87733fcafc594b18a6c3dda8">fuse_config</a>
+</li>
+<li>set_mode
+: <a class="el" href="structfuse__config.html#acc5a36d2830854b678e5dda19a1c9ba4">fuse_config</a>
+</li>
+<li>set_uid
+: <a class="el" href="structfuse__config.html#a1921f79bf70f0bba90d41ba6f530e4bc">fuse_config</a>
 </li>
 <li>setattr
 : <a class="el" href="structfuse__lowlevel__ops.html#a6a95408dd79575df7f6c64e55f1e973b">fuse_lowlevel_ops</a>
@@ -438,6 +447,9 @@
 <li>setxattr
 : <a class="el" href="structfuse__lowlevel__ops.html#ab80c4081204c07a423c3c88b116f3086">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a988ced7091c2821daa208e6c96d8b598">fuse_operations</a>
+</li>
+<li>show_help
+: <a class="el" href="structfuse__config.html#af55edfc4d69e0042146fbd03c26ded3a">fuse_config</a>
 </li>
 <li>size
 : <a class="el" href="structfuse__buf.html#afb58c1e18f434d1d4edb784d00e2e13d">fuse_buf</a>
@@ -457,8 +469,11 @@
 <li>templ
 : <a class="el" href="structfuse__opt.html#a215255be3ed5c0f6c3e0d5dcc96d7b12">fuse_opt</a>
 </li>
+<li>time_gran
+: <a class="el" href="structfuse__conn__info.html#a0a72f4702cf256e4861cc2b98486d08c">fuse_conn_info</a>
+</li>
 <li>truncate
-: <a class="el" href="structfuse__operations.html#a8efb50b9cd975ba8c4c450248caff6ed">fuse_operations</a>
+: <a class="el" href="structfuse__operations.html#a103927b9fe73c5b7cb5ef43bccac5993">fuse_operations</a>
 </li>
 </ul>
 
@@ -476,11 +491,11 @@
 : <a class="el" href="structfuse__lowlevel__ops.html#afb6e186f5cbe806d3838a51c112a97ee">fuse_lowlevel_ops</a>
 , <a class="el" href="structfuse__operations.html#a8bf63301a9d6e94311fa10480993801e">fuse_operations</a>
 </li>
-<li>utime
-: <a class="el" href="structfuse__operations.html#acb7452acad1002d418409892b6e54c2e">fuse_operations</a>
+<li>use_ino
+: <a class="el" href="structfuse__config.html#adf78e64e79e31c4fe1464cd0744ea725">fuse_config</a>
 </li>
 <li>utimens
-: <a class="el" href="structfuse__operations.html#a79955861cc5eb006954476607ef28944">fuse_operations</a>
+: <a class="el" href="structfuse__operations.html#a14b47789c53aa750ed2cfea92cacc9c9">fuse_operations</a>
 </li>
 </ul>
 
@@ -505,13 +520,13 @@
 , <a class="el" href="structfuse__operations.html#a89f400083a03ddcc43e47ce126b6761f">fuse_operations</a>
 </li>
 <li>writepage
-: <a class="el" href="structfuse__file__info.html#ac58a8634699eb8ed8d424cd4413dd75b">fuse_file_info</a>
+: <a class="el" href="structfuse__file__info.html#a984187caa62aafc15abf9ff621667f3d">fuse_file_info</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

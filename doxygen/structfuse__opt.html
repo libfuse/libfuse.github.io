@@ -81,7 +81,7 @@ Data Fields</h2></td></tr>
 <p>4) "bar=%s", "--foo=%lu", etc. Same matching as above but perform action iii).</p>
 <p>5) "-x ", etc. Matches either "-xparam" or "-x param" as two separate arguments</p>
 <p>6) "-x %s", etc. Combination of 4) and 5)</p>
-<p>If the format is "%s", memory is allocated for the string unlike with scanf(). </p>
+<p>If the format is "%s", memory is allocated for the string unlike with scanf(). The previous value (if non-NULL) stored at the this location is freed. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a333dcd849a3bd54df06084a69b5a8d39"></a>
 <div class="memitem">
@@ -128,7 +128,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

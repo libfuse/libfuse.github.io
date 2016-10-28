@@ -54,10 +54,8 @@
 Data Fields</h2></td></tr>
 <tr class="memitem:ae7d31802727be19670193a411647bca5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#ae7d31802727be19670193a411647bca5">flags</a></td></tr>
 <tr class="separator:ae7d31802727be19670193a411647bca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d0083192d16484ac3136af3710cc11"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a62d0083192d16484ac3136af3710cc11">fh_old</a></td></tr>
-<tr class="separator:a62d0083192d16484ac3136af3710cc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac58a8634699eb8ed8d424cd4413dd75b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#ac58a8634699eb8ed8d424cd4413dd75b">writepage</a></td></tr>
-<tr class="separator:ac58a8634699eb8ed8d424cd4413dd75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984187caa62aafc15abf9ff621667f3d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a984187caa62aafc15abf9ff621667f3d">writepage</a>: 1</td></tr>
+<tr class="separator:a984187caa62aafc15abf9ff621667f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b59a10e62963d9affa34ad78bd144a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a03b59a10e62963d9affa34ad78bd144a">direct_io</a>: 1</td></tr>
 <tr class="separator:a03b59a10e62963d9affa34ad78bd144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23a64eaecbf83f99aba8ee79e6de2780"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a23a64eaecbf83f99aba8ee79e6de2780">keep_cache</a>: 1</td></tr>
@@ -72,10 +70,11 @@ Data Fields</h2></td></tr>
 <tr class="separator:a45314d0b92a8d4c9de33d996aa59ada8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3575f36b21f406c211c41c8c31323688"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a3575f36b21f406c211c41c8c31323688">lock_owner</a></td></tr>
 <tr class="separator:a3575f36b21f406c211c41c8c31323688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b0d5928ec6112456d2aa50f2c35001"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__file__info.html#a51b0d5928ec6112456d2aa50f2c35001">poll_events</a></td></tr>
+<tr class="separator:a51b0d5928ec6112456d2aa50f2c35001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Information about open files</p>
-<p>Changed in version 2.5 </p>
+<div class="textblock"><p>Information about open files </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a03b59a10e62963d9affa34ad78bd144a"></a>
 <div class="memitem">
@@ -86,7 +85,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Can be filled in by open, to use direct I/O on this file. Introduced in version 2.4 </p>
+<p>Can be filled in by open, to use direct I/O on this file. </p>
 
 </div>
 </div>
@@ -100,19 +99,6 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>File handle. May be filled in by filesystem in open(). Available in all other file operations </p>
-
-</div>
-</div>
-<a class="anchor" id="a62d0083192d16484ac3136af3710cc11"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned long fuse_file_info::fh_old</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Old file handle, don't use </p>
 
 </div>
 </div>
@@ -138,7 +124,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates a flush operation. Set in flush operation, also maybe set in highlevel lock operation and lowlevel release operation. Introduced in version 2.6 </p>
+<p>Indicates a flush operation. Set in flush operation, also maybe set in highlevel lock operation and lowlevel release operation. </p>
 
 </div>
 </div>
@@ -151,7 +137,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Can be filled in by open, to indicate, that cached file data need not be invalidated. Introduced in version 2.4 </p>
+<p>Can be filled in by open, to indicate, that cached file data need not be invalidated. </p>
 
 </div>
 </div>
@@ -177,7 +163,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Can be filled in by open, to indicate that the file is not seekable. Introduced in version 2.8 </p>
+<p>Can be filled in by open, to indicate that the file is not seekable. </p>
 
 </div>
 </div>
@@ -194,12 +180,25 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac58a8634699eb8ed8d424cd4413dd75b"></a>
+<a class="anchor" id="a51b0d5928ec6112456d2aa50f2c35001"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_file_info::writepage</td>
+          <td class="memname">uint32_t fuse_file_info::poll_events</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Requested poll events. Available in -&gt;poll. Only set on kernels which support it. If unsupported, this field is set to zero. </p>
+
+</div>
+</div>
+<a class="anchor" id="a984187caa62aafc15abf9ff621667f3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int fuse_file_info::writepage</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,7 +212,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

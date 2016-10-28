@@ -57,7 +57,6 @@
 <div class="textblock"><code>#include &quot;<a class="el" href="fuse__opt_8h.html">fuse_opt.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
-<code>#include &quot;fuse_common_compat.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -72,12 +71,42 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2779d57c512b7b948992858653e95f0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a2779d57c512b7b948992858653e95f0e">FUSE_MAJOR_VERSION</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:a2779d57c512b7b948992858653e95f0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a2779d57c512b7b948992858653e95f0e">FUSE_MAJOR_VERSION</a>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a2779d57c512b7b948992858653e95f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a8571aa4ec96e1685d31eeff07cb2f163">FUSE_MINOR_VERSION</a>&#160;&#160;&#160;9</td></tr>
+<tr class="memitem:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a8571aa4ec96e1685d31eeff07cb2f163">FUSE_MINOR_VERSION</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4e1bacbb44d6dca9a82255c8069c3d69">FUSE_CAP_ASYNC_READ</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f6b481e6a7c519fea9250daef6177a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a76f6b481e6a7c519fea9250daef6177a">FUSE_CAP_POSIX_LOCKS</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="separator:a76f6b481e6a7c519fea9250daef6177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c81f2838716f43fe493a61c87a62816"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4c81f2838716f43fe493a61c87a62816">FUSE_CAP_ATOMIC_O_TRUNC</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="separator:a4c81f2838716f43fe493a61c87a62816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7686c11aaf80382189927b10b848d8c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a7686c11aaf80382189927b10b848d8c8">FUSE_CAP_EXPORT_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:a7686c11aaf80382189927b10b848d8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd4cebf7ec784886836aa061a1612fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a0cd4cebf7ec784886836aa061a1612fe">FUSE_CAP_DONT_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="separator:a0cd4cebf7ec784886836aa061a1612fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8815e0f48c60c3d9cd6e72be5a84e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4f8815e0f48c60c3d9cd6e72be5a84e4">FUSE_CAP_SPLICE_WRITE</a>&#160;&#160;&#160;(1 &lt;&lt; 7)</td></tr>
+<tr class="separator:a4f8815e0f48c60c3d9cd6e72be5a84e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef5da823dc5f202bbe033c7a5a3de9c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#aef5da823dc5f202bbe033c7a5a3de9c4">FUSE_CAP_SPLICE_MOVE</a>&#160;&#160;&#160;(1 &lt;&lt; 8)</td></tr>
+<tr class="separator:aef5da823dc5f202bbe033c7a5a3de9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8a51bc70841ab691660413836a9a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a2f8a51bc70841ab691660413836a9a14">FUSE_CAP_SPLICE_READ</a>&#160;&#160;&#160;(1 &lt;&lt; 9)</td></tr>
+<tr class="separator:a2f8a51bc70841ab691660413836a9a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd06393448dbb60668f5a3bf0006f536"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#afd06393448dbb60668f5a3bf0006f536">FUSE_CAP_FLOCK_LOCKS</a>&#160;&#160;&#160;(1 &lt;&lt; 10)</td></tr>
+<tr class="separator:afd06393448dbb60668f5a3bf0006f536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfb2ecd448cb5659679df690e75581a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a0bfb2ecd448cb5659679df690e75581a">FUSE_CAP_IOCTL_DIR</a>&#160;&#160;&#160;(1 &lt;&lt; 11)</td></tr>
+<tr class="separator:a0bfb2ecd448cb5659679df690e75581a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2568c799f5f90ad2f0c353d48d8b8780"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a2568c799f5f90ad2f0c353d48d8b8780">FUSE_CAP_AUTO_INVAL_DATA</a>&#160;&#160;&#160;(1 &lt;&lt; 12)</td></tr>
+<tr class="separator:a2568c799f5f90ad2f0c353d48d8b8780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad808b93c66a58d1b4cd738af7ddcf37f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ad808b93c66a58d1b4cd738af7ddcf37f">FUSE_CAP_READDIRPLUS</a>&#160;&#160;&#160;(1 &lt;&lt; 13)</td></tr>
+<tr class="separator:ad808b93c66a58d1b4cd738af7ddcf37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b90333ad08d0e1c2ed0134d9305ee87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a9b90333ad08d0e1c2ed0134d9305ee87">FUSE_CAP_READDIRPLUS_AUTO</a>&#160;&#160;&#160;(1 &lt;&lt; 14)</td></tr>
+<tr class="separator:a9b90333ad08d0e1c2ed0134d9305ee87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac172aaeb6d27e2fdcafd086f9f3c0cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#aac172aaeb6d27e2fdcafd086f9f3c0cf">FUSE_CAP_ASYNC_DIO</a>&#160;&#160;&#160;(1 &lt;&lt; 15)</td></tr>
+<tr class="separator:aac172aaeb6d27e2fdcafd086f9f3c0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4839fce31097f4b4da7a1f01169228fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4839fce31097f4b4da7a1f01169228fa">FUSE_CAP_WRITEBACK_CACHE</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="separator:a4839fce31097f4b4da7a1f01169228fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4477fe76f57e8b726d0357a637d7aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ad4477fe76f57e8b726d0357a637d7aaf">FUSE_CAP_NO_OPEN_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 17)</td></tr>
+<tr class="separator:ad4477fe76f57e8b726d0357a637d7aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade38f8e8c463cd40af5bfeeebfa99486"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:ade38f8e8c463cd40af5bfeeebfa99486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -97,16 +126,16 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a30d394a6127b20455bf5a4899e56e759"><td class="memItemLeft" align="right" valign="top">struct fuse_chan *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a30d394a6127b20455bf5a4899e56e759">fuse_mount</a> (const char *mountpoint, struct <a class="el" href="structfuse__args.html">fuse_args</a> *args)</td></tr>
-<tr class="separator:a30d394a6127b20455bf5a4899e56e759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6448c8529f9fac068a35ef7a279d4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a1b6448c8529f9fac068a35ef7a279d4d">fuse_unmount</a> (const char *mountpoint, struct fuse_chan *ch)</td></tr>
-<tr class="separator:a1b6448c8529f9fac068a35ef7a279d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971bb6dbde8b6d47dfd5c1fab8b30a1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a971bb6dbde8b6d47dfd5c1fab8b30a1d">fuse_parse_cmdline</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args, char **mountpoint, int *multithreaded, int *foreground)</td></tr>
-<tr class="separator:a971bb6dbde8b6d47dfd5c1fab8b30a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5431cea3c9a8490cefe087cb8089cd9"><td class="memItemLeft" align="right" valign="top">struct fuse_conn_info_opts *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#af5431cea3c9a8490cefe087cb8089cd9">fuse_parse_conn_info_opts</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args)</td></tr>
+<tr class="separator:af5431cea3c9a8490cefe087cb8089cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55cf81fd313a39a171275360960b0471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a55cf81fd313a39a171275360960b0471">fuse_apply_conn_info_opts</a> (struct fuse_conn_info_opts *opts, struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td></tr>
+<tr class="separator:a55cf81fd313a39a171275360960b0471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1857d2209952f49a762aff39f3cd8bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#af1857d2209952f49a762aff39f3cd8bd">fuse_daemonize</a> (int foreground)</td></tr>
 <tr class="separator:af1857d2209952f49a762aff39f3cd8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae04b2f721003f5540c71be65396c53c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ae04b2f721003f5540c71be65396c53c8">fuse_version</a> (void)</td></tr>
 <tr class="separator:ae04b2f721003f5540c71be65396c53c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52e27388a7c16eb509173908e5eebd0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ac52e27388a7c16eb509173908e5eebd0">fuse_pkgversion</a> (void)</td></tr>
+<tr class="separator:ac52e27388a7c16eb509173908e5eebd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5027f8a38b2efc03858efd7fdc756a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#adf5027f8a38b2efc03858efd7fdc756a">fuse_pollhandle_destroy</a> (struct fuse_pollhandle *ph)</td></tr>
 <tr class="separator:adf5027f8a38b2efc03858efd7fdc756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4327f41b2fe1ca84151b407169bd86c0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4327f41b2fe1ca84151b407169bd86c0">fuse_buf_size</a> (const struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td></tr>
@@ -119,6 +148,20 @@ Functions</h2></td></tr>
 <tr class="separator:aeb674bbc11074c4fe520b952d6bfdd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="aac172aaeb6d27e2fdcafd086f9f3c0cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_ASYNC_DIO&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports asynchronous direct I/O submission.</p>
+<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read and one pending write request per direct I/O file-handle at any time. </p>
+
+</div>
+</div>
 <a class="anchor" id="a4e1bacbb44d6dca9a82255c8069c3d69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -128,8 +171,190 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Capability bits for '<a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a>' and '<a class="el" href="structfuse__conn__info.html#af45de81548b591f3004353a324e4e04d">fuse_conn_info.want</a>'</p>
-<p>FUSE_CAP_ASYNC_READ: filesystem supports asynchronous read requests FUSE_CAP_POSIX_LOCKS: filesystem supports "remote" locking FUSE_CAP_ATOMIC_O_TRUNC: filesystem handles the O_TRUNC open flag FUSE_CAP_EXPORT_SUPPORT: filesystem handles lookups of "." and ".." FUSE_CAP_BIG_WRITES: filesystem can handle write size larger than 4kB FUSE_CAP_DONT_MASK: don't apply umask to file mode on create operations FUSE_CAP_SPLICE_WRITE: ability to use splice() to write to the fuse device FUSE_CAP_SPLICE_MOVE: ability to move data to the fuse device with splice() FUSE_CAP_SPLICE_READ: ability to use splice() to read from the fuse device FUSE_CAP_IOCTL_DIR: ioctl support on directories </p>
+<p>Indicates that the filesystem supports asynchronous read requests.</p>
+<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read request per file-handle at any time, and will attempt to order read requests by increasing offset. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c81f2838716f43fe493a61c87a62816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_ATOMIC_O_TRUNC&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports the O_TRUNC open flag </p>
+
+</div>
+</div>
+<a class="anchor" id="a2568c799f5f90ad2f0c353d48d8b8780"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_AUTO_INVAL_DATA&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports automatic invalidation of cached pages. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0cd4cebf7ec784886836aa061a1612fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_DONT_MASK&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the kernel should not apply the umask to the file mode on create operations. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7686c11aaf80382189927b10b848d8c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_EXPORT_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports lookups of "." and "..". </p>
+
+</div>
+</div>
+<a class="anchor" id="afd06393448dbb60668f5a3bf0006f536"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_FLOCK_LOCKS&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FIXME: This capability is not documented. Please get in touch if you know what it does! </p>
+
+</div>
+</div>
+<a class="anchor" id="a0bfb2ecd448cb5659679df690e75581a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_IOCTL_DIR&#160;&#160;&#160;(1 &lt;&lt; 11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports ioctl's on directories. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4477fe76f57e8b726d0357a637d7aaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_NO_OPEN_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports support zero-message opens. </p>
+
+</div>
+</div>
+<a class="anchor" id="a76f6b481e6a7c519fea9250daef6177a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_POSIX_LOCKS&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports "remote" locking. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad808b93c66a58d1b4cd738af7ddcf37f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_READDIRPLUS&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports readdirplus </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b90333ad08d0e1c2ed0134d9305ee87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_READDIRPLUS_AUTO&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem supports adaptive readdirplus </p>
+
+</div>
+</div>
+<a class="anchor" id="aef5da823dc5f202bbe033c7a5a3de9c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_SPLICE_MOVE&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that libfuse should try to move pages instead of copying when writing to / reading from the fuse device. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2f8a51bc70841ab691660413836a9a14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_SPLICE_READ&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that libfuse should try to use splice() when reading from the fuse device. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f8815e0f48c60c3d9cd6e72be5a84e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_SPLICE_WRITE&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that libfuse should try to use splice() when writing to the fuse device </p>
+
+</div>
+</div>
+<a class="anchor" id="a4839fce31097f4b4da7a1f01169228fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_WRITEBACK_CACHE&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that writeback caching should be enabled. This means that individual write request may be buffered and merged in the kernel before they are send to the filesystem. </p>
 
 </div>
 </div>
@@ -153,7 +378,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_MAJOR_VERSION&#160;&#160;&#160;2</td>
+          <td class="memname">#define FUSE_MAJOR_VERSION&#160;&#160;&#160;3</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -166,7 +391,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_MINOR_VERSION&#160;&#160;&#160;9</td>
+          <td class="memname">#define FUSE_MINOR_VERSION&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,6 +460,33 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a55cf81fd313a39a171275360960b0471"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fuse_apply_conn_info_opts </td>
+          <td>(</td>
+          <td class="paramtype">struct fuse_conn_info_opts *&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *&#160;</td>
+          <td class="paramname"><em>conn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function applies the (parsed) parameters in <em>opts</em> to the <em>conn</em> pointer. It may modify the following fields: wants, max_write, max_readahead, congestion_threshold, max_background, time_gran. A field is only set (or unset) if the corresponding option has been explicitly set. </p>
+
+</div>
+</div>
 <a class="anchor" id="a9ca301390fb5e85b85153abb1891a3f7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -325,91 +577,49 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a30d394a6127b20455bf5a4899e56e759"></a>
+<a class="anchor" id="af5431cea3c9a8490cefe087cb8089cd9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct fuse_chan* fuse_mount </td>
+          <td class="memname">struct fuse_conn_info_opts* fuse_parse_conn_info_opts </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>mountpoint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">struct <a class="el" href="structfuse__args.html">fuse_args</a> *&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a FUSE mountpoint</p>
-<p>Returns a control file descriptor suitable for passing to <a class="el" href="fuse_8h.html#a5326844946defe4a50b3f4320786a0f4">fuse_new()</a></p>
+<p>This function parses several command-line options that can be used to override elements of struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>. The pointer returned by this function should be passed to the <a class="el" href="fuse__common_8h.html#a55cf81fd313a39a171275360960b0471">fuse_apply_conn_info_opts()</a> method by the file system's init() handler.</p>
+<p>Before using this function, think twice if you really want these parameters to be adjustable from the command line. In most cases, they should be determined by the file system internally.</p>
+<p>The following options are recognized:</p>
+<p>-o max_write=N sets conn-&gt;max_write -o max_readahead=N sets conn-&gt;max_readahead -o max_background=N sets conn-&gt;max_background -o congestion_threshold=N sets conn-&gt;congestion_threshold -o async_read sets FUSE_CAP_ASYNC_READ in conn-&gt;want -o sync_read unsets FUSE_CAP_ASYNC_READ in conn-&gt;want -o atomic_o_trunc sets FUSE_CAP_ATOMIC_O_TRUNC in conn-&gt;want -o no_remote_lock Equivalent to -o no_remote_flock,no_remote_posix_lock -o no_remote_flock Unsets FUSE_CAP_FLOCK_LOCKS in conn-&gt;want -o no_remote_posix_lock Unsets FUSE_CAP_POSIX_LOCKS in conn-&gt;want -o [no_]splice_write (un-)sets FUSE_CAP_SPLICE_WRITE in conn-&gt;want -o [no_]splice_move (un-)sets FUSE_CAP_SPLICE_MOVE in conn-&gt;want -o [no_]splice_read (un-)sets FUSE_CAP_SPLICE_READ in conn-&gt;want -o [no_]auto_inval_data (un-)sets FUSE_CAP_AUTO_INVAL_DATA in conn-&gt;want -o readdirplus=no unsets FUSE_CAP_READDIRPLUS in conn-&gt;want -o readdirplus=yes sets FUSE_CAP_READDIRPLUS and unsets FUSE_CAP_READDIRPLUS_AUTO in conn-&gt;want -o readdirplus=auto sets FUSE_CAP_READDIRPLUS and FUSE_CAP_READDIRPLUS_AUTO in conn-&gt;want -o [no_]async_dio (un-)sets FUSE_CAP_ASYNC_DIO in conn-&gt;want -o [no_]writeback_cache (un-)sets FUSE_CAP_WRITEBACK_CACHE in conn-&gt;want -o time_gran=N sets conn-&gt;time_gran</p>
+<p>Known options will be removed from <em>args</em>, unknown options will be passed through unchanged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mountpoint</td><td>the mount point path </td></tr>
-    <tr><td class="paramname">args</td><td>argument vector </td></tr>
+    <tr><td class="paramname">args</td><td>argument vector (input+output) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the communication channel on success, NULL on failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>parsed options </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a971bb6dbde8b6d47dfd5c1fab8b30a1d"></a>
+<a class="anchor" id="ac52e27388a7c16eb509173908e5eebd0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_parse_cmdline </td>
+          <td class="memname">const char* fuse_pkgversion </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structfuse__args.html">fuse_args</a> *&#160;</td>
-          <td class="paramname"><em>args</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>mountpoint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>multithreaded</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>foreground</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Parse common options</p>
-<p>The following options are parsed:</p>
-<p>'-f' foreground '-d' '-odebug' foreground, but keep the debug option '-s' single threaded '-h' '&ndash;help' help '-ho' help without header '-ofsname=..' file system name, if not present, then set to the program name</p>
-<p>All parameters may be NULL</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>argument vector </td></tr>
-    <tr><td class="paramname">mountpoint</td><td>the returned mountpoint, should be freed after use </td></tr>
-    <tr><td class="paramname">multithreaded</td><td>set to 1 unless the '-s' option is present </td></tr>
-    <tr><td class="paramname">foreground</td><td>set to 1 if one of the relevant options is present </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
+<p>Get the full package version string of the library</p>
+<dl class="section return"><dt>Returns</dt><dd>the package version </dd></dl>
 
 </div>
 </div>
@@ -453,10 +663,11 @@ Functions</h2></td></tr>
 <p>Resets global session. After this <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> may be called again.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">se</td><td>the same session as given in <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> </td></tr>
+    <tr><td class="paramname">se</td><td>the same session as given in <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a></td></tr>
   </table>
   </dd>
 </dl>
+<p>See also: <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> </p>
 
 </div>
 </div>
@@ -475,47 +686,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Exit session on HUP, TERM and INT signals and ignore PIPE signal</p>
 <p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Once either of the POSIX signals arrives, the exit_handler() in fuse_signals.c is called: </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> exit_handler(<span class="keywordtype">int</span> sig)</div>
+<div class="line">{</div>
+<div class="line">        (void) sig;</div>
+<div class="line">        <span class="keywordflow">if</span> (fuse_instance)</div>
+<div class="line">                <a class="code" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(fuse_instance);</div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session to exit </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a1b6448c8529f9fac068a35ef7a279d4d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fuse_unmount </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>mountpoint</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct fuse_chan *&#160;</td>
-          <td class="paramname"><em>ch</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Umount a FUSE mountpoint</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mountpoint</td><td>the mount point path </td></tr>
-    <tr><td class="paramname">ch</td><td>the communication channel </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
+<p>See also: <a class="el" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
 
 </div>
 </div>
@@ -540,7 +724,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 23 2016 09:43:20 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
