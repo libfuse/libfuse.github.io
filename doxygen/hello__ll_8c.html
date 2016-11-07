@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: example/hello_ll.c File Reference</title>
+<title>libfuse: example/hello_ll.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -45,8 +45,6 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">hello_ll.c File Reference</div>  </div>
 </div><!--header-->
@@ -60,34 +58,10 @@
 <code>#include &lt;fcntl.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
-<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="hello__ll_8c.html">hello_ll.c</a> - fuse low level functionality</p>
-<p>unlike <a class="el" href="hello_8c.html">hello.c</a> this example will stay in the foreground. it also replaced the convenience function fuse_main(..) with a more low level approach.</p>
-<h1><a class="anchor" id="section_compile"></a>
-compiling this example</h1>
-<p>gcc -Wall <a class="el" href="hello__ll_8c.html">hello_ll.c</a> <code>pkg-config fuse3 --cflags --libs</code> -o hello_ll</p>
-<h1><a class="anchor" id="section_usage"></a>
-usage</h1>
-<pre class="fragment">% mkdir mnt
-% ./hello_ll mnt       # program will wait in foreground until you press CTRL+C
-in a different shell do:
-% ls -la mnt
-  total 4
-  drwxr-xr-x 2 root root      0 Jan  1  1970 ./
-  drwxrwx--- 1 root vboxsf 4096 Jun 16 23:12 ../
-  -r--r--r-- 1 root root     13 Jan  1  1970 hello
-% cat mnt/hello
-  Hello World!
-finally either press ctrl+c or do:
-% fusermount -u mnt
-</pre><h1><a class="anchor" id="section_source"></a>
-the complete source</h1>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>minimal example filesystem using low-level API</p>
+<p>Compile with: </p><pre class="fragment">gcc -Wall hello_ll.c `pkg-config fuse3 --cflags --libs` -o hello_ll
+</pre><h2>Source code</h2>
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">  FUSE: Filesystem in Userspace</span></div>
 <div class="line"><span class="comment">  Copyright (C) 2001-2007  Miklos Szeredi &lt;miklos@szeredi.hu&gt;</span></div>
@@ -241,7 +215,7 @@ the complete source</h1>
 <div class="line">        .read           = hello_ll_read,</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
 <div class="line">{</div>
 <div class="line">        <span class="keyword">struct </span><a class="code" href="structfuse__args.html">fuse_args</a> args = <a class="code" href="fuse__opt_8h.html#a9bea40fe56b18be9aa110185ab7387ed">FUSE_ARGS_INIT</a>(argc, argv);</div>
 <div class="line">        <span class="keyword">struct </span>fuse_session *se;</div>
@@ -293,38 +267,10 @@ the complete source</h1>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">return</span> ret ? 1 : 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>[doxygen_fuse_lowlevel_usage] </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

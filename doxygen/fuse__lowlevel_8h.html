@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: include/fuse_lowlevel.h File Reference</title>
+<title>libfuse: include/fuse_lowlevel.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -1942,60 +1942,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the fuse session on success, NULL on failure</dd></dl>
-<p>Example: See <a class="el" href="hello__ll_8c.html">hello_ll.c</a>: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line">{</div>
-<div class="line">        <span class="keyword">struct </span><a class="code" href="structfuse__args.html">fuse_args</a> args = <a class="code" href="fuse__opt_8h.html#a9bea40fe56b18be9aa110185ab7387ed">FUSE_ARGS_INIT</a>(argc, argv);</div>
-<div class="line">        <span class="keyword">struct </span>fuse_session *se;</div>
-<div class="line">        <span class="keyword">struct </span>fuse_cmdline_opts opts;</div>
-<div class="line">        <span class="keywordtype">int</span> ret = -1;</div>
-<div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a>(&amp;args, &amp;opts) != 0)</div>
-<div class="line">                <span class="keywordflow">return</span> 1;</div>
-<div class="line">        <span class="keywordflow">if</span> (opts.show_help) {</div>
-<div class="line">                printf(<span class="stringliteral">&quot;usage: %s [options] &lt;mountpoint&gt;\n\n&quot;</span>, argv[0]);</div>
-<div class="line">                <a class="code" href="fuse__lowlevel_8h.html#a7235e3a2d1c780d5e0beaee13c81529f">fuse_cmdline_help</a>();</div>
-<div class="line">                <a class="code" href="fuse__lowlevel_8h.html#a990af0becaba1b5e45781d399720f85e">fuse_lowlevel_help</a>();</div>
-<div class="line">                ret = 0;</div>
-<div class="line">                <span class="keywordflow">goto</span> err_out1;</div>
-<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (opts.show_version) {</div>
-<div class="line">                printf(<span class="stringliteral">&quot;FUSE library version %s\n&quot;</span>, <a class="code" href="fuse__common_8h.html#ac52e27388a7c16eb509173908e5eebd0">fuse_pkgversion</a>());</div>
-<div class="line">                <a class="code" href="fuse__lowlevel_8h.html#ac6e2d0fde62dcf4f0e57afeabeefd7b1">fuse_lowlevel_version</a>();</div>
-<div class="line">                ret = 0;</div>
-<div class="line">                <span class="keywordflow">goto</span> err_out1;</div>
-<div class="line">        }</div>
-<div class="line"></div>
-<div class="line">        se = <a class="code" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new</a>(&amp;args, &amp;hello_ll_oper,</div>
-<div class="line">                              <span class="keyword">sizeof</span>(hello_ll_oper), NULL);</div>
-<div class="line">        <span class="keywordflow">if</span> (se == NULL)</div>
-<div class="line">            <span class="keywordflow">goto</span> err_out1;</div>
-<div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a>(se) != 0)</div>
-<div class="line">            <span class="keywordflow">goto</span> err_out2;</div>
-<div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a>(se, opts.mountpoint) != 0)</div>
-<div class="line">            <span class="keywordflow">goto</span> err_out3;</div>
-<div class="line"></div>
-<div class="line">        <a class="code" href="fuse__common_8h.html#af1857d2209952f49a762aff39f3cd8bd">fuse_daemonize</a>(opts.foreground);</div>
-<div class="line"></div>
-<div class="line">        <span class="comment">/* Block until ctrl+c or fusermount -u */</span></div>
-<div class="line">        <span class="keywordflow">if</span> (opts.singlethread)</div>
-<div class="line">                ret = <a class="code" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a>(se);</div>
-<div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">                ret = <a class="code" href="fuse__lowlevel_8h.html#a0ae949b229431e278bce6d8af271c23c">fuse_session_loop_mt</a>(se, opts.clone_fd);</div>
-<div class="line"></div>
-<div class="line">        <a class="code" href="fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount</a>(se);</div>
-<div class="line">err_out3:</div>
-<div class="line">        <a class="code" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a>(se);</div>
-<div class="line">err_out2:</div>
-<div class="line">        <a class="code" href="fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(se);</div>
-<div class="line">err_out1:</div>
-<div class="line">        free(opts.mountpoint);</div>
-<div class="line">        <a class="code" href="fuse__opt_8h.html#a2cdf272429ab3869a5162976141b287d">fuse_opt_free_args</a>(&amp;args);</div>
-<div class="line"></div>
-<div class="line">        <span class="keywordflow">return</span> ret ? 1 : 0;</div>
-<div class="line">}</div>
-</div><!-- fragment -->
+<dl class="section return"><dt>Returns</dt><dd>the fuse session on success, NULL on failure </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a411ee86ec4657ea954402a9ca263e6d0"></a>
@@ -2027,7 +1975,6 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
     <tr><td class="paramname">buf</td><td>the <a class="el" href="structfuse__buf.html">fuse_buf</a> containing the request </td></tr>
-    <tr><td class="paramname">ch</td><td>channel on which the request was received </td></tr>
   </table>
   </dd>
 </dl>
@@ -2063,7 +2010,6 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
     <tr><td class="paramname">buf</td><td>the <a class="el" href="structfuse__buf.html">fuse_buf</a> to store the request in </td></tr>
-    <tr><td class="paramname">ch</td><td>the channel </td></tr>
   </table>
   </dd>
 </dl>
@@ -2120,7 +2066,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

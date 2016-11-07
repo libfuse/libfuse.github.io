@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: fuse_operations Struct Reference</title>
+<title>libfuse: fuse_operations Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -136,7 +136,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file system operations:</p>
 <p>Most of these should work very similarly to the well known UNIX file system operations. A major exception is that instead of returning an error in 'errno', the operation should return the negated error value (-errno) directly.</p>
-<p>All methods are optional, but some are essential for a useful filesystem (e.g. getattr). Open, flush, release, fsync, opendir, releasedir, fsyncdir, access, create, ftruncate, fgetattr, lock, init and destroy are special purpose methods, without which a full featured filesystem can still be implemented.</p>
+<p>All methods are optional, but some are essential for a useful filesystem (e.g. getattr). Open, flush, release, fsync, opendir, releasedir, fsyncdir, access, create, truncate, lock, init and destroy are special purpose methods, without which a full featured filesystem can still be implemented.</p>
 <p>In general, all methods are expected to perform any necessary permission checking. However, a filesystem may delegate this task to the kernel by passing the <code>default_permissions</code> mount option to <code><a class="el" href="fuse_8h.html#a4588c85c19c29613e1e7e13748726874">fuse_new()</a></code>. In this case, methods will only be called if the kernel's permission check has succeeded.</p>
 <p>Almost all operations take a path which can be of any length. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
@@ -179,7 +179,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the permission bits of a file</p>
-<p><em>fi</em> will be NULL if the file is not currenly opened. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
 
 </div>
 </div>
@@ -193,7 +193,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the owner and group of a file</p>
-<p><em>fi</em> will be NULL if the file is not currenly opened. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
 
 </div>
 </div>
@@ -314,7 +314,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Get file attributes.</p>
 <p>Similar to stat(). The 'st_dev' and 'st_blksize' fields are ignored. The 'st_ino' field is ignored except if the 'use_ino' mount option is given.</p>
-<p><em>fi</em> will be NULL if the file is not currenly opened. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
 
 </div>
 </div>
@@ -655,7 +655,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the size of a file</p>
-<p><em>fi</em> will be NULL if the file is not currenly opened. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
 
 </div>
 </div>
@@ -683,7 +683,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Change the access and modification times of a file with nanosecond resolution</p>
 <p>This supersedes the old utime() interface. New applications should use this.</p>
-<p><em>fi</em> will be NULL if the file is not currenly opened.</p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open.</p>
 <p>See the utimensat(2) man page for details. </p>
 
 </div>
@@ -722,7 +722,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

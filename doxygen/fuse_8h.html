@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: include/fuse.h File Reference</title>
+<title>libfuse: include/fuse.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -170,7 +170,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Main function of FUSE.</p>
-<p>This is for the lazy. This is all that has to be called from the <a class="el" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a> function.</p>
+<p>This is for the lazy. This is all that has to be called from the main() function.</p>
 <p>This function does the following:</p><ul>
 <li>parses command line options, and handles &ndash;help and &ndash;version</li>
 <li>installs signal handlers for INT, HUP, TERM and PIPE</li>
@@ -185,8 +185,8 @@ Functions</h2></td></tr>
 <p>Note: this is currently implemented as a macro.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argc</td><td>the argument counter passed to the <a class="el" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a> function </td></tr>
-    <tr><td class="paramname">argv</td><td>the argument vector passed to the <a class="el" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a> function </td></tr>
+    <tr><td class="paramname">argc</td><td>the argument counter passed to the main() function </td></tr>
+    <tr><td class="paramname">argv</td><td>the argument vector passed to the main() function </td></tr>
     <tr><td class="paramname">op</td><td>the file system operation </td></tr>
     <tr><td class="paramname">user_data</td><td>user data supplied in the context during the init() method </td></tr>
   </table>
@@ -221,8 +221,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Register filesystem module</p>
-<p>If the "-omodules=@name_:..." option is present, filesystem objects are created and pushed onto the stack with the  function.</p>
-<p>the name of this filesystem module  the factory function for this filesystem module </p>
+<p>If the "-omodules=*name*_:..." option is present, filesystem objects are created and pushed onto the stack with the <em>factory_</em> function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name_</td><td>the name of this filesystem module </td></tr>
+    <tr><td class="paramname">factory_</td><td>the factory function for this filesystem module </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -796,7 +802,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: example/cuse_client.c File Reference</title>
+<title>libfuse: example/cuse_client.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -74,11 +74,8 @@ $ cuse_client /dev/foobar s
 $ cuse_client /dev/foobar r 10
 hello
 transferred 6 bytes (6 -&gt; 6)
-</pre><h1><a class="anchor" id="section_compile"></a>
-compiling this example</h1>
-<p>gcc -Wall <a class="el" href="cuse__client_8c.html">cuse_client.c</a> -o cuse_client</p>
-<h1><a class="anchor" id="section_source"></a>
-the complete source</h1>
+</pre><p>Compiling this example </p><pre class="fragment">gcc -Wall cuse_client.c -o cuse_client
+</pre><h2>Source Code</h2>
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">  FUSE fioclient: FUSE ioctl example client</span></div>
 <div class="line"><span class="comment">  Copyright (C) 2008       SUSE Linux Products GmbH</span></div>
@@ -142,7 +139,7 @@ the complete source</h1>
 <div class="line">        <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="hello__ll_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
 <div class="line">{</div>
 <div class="line">        <span class="keywordtype">size_t</span> param[2] = { };</div>
 <div class="line">        <span class="keywordtype">size_t</span> size, prev_size = 0, new_size = 0;</div>
@@ -204,7 +201,7 @@ the complete source</h1>
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

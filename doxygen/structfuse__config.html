@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: fuse_config Struct Reference</title>
+<title>libfuse: fuse_config Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -173,7 +173,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The default behavior is that if an open file is deleted, the file is renamed to a hidden file (.fuse_hiddenXXX), and only removed when the file is finally released. This relieves the filesystem implementation of having to deal with this problem. This option disables the hiding behavior, and files are removed immediately in an unlink operation (or in a rename operation which overwrites an existing file).</p>
-<p>It is recommended that you not use the hard_remove option. When hard_remove is set, the following libc functions fail on unlinked files (returning errno of ENOENT): read(2), write(2), fsync(2), close(2), f*xattr(2), ftruncate(2), fstat(2), fch‐ mod(2), fchown(2) </p>
+<p>It is recommended that you not use the hard_remove option. When hard_remove is set, the following libc functions fail on unlinked files (returning errno of ENOENT): read(2), write(2), fsync(2), close(2), f*xattr(2), ftruncate(2), fstat(2), fchmod(2), fchown(2) </p>
 
 </div>
 </div>
@@ -241,7 +241,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>If this option is given the file-system handlers for the following operations will not receive path information: read, write, flush, release, fsync, readdir, releasedir, fsyncdir, lock, ioctl and poll.</p>
-<p>For the truncate, getattr, chmod, chown and utimens operations the path will be provided only if the file is not currently open (i.e., when the struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> argument is NULL). </p>
+<p>For the truncate, getattr, chmod, chown and utimens operations the path will be provided only if the struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> argument is NULL. </p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

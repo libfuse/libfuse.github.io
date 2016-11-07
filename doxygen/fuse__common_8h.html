@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>fuse: include/fuse_common.h File Reference</title>
+<title>libfuse: include/fuse_common.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">fuse
+   <div id="projectname">libfuse
    </div>
   </td>
  </tr>
@@ -686,13 +686,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Exit session on HUP, TERM and INT signals and ignore PIPE signal</p>
 <p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
-<p>Once either of the POSIX signals arrives, the exit_handler() in fuse_signals.c is called: </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> exit_handler(<span class="keywordtype">int</span> sig)</div>
-<div class="line">{</div>
-<div class="line">        (void) sig;</div>
-<div class="line">        <span class="keywordflow">if</span> (fuse_instance)</div>
-<div class="line">                <a class="code" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(fuse_instance);</div>
-<div class="line">}</div>
-</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+<p>Once either of the POSIX signals arrives, the <a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session to exit </td></tr>
   </table>
@@ -724,7 +719,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 28 2016 11:55:27 for fuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 6 2016 21:50:35 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
