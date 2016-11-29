@@ -101,7 +101,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Kernel congestion threshold parameter </p>
+<p>Kernel congestion threshold parameter. If the number of pending background requests exceeds this number, the FUSE kernel module will mark the filesystem as "congested". This instructs the kernel to expect that queued requests will take some time to complete, and to adjust its algorithms accordingly (e.g. by putting a waiting thread to sleep instead of using a busy-loop). </p>
 
 </div>
 </div>
@@ -114,7 +114,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Maximum number of backgrounded requests </p>
+<p>Maximum number of pending "background" requests. A background request is any type of request for which the total number is not limited by other means. As of kernel 4.8, only two types of requests fall into this category:</p>
+<ol type="1">
+<li>Read-ahead requests</li>
+<li>Asychronous direct I/O requests</li>
+</ol>
+<p>Read-ahead requests are generated (if max_readahead is non-zero) by the kernel to preemptively fill its caches when it anticipates that userspace will soon read more data.</p>
+<p>Asynchronous direct I/O requests are generated if FUSE_CAP_ASYNC_DIO is enabled and userspace submits a large direct I/O request. In this case the kernel will internally split it up into multiple smaller requests and submit them to the filesystem concurrently.</p>
+<p>Note that the following requests are <em>not</em> background requests: writeback requests (limited by the kernel's flusher algorithm), regular (i.e., synchronous and buffered) userspace read/write requests (limited to one per thread), asynchronous read requests (Linux's io_submit(2) call actually blocks, so these are also limited to one per thread). </p>
 
 </div>
 </div>
@@ -206,8 +213,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Time granularity if kernel is responsible for setting times (in nsec)</p>
-<p>Should be power of 10. A zero (default) value is equivalent to 1000000000 (1sec). </p>
+<p>When FUSE_CAP_WRITEBACK_CACHE is enabled, the kernel is responsible for updating mtime and ctime when write requests are received. The updated values are passed to the filesystem with setattr() requests. However, if the filesystem does not support the full resolution of the kernel timestamps (nanoseconds), the mtime and ctime values used by kernel and filesystem will differ (and result in an apparent change of times after a cache flush).</p>
+<p>To prevent this problem, this variable can be used to inform the kernel about the timestamp granularity supported by the file-system. The value should be power of 10. A zero (default) value is equivalent to 1000000000 (1sec). </p>
 
 </div>
 </div>
@@ -231,7 +238,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

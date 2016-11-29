@@ -193,7 +193,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the owner and group of a file</p>
-<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 </div>
 </div>
@@ -655,7 +656,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the size of a file</p>
-<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open. </p>
+<p><code>fi</code> will always be NULL if the file is not currenly open, but may also be NULL if the file is open.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 </div>
 </div>
@@ -698,7 +700,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Write data to an open file</p>
-<p>Write should return exactly the number of bytes requested except on error. An exception to this is when the 'direct_io' mount option is specified (see read operation). </p>
+<p>Write should return exactly the number of bytes requested except on error. An exception to this is when the 'direct_io' mount option is specified (see read operation).</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 </div>
 </div>
@@ -712,7 +715,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Write contents of buffer to an open file</p>
-<p>Similar to the <a class="el" href="structfuse__operations.html#a897d1ece4b8b04c92d97b97b2dbf9768">write()</a> method, but data is supplied in a generic buffer. Use <a class="el" href="fuse__common_8h.html#a9ca301390fb5e85b85153abb1891a3f7">fuse_buf_copy()</a> to transfer data to the destination. </p>
+<p>Similar to the <a class="el" href="structfuse__operations.html#a897d1ece4b8b04c92d97b97b2dbf9768">write()</a> method, but data is supplied in a generic buffer. Use <a class="el" href="fuse__common_8h.html#a9ca301390fb5e85b85153abb1891a3f7">fuse_buf_copy()</a> to transfer data to the destination.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 </div>
 </div>
@@ -722,7 +726,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -56,6 +56,7 @@
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 <code>#include &lt;dirent.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
@@ -86,6 +87,7 @@
 <div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;dirent.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
@@ -512,6 +514,9 @@
 <div class="line">        <span class="keyword">struct </span>lo_data lo = { .debug = 0 };</div>
 <div class="line">        <span class="keywordtype">int</span> ret = -1;</div>
 <div class="line"></div>
+<div class="line">        lo.root.next = lo.root.prev = &amp;lo.root;</div>
+<div class="line">        lo.root.fd = -1;</div>
+<div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a>(&amp;args, &amp;opts) != 0)</div>
 <div class="line">                <span class="keywordflow">return</span> 1;</div>
 <div class="line">        <span class="keywordflow">if</span> (opts.show_help) {</div>
@@ -528,7 +533,6 @@
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        lo.debug = opts.debug;</div>
-<div class="line">        lo.root.next = lo.root.prev = &amp;lo.root;</div>
 <div class="line">        lo.root.fd = open(<span class="stringliteral">&quot;/&quot;</span>, O_PATH);</div>
 <div class="line">        lo.root.nlookup = 2;</div>
 <div class="line">        <span class="keywordflow">if</span> (lo.root.fd == -1)</div>
@@ -563,13 +567,15 @@
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">while</span> (lo.root.next != &amp;lo.root)</div>
 <div class="line">                lo_free(lo.root.next);</div>
+<div class="line">        <span class="keywordflow">if</span> (lo.root.fd &gt;= 0)</div>
+<div class="line">                close(lo.root.fd);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">return</span> ret ? 1 : 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

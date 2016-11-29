@@ -107,6 +107,12 @@ Macros</h2></td></tr>
 <tr class="separator:a4839fce31097f4b4da7a1f01169228fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4477fe76f57e8b726d0357a637d7aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ad4477fe76f57e8b726d0357a637d7aaf">FUSE_CAP_NO_OPEN_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 17)</td></tr>
 <tr class="separator:ad4477fe76f57e8b726d0357a637d7aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3311a7f569e9fbf55b3f0bcaadbe4ad0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a3311a7f569e9fbf55b3f0bcaadbe4ad0">FUSE_CAP_PARALLEL_DIROPS</a>&#160;&#160;&#160;(1 &lt;&lt; 18)</td></tr>
+<tr class="separator:a3311a7f569e9fbf55b3f0bcaadbe4ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3ef5b12be33295311d6b751846c263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a5b3ef5b12be33295311d6b751846c263">FUSE_CAP_POSIX_ACL</a>&#160;&#160;&#160;(1 &lt;&lt; 19)</td></tr>
+<tr class="separator:a5b3ef5b12be33295311d6b751846c263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a4a980dff3f7a4ba771a92bb59a4bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a24a4a980dff3f7a4ba771a92bb59a4bd">FUSE_CAP_HANDLE_KILLPRIV</a>&#160;&#160;&#160;(1 &lt;&lt; 20)</td></tr>
+<tr class="separator:a24a4a980dff3f7a4ba771a92bb59a4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade38f8e8c463cd40af5bfeeebfa99486"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:ade38f8e8c463cd40af5bfeeebfa99486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -158,7 +164,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports asynchronous direct I/O submission.</p>
-<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read and one pending write request per direct I/O file-handle at any time. </p>
+<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read and one pending write request per direct I/O file-handle at any time.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -172,7 +179,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports asynchronous read requests.</p>
-<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read request per file-handle at any time, and will attempt to order read requests by increasing offset. </p>
+<p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read request per file-handle at any time, and will attempt to order read requests by increasing offset.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -185,7 +193,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports the O_TRUNC open flag </p>
+<p>Indicates that the filesystem supports the O_TRUNC open flag</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -198,7 +207,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports automatic invalidation of cached pages. </p>
+<p>Traditionally, while a file is open the FUSE kernel module only asks the filesystem for an update of the file's attributes when a client attempts to read beyond EOF. This is unsuitable for e.g. network filesystems, where the file contents may change without the kernel knowing about it.</p>
+<p>If this flag is set, FUSE will check the validity of the attributes on every read. If the attributes are no longer valid (i.e., if the <em>attr_timeout</em> passed to <a class="el" href="fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr()</a> or set in <code>struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a></code> has passed), it will first issue a <code>getattr</code> request. If the new mtime differs from the previous value, any cached file <em>contents</em> will be invalidated as well.</p>
+<p>This flag should always be set when available. If all file changes go through the kernel, <em>attr_timeout</em> should be set to zero to avoid unneccessary getattr() calls.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -211,7 +223,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the kernel should not apply the umask to the file mode on create operations. </p>
+<p>Indicates that the kernel should not apply the umask to the file mode on create operations.</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -224,7 +237,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports lookups of "." and "..". </p>
+<p>Indicates that the filesystem supports lookups of "." and "..".</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -237,7 +251,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>FIXME: This capability is not documented. Please get in touch if you know what it does! </p>
+<p>If set, the calls to flock(2) will be emulated using POSIX locks and must then be handled by the filesystem's setlock() handler.</p>
+<p>If not set, flock(2) calls will be handled by the FUSE kernel module internally (so any access that does not go through the kernel cannot be taken into account).</p>
+<p>This feature is enabled by default when supported by the kernel and if the filesystem implements a flock() handler. </p>
+
+</div>
+</div>
+<a class="anchor" id="a24a4a980dff3f7a4ba771a92bb59a4bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_HANDLE_KILLPRIV&#160;&#160;&#160;(1 &lt;&lt; 20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates that the filesystem is responsible for unsetting setuid and setgid bits when a file is written, truncated, or its owner is changed.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -250,7 +280,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports ioctl's on directories. </p>
+<p>Indicates that the filesystem supports ioctl's on directories.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
 
 </div>
 </div>
@@ -263,7 +294,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports support zero-message opens. </p>
+<p>Indicates support for zero-message opens. If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the filesystem may return <code>ENOSYS</code> from the open() handler to indicate success. Further attempts to open files will be handled in the kernel. (If this flag is not set, returning ENOSYS will be treated as an error and signaled to the caller).</p>
+<p>Setting (or unsetting) this flag in the <code>want</code> field has <em>no effect</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3311a7f569e9fbf55b3f0bcaadbe4ad0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_PARALLEL_DIROPS&#160;&#160;&#160;(1 &lt;&lt; 18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates support for parallel directory operations. If this flag is unset, the FUSE kernel module will ensure that lookup() and readdir() requests are never issued concurrently for the same directory.</p>
+<p>This feature is enabled by default when supported by the kernel. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5b3ef5b12be33295311d6b751846c263"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_POSIX_ACL&#160;&#160;&#160;(1 &lt;&lt; 19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates support for POSIX ACLs.</p>
+<p>If this feature is enabled, the kernel will cache and have responsibility for enforcing ACLs. ACL will be stored as xattrs and passed to userspace, which is responsible for updating the ACLs in the filesystem, keeping the file mode in sync with the ACL, and ensuring inheritance of default ACLs when new filesystem nodes are created. Note that this requires that the file system is able to parse and interpret the xattr representation of ACLs.</p>
+<p>Enabling this feature implicitly turns on the <code>default_permissions</code> mount option (even if it was not passed to mount(2)).</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -276,7 +338,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports "remote" locking. </p>
+<p>Indicates that the filesystem supports "remote" locking.</p>
+<p>This feature is enabled by default when supported by the kernel, and if getlk() and setlk() handlers are implemented. </p>
 
 </div>
 </div>
@@ -289,7 +352,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports readdirplus </p>
+<p>Indicates that the filesystem supports readdirplus</p>
+<p>This feature is enabled by default when supported by the kernel and if the filesystem implements a readdirplus() handler. </p>
 
 </div>
 </div>
@@ -302,7 +366,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that the filesystem supports adaptive readdirplus </p>
+<p>Indicates that the filesystem supports adaptive readdirplus</p>
+<p>This feature is enabled by default when supported by the kernel and if the filesystem implements a readdirplus() handler. </p>
 
 </div>
 </div>
@@ -315,7 +380,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that libfuse should try to move pages instead of copying when writing to / reading from the fuse device. </p>
+<p>Indicates that libfuse should try to move pages instead of copying when writing to / reading from the fuse device. This may improve performance.</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -328,7 +394,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that libfuse should try to use splice() when reading from the fuse device. </p>
+<p>Indicates that libfuse should try to use splice() when reading from the fuse device. This may improve performance.</p>
+<p>This feature is enabled by default when supported by the kernel and if the filesystem implements a write_buf() handler. </p>
 
 </div>
 </div>
@@ -341,7 +408,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that libfuse should try to use splice() when writing to the fuse device </p>
+<p>Indicates that libfuse should try to use splice() when writing to the fuse device. This may improve performance.</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -354,7 +422,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Indicates that writeback caching should be enabled. This means that individual write request may be buffered and merged in the kernel before they are send to the filesystem. </p>
+<p>Indicates that writeback caching should be enabled. This means that individual write request may be buffered and merged in the kernel before they are send to the filesystem.</p>
+<p>This feature is disabled by default. </p>
 
 </div>
 </div>
@@ -686,7 +755,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Exit session on HUP, TERM and INT signals and ignore PIPE signal</p>
 <p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
-<p>Once either of the POSIX signals arrives, the <a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a> is called.</p>
+<p>Once either of the POSIX signals arrives, the signal handler calls <a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session to exit </td></tr>
@@ -719,7 +788,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

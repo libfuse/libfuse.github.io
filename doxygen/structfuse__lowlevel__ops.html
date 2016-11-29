@@ -157,6 +157,7 @@ Data Fields</h2></td></tr>
 <p>Check file access permissions</p>
 <p>This will be called for the <a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">access()</a> system call. If the 'default_permissions' mount option is given, this method is not called.</p>
 <p>This method is not called under Linux kernel versions 2.4.x</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent success, i.e. this and all future <a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">access()</a> requests will succeed without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -180,6 +181,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Map block index within file to block index within device</p>
 <p>Note: This makes sense only for block device backed filesystems mounted with the 'blkdev' option</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#adb295e706897d7ada3249d8b027fde7b">bmap()</a> requests will fail with the same error code without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_bmap fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -208,6 +210,7 @@ Data Fields</h2></td></tr>
 <p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
 <p>If this method is not implemented or under Linux kernel versions earlier than 2.6.15, the <a class="el" href="structfuse__lowlevel__ops.html#a5cd44aa96291fa366d4ef40e2d1d1d76">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a> methods will be called instead.</p>
+<p>If this request is answered with an error code of ENOSYS, the handler is treated as not implemented (i.e., for this and future requests the <a class="el" href="structfuse__lowlevel__ops.html#a5cd44aa96291fa366d4ef40e2d1d1d76">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a> handlers will be called instead).</p>
 <p>Valid replies: fuse_reply_create fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -253,6 +256,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Allocate requested space. If this function returns success then subsequent writes to the specified range shall not fail due to the lack of free space on the file system storage media.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a5d0ddef3583d645ccf957bdef9291047">fallocate()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -307,6 +311,7 @@ Data Fields</h2></td></tr>
 <p>fi-&gt;fh will contain the value set by the open method, or will be undefined if the open method didn't set any value.</p>
 <p>NOTE: the name of the method is misleading, since (unlike fsync) the filesystem is not forced to flush pending writes. One reason to flush data, is if the filesystem wants to return write errors.</p>
 <p>If the filesystem supports file locking operations (setlk, getlk) it should remove all locks belonging to 'fi-&gt;owner'.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#af6c2540969d60626f1c18e0012de393a">flush()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -378,6 +383,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Synchronize file contents</p>
 <p>If the datasync parameter is non-zero, then only the user data should be flushed, not the meta data.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#a81ff5a93a2edd71b063c2e827e0fd8d8">fsync()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -403,6 +409,7 @@ Data Fields</h2></td></tr>
 <p>Synchronize directory contents</p>
 <p>If the datasync parameter is non-zero, then only the directory contents should be flushed, not the meta data.</p>
 <p>fi-&gt;fh will contain the value set by the opendir method, or will be undefined if the opendir method didn't set any value.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#ab2e3a9ad8b264daec4c254f5b064dfb3">fsyncdir()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -425,7 +432,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get file attributes</p>
+<p>Get file attributes.</p>
+<p>If writeback caching is enabled, the kernel may have a better idea of a file's length than the FUSE file system (eg if there has been a write that extended the file size, but that has not yet been passed to the filesystem.n</p>
+<p>In this case, the st_size value provided by the file system will be ignored.</p>
 <p>Valid replies: fuse_reply_attr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -474,6 +483,7 @@ Data Fields</h2></td></tr>
 <p>If size is zero, the size of the value should be sent with fuse_reply_xattr.</p>
 <p>If the size is non-zero, and the value fits in the buffer, the value should be sent with fuse_reply_buf.</p>
 <p>If the size is too small for the value, the ERANGE error should be sent.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#aaed65c2801391c35ad0c60e73a0c43d9">getxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_xattr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -574,6 +584,7 @@ Data Fields</h2></td></tr>
 <p>If size is zero, the total size of the attribute list should be sent with fuse_reply_xattr.</p>
 <p>If the size is non-zero, and the null character separated attribute list fits in the buffer, the list should be sent with fuse_reply_buf.</p>
 <p>If the size is too small for the list, the ERANGE error should be sent.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a0f084e779f3fbd407bb5d0890bf0ef6b">listxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_xattr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -671,6 +682,7 @@ Data Fields</h2></td></tr>
 <p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p>Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
 <p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
+<p>If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open will also succeed without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_open fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -717,9 +729,10 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Poll for IO readiness</p>
-<p>Note: If ph is non-NULL, the client should notify when IO readiness events occur by calling fuse_lowelevel_notify_poll() with the specified ph.</p>
+<p>Note: If ph is non-NULL, the client should notify when IO readiness events occur by calling <a class="el" href="fuse__lowlevel_8h.html#ab078685b1f480188031fc40aa2e2fbca">fuse_lowlevel_notify_poll()</a> with the specified ph.</p>
 <p>Regardless of the number of times poll with a non-NULL ph is received, single notification is enough to clear all. Notifying more times incurs overhead but doesn't harm correctness.</p>
 <p>The callee is responsible for destroying ph with <a class="el" href="fuse__common_8h.html#adf5027f8a38b2efc03858efd7fdc756a">fuse_pollhandle_destroy()</a> when no longer in use.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success (with a kernel-defined default poll-mask) and future calls to pull() will succeed the same way without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_poll fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -895,6 +908,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Remove an extended attribute</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a15be6632986e6be8660071e1d71ffe51">removexattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -918,6 +932,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Rename a file</p>
 <p>If the target exists it should be atomically replaced. If the target's inode's lookup count is non-zero, the file system is expected to postpone any removal of the inode until the lookup count reaches zero (see description of the forget function).</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EINVAL, i.e. all future bmap requests will fail with EINVAL without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -990,6 +1005,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Set file attributes</p>
 <p>In the 'attr' argument only members indicated by the 'to_set' bitmask contain valid values. Other members contain undefined values.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits if the file size or owner is being changed.</p>
 <p>If the setattr was invoked from the ftruncate() system call under Linux kernel versions 2.6.15 or later, the fi-&gt;fh will contain the value set by the open method or will be undefined if the open method didn't set any value. Otherwise (not ftruncate call, or kernel version earlier than 2.6.15) the fi parameter will be NULL.</p>
 <p>Valid replies: fuse_reply_attr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1041,6 +1057,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set an extended attribute</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#ab80c4081204c07a423c3c88b116f3086">setxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err </p>
 
 </div>
@@ -1123,6 +1140,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Write data</p>
 <p>Write should return exactly the number of bytes requested except on error. An exception to this is when the file has been opened in 'direct_io' mode, in which case the return value of the write system call will reflect the return value of this operation.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits.</p>
 <p>fi-&gt;fh will contain the value set by the open method, or will be undefined if the open method didn't set any value.</p>
 <p>Valid replies: fuse_reply_write fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1151,6 +1169,7 @@ Data Fields</h2></td></tr>
 <p>Write data made available in a buffer</p>
 <p>This is a more generic version of the -&gt;<a class="el" href="structfuse__lowlevel__ops.html#a09cc5c1078cfb909513b5ca27464f53a">write()</a> method. If FUSE_CAP_SPLICE_READ is set in <a class="el" href="structfuse__conn__info.html#af45de81548b591f3004353a324e4e04d">fuse_conn_info.want</a> and the kernel supports splicing from the fuse device, then the data will be made available in pipe for supporting zero copy data transfer.</p>
 <p>buf-&gt;count is guaranteed to be one (and thus buf-&gt;idx is always zero). The write_buf handler must ensure that bufv-&gt;off is correctly updated (reflecting the number of bytes read from bufv-&gt;buf[0]).</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits.</p>
 <p>Valid replies: fuse_reply_write fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1171,7 +1190,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

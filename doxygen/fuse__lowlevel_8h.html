@@ -1054,9 +1054,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reply with an error code or success</p>
+<p>Reply with an error code or success.</p>
 <p>Possible requests: all except forget</p>
-<p>unlink, rmdir, rename, flush, release, fsync, fsyncdir, setxattr, removexattr and setlk may send a zero code</p>
+<p>Whereever possible, error codes should be chosen from the list of documented error conditions in the corresponding system calls manpage.</p>
+<p>An error code of ENOSYS is sometimes treated specially. This is indicated in the documentation of the affected handler functions.</p>
+<p>The following requests may be answered with a zero error code: unlink, rmdir, rename, flush, release, fsync, fsyncdir, setxattr, removexattr, setlk.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>request handle </td></tr>
@@ -1812,14 +1814,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Enter a single threaded, blocking event loop.</p>
-<p>Using POSIX signals this event loop can be exited but the session needs to be configued by issuing: <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> first.</p>
+<p>When the event loop terminates because the connection to the FUSE kernel module has been closed, this function returns zero. This happens when the filesystem is unmounted regularly (by the filesystem owner or root running the umount(8) or fusermount(1) command), or if connection is explicitly severed by writing <code>1</code> to the<code>abort</code> file in <code>/sys/fs/fuse/connections/NNN</code>. The only way to distinguish between these two conditions is to check if the filesystem is still mounted after the session loop returns.</p>
+<p>When some error occurs during request processing, the function returns a negated errno(3) value.</p>
+<p>If the loop has been terminated because of a signal handler installed by <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a>, this function returns the (positive) signal value that triggered the exit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0, -errno, or a signal value </dd></dl>
 
 </div>
 </div>
@@ -1846,7 +1850,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Enter a multi-threaded event loop</p>
+<p>Enter a multi-threaded event loop.</p>
+<p>For a description of the return value and the conditions when the event loop exits, refer to the documentation of <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
@@ -1854,7 +1859,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a> </dd></dl>
 
 </div>
 </div>
@@ -2053,7 +2058,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unmount the file system</p>
+<p>Ensure that file system is unmounted.</p>
+<p>In regular operation, the file system is typically unmounted by the user calling umount(8) or fusermount(1), which then terminates the FUSE session loop. However, the session loop may also terminate as a result of an explicit call to <a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a> (e.g. by a signal handler installed by fuse_set_signal_handler()). In this case the filesystem remains mounted, but any attempt to access it will block (while the filesystem process is still running) or give an ESHUTDOWN error (after the filesystem process has terminated).</p>
+<p>If the communication channel with the FUSE kernel module is still open (i.e., if the session loop was terminated by an explicit call to <a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>), this function will close it and unmount the filesystem. If the communication channel has been closed by the kernel, this method will do (almost) nothing.</p>
+<p>NOTE: The above semantics mean that if the connection to the kernel is terminated via the <code>/sys/fs/fuse/connections/NNN/abort</code> file, this method will <em>not</em> unmount the filesystem.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
@@ -2066,7 +2074,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

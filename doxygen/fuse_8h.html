@@ -543,14 +543,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>FUSE event loop.</p>
 <p>Requests from the kernel are processed, and the appropriate operations are called.</p>
+<p>For a description of the return value and the conditions when the event loop exits, refer to the documentation of <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>the FUSE handle </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if no error occurred, -1 otherwise</dd></dl>
-<p>See also: <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> </p>
+<dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
+<p>See also: <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> </p>
 
 </div>
 </div>
@@ -579,7 +580,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>FUSE event loop with multiple threads</p>
 <p>Requests from the kernel are processed, and the appropriate operations are called. Request are processed in parallel by distributing them between multiple threads.</p>
-<p>Calling this function requires the pthreads library to be linked to the application.</p>
+<p>For a description of the return value and the conditions when the event loop exits, refer to the documentation of <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
 <p>Note: using <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> instead of <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> means you are running in single-threaded mode, and that you will not have to worry about reentrancy, though you will have to worry about recursive lookups. In single-threaded mode, FUSE will wait for one callback to return before calling another.</p>
 <p>Enabling multiple threads, by using <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a>, will cause FUSE to make multiple simultaneous calls into the various callback functions given by your <a class="el" href="structfuse__operations.html">fuse_operations</a> record.</p>
 <p>If you are using multiple threads, you can enjoy all the parallel execution and interactive response benefits of threads, and you get to enjoy all the benefits of race conditions and locking bugs, too. Ensure that any code used in the callback function of <a class="el" href="structfuse__operations.html">fuse_operations</a> is also thread-safe.</p>
@@ -590,7 +591,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if no error occurred, -1 otherwise</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
 <p>See also: <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> </p>
 
 </div>
@@ -790,6 +791,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Unmount a FUSE file system.</p>
+<p>See <a class="el" href="fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount()</a> for additional information.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>the FUSE handle </td></tr>
@@ -802,7 +804,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 6 2016 21:52:28 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 08:29:18 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
