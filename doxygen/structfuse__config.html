@@ -333,7 +333,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Honor the st_ino field in the functions getattr() and fill_dir(). This value is used to fill in the st_ino field in the stat(2), lstat(2), fstat(2) functions and the d_ino field in the readdir(2) function. The filesystem does not have to guarantee uniqueness, however some applications rely on this value being unique for the whole filesystem. </p>
+<p>Honor the st_ino field in the functions getattr() and fill_dir(). This value is used to fill in the st_ino field in the stat(2), lstat(2), fstat(2) functions and the d_ino field in the readdir(2) function. The filesystem does not have to guarantee uniqueness, however some applications rely on this value being unique for the whole filesystem.</p>
+<p>Note that this does <em>not</em> affect the inode that libfuse and the kernel use internally (also called the "nodeid"). </p>
 
 </div>
 </div>
@@ -343,7 +344,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 9 2016 09:31:36 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 10 2017 17:21:51 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -62,7 +62,7 @@
 <code>#include &lt;errno.h&gt;</code><br />
 <code>#include &lt;err.h&gt;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file system mirrors the existing file system hierarchy of the system, starting at the root file system. This is implemented by just "passing through" all requests to the corresponding user-space libc functions. In contrast to <a class="el" href="passthrough_8c.html">passthrough.c</a> and <a class="el" href="passthrough__fh_8c.html">passthrough_fh.c</a>, this implementation ises the low-level API. Its performance should be the least bad among the three.</p>
+<div class="textblock"><p>This file system mirrors the existing file system hierarchy of the system, starting at the root file system. This is implemented by just "passing through" all requests to the corresponding user-space libc functions. In contrast to <a class="el" href="passthrough_8c.html">passthrough.c</a> and <a class="el" href="passthrough__fh_8c.html">passthrough_fh.c</a>, this implementation ises the low-level API. Its performance should be the least bad among the three, but many operations are not implemented. In particular, it is not possible to remove files (or directories) because the code necessary to defer actual removal until the file is not opened anymore would make the example much more complicated.</p>
 <p>Compile with: </p><pre class="fragment">gcc -Wall passthrough_ll.c `pkg-config fuse3 --cflags --libs` -o passthrough_ll
 </pre><h2>Source code</h2>
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
@@ -170,6 +170,13 @@
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> lo_debug(<a class="code" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</div>
 <div class="line">{</div>
 <div class="line">        <span class="keywordflow">return</span> lo_data(req)-&gt;debug != 0;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> lo_init(<span class="keywordtype">void</span> *userdata,</div>
+<div class="line">                    <span class="keyword">struct</span> <a class="code" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</div>
+<div class="line">{</div>
+<div class="line">        (void) userdata;</div>
+<div class="line">        conn-&gt;<a class="code" href="structfuse__conn__info.html#af45de81548b591f3004353a324e4e04d">want</a> |= <a class="code" href="fuse__common_8h.html#a7686c11aaf80382189927b10b848d8c8">FUSE_CAP_EXPORT_SUPPORT</a>;</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> lo_getattr(<a class="code" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="code" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino,</div>
@@ -493,7 +500,8 @@
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> lo_oper = {</div>
-<div class="line">        .<a class="code" href="structfuse__lowlevel__ops.html#ae8a2850c71bec355ad347413fa73f7c2">lookup</a>         = lo_lookup,</div>
+<div class="line">        .<a class="code" href="structfuse__lowlevel__ops.html#ab6fa0b9edb5b002cd1502c969c887329">init</a>           = lo_init,</div>
+<div class="line">        .lookup         = lo_lookup,</div>
 <div class="line">        .forget         = lo_forget,</div>
 <div class="line">        .getattr        = lo_getattr,</div>
 <div class="line">        .readlink       = lo_readlink,</div>
@@ -575,7 +583,7 @@
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 9 2016 09:31:36 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 10 2017 17:21:51 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

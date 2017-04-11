@@ -677,8 +677,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Open a file</p>
-<p>Open flags are available in fi-&gt;flags. Creation (O_CREAT, O_EXCL, O_NOCTTY) and by default also truncation (O_TRUNC) flags will be filtered out. If an application specifies O_TRUNC, fuse first calls truncate() and then <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a>.</p>
-<p>If filesystem is able to handle O_TRUNC directly, the <a class="el" href="structfuse__lowlevel__ops.html#ab6fa0b9edb5b002cd1502c969c887329">init()</a> handler should set the <code>FUSE_CAP_ATOMIC_O_TRUNC</code> bit in <code>conn-&gt;want</code>.</p>
+<p>Open flags are available in fi-&gt;flags. Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out.</p>
 <p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p>Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
 <p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
@@ -1190,7 +1189,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 9 2016 09:31:36 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 10 2017 17:21:51 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -100,6 +100,18 @@
 <div class="line">{</div>
 <div class="line">        (void) conn;</div>
 <div class="line">        cfg-&gt;<a class="code" href="structfuse__config.html#adf78e64e79e31c4fe1464cd0744ea725">use_ino</a> = 1;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* Pick up changes from lower filesystem right away. This is</span></div>
+<div class="line"><span class="comment">           also necessary for better hardlink support. When the kernel</span></div>
+<div class="line"><span class="comment">           calls the unlink() handler, it does not know the inode of</span></div>
+<div class="line"><span class="comment">           the to-be-removed entry and can therefore not invalidate</span></div>
+<div class="line"><span class="comment">           the cache of the associated inode - resulting in an</span></div>
+<div class="line"><span class="comment">           incorrect st_nlink value being reported for any remaining</span></div>
+<div class="line"><span class="comment">           hardlinks to this inode. */</span></div>
+<div class="line">        cfg-&gt;<a class="code" href="structfuse__config.html#a9bc2e3b1d8a4410215cd620553e61b62">entry_timeout</a> = 0;</div>
+<div class="line">        cfg-&gt;<a class="code" href="structfuse__config.html#aeba85551d9498ca85fa2bf13b5e78eda">attr_timeout</a> = 0;</div>
+<div class="line">        cfg-&gt;<a class="code" href="structfuse__config.html#ab4205f7343afe6e20edfbfb64cb90248">negative_timeout</a> = 0;</div>
+<div class="line"></div>
 <div class="line">        <span class="keywordflow">return</span> NULL;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -120,7 +132,7 @@
 <div class="line">{</div>
 <div class="line">        <span class="keywordtype">int</span> res;</div>
 <div class="line"></div>
-<div class="line">        res = access(path, mask);</div>
+<div class="line">        res = <a class="code" href="structfuse__operations.html#a2248db35e200265f7fb9a18348229858">access</a>(path, mask);</div>
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
@@ -131,7 +143,7 @@
 <div class="line">{</div>
 <div class="line">        <span class="keywordtype">int</span> res;</div>
 <div class="line"></div>
-<div class="line">        res = readlink(path, buf, size - 1);</div>
+<div class="line">        res = <a class="code" href="structfuse__operations.html#ab4ce6e6d69dfde3ec550f22d932c5633">readlink</a>(path, buf, size - 1);</div>
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
@@ -286,10 +298,12 @@
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> xmp_truncate(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, off_t size,</div>
 <div class="line">                        <span class="keyword">struct</span> <a class="code" href="structfuse__file__info.html">fuse_file_info</a> *fi)</div>
 <div class="line">{</div>
-<div class="line">        (void) fi;</div>
 <div class="line">        <span class="keywordtype">int</span> res;</div>
 <div class="line"></div>
-<div class="line">        res = truncate(path, size);</div>
+<div class="line">        <span class="keywordflow">if</span> (fi != NULL)</div>
+<div class="line">                res = ftruncate(fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a>, size);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">                res = truncate(path, size);</div>
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
@@ -312,6 +326,19 @@
 <div class="line">}</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> xmp_create(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, mode_t mode,</div>
+<div class="line">                      <span class="keyword">struct</span> <a class="code" href="structfuse__file__info.html">fuse_file_info</a> *fi)</div>
+<div class="line">{</div>
+<div class="line">        <span class="keywordtype">int</span> res;</div>
+<div class="line"></div>
+<div class="line">        res = open(path, fi-&gt;<a class="code" href="structfuse__file__info.html#ae7d31802727be19670193a411647bca5">flags</a>, mode);</div>
+<div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
+<div class="line">                <span class="keywordflow">return</span> -errno;</div>
+<div class="line"></div>
+<div class="line">        fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a> = res;</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> xmp_open(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">struct</span> <a class="code" href="structfuse__file__info.html">fuse_file_info</a> *fi)</div>
 <div class="line">{</div>
 <div class="line">        <span class="keywordtype">int</span> res;</div>
@@ -320,7 +347,7 @@
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
-<div class="line">        close(res);</div>
+<div class="line">        fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a> = res;</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -330,8 +357,11 @@
 <div class="line">        <span class="keywordtype">int</span> fd;</div>
 <div class="line">        <span class="keywordtype">int</span> res;</div>
 <div class="line"></div>
-<div class="line">        (void) fi;</div>
-<div class="line">        fd = open(path, O_RDONLY);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                fd = open(path, O_RDONLY);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">                fd = fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a>;</div>
+<div class="line">        </div>
 <div class="line">        <span class="keywordflow">if</span> (fd == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
@@ -339,7 +369,8 @@
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                res = -errno;</div>
 <div class="line"></div>
-<div class="line">        close(fd);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                close(fd);</div>
 <div class="line">        <span class="keywordflow">return</span> res;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -350,7 +381,11 @@
 <div class="line">        <span class="keywordtype">int</span> res;</div>
 <div class="line"></div>
 <div class="line">        (void) fi;</div>
-<div class="line">        fd = open(path, O_WRONLY);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                fd = open(path, O_WRONLY);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">                fd = fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a>;</div>
+<div class="line">        </div>
 <div class="line">        <span class="keywordflow">if</span> (fd == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
@@ -358,7 +393,8 @@
 <div class="line">        <span class="keywordflow">if</span> (res == -1)</div>
 <div class="line">                res = -errno;</div>
 <div class="line"></div>
-<div class="line">        close(fd);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                close(fd);</div>
 <div class="line">        <span class="keywordflow">return</span> res;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -375,11 +411,8 @@
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> xmp_release(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">struct</span> <a class="code" href="structfuse__file__info.html">fuse_file_info</a> *fi)</div>
 <div class="line">{</div>
-<div class="line">        <span class="comment">/* Just a stub.  This method is optional and can safely be left</span></div>
-<div class="line"><span class="comment">           unimplemented */</span></div>
-<div class="line"></div>
 <div class="line">        (void) path;</div>
-<div class="line">        (void) fi;</div>
+<div class="line">        close(fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a>);</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -407,13 +440,18 @@
 <div class="line">        <span class="keywordflow">if</span> (mode)</div>
 <div class="line">                <span class="keywordflow">return</span> -EOPNOTSUPP;</div>
 <div class="line"></div>
-<div class="line">        fd = open(path, O_WRONLY);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                fd = open(path, O_WRONLY);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">                fd = fi-&gt;<a class="code" href="structfuse__file__info.html#a45314d0b92a8d4c9de33d996aa59ada8">fh</a>;</div>
+<div class="line">        </div>
 <div class="line">        <span class="keywordflow">if</span> (fd == -1)</div>
 <div class="line">                <span class="keywordflow">return</span> -errno;</div>
 <div class="line"></div>
 <div class="line">        res = -posix_fallocate(fd, offset, length);</div>
 <div class="line"></div>
-<div class="line">        close(fd);</div>
+<div class="line">        <span class="keywordflow">if</span>(fi == NULL)</div>
+<div class="line">                close(fd);</div>
 <div class="line">        <span class="keywordflow">return</span> res;</div>
 <div class="line">}</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
@@ -475,6 +513,7 @@
 <div class="line">        .utimens        = xmp_utimens,</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">        .open           = xmp_open,</div>
+<div class="line">        .create         = xmp_create,</div>
 <div class="line">        .read           = xmp_read,</div>
 <div class="line">        .write          = xmp_write,</div>
 <div class="line">        .statfs         = xmp_statfs,</div>
@@ -499,7 +538,7 @@
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 9 2016 09:31:36 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 10 2017 17:21:51 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

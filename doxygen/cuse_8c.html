@@ -185,11 +185,11 @@
 <div class="line"></div>
 <div class="line">        <span class="comment">/* prepare size outputs */</span></div>
 <div class="line">        out_iov[0].iov_base =</div>
-<div class="line">                addr + (<span class="keywordtype">unsigned</span> long)&amp;(((<span class="keyword">struct</span> fioc_rw_arg *)0)-&gt;prev_size);</div>
+<div class="line">                addr + offsetof(<span class="keyword">struct</span> fioc_rw_arg, prev_size);</div>
 <div class="line">        out_iov[0].iov_len = <span class="keyword">sizeof</span>(arg-&gt;prev_size);</div>
 <div class="line"></div>
 <div class="line">        out_iov[1].iov_base =</div>
-<div class="line">                addr + (<span class="keywordtype">unsigned</span> long)&amp;(((<span class="keyword">struct</span> fioc_rw_arg *)0)-&gt;new_size);</div>
+<div class="line">                addr + offsetof(<span class="keyword">struct</span> fioc_rw_arg, new_size);</div>
 <div class="line">        out_iov[1].iov_len = <span class="keyword">sizeof</span>(arg-&gt;new_size);</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">/* prepare client buf */</span></div>
@@ -367,7 +367,7 @@
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 9 2016 09:31:36 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 10 2017 17:21:51 for libfuse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
