@@ -208,9 +208,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Create and open a file</p>
 <p>If the file does not exist, first create it with the specified mode, and then open it.</p>
-<p>Open flags (with the exception of O_NOCTTY) are available in fi-&gt;flags.</p>
-<p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
-<p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
+<p>See the description of the open handler for more information.</p>
 <p>If this method is not implemented or under Linux kernel versions earlier than 2.6.15, the <a class="el" href="structfuse__lowlevel__ops.html#ad4bdf5bac31f832125c76ee3b8e055f8">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> methods will be called instead.</p>
 <p>If this request is answered with an error code of ENOSYS, the handler is treated as not implemented (i.e., for this and future requests the <a class="el" href="structfuse__lowlevel__ops.html#ad4bdf5bac31f832125c76ee3b8e055f8">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> handlers will be called instead).</p>
 <p>Valid replies: fuse_reply_create fuse_reply_err</p>
@@ -717,7 +715,14 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Open a file</p>
-<p>Open flags are available in fi-&gt;flags. Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out.</p>
+<p>Open flags are available in fi-&gt;flags. The following rules apply.</p>
+<ul>
+<li>Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out / handled by the kernel.</li>
+<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> and may thus be omitted by the filesystem.</li>
+<li>When writeback caching is enabled, the kernel may send read requests even for files opened with O_WRONLY. The filesystem should be prepared to handle this.</li>
+<li>When writeback caching is disabled, the filesystem is expected to properly handle the O_APPEND flag and ensure that each write is appending to the end of the file.</li>
+<li>When writeback caching is enabled, the kernel will handle O_APPEND. However, unless all changes to the file come through the kernel this will not work reliably. The filesystem should thus either ignore the O_APPEND flag (and let the kernel handle it), or return an error (indicating that reliably O_APPEND is not available).</li>
+</ul>
 <p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p>Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
 <p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>

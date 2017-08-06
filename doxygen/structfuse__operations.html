@@ -481,9 +481,19 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>File open operation</p>
-<p>No creation (O_CREAT, O_EXCL) and by default also no truncation (O_TRUNC) flags will be passed to <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a>. If an application specifies O_TRUNC, fuse first calls <a class="el" href="structfuse__operations.html#a73ddfa101255e902cb0ca25b40785be8">truncate()</a> and then <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a>. Only if 'atomic_o_trunc' has been specified and kernel version is 2.6.24 or later, O_TRUNC is passed on to open.</p>
-<p>Unless the 'default_permissions' mount option is given, open should check if the operation is permitted for the given flags. Optionally open may also return an arbitrary filehandle in the <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure, which will be passed to all file operations. </p>
+<p>Open a file</p>
+<p>Open flags are available in fi-&gt;flags. The following rules apply.</p>
+<ul>
+<li>Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out / handled by the kernel.</li>
+<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> and may thus be omitted by the filesystem.</li>
+<li>When writeback caching is enabled, the kernel may send read requests even for files opened with O_WRONLY. The filesystem should be prepared to handle this.</li>
+<li>When writeback caching is disabled, the filesystem is expected to properly handle the O_APPEND flag and ensure that each write is appending to the end of the file.</li>
+<li>When writeback caching is enabled, the kernel will handle O_APPEND. However, unless all changes to the file come through the kernel this will not work reliably. The filesystem should thus either ignore the O_APPEND flag (and let the kernel handle it), or return an error (indicating that reliably O_APPEND is not available).</li>
+</ul>
+<p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
+<p>Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
+<p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
+<p>If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open will also succeed without being send to the filesystem process. </p>
 
 </div>
 </div>
