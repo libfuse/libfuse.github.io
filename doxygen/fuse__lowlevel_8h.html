@@ -161,8 +161,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa6d77679a110582684e9ca2da623bbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f1e538aa3287e251afbe985438c4249"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:a5f1e538aa3287e251afbe985438c4249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ae949b229431e278bce6d8af271c23c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a0ae949b229431e278bce6d8af271c23c">fuse_session_loop_mt</a> (struct fuse_session *se, int clone_fd)</td></tr>
-<tr class="separator:a0ae949b229431e278bce6d8af271c23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13aa0ce912c020d9c8fbedaf12e787a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a13aa0ce912c020d9c8fbedaf12e787a7">fuse_session_loop_mt_31</a> (struct fuse_session *se, int clone_fd)</td></tr>
+<tr class="separator:a13aa0ce912c020d9c8fbedaf12e787a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a198429f3fbc23ef29ef9971271827690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:a198429f3fbc23ef29ef9971271827690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d015de77ae0edeb3157321e7a5c434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434">fuse_session_reset</a> (struct fuse_session *se)</td></tr>
@@ -305,7 +305,7 @@ Functions</h2></td></tr>
 <p>Add a directory entry to the buffer</p>
 <p>Buffer needs to be large enough to hold the entry. If it's not, then the entry is not filled in but the size of the entry is still returned. The caller can check this by comparing the bufsize parameter with the returned entry size. If the entry size is larger than the buffer size, the operation failed.</p>
 <p>From the 'stbuf' argument the st_ino field and bits 12-15 of the st_mode field are used. The other fields are ignored.</p>
-<p>Note: offsets do not necessarily represent physical offsets, and could be any marker, that enables the implementation to find a specific point in the directory stream.</p>
+<p><em>off</em> should be any non-zero value that the filesystem can use to identify the current point in the directory stream. It does not need to be the actual physical position. A value of zero is reserved to mean "from the beginning", and should therefore never be used (the first call to fuse_add_direntry should be passed the offset of the second directory entry).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>request handle </td></tr>
@@ -371,9 +371,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Add a directory entry to the buffer with the attributes</p>
-<p>Buffer needs to be large enough to hold the entry. If it's not, then the entry is not filled in but the size of the entry is still returned. The caller can check this by comparing the bufsize parameter with the returned entry size. If the entry size is larger than the buffer size, the operation failed.</p>
-<p>From the 'stbuf' argument the st_ino field and bits 12-15 of the st_mode field are used. The other fields are ignored.</p>
-<p>Note: offsets do not necessarily represent physical offsets, and could be any marker, that enables the implementation to find a specific point in the directory stream.</p>
+<p>See documentation of <code>fuse_add_direntryt()</code> for more details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>request handle </td></tr>
@@ -470,9 +468,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>As of kernel 4.8, this function behaves like <a class="el" href="fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> with the following additional effect:</p>
+<p>This function behaves like <a class="el" href="fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> with the following additional effect (at least as of Linux kernel 4.8):</p>
 <p>If the provided <em>child</em> inode matches the inode that is currently associated with the cached dentry, and if there are any inotify watches registered for the dentry, then the watchers are informed that the dentry has been deleted.</p>
 <p>To avoid a deadlock don't call this function from a filesystem operation and don't call it with a lock held that can also be held by a filesystem operation.</p>
+<p>Added in FUSE protocol version 7.18. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session object </td></tr>
@@ -526,6 +525,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Notify to invalidate parent attributes and the dentry matching parent/name</p>
 <p>To avoid a deadlock don't call this function from a filesystem operation and don't call it with a lock held that can also be held by a filesystem operation.</p>
+<p>Added in FUSE protocol version 7.12. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session object </td></tr>
@@ -576,7 +576,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Notify to invalidate cache for an inode</p>
+<p>Notify to invalidate cache for an inode.</p>
+<p>Added in FUSE protocol version 7.12. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session object </td></tr>
@@ -664,6 +665,7 @@ Functions</h2></td></tr>
 <p>Only present pages are returned in the retrieve reply. Retrieving stops when it finds a non-present page and only data prior to that is returned.</p>
 <p>If this function returns an error, then the retrieve will not be completed and no reply will be sent.</p>
 <p>This function doesn't change the dirty state of pages in the kernel buffer. For dirty pages the write() method will be called regardless of having been retrieved previously.</p>
+<p>Added in FUSE protocol version 7.15. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session object </td></tr>
@@ -725,6 +727,7 @@ Functions</h2></td></tr>
 <p>Synchronously store data in the kernel buffers belonging to the given inode. The stored data is marked up-to-date (no read will be performed against it, unless it's invalidated or evicted from the cache).</p>
 <p>If the stored data overflows the current file size, then the size is extended, similarly to a write(2) on the filesystem.</p>
 <p>If this function returns an error, then the store wasn't fully completed, but it may have been partially completed.</p>
+<p>Added in FUSE protocol version 7.15. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session object </td></tr>
@@ -1914,14 +1917,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ae949b229431e278bce6d8af271c23c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ae949b229431e278bce6d8af271c23c">&#9670;&nbsp;</a></span>fuse_session_loop_mt()</h2>
+<a id="a13aa0ce912c020d9c8fbedaf12e787a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13aa0ce912c020d9c8fbedaf12e787a7">&#9670;&nbsp;</a></span>fuse_session_loop_mt_31()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_session_loop_mt </td>
+          <td class="memname">int fuse_session_loop_mt_31 </td>
           <td>(</td>
           <td class="paramtype">struct fuse_session *&#160;</td>
           <td class="paramname"><em>se</em>, </td>
@@ -1944,7 +1947,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
-    <tr><td class="paramname">clone_fd</td><td>whether to use separate device fds for each thread (may increase performance) </td></tr>
+    <tr><td class="paramname">config</td><td>session loop configuration </td></tr>
   </table>
   </dd>
 </dl>

@@ -107,14 +107,16 @@ Functions</h2></td></tr>
 <tr class="separator:a6ea805c47ccc960497dfd64e12081159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9024935b211288c1869dc7566895d739"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a9024935b211288c1869dc7566895d739">fuse_exit</a> (struct fuse *f)</td></tr>
 <tr class="separator:a9024935b211288c1869dc7566895d739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49aa1cd0d8f9e62efd2047de244e318a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt</a> (struct fuse *f, int clone_fd)</td></tr>
-<tr class="separator:a49aa1cd0d8f9e62efd2047de244e318a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb55dfd425856e0b10f4a2836e6f9f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a8fb55dfd425856e0b10f4a2836e6f9f0">fuse_loop_mt_31</a> (struct fuse *f, int clone_fd)</td></tr>
+<tr class="separator:a8fb55dfd425856e0b10f4a2836e6f9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0f2a6603cb1e21f5e4c1aec84a3bcc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structfuse__context.html">fuse_context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a9a0f2a6603cb1e21f5e4c1aec84a3bcc">fuse_get_context</a> (void)</td></tr>
 <tr class="separator:a9a0f2a6603cb1e21f5e4c1aec84a3bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04273db088e57d8242caa388193b6958"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a04273db088e57d8242caa388193b6958">fuse_getgroups</a> (int size, gid_t list[])</td></tr>
 <tr class="separator:a04273db088e57d8242caa388193b6958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0514ca828e6a02a330dcf037292c8803"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a0514ca828e6a02a330dcf037292c8803">fuse_interrupted</a> (void)</td></tr>
 <tr class="separator:a0514ca828e6a02a330dcf037292c8803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c1dfbdfaf10818dbc6c2ca6264f19a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a56c1dfbdfaf10818dbc6c2ca6264f19a">fuse_invalidate_path</a> (struct fuse *f, const char *path)</td></tr>
+<tr class="separator:a56c1dfbdfaf10818dbc6c2ca6264f19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf072472df42e07a8874b570af8e4aaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#adf072472df42e07a8874b570af8e4aaa">fuse_main_real</a> (int argc, char *argv[], const struct <a class="el" href="structfuse__operations.html">fuse_operations</a> *op, size_t op_size, void *private_data)</td></tr>
 <tr class="separator:adf072472df42e07a8874b570af8e4aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b2246caec521ec4ac84093f8c4b616d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a4b2246caec521ec4ac84093f8c4b616d">fuse_start_cleanup_thread</a> (struct fuse *fuse)</td></tr>
@@ -247,6 +249,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Function to add an entry in a readdir() operation</p>
+<p>The <em>off</em> parameter can be any non-zero value that enableds the filesystem to identify the current point in the directory stream. It does not need to be the actual physical position. A value of zero is reserved to indicate that seeking in directories is not supported.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf</td><td>the buffer passed to the readdir() operation </td></tr>
@@ -552,6 +555,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a56c1dfbdfaf10818dbc6c2ca6264f19a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c1dfbdfaf10818dbc6c2ca6264f19a">&#9670;&nbsp;</a></span>fuse_invalidate_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_invalidate_path </td>
+          <td>(</td>
+          <td class="paramtype">struct fuse *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Invalidates cache for the given path.</p>
+<p>This calls fuse_lowlevel_notify_inval_inode internally.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 on successful invalidation, negative error value otherwise. This routine may return -ENOENT to indicate that there was no entry to be invalidated, e.g., because the path has not been seen before or has been forgotten; this should not be considered to be an error. </dd></dl>
+
+</div>
+</div>
 <a id="a9cef8443ae22c4bcc800d7c45f1496fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cef8443ae22c4bcc800d7c45f1496fe">&#9670;&nbsp;</a></span>fuse_lib_help()</h2>
 
@@ -603,18 +637,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
-<p>See also: <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> </p>
+<p>See also: fuse_loop_mt() </p>
 
 </div>
 </div>
-<a id="a49aa1cd0d8f9e62efd2047de244e318a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49aa1cd0d8f9e62efd2047de244e318a">&#9670;&nbsp;</a></span>fuse_loop_mt()</h2>
+<a id="a8fb55dfd425856e0b10f4a2836e6f9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb55dfd425856e0b10f4a2836e6f9f0">&#9670;&nbsp;</a></span>fuse_loop_mt_31()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_loop_mt </td>
+          <td class="memname">int fuse_loop_mt_31 </td>
           <td>(</td>
           <td class="paramtype">struct fuse *&#160;</td>
           <td class="paramname"><em>f</em>, </td>
@@ -635,13 +669,13 @@ Functions</h2></td></tr>
 <p>FUSE event loop with multiple threads</p>
 <p>Requests from the kernel are processed, and the appropriate operations are called. Request are processed in parallel by distributing them between multiple threads.</p>
 <p>For a description of the return value and the conditions when the event loop exits, refer to the documentation of <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
-<p>Note: using <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> instead of <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> means you are running in single-threaded mode, and that you will not have to worry about reentrancy, though you will have to worry about recursive lookups. In single-threaded mode, FUSE will wait for one callback to return before calling another.</p>
-<p>Enabling multiple threads, by using <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a>, will cause FUSE to make multiple simultaneous calls into the various callback functions given by your <a class="el" href="structfuse__operations.html">fuse_operations</a> record.</p>
+<p>Note: using <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> instead of fuse_loop_mt() means you are running in single-threaded mode, and that you will not have to worry about reentrancy, though you will have to worry about recursive lookups. In single-threaded mode, FUSE will wait for one callback to return before calling another.</p>
+<p>Enabling multiple threads, by using fuse_loop_mt(), will cause FUSE to make multiple simultaneous calls into the various callback functions given by your <a class="el" href="structfuse__operations.html">fuse_operations</a> record.</p>
 <p>If you are using multiple threads, you can enjoy all the parallel execution and interactive response benefits of threads, and you get to enjoy all the benefits of race conditions and locking bugs, too. Ensure that any code used in the callback function of <a class="el" href="structfuse__operations.html">fuse_operations</a> is also thread-safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>the FUSE handle </td></tr>
-    <tr><td class="paramname">clone_fd</td><td>whether to use separate device fds for each thread (may increase performance) </td></tr>
+    <tr><td class="paramname">config</td><td>loop configuration </td></tr>
   </table>
   </dd>
 </dl>
@@ -806,7 +840,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Start the cleanup thread when using option "remember".</p>
-<p>This is done automatically by <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is done automatically by fuse_loop_mt() </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fuse</td><td>struct fuse pointer for fuse instance </td></tr>
   </table>
@@ -832,7 +866,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Stop the cleanup thread when using option "remember".</p>
-<p>This is done automatically by <a class="el" href="fuse_8h.html#a49aa1cd0d8f9e62efd2047de244e318a">fuse_loop_mt()</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is done automatically by fuse_loop_mt() </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fuse</td><td>struct fuse pointer for fuse instance </td></tr>
   </table>
