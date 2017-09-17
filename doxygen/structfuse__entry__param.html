@@ -44,7 +44,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;fuse_lowlevel.h&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -61,6 +61,8 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Directory entry parameters supplied to <a class="el" href="fuse__lowlevel_8h.html#a672c45e126cd240f4bcd59bf9b7e3708">fuse_reply_entry()</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00059">59</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="adcdee37c96ad18380a47cdbe96a323b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adcdee37c96ad18380a47cdbe96a323b9">&#9670;&nbsp;</a></span>attr</h2>
@@ -75,6 +77,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Inode attributes.</p>
 <p>Even if attr_timeout == 0, attr must be correct. For example, for open(), FUSE uses attr.st_size from lookup() to determine how many bytes to request. If this value is not correct, incorrect data will be returned. </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00091">91</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -91,6 +95,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Validity timeout (in seconds) for inode attributes. If attributes only change as a result of requests that come through the kernel, this should be set to a very large value. </p>
 
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00097">97</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+
 </div>
 </div>
 <a id="a281b39b72e7ec574ba40d7341fd22c1d"></a>
@@ -105,6 +111,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Validity timeout (in seconds) for the name. If directory entries are changed/deleted only as a result of requests that come through the kernel, this should be set to a very large value. </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00103">103</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -123,6 +131,8 @@ Data Fields</h2></td></tr>
 <p>If the file system will be exported over NFS, the ino/generation pairs need to be unique over the file system's lifetime (rather than just the mount time). So if the file system reuses an inode after it has been deleted, it must assign a new, previously unused generation number to the inode at the same time.</p>
 <p>The generation must be non-zero, otherwise FUSE will treat it as an error. </p>
 
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00082">82</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+
 </div>
 </div>
 <a id="a285ba89754871772d940fa4fb736bce3"></a>
@@ -139,10 +149,12 @@ Data Fields</h2></td></tr>
 <p>Unique inode number</p>
 <p>In lookup, zero means negative entry (from version 2.5) Returning ENOENT also means negative entry, but by setting zero ino the kernel may cache negative entries for entry_timeout seconds. </p>
 
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00067">67</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="fuse__lowlevel_8h.html">fuse_lowlevel.h</a></li>
+<li>include/<a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
