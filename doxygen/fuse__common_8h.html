@@ -223,7 +223,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Traditionally, while a file is open the FUSE kernel module only asks the filesystem for an update of the file's attributes when a client attempts to read beyond EOF. This is unsuitable for e.g. network filesystems, where the file contents may change without the kernel knowing about it.</p>
 <p>If this flag is set, FUSE will check the validity of the attributes on every read. If the attributes are no longer valid (i.e., if the <em>attr_timeout</em> passed to <a class="el" href="fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr()</a> or set in <code>struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a></code> has passed), it will first issue a <code>getattr</code> request. If the new mtime differs from the previous value, any cached file <em>contents</em> will be invalidated as well.</p>
-<p>This flag should always be set when available. If all file changes go through the kernel, <em>attr_timeout</em> should be set to a very large number to avoid unneccessary getattr() calls.</p>
+<p>This flag should always be set when available. If all file changes go through the kernel, <em>attr_timeout</em> should be set to a very large number to avoid unnecessary getattr() calls.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00219">219</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
@@ -857,7 +857,7 @@ Functions</h2></td></tr>
 </dl>
 <p>See also: <a class="el" href="fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__signals_8c_source.html#l00080">80</a> of file <a class="el" href="fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__signals_8c_source.html#l00079">79</a> of file <a class="el" href="fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
 
 </div>
 </div>
@@ -888,7 +888,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
 <p>See also: <a class="el" href="fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__signals_8c_source.html#l00063">63</a> of file <a class="el" href="fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__signals_8c_source.html#l00062">62</a> of file <a class="el" href="fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
 
 </div>
 </div>

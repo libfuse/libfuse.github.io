@@ -74,7 +74,7 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:ac99b844cee7aaa8fb4e35df5b5488d82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main</a>(argc,  argv,  op,  private_data)&#160;&#160;&#160;<a class="el" href="fuse_8h.html#adf072472df42e07a8874b570af8e4aaa">fuse_main_real</a>(argc, argv, op, sizeof(*(op)), private_data)</td></tr>
 <tr class="separator:ac99b844cee7aaa8fb4e35df5b5488d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af335784cf29289c7583f3312d98d2bcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#af335784cf29289c7583f3312d98d2bcd">FUSE_REGISTER_MODULE</a>(name_,  factory_)&#160;&#160;&#160;<a class="el" href="fuse_8h.html#ab92480001ec4f475a082cbd32bee94e2">fuse_module_factory_t</a> fuse_module_ ## name_ ## _factory = factory_;</td></tr>
+<tr class="memitem:af335784cf29289c7583f3312d98d2bcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#af335784cf29289c7583f3312d98d2bcd">FUSE_REGISTER_MODULE</a>(name_,  factory_)&#160;&#160;&#160;<a class="el" href="fuse_8h.html#ab92480001ec4f475a082cbd32bee94e2">fuse_module_factory_t</a> fuse_module_ ## name_ ## _factory = factory_</td></tr>
 <tr class="separator:af335784cf29289c7583f3312d98d2bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">argc</td><td>the argument counter passed to the main() function </td></tr>
     <tr><td class="paramname">argv</td><td>the argument vector passed to the main() function </td></tr>
     <tr><td class="paramname">op</td><td>the file system operation </td></tr>
-    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overriden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
+    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overridden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="fuse_8h.html#ab92480001ec4f475a082cbd32bee94e2">fuse_module_factory_t</a> fuse_module_ ## name_ ## _factory = factory_;</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="fuse_8h.html#ab92480001ec4f475a082cbd32bee94e2">fuse_module_factory_t</a> fuse_module_ ## name_ ## _factory = factory_</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,7 +428,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04411">4411</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04410">4410</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -469,13 +469,13 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">op</td><td>the filesystem operations </td></tr>
     <tr><td class="paramname">op_size</td><td>the size of the <a class="el" href="structfuse__operations.html">fuse_operations</a> structure </td></tr>
-    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overriden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
+    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overridden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a new filesystem object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04619">4619</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04618">4618</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -498,7 +498,7 @@ Functions</h2></td></tr>
 <p>The context is only valid for the duration of a filesystem operation, and thus must not be stored and used later.</p>
 <dl class="section return"><dt>Returns</dt><dd>the context </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04416">4416</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04415">4415</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -561,7 +561,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of supplementary group IDs or -errno on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04426">4426</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04425">4425</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ Functions</h2></td></tr>
 <p>Check if the current request has already been interrupted</p>
 <dl class="section return"><dt>Returns</dt><dd>1 if the request has been interrupted, 0 otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04435">4435</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04434">4434</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -616,7 +616,7 @@ Functions</h2></td></tr>
 <p>This calls fuse_lowlevel_notify_inval_inode internally.</p>
 <dl class="section return"><dt>Returns</dt><dd>0 on successful invalidation, negative error value otherwise. This routine may return -ENOENT to indicate that there was no entry to be invalidated, e.g., because the path has not been seen before or has been forgotten; this should not be considered to be an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04445">4445</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04444">4444</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -644,7 +644,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04509">4509</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04508">4508</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -720,7 +720,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
 <p>See also: <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04403">4403</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04402">4402</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -860,7 +860,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">args</td><td>argument vector </td></tr>
     <tr><td class="paramname">op</td><td>the filesystem operations </td></tr>
     <tr><td class="paramname">op_size</td><td>the size of the <a class="el" href="structfuse__operations.html">fuse_operations</a> structure </td></tr>
-    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overriden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
+    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overridden by the <code>struct <a class="el" href="structfuse__operations.html#a0ad1f7c4105ee062528c767da88060f0">fuse_operations.init</a></code> handler. </td></tr>
   </table>
   </dd>
 </dl>
@@ -892,7 +892,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success and -1 on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04667">4667</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04666">4666</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -919,7 +919,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04675">4675</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04674">4674</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
