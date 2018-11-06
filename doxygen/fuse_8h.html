@@ -131,6 +131,8 @@ Functions</h2></td></tr>
 <tr class="separator:a74883ac07b1794da7affbd95251d25d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03baa193b5bfcbe625afbc62e9b97e91"><td class="memItemLeft" align="right" valign="top">struct fuse_session *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a03baa193b5bfcbe625afbc62e9b97e91">fuse_get_session</a> (struct fuse *f)</td></tr>
 <tr class="separator:a03baa193b5bfcbe625afbc62e9b97e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8c9af40b22631f9f2636019cd073b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse_8h.html#a9e8c9af40b22631f9f2636019cd073b6">fuse_open_channel</a> (const char *mountpoint, const char *options)</td></tr>
+<tr class="separator:a9e8c9af40b22631f9f2636019cd073b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file defines the library interface of FUSE</p>
@@ -189,6 +191,7 @@ Functions</h2></td></tr>
 <p><a class="el" href="fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main()</a> accepts all options that can be passed to <a class="el" href="fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline()</a>, <a class="el" href="fuse_8h.html#ad866b0fd4d81bdbf3e737f7273ba4520">fuse_new()</a>, or <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a>.</p>
 <p>Option parsing skips argv[0], which is assumed to contain the program name. This element must always be present and is used to construct a basic <code>usage:</code> message for the &ndash;help output. argv[0] may also be set to the empty string. In this case the usage message is suppressed. This can be used by file systems to print their own usage line first. See <a class="el" href="hello_8c.html">hello.c</a> for an example of how to do this.</p>
 <p>Note: this is currently implemented as a macro.</p>
+<p>The following error codes may be returned from <a class="el" href="fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main()</a>: 1: Invalid option arguments 2: No mount point specified 3: FUSE setup failed 4: Mounting failed 5: Failed to daemonize (detach from session) 6: Failed to set up signal handlers 7: An error occured during the life of the file system</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>the argument counter passed to the main() function </td></tr>
@@ -201,7 +204,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, nonzero on failure</dd></dl>
 <p>Example usage, see <a class="el" href="hello_8c.html">hello.c</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00829">829</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00838">838</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +243,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l01207">1207</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l01216">1216</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -297,7 +300,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the new filesystem object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l01195">1195</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l01204">1204</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -372,7 +375,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of seconds until the next cleanup </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04232">4232</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04311">4311</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -400,7 +403,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04865">4865</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04944">4944</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -428,7 +431,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04410">4410</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04489">4489</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -475,7 +478,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a new filesystem object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04618">4618</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04697">4697</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -498,7 +501,7 @@ Functions</h2></td></tr>
 <p>The context is only valid for the duration of a filesystem operation, and thus must not be stored and used later.</p>
 <dl class="section return"><dt>Returns</dt><dd>the context </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04415">4415</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04494">4494</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -519,7 +522,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Get session from fuse object </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04317">4317</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04396">4396</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -561,7 +564,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of supplementary group IDs or -errno on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04425">4425</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04504">4504</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -583,7 +586,7 @@ Functions</h2></td></tr>
 <p>Check if the current request has already been interrupted</p>
 <dl class="section return"><dt>Returns</dt><dd>1 if the request has been interrupted, 0 otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04434">4434</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04513">4513</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -616,7 +619,7 @@ Functions</h2></td></tr>
 <p>This calls fuse_lowlevel_notify_inval_inode internally.</p>
 <dl class="section return"><dt>Returns</dt><dd>0 on successful invalidation, negative error value otherwise. This routine may return -ENOENT to indicate that there was no entry to be invalidated, e.g., because the path has not been seen before or has been forgotten; this should not be considered to be an error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04444">4444</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04523">4523</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -644,7 +647,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04508">4508</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04587">4587</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -675,7 +678,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
 <p>See also: fuse_loop_mt() </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04374">4374</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04453">4453</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -720,7 +723,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a></dd></dl>
 <p>See also: <a class="el" href="fuse_8h.html#a6ea805c47ccc960497dfd64e12081159">fuse_loop()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04402">4402</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04481">4481</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -770,7 +773,7 @@ Functions</h2></td></tr>
 <p>The real main function</p>
 <p>Do not call this directly, use <a class="el" href="fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="helper_8c_source.html#l00274">274</a> of file <a class="el" href="helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helper_8c_source.html#l00279">279</a> of file <a class="el" href="helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -809,7 +812,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04912">4912</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04994">4994</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -868,6 +871,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9e8c9af40b22631f9f2636019cd073b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8c9af40b22631f9f2636019cd073b6">&#9670;&nbsp;</a></span>fuse_open_channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_open_channel </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mountpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open a FUSE file descriptor and set up the mount for the given mountpoint and flags.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mountpoint</td><td>reference to the mount in the file system </td></tr>
+    <tr><td class="paramname">options</td><td>mount options </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the FUSE file descriptor or -1 upon error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="helper_8c_source.html#l00424">424</a> of file <a class="el" href="helper_8c_source.html">helper.c</a>.</p>
+
+</div>
+</div>
 <a id="a4b2246caec521ec4ac84093f8c4b616d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b2246caec521ec4ac84093f8c4b616d">&#9670;&nbsp;</a></span>fuse_start_cleanup_thread()</h2>
 
@@ -892,7 +934,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success and -1 on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04666">4666</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04745">4745</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -919,7 +961,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04674">4674</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04753">4753</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -947,7 +989,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04917">4917</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l04999">4999</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
