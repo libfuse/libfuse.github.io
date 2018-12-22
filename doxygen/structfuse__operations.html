@@ -128,6 +128,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:acc2c00ad92ac7dd1c130995b65ea8955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ee7ba94cbc9ad068b15a0b1d22afd3"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a22ee7ba94cbc9ad068b15a0b1d22afd3">fallocate</a> )(const char *, int, off_t, off_t, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *)</td></tr>
 <tr class="separator:a22ee7ba94cbc9ad068b15a0b1d22afd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b68daa154f8400cfb76e790aad9e697"><td class="memItemLeft" align="right" valign="top">ssize_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a8b68daa154f8400cfb76e790aad9e697">copy_file_range</a> )(const char *path_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, off_t offset_in, const char *path_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, off_t offset_out, size_t size, int flags)</td></tr>
+<tr class="separator:a8b68daa154f8400cfb76e790aad9e697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file system operations:</p>
@@ -209,6 +211,25 @@ Data Fields</h2></td></tr>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00377">377</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b68daa154f8400cfb76e790aad9e697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b68daa154f8400cfb76e790aad9e697">&#9670;&nbsp;</a></span>copy_file_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t(* fuse_operations::copy_file_range) (const char *path_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, off_t offset_in, const char *path_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, off_t offset_out, size_t size, int flags)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy a range of data from one file to another</p>
+<p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
+<p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data. </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00765">765</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>

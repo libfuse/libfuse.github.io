@@ -132,6 +132,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a66727384614c3fa8d44b4ad1fc9da36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83c19a8b50f0520d3857cf0af4c9b1a7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a83c19a8b50f0520d3857cf0af4c9b1a7">readdirplus</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
 <tr class="separator:a83c19a8b50f0520d3857cf0af4c9b1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871740861ba7ea9d3198cc6b81485b4b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td></tr>
+<tr class="separator:a871740861ba7ea9d3198cc6b81485b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low level filesystem operations</p>
@@ -198,6 +200,41 @@ Data Fields</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00971">971</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+
+</div>
+</div>
+<a id="a871740861ba7ea9d3198cc6b81485b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871740861ba7ea9d3198cc6b81485b4b">&#9670;&nbsp;</a></span>copy_file_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* fuse_lowlevel_ops::copy_file_range) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy a range of data from one file to another</p>
+<p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
+<p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>Valid replies: fuse_reply_write fuse_reply_err</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>request handle </td></tr>
+    <tr><td class="paramname">ino_in</td><td>the inode number or the source file </td></tr>
+    <tr><td class="paramname">off_in</td><td>starting point from were the data should be read </td></tr>
+    <tr><td class="paramname">fi_in</td><td>file information of the source file </td></tr>
+    <tr><td class="paramname">ino_out</td><td>the inode number or the destination file </td></tr>
+    <tr><td class="paramname">off_out</td><td>starting point where the data should be written </td></tr>
+    <tr><td class="paramname">fi_out</td><td>file information of the destination file </td></tr>
+    <tr><td class="paramname">len</td><td>maximum size of the data to copy </td></tr>
+    <tr><td class="paramname">flags</td><td>passed along with the <a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range()</a> syscall </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01194">1194</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
