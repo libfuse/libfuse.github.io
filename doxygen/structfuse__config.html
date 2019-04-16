@@ -244,7 +244,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This option disables flushing the cache of the file contents on every open(2). This should only be enabled on filesystems, where the file data is never changed externally (not through the mounted FUSE filesystem). Thus it is not suitable for network filesystems and other intermediate filesystems.</p>
+<p>This option disables flushing the cache of the file contents on every open(2). This should only be enabled on filesystems where the file data is never changed externally (not through the mounted FUSE filesystem). Thus it is not suitable for network filesystems and other intermediate filesystems.</p>
 <p>NOTE: if this option is not specified (and neither direct_io) data is still cached after the open(2), so a read(2) system call will not always initiate a read operation.</p>
 <p>Internally, enabling this option causes fuse to set the <code>keep_cache</code> field of <code>struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a></code> - overwriting any value that was put there by the file system. </p>
 

@@ -116,8 +116,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a936691bc2d278d6cbd344a6aad1b2c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb5d953d0aca9d859480abd470abd754"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#afb5d953d0aca9d859480abd470abd754">bmap</a> )(const char *, size_t blocksize, uint64_t *idx)</td></tr>
 <tr class="separator:afb5d953d0aca9d859480abd470abd754"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad63a7eb3cfe87b4be0bd652075e8ff8d"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ad63a7eb3cfe87b4be0bd652075e8ff8d">ioctl</a> )(const char *, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
-<tr class="separator:ad63a7eb3cfe87b4be0bd652075e8ff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8db8f0c5012ec37cab358b28726e416"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ad8db8f0c5012ec37cab358b28726e416">ioctl</a> )(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
+<tr class="separator:ad8db8f0c5012ec37cab358b28726e416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae917aafa687ffbf7b76fd3a335f10f9"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#aae917aafa687ffbf7b76fd3a335f10f9">poll</a> )(const char *, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, struct fuse_pollhandle *ph, unsigned *reventsp)</td></tr>
 <tr class="separator:aae917aafa687ffbf7b76fd3a335f10f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42689ab07d7f98a89fe4707a10ce4bc3"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a42689ab07d7f98a89fe4707a10ce4bc3">write_buf</a> )(const char *, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *buf, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *)</td></tr>
@@ -155,7 +155,7 @@ Data Fields</h2></td></tr>
 <p>This will be called for the <a class="el" href="structfuse__operations.html#a4dd366b9f74ead6927fb75afb91863bc">access()</a> system call. If the 'default_permissions' mount option is given, this method is not called.</p>
 <p>This method is not called under Linux kernel versions 2.4.x </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00591">591</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00597">597</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -173,7 +173,7 @@ Data Fields</h2></td></tr>
 <p>Map block index within file to block index within device</p>
 <p>Note: This makes sense only for block device backed filesystems mounted with the 'blkdev' option </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00659">659</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00665">665</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Data Fields</h2></td></tr>
 <p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
 <p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00765">765</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00774">774</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +248,7 @@ Data Fields</h2></td></tr>
 <p>If the file does not exist, first create it with the specified mode, and then open it.</p>
 <p>If this method is not implemented or under Linux kernel versions earlier than 2.6.15, the <a class="el" href="structfuse__operations.html#a086e9d012d0de2f2cdd53ba13c65ace7">mknod()</a> and <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> methods will be called instead. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00603">603</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00609">609</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ Data Fields</h2></td></tr>
 <p>Clean up filesystem</p>
 <p>Called on filesystem exit. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00580">580</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00586">586</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -284,7 +284,7 @@ Data Fields</h2></td></tr>
 <p>Allocates space for an open file</p>
 <p>This function ensures that required space is allocated for specified file. If this function returns success then any subsequent write request to specified range is guaranteed not to fail because of lack of space on the file system media. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00751">751</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00760">760</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -306,7 +306,7 @@ Data Fields</h2></td></tr>
 <p>Additionally fi-&gt;owner will be set to a value unique to this open file. This same value will be supplied to -&gt;<a class="el" href="structfuse__operations.html#a4a6f1b50c583774125b5003811ecebce">release()</a> when the file is released.</p>
 <p>Note: if this method is not implemented, the kernel will still allow file locking to work locally. Hence it is only interesting for network filesystems and similar. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00741">741</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00750">750</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -323,11 +323,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Possibly flush cached data</p>
 <p>BIG NOTE: This is not equivalent to <a class="el" href="structfuse__operations.html#abaa2a0bdc9b9955a399ea6973f6f4927">fsync()</a>. It's not a request to sync dirty data.</p>
-<p>Flush is called on each close() of a file descriptor. So if a filesystem wants to return write errors in close() and the file has cached dirty data, this is a good place to write back data and return any errors. Since many applications ignore close() errors this is not always useful.</p>
-<p>NOTE: The <a class="el" href="structfuse__operations.html#a6bfecd61ddd58f74820953ee23b19ef3">flush()</a> method may be called more than once for each <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a>. This happens if more than one file descriptor refers to an opened file due to dup(), dup2() or fork() calls. It is not possible to determine if a flush is final, so each flush should be treated equally. Multiple write-flush sequences are relatively rare, so this shouldn't be a problem.</p>
-<p>Filesystems shouldn't assume that flush will always be called after some writes, or that if will be called at all. </p>
+<p>Flush is called on each close() of a file descriptor, as opposed to release which is called on the close of the last file descriptor for a file. Under Linux, errors returned by <a class="el" href="structfuse__operations.html#a6bfecd61ddd58f74820953ee23b19ef3">flush()</a> will be passed to userspace as errors from close(), so <a class="el" href="structfuse__operations.html#a6bfecd61ddd58f74820953ee23b19ef3">flush()</a> is a good place to write back any cached dirty data. However, many applications ignore errors on close(), and on non-Linux systems, close() may succeed even if <a class="el" href="structfuse__operations.html#a6bfecd61ddd58f74820953ee23b19ef3">flush()</a> returns an error. For these reasons, filesystems should not assume that errors returned by flush will ever be noticed or even delivered.</p>
+<p>NOTE: The <a class="el" href="structfuse__operations.html#a6bfecd61ddd58f74820953ee23b19ef3">flush()</a> method may be called more than once for each <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a>. This happens if more than one file descriptor refers to an open file handle, e.g. due to dup(), dup2() or fork() calls. It is not possible to determine if a flush is final, so each flush should be treated equally. Multiple write-flush sequences are relatively rare, so this shouldn't be a problem.</p>
+<p>Filesystems shouldn't assume that flush will be called at any particular point. It may be called more times than expected, or not at all. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00490">490</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00496">496</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ Data Fields</h2></td></tr>
 <p>Synchronize file contents</p>
 <p>If the datasync parameter is non-zero, then only the user data should be flushed, not the meta data. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00511">511</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00517">517</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ Data Fields</h2></td></tr>
 <p>Synchronize directory contents</p>
 <p>If the datasync parameter is non-zero, then only the user data should be flushed, not the meta data </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00562">562</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00568">568</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Get extended attributes </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00517">517</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00523">523</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -417,26 +417,27 @@ Data Fields</h2></td></tr>
 <p>Initialize filesystem</p>
 <p>The return value will passed in the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code> to all file operations, and as a parameter to the <a class="el" href="structfuse__operations.html#af7485db1c9c6d402323f7a24e1b7db82">destroy()</a> method. It overrides the initial value provided to <a class="el" href="fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main()</a> / <a class="el" href="fuse_8h.html#ad866b0fd4d81bdbf3e737f7273ba4520">fuse_new()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00572">572</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00578">578</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
-<a id="ad63a7eb3cfe87b4be0bd652075e8ff8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad63a7eb3cfe87b4be0bd652075e8ff8d">&#9670;&nbsp;</a></span>ioctl</h2>
+<a id="ad8db8f0c5012ec37cab358b28726e416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8db8f0c5012ec37cab358b28726e416">&#9670;&nbsp;</a></span>ioctl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* fuse_operations::ioctl) (const char *, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
+          <td class="memname">int(* fuse_operations::ioctl) (const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Ioctl</p>
 <p>flags will have FUSE_IOCTL_COMPAT set for 32bit ioctls in 64bit environment. The size and direction of data is determined by <em>IOC</em>*() decoding of cmd. For _IOC_NONE, data will be NULL, for _IOC_WRITE data is out area, for _IOC_READ in area and if both are set in/out area. In all non-NULL cases, the area is of _IOC_SIZE(cmd) bytes.</p>
-<p>If flags has FUSE_IOCTL_DIR then the <a class="el" href="structfuse__file__info.html">fuse_file_info</a> refers to a directory file handle. </p>
+<p>If flags has FUSE_IOCTL_DIR then the <a class="el" href="structfuse__file__info.html">fuse_file_info</a> refers to a directory file handle.</p>
+<p>Note : the unsigned long request submitted by the application is truncated to 32 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00674">674</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00683">683</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +471,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>List extended attributes </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00520">520</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00526">526</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -493,7 +494,7 @@ Data Fields</h2></td></tr>
 <p>For F_SETLK and F_SETLKW the l_pid field will be set to the pid of the process performing the locking operation.</p>
 <p>Note: if this method is not implemented, the kernel will still allow file locking to work locally. Hence it is only interesting for network filesystems and similar. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00635">635</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00641">641</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -548,7 +549,7 @@ Data Fields</h2></td></tr>
 <p>Open flags are available in fi-&gt;flags. The following rules apply.</p>
 <ul>
 <li>Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out / handled by the kernel.</li>
-<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> and may thus be omitted by the filesystem.</li>
+<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR, O_EXEC, O_SEARCH) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> and may thus be omitted by the filesystem.</li>
 <li>When writeback caching is enabled, the kernel may send read requests even for files opened with O_WRONLY. The filesystem should be prepared to handle this.</li>
 <li>When writeback caching is disabled, the filesystem is expected to properly handle the O_APPEND flag and ensure that each write is appending to the end of the file.</li>
 <li>When writeback caching is enabled, the kernel will handle O_APPEND. However, unless all changes to the file come through the kernel this will not work reliably. The filesystem should thus either ignore the O_APPEND flag (and let the kernel handle it), or return an error (indicating that reliably O_APPEND is not available).</li>
@@ -558,7 +559,7 @@ Data Fields</h2></td></tr>
 <p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
 <p>If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open will also succeed without being send to the filesystem process. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00437">437</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00436">436</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +577,7 @@ Data Fields</h2></td></tr>
 <p>Open directory</p>
 <p>Unless the 'default_permissions' mount option is given, this method should check if opendir is permitted for this directory. Optionally opendir may also return an arbitrary filehandle in the <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure, which will be passed to readdir, releasedir and fsyncdir. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00533">533</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00539">539</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -596,7 +597,7 @@ Data Fields</h2></td></tr>
 <p>Regardless of the number of times poll with a non-NULL ph is received, single notification is enough to clear all. Notifying more times incurs overhead but doesn't harm correctness.</p>
 <p>The callee is responsible for destroying ph with <a class="el" href="fuse__common_8h.html#adf5027f8a38b2efc03858efd7fdc756a">fuse_pollhandle_destroy()</a> when no longer in use. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00692">692</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00701">701</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -614,7 +615,7 @@ Data Fields</h2></td></tr>
 <p>Read data from an open file</p>
 <p>Read should return exactly the number of bytes requested except on EOF or error, otherwise the rest of the data will be substituted with zeroes. An exception to this is when the 'direct_io' mount option is specified, in which case the return value of the read system call will reflect the return value of this operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00448">448</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00447">447</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -634,7 +635,7 @@ Data Fields</h2></td></tr>
 <p>No actual copying of data has to take place, the source file descriptor may simply be stored in the buffer for later data transfer.</p>
 <p>The buffer must be allocated dynamically and stored at the location pointed to by bufp. If the buffer contains memory regions, they too must be allocated using malloc(). The allocated memory will be freed by the caller. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00721">721</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00730">730</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -654,7 +655,7 @@ Data Fields</h2></td></tr>
 <p>1) The readdir implementation ignores the offset parameter, and passes zero to the filler function's offset. The filler function will not return '1' (unless an error happens), so the whole directory is read in a single readdir operation.</p>
 <p>2) The readdir implementation keeps track of the offsets of the directory entries. It uses the offset parameter and always passes non-zero offset to the filler function. When the buffer is full (or an error happens) the filler function will return '1'. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00550">550</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00556">556</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -689,9 +690,9 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Release an open file</p>
 <p>Release is called when there are no more references to an open file: all file descriptors are closed and all memory mappings are unmapped.</p>
-<p>For every <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> call there will be exactly one <a class="el" href="structfuse__operations.html#a4a6f1b50c583774125b5003811ecebce">release()</a> call with the same flags and file descriptor. It is possible to have a file opened more than once, in which case only the last release will mean, that no more reads/writes will happen on the file. The return value of release is ignored. </p>
+<p>For every <a class="el" href="structfuse__operations.html#a08a085fceedd8770e3290a80aa9645ac">open()</a> call there will be exactly one <a class="el" href="structfuse__operations.html#a4a6f1b50c583774125b5003811ecebce">release()</a> call with the same flags and file handle. It is possible to have a file opened more than once, in which case only the last release will mean, that no more reads/writes will happen on the file. The return value of release is ignored. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00504">504</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00510">510</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -708,7 +709,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Release directory </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00555">555</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00561">561</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -725,7 +726,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Remove extended attributes </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00523">523</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00529">529</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -777,7 +778,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Set extended attributes </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00514">514</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00520">520</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -795,7 +796,7 @@ Data Fields</h2></td></tr>
 <p>Get file system statistics</p>
 <p>The 'f_favail', 'f_fsid' and 'f_flag' fields are ignored </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00467">467</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00466">466</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -868,7 +869,7 @@ Data Fields</h2></td></tr>
 <p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open.</p>
 <p>See the utimensat(2) man page for details. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00650">650</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00656">656</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -887,7 +888,7 @@ Data Fields</h2></td></tr>
 <p>Write should return exactly the number of bytes requested except on error. An exception to this is when the 'direct_io' mount option is specified (see read operation).</p>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00460">460</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00459">459</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -906,7 +907,7 @@ Data Fields</h2></td></tr>
 <p>Similar to the <a class="el" href="structfuse__operations.html#a1fdc611027324dd68a550f9662db1fac">write()</a> method, but data is supplied in a generic buffer. Use <a class="el" href="fuse__common_8h.html#a9ca301390fb5e85b85153abb1891a3f7">fuse_buf_copy()</a> to transfer data to the destination.</p>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00704">704</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00713">713</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
