@@ -78,7 +78,7 @@ Data Fields</h2></td></tr>
 <p>Inode attributes.</p>
 <p>Even if attr_timeout == 0, attr must be correct. For example, for open(), FUSE uses attr.st_size from lookup() to determine how many bytes to request. If this value is not correct, incorrect data will be returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00091">91</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00088">88</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -95,7 +95,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Validity timeout (in seconds) for inode attributes. If attributes only change as a result of requests that come through the kernel, this should be set to a very large value. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00097">97</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00094">94</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -112,7 +112,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Validity timeout (in seconds) for the name. If directory entries are changed/deleted only as a result of requests that come through the kernel, this should be set to a very large value. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00103">103</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00100">100</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -128,10 +128,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Generation number for this entry.</p>
-<p>If the file system will be exported over NFS, the ino/generation pairs need to be unique over the file system's lifetime (rather than just the mount time). So if the file system reuses an inode after it has been deleted, it must assign a new, previously unused generation number to the inode at the same time.</p>
-<p>The generation must be non-zero, otherwise FUSE will treat it as an error. </p>
+<p>If the file system will be exported over NFS, the ino/generation pairs need to be unique over the file system's lifetime (rather than just the mount time). So if the file system reuses an inode after it has been deleted, it must assign a new, previously unused generation number to the inode at the same time. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00082">82</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00079">79</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>

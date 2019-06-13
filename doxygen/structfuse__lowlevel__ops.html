@@ -143,7 +143,7 @@ Data Fields</h2></td></tr>
 <p>In general, all methods are expected to perform any necessary permission checking. However, a filesystem may delegate this task to the kernel by passing the <code>default_permissions</code> mount option to <code><a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a></code>. In this case, methods will only be called if the kernel's permission check has succeeded.</p>
 <p>The filesystem sometimes needs to handle a return value of -ENOENT from the reply function, which means, that the request was interrupted, and the reply discarded. For example if <a class="el" href="fuse__lowlevel_8h.html#a170f8c6b953d70928e83bcecee43bfdc">fuse_reply_open()</a> return -ENOENT means, that the release method for this file will not be called. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00175">175</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00172">172</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ac9fec3156389a36345dbbb76161641c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9fec3156389a36345dbbb76161641c7">&#9670;&nbsp;</a></span>access</h2>
@@ -170,7 +170,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00900">900</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00897">897</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -199,7 +199,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00993">993</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00990">990</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01219">1219</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01216">1216</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00929">929</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00926">926</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00205">205</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00202">202</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +320,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01158">1158</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01155">1155</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -348,7 +348,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01135">1135</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01132">1132</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +381,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00608">608</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00605">605</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +412,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00256">256</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00253">253</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -437,7 +437,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01117">1117</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01114">1114</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -466,7 +466,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00658">658</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00655">655</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -496,7 +496,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00773">773</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00770">770</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -524,7 +524,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00277">277</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00274">274</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -551,7 +551,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00944">944</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00941">941</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -582,7 +582,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00830">830</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00827">827</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00192">192</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00189">189</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -642,7 +642,7 @@ Data Fields</h2></td></tr>
 </dl>
 <p>Note : the unsigned long request submitted by the application is truncated to 32 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01024">1024</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01021">1021</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -669,7 +669,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00451">451</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00448">448</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -699,7 +699,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00861">861</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00858">858</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -725,7 +725,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00218">218</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00215">215</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -752,7 +752,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00354">354</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00351">351</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -781,7 +781,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00339">339</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00336">336</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00510">510</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00507">507</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -847,7 +847,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00683">683</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00680">680</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -878,7 +878,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01057">1057</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01054">1054</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -908,7 +908,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00538">538</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00535">535</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -941,7 +941,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00729">729</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00726">726</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -972,7 +972,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01186">1186</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01183">1183</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -997,7 +997,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00321">321</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00318">318</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1027,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00636">636</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00633">633</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1055,7 +1055,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00748">748</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00745">745</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1082,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00878">878</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00875">875</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1113,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00435">435</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00432">432</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1141,7 +1141,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01103">1103</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01100">1100</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1168,7 +1168,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00389">389</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00386">386</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1199,7 +1199,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00308">308</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00305">305</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +1229,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00969">969</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00966">966</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1248,7 +1248,7 @@ Data Fields</h2></td></tr>
 <p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a31f085ab232e7beeb7f83e458103afad">setxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00799">799</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00796">796</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1273,7 +1273,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00786">786</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00783">783</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1300,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00403">403</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00400">400</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1327,7 +1327,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00372">372</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00369">369</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1359,7 +1359,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00567">567</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00564">564</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1390,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01087">1087</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01084">1084</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
