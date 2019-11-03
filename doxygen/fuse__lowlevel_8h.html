@@ -127,6 +127,8 @@ Functions</h2></td></tr>
 <tr class="separator:a37381eb84c39e5fe3af9f3ef507aeeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2172d260d34c76c25cd601870aee4220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a2172d260d34c76c25cd601870aee4220">fuse_reply_poll</a> (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, unsigned revents)</td></tr>
 <tr class="separator:a2172d260d34c76c25cd601870aee4220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5dd8e5a4639d232f904e6770e7fd244"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#ac5dd8e5a4639d232f904e6770e7fd244">fuse_reply_lseek</a> (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, off_t off)</td></tr>
+<tr class="separator:ac5dd8e5a4639d232f904e6770e7fd244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab078685b1f480188031fc40aa2e2fbca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#ab078685b1f480188031fc40aa2e2fbca">fuse_lowlevel_notify_poll</a> (struct fuse_pollhandle *ph)</td></tr>
 <tr class="separator:ab078685b1f480188031fc40aa2e2fbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb974af9745294ff446d11cba2422f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a9cb974af9745294ff446d11cba2422f1">fuse_lowlevel_notify_inval_inode</a> (struct fuse_session *se, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, off_t len)</td></tr>
@@ -243,7 +245,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01782">1782</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01815">1815</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -441,7 +443,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Print available low-level options to stdout. This is not an exhaustive list, but includes only those options that may be of interest to an end-user of a file system. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02633">2633</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02690">2690</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -505,7 +507,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02209">2209</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02265">2265</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -561,7 +563,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02185">2185</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02241">2241</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -617,7 +619,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02163">2163</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02219">2219</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -645,7 +647,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02146">2146</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02202">2202</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -710,7 +712,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02315">2315</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02371">2371</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -774,7 +776,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02235">2235</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02291">2291</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -795,7 +797,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Print low-level version information to stdout. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02626">2626</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02683">2683</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -923,7 +925,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00883">883</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00915">915</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1084,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00822">822</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00854">854</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1221,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00981">981</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01013">1013</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1272,7 +1274,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01002">1002</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01034">1034</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1333,7 +1335,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00911">911</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00943">943</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1420,7 +1422,47 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00866">866</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00898">898</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+
+</div>
+</div>
+<a id="ac5dd8e5a4639d232f904e6770e7fd244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dd8e5a4639d232f904e6770e7fd244">&#9670;&nbsp;</a></span>fuse_reply_lseek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_reply_lseek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&#160;</td>
+          <td class="paramname"><em>off</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reply with offset</p>
+<p>Possible requests: lseek</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>request handle </td></tr>
+    <tr><td class="paramname">off</td><td>offset of next data or hole </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01068">1068</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1527,7 +1569,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01026">1026</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01058">1058</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1649,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00844">844</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00876">876</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1729,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00856">856</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l00888">888</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1716,7 +1758,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the context structure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02365">2365</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02421">2421</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1765,7 +1807,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of supplementary group IDs or -errno on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03048">3048</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03108">3108</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1811,7 +1853,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02370">2370</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02426">2426</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1839,7 +1881,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the request has been interrupted, 0 otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02383">2383</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02439">2439</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1867,7 +1909,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the user data passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02360">2360</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02416">2416</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1894,7 +1936,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02643">2643</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02700">2700</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1922,7 +1964,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03055">3055</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03115">3115</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1950,7 +1992,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if exited, 0 if not exited </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03066">3066</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03126">3126</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1980,7 +2022,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a file descriptor </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02971">2971</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03031">3031</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2090,7 +2132,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02921">2921</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02981">2981</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2147,7 +2189,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the fuse session on success, NULL on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02826">2826</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02886">2886</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2186,7 +2228,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02470">2470</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02527">2527</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2226,7 +2268,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the actual size of the raw request, or -errno on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02670">2670</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02727">2727</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2253,7 +2295,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03060">3060</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03120">3120</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2283,7 +2325,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l02976">2976</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l03036">3036</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
