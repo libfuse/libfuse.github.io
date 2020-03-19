@@ -116,8 +116,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a14b47789c53aa750ed2cfea92cacc9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3f3482e33a0eada0292350d76b82901"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ae3f3482e33a0eada0292350d76b82901">bmap</a> )(const char *, size_t blocksize, uint64_t *idx)</td></tr>
 <tr class="separator:ae3f3482e33a0eada0292350d76b82901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b7b69192ccea64059182be90d3d63b"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ad5b7b69192ccea64059182be90d3d63b">ioctl</a> )(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
-<tr class="separator:ad5b7b69192ccea64059182be90d3d63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d360d871ec63a90bd1b22c7114b47b9"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a6d360d871ec63a90bd1b22c7114b47b9">ioctl</a> )(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
+<tr class="separator:a6d360d871ec63a90bd1b22c7114b47b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c02838d30391c09dd5213edc61e106a"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a2c02838d30391c09dd5213edc61e106a">poll</a> )(const char *, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, struct fuse_pollhandle *ph, unsigned *reventsp)</td></tr>
 <tr class="separator:a2c02838d30391c09dd5213edc61e106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89f400083a03ddcc43e47ce126b6761f"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a89f400083a03ddcc43e47ce126b6761f">write_buf</a> )(const char *, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *buf, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *)</td></tr>
@@ -229,7 +229,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Copy a range of data from one file to another</p>
 <p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
-<p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data. </p>
+<p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data.</p>
+<p>Copy a range of data from one file to another</p>
+<p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
+<p>In case this method is not implemented, applications are expected to fall back to a regular file copy. (Some glibc versions did this emulation automatically, but the emulation has been removed from all glibc release branches.) </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_88_80_2include_2fuse_8h_source.html#l00774">774</a> of file <a class="el" href="fuse-3_88_80_2include_2fuse_8h_source.html">fuse.h</a>.</p>
 
@@ -423,14 +426,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ad5b7b69192ccea64059182be90d3d63b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5b7b69192ccea64059182be90d3d63b">&#9670;&nbsp;</a></span>ioctl</h2>
+<a id="a6d360d871ec63a90bd1b22c7114b47b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d360d871ec63a90bd1b22c7114b47b9">&#9670;&nbsp;</a></span>ioctl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* fuse_operations::ioctl)(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
+          <td class="memname">int(* fuse_operations::ioctl)(const char *, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
