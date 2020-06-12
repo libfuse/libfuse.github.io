@@ -88,11 +88,13 @@ Typedefs</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:af2bcf2a473b41b3cc8da8c079656a074"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse-3_88_80_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074">fuse_readdir_flags</a> { <a class="el" href="fuse-3_88_80_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441">FUSE_READDIR_PLUS</a> = (1 &lt;&lt; 0), 
 <a class="el" href="fuse-3_89_80_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441">FUSE_READDIR_PLUS</a> = (1 &lt;&lt; 0), 
+<a class="el" href="fuse-3_89_81_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441">FUSE_READDIR_PLUS</a> = (1 &lt;&lt; 0), 
 <a class="el" href="include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441">FUSE_READDIR_PLUS</a> = (1 &lt;&lt; 0)
  }</td></tr>
 <tr class="separator:af2bcf2a473b41b3cc8da8c079656a074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1d0194d186240ef6aaf6e9bf8568568"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse-3_88_80_2include_2fuse_8h.html#af1d0194d186240ef6aaf6e9bf8568568">fuse_fill_dir_flags</a> { <a class="el" href="fuse-3_88_80_2include_2fuse_8h.html#af1d0194d186240ef6aaf6e9bf8568568a3f50d11935fe96eb4df6ff0844c4e153">FUSE_FILL_DIR_PLUS</a> = (1 &lt;&lt; 1), 
 <a class="el" href="fuse-3_89_80_2include_2fuse_8h.html#af1d0194d186240ef6aaf6e9bf8568568a3f50d11935fe96eb4df6ff0844c4e153">FUSE_FILL_DIR_PLUS</a> = (1 &lt;&lt; 1), 
+<a class="el" href="fuse-3_89_81_2include_2fuse_8h.html#af1d0194d186240ef6aaf6e9bf8568568a3f50d11935fe96eb4df6ff0844c4e153">FUSE_FILL_DIR_PLUS</a> = (1 &lt;&lt; 1), 
 <a class="el" href="include_2fuse_8h.html#af1d0194d186240ef6aaf6e9bf8568568a3f50d11935fe96eb4df6ff0844c4e153">FUSE_FILL_DIR_PLUS</a> = (1 &lt;&lt; 1)
  }</td></tr>
 <tr class="separator:af1d0194d186240ef6aaf6e9bf8568568"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -333,6 +335,10 @@ Functions</h2></td></tr>
 <p>The attributes are used by the kernel to prefill the inode cache during a readdir.</p>
 <p>It is okay to set FUSE_FILL_DIR_PLUS if FUSE_READDIR_PLUS is not set and vice versa. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="af1d0194d186240ef6aaf6e9bf8568568a3f50d11935fe96eb4df6ff0844c4e153"></a>FUSE_FILL_DIR_PLUS&#160;</td><td class="fielddoc"><p>"Plus" mode: all file attributes are valid</p>
+<p>The attributes are used by the kernel to prefill the inode cache during a readdir.</p>
+<p>It is okay to set FUSE_FILL_DIR_PLUS if FUSE_READDIR_PLUS is not set and vice versa. </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_88_80_2include_2fuse_8h_source.html#l00054">54</a> of file <a class="el" href="fuse-3_88_80_2include_2fuse_8h_source.html">fuse.h</a>.</p>
@@ -353,6 +359,9 @@ Functions</h2></td></tr>
 <p>Readdir flags, passed to -&gt;readdir() </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441"></a>FUSE_READDIR_PLUS&#160;</td><td class="fielddoc"><p>"Plus" mode.</p>
+<p>The kernel wants to prefill the inode cache during readdir. The filesystem may honour this by filling in the attributes and setting FUSE_FILL_DIR_FLAGS for the filler function. The filesystem may also just ignore this flag completely. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441"></a>FUSE_READDIR_PLUS&#160;</td><td class="fielddoc"><p>"Plus" mode.</p>
 <p>The kernel wants to prefill the inode cache during readdir. The filesystem may honour this by filling in the attributes and setting FUSE_FILL_DIR_FLAGS for the filler function. The filesystem may also just ignore this flag completely. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af2bcf2a473b41b3cc8da8c079656a074ad62ab7c23f966a76282921e9187ca441"></a>FUSE_READDIR_PLUS&#160;</td><td class="fielddoc"><p>"Plus" mode.</p>
