@@ -116,8 +116,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:af290d78441583d1d6ba02da01904f328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb295e706897d7ada3249d8b027fde7b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#adb295e706897d7ada3249d8b027fde7b">bmap</a> )(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t blocksize, uint64_t idx)</td></tr>
 <tr class="separator:adb295e706897d7ada3249d8b027fde7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399da4f164985be5f5b93ef5b33551da"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a399da4f164985be5f5b93ef5b33551da">ioctl</a> )(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td></tr>
-<tr class="separator:a399da4f164985be5f5b93ef5b33551da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac954bd3cfab3c8d6000089a6fbb799"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a9ac954bd3cfab3c8d6000089a6fbb799">ioctl</a> )(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td></tr>
+<tr class="separator:a9ac954bd3cfab3c8d6000089a6fbb799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50abf8a54b6c73a5a40123b6cf63c71e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a50abf8a54b6c73a5a40123b6cf63c71e">poll</a> )(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct fuse_pollhandle *ph)</td></tr>
 <tr class="separator:a50abf8a54b6c73a5a40123b6cf63c71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b40ed06d1297f244363a8dcd40d44aa"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a3b40ed06d1297f244363a8dcd40d44aa">write_buf</a> )(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
@@ -614,14 +614,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a399da4f164985be5f5b93ef5b33551da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a399da4f164985be5f5b93ef5b33551da">&#9670;&nbsp;</a></span>ioctl</h2>
+<a id="a9ac954bd3cfab3c8d6000089a6fbb799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac954bd3cfab3c8d6000089a6fbb799">&#9670;&nbsp;</a></span>ioctl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::ioctl)(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::ioctl)(<a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -644,7 +644,7 @@ Data Fields</h2></td></tr>
 </dl>
 <p>Note : the unsigned long request submitted by the application is truncated to 32 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h_source.html#l01022">1022</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h_source.html#l01026">1026</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>

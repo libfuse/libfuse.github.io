@@ -116,8 +116,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a14b47789c53aa750ed2cfea92cacc9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3f3482e33a0eada0292350d76b82901"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ae3f3482e33a0eada0292350d76b82901">bmap</a> )(const char *, size_t blocksize, uint64_t *idx)</td></tr>
 <tr class="separator:ae3f3482e33a0eada0292350d76b82901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f0612d67a6b76bf10fe6a71b0e3b5b"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a37f0612d67a6b76bf10fe6a71b0e3b5b">ioctl</a> )(const char *, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
-<tr class="separator:a37f0612d67a6b76bf10fe6a71b0e3b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b7b69192ccea64059182be90d3d63b"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#ad5b7b69192ccea64059182be90d3d63b">ioctl</a> )(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td></tr>
+<tr class="separator:ad5b7b69192ccea64059182be90d3d63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c02838d30391c09dd5213edc61e106a"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a2c02838d30391c09dd5213edc61e106a">poll</a> )(const char *, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, struct fuse_pollhandle *ph, unsigned *reventsp)</td></tr>
 <tr class="separator:a2c02838d30391c09dd5213edc61e106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89f400083a03ddcc43e47ce126b6761f"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__operations.html#a89f400083a03ddcc43e47ce126b6761f">write_buf</a> )(const char *, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *buf, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *)</td></tr>
@@ -191,7 +191,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Change the permission bits of a file</p>
-<p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open. </p>
+<p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open.</p>
+<p>Change the permission bits of a file</p>
+<p><code>fi</code> will always be NULL if the file is not currently open, but may also be NULL if the file is open. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00367">367</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
 
@@ -210,6 +212,9 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Change the owner and group of a file</p>
 <p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits.</p>
+<p>Change the owner and group of a file</p>
+<p><code>fi</code> will always be NULL if the file is not currently open, but may also be NULL if the file is open.</p>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00377">377</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
@@ -423,14 +428,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a37f0612d67a6b76bf10fe6a71b0e3b5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37f0612d67a6b76bf10fe6a71b0e3b5b">&#9670;&nbsp;</a></span>ioctl</h2>
+<a id="ad5b7b69192ccea64059182be90d3d63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b7b69192ccea64059182be90d3d63b">&#9670;&nbsp;</a></span>ioctl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* fuse_operations::ioctl)(const char *, int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
+          <td class="memname">int(* fuse_operations::ioctl)(const char *, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *, unsigned int flags, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,7 +444,7 @@ Data Fields</h2></td></tr>
 <p>If flags has FUSE_IOCTL_DIR then the <a class="el" href="structfuse__file__info.html">fuse_file_info</a> refers to a directory file handle.</p>
 <p>Note : the unsigned long request submitted by the application is truncated to 32 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00684">684</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00687">687</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -849,6 +854,9 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Change the size of a file</p>
 <p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open.</p>
+<p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits.</p>
+<p>Change the size of a file</p>
+<p><code>fi</code> will always be NULL if the file is not currently open, but may also be NULL if the file is open.</p>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00387">387</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
@@ -886,6 +894,10 @@ Data Fields</h2></td></tr>
 <p>Change the access and modification times of a file with nanosecond resolution</p>
 <p>This supersedes the old utime() interface. New applications should use this.</p>
 <p><code>fi</code> will always be NULL if the file is not currenlty open, but may also be NULL if the file is open.</p>
+<p>See the utimensat(2) man page for details.</p>
+<p>Change the access and modification times of a file with nanosecond resolution</p>
+<p>This supersedes the old utime() interface. New applications should use this.</p>
+<p><code>fi</code> will always be NULL if the file is not currently open, but may also be NULL if the file is open.</p>
 <p>See the utimensat(2) man page for details. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html#l00656">656</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse_8h_source.html">fuse.h</a>.</p>
