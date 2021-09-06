@@ -44,7 +44,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -75,7 +75,7 @@ Data Fields</h2></td></tr>
 <div class="textblock"><p>Information about an open file.</p>
 <p>File Handles are created by the open, opendir, and create methods and closed by the release and releasedir methods. Multiple file handles may be concurrently open for the same file. Generally, a client will create one file handle per file descriptor, though in some cases multiple file descriptors can share a single file handle. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00044">44</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00044">44</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="af51d1a8d47e7a9d57b4aa15c11da238d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af51d1a8d47e7a9d57b4aa15c11da238d">&#9670;&nbsp;</a></span>cache_readdir</h2>
@@ -90,7 +90,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be filled in by opendir. It signals the kernel to enable caching of entries returned by readdir(). Has no effect when set in other contexts (in particular it does nothing when set by open()). </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00084">84</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00084">84</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -107,7 +107,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be filled in by open, to use direct I/O on this file. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00057">57</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00057">57</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -124,7 +124,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>File handle id. May be filled in by filesystem in create, open, and opendir(). Available in most other file operations on the same file handle. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00093">93</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00093">93</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -141,7 +141,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Open flags. Available in open() and release() </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00046">46</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00046">46</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -158,7 +158,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Indicates a flush operation. Set in flush operation, also maybe set in highlevel lock operation and lowlevel release operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00069">69</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00069">69</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -175,7 +175,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be filled in by open. It signals the kernel that any currently cached file data (ie., data that the filesystem provided the last time the file was open) need not be invalidated. Has no effect when set in other contexts (in particular it does nothing when set by opendir()). </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00064">64</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00064">64</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -192,7 +192,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Lock owner id. Available in locking operations and flush </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00096">96</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00096">96</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +209,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be filled in by open, to indicate that the file is not seekable. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00073">73</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00073">73</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -226,7 +226,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Padding. Reserved for future use </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00087">87</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00087">87</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -243,7 +243,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Requested poll events. Available in -&gt;poll. Only set on kernels which support it. If unsupported, this field is set to zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00100">100</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00100">100</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -260,12 +260,12 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>In case of a write operation indicates if this was caused by a delayed write from the page cache. If so, then the context's pid, uid, and gid fields will not be valid, and the <em>fh</em> value may not match the <em>fh</em> value that would have been sent with the corresponding individual write requests if write caching had been disabled. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html#l00054">54</a> of file <a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00054">54</a> of file <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>fuse-3.10.1/include/<a class="el" href="fuse-3_810_81_2include_2fuse__common_8h_source.html">fuse_common.h</a></li>
+<li>fuse-3.10.4/include/<a class="el" href="fuse-3_810_84_2include_2fuse__common_8h_source.html">fuse_common.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

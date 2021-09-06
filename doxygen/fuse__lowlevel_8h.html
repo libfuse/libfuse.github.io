@@ -165,8 +165,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa6d77679a110582684e9ca2da623bbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f1e538aa3287e251afbe985438c4249"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:a5f1e538aa3287e251afbe985438c4249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13aa0ce912c020d9c8fbedaf12e787a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a13aa0ce912c020d9c8fbedaf12e787a7">fuse_session_loop_mt_31</a> (struct fuse_session *se, int clone_fd)</td></tr>
-<tr class="separator:a13aa0ce912c020d9c8fbedaf12e787a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf73f7cd9149b60f9635b8eac429fb1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#abf73f7cd9149b60f9635b8eac429fb1f">fuse_session_loop_mt</a> (struct fuse_session *se, struct <a class="el" href="structfuse__loop__config.html">fuse_loop_config</a> *config)</td></tr>
+<tr class="separator:abf73f7cd9149b60f9635b8eac429fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a198429f3fbc23ef29ef9971271827690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:a198429f3fbc23ef29ef9971271827690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d015de77ae0edeb3157321e7a5c434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434">fuse_session_reset</a> (struct fuse_session *se)</td></tr>
@@ -1155,8 +1155,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Reply with an error code or success.</p>
-<p>Possible requests: all except forget</p>
-<p>Whereever possible, error codes should be chosen from the list of documented error conditions in the corresponding system calls manpage.</p>
+<p>Possible requests: all except forget, forget_multi, retrieve_reply</p>
+<p>Wherever possible, error codes should be chosen from the list of documented error conditions in the corresponding system calls manpage.</p>
 <p>An error code of ENOSYS is sometimes treated specially. This is indicated in the documentation of the affected handler functions.</p>
 <p>The following requests may be answered with a zero error code: unlink, rmdir, rename, flush, release, fsync, fsyncdir, setxattr, removexattr, setlk.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -2053,14 +2053,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a13aa0ce912c020d9c8fbedaf12e787a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13aa0ce912c020d9c8fbedaf12e787a7">&#9670;&nbsp;</a></span>fuse_session_loop_mt_31()</h2>
+<a id="abf73f7cd9149b60f9635b8eac429fb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf73f7cd9149b60f9635b8eac429fb1f">&#9670;&nbsp;</a></span>fuse_session_loop_mt()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_session_loop_mt_31 </td>
+          <td class="memname">int fuse_session_loop_mt </td>
           <td>(</td>
           <td class="paramtype">struct fuse_session *&#160;</td>
           <td class="paramname"><em>se</em>, </td>
@@ -2068,8 +2068,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>clone_fd</em>&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structfuse__loop__config.html">fuse_loop_config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2088,8 +2088,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>see <a class="el" href="fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="fuse__loop__mt_8c_source.html#l00356">356</a> of file <a class="el" href="fuse__loop__mt_8c_source.html">fuse_loop_mt.c</a>.</p>
 
 </div>
 </div>
