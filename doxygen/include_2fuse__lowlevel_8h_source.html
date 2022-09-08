@@ -377,67 +377,86 @@ $(function() {
 <div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;<span class="comment"> * Filesystem setup &amp; teardown                                 *</span></div>
 <div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;<span class="comment"> * ----------------------------------------------------------- */</span></div>
 <div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160; </div>
-<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;<span class="keyword">struct </span>fuse_cmdline_opts {</div>
-<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        <span class="keywordtype">int</span> singlethread;</div>
-<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;        <span class="keywordtype">int</span> foreground;</div>
-<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;        <span class="keywordtype">int</span> debug;</div>
-<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;        <span class="keywordtype">int</span> nodefault_subtype;</div>
-<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;        <span class="keywordtype">char</span> *mountpoint;</div>
-<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;        <span class="keywordtype">int</span> show_version;</div>
-<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;        <span class="keywordtype">int</span> show_help;</div>
-<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;        <span class="keywordtype">int</span> clone_fd;</div>
-<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_idle_threads;</div>
-<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;};</div>
-<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160; </div>
-<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;                       <span class="keyword">struct</span> fuse_cmdline_opts *opts);</div>
-<div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160; </div>
-<div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;<span class="keyword">struct </span>fuse_session *<a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;                                      <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op,</div>
-<div class="line"><a name="l01934"></a><span class="lineno"> 1934</span>&#160;                                      <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *userdata);</div>
-<div class="line"><a name="l01935"></a><span class="lineno"> 1935</span>&#160; </div>
-<div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">const</span> <span class="keywordtype">char</span> *mountpoint);</div>
-<div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160; </div>
-<div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l01969"></a><span class="lineno"> 1969</span>&#160; </div>
-<div class="line"><a name="l01970"></a><span class="lineno"> 1970</span>&#160;<span class="preprocessor">#if FUSE_USE_VERSION &lt; 32</span></div>
-<div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;<span class="keywordtype">int</span> fuse_session_loop_mt_31(<span class="keyword">struct</span> fuse_session *se, <span class="keywordtype">int</span> clone_fd);</div>
-<div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160;<span class="preprocessor">#define fuse_session_loop_mt(se, clone_fd) fuse_session_loop_mt_31(se, clone_fd)</span></div>
-<div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;<span class="preprocessor">#if (!defined(__UCLIBC__) &amp;&amp; !defined(__APPLE__))</span></div>
-<div class="line"><a name="l01986"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#abf73f7cd9149b60f9635b8eac429fb1f"> 1986</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#abf73f7cd9149b60f9635b8eac429fb1f">fuse_session_loop_mt</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__loop__config.html">fuse_loop_config</a> *config);</div>
-<div class="line"><a name="l01987"></a><span class="lineno"> 1987</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01988"></a><span class="lineno"> 1988</span>&#160;<span class="keywordtype">int</span> fuse_session_loop_mt_32(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__loop__config.html">fuse_loop_config</a> *config);</div>
-<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;<span class="preprocessor">#define fuse_session_loop_mt(se, config) fuse_session_loop_mt_32(se, config)</span></div>
-<div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160; </div>
-<div class="line"><a name="l02002"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690"> 2002</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160; </div>
-<div class="line"><a name="l02009"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434"> 2009</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434">fuse_session_reset</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02010"></a><span class="lineno"> 2010</span>&#160; </div>
-<div class="line"><a name="l02017"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#a41b12193fa1520ff658d65679f4e513c"> 2017</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a41b12193fa1520ff658d65679f4e513c">fuse_session_exited</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02018"></a><span class="lineno"> 2018</span>&#160; </div>
-<div class="line"><a name="l02043"></a><span class="lineno"> 2043</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02044"></a><span class="lineno"> 2044</span>&#160; </div>
-<div class="line"><a name="l02050"></a><span class="lineno"> 2050</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02051"></a><span class="lineno"> 2051</span>&#160; </div>
-<div class="line"><a name="l02052"></a><span class="lineno"> 2052</span>&#160;<span class="comment">/* ----------------------------------------------------------- *</span></div>
-<div class="line"><a name="l02053"></a><span class="lineno"> 2053</span>&#160;<span class="comment"> * Custom event loop support                                   *</span></div>
-<div class="line"><a name="l02054"></a><span class="lineno"> 2054</span>&#160;<span class="comment"> * ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l02055"></a><span class="lineno"> 2055</span>&#160; </div>
-<div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a4bf19badb53d92d31d6b2fb131546a2d">fuse_session_fd</a>(<span class="keyword">struct</span> fuse_session *se);</div>
-<div class="line"><a name="l02071"></a><span class="lineno"> 2071</span>&#160; </div>
-<div class="line"><a name="l02080"></a><span class="lineno"> 2080</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a411ee86ec4657ea954402a9ca263e6d0">fuse_session_process_buf</a>(<span class="keyword">struct</span> fuse_session *se,</div>
-<div class="line"><a name="l02081"></a><span class="lineno"> 2081</span>&#160;                              <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structfuse__buf.html">fuse_buf</a> *buf);</div>
-<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160; </div>
-<div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#aa434f1c9e7d71c4ed219c4dc3b1deae7">fuse_session_receive_buf</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__buf.html">fuse_buf</a> *buf);</div>
+<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;<span class="keyword">struct </span><a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> {</div>
+<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;        <span class="keywordtype">int</span> singlethread;</div>
+<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;        <span class="keywordtype">int</span> foreground;</div>
+<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;        <span class="keywordtype">int</span> debug;</div>
+<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        <span class="keywordtype">int</span> nodefault_subtype;</div>
+<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;        <span class="keywordtype">char</span> *mountpoint;</div>
+<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160;        <span class="keywordtype">int</span> show_version;</div>
+<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        <span class="keywordtype">int</span> show_help;</div>
+<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;        <span class="keywordtype">int</span> clone_fd;</div>
+<div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_idle_threads; <span class="comment">/* discouraged, due to thread</span></div>
+<div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;<span class="comment">                                        * destruct overhead */</span></div>
+<div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160; </div>
+<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;        <span class="comment">/* Added in libfuse-3.12 */</span></div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_threads;</div>
+<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;};</div>
+<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160; </div>
+<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;<span class="preprocessor">#if (!defined(__UCLIBC__) &amp;&amp; !defined(__APPLE__))</span></div>
+<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;                       <span class="keyword">struct</span> <a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts);</div>
+<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;<span class="preprocessor">#if FUSE_USE_VERSION &lt; FUSE_MAKE_VERSION(3, 12)</span></div>
+<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;<span class="keywordtype">int</span> fuse_parse_cmdline_30(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;                           <span class="keyword">struct</span> <a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts);</div>
+<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;<span class="preprocessor">#define fuse_parse_cmdline(args, opts) fuse_parse_cmdline_30(args, opts)</span></div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;<span class="keywordtype">int</span> fuse_parse_cmdline_312(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;                           <span class="keyword">struct</span> <a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts);</div>
+<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;<span class="preprocessor">#define fuse_parse_cmdline(args, opts) fuse_parse_cmdline_312(args, opts)</span></div>
+<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160; </div>
+<div class="line"><a name="l01953"></a><span class="lineno"> 1953</span>&#160;<span class="keyword">struct </span>fuse_session *<a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a name="l01954"></a><span class="lineno"> 1954</span>&#160;                                      <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op,</div>
+<div class="line"><a name="l01955"></a><span class="lineno"> 1955</span>&#160;                                      <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *userdata);</div>
+<div class="line"><a name="l01956"></a><span class="lineno"> 1956</span>&#160; </div>
+<div class="line"><a name="l01965"></a><span class="lineno"> 1965</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">const</span> <span class="keywordtype">char</span> *mountpoint);</div>
+<div class="line"><a name="l01966"></a><span class="lineno"> 1966</span>&#160; </div>
+<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160; </div>
+<div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;<span class="preprocessor">#if FUSE_USE_VERSION &lt; 32</span></div>
+<div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160;        <span class="keywordtype">int</span> fuse_session_loop_mt_31(<span class="keyword">struct</span> fuse_session *se, <span class="keywordtype">int</span> clone_fd);</div>
+<div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;<span class="preprocessor">        #define fuse_session_loop_mt(se, clone_fd) fuse_session_loop_mt_31(se, clone_fd)</span></div>
+<div class="line"><a name="l01994"></a><span class="lineno"> 1994</span>&#160;<span class="preprocessor">#elif FUSE_USE_VERSION &lt; FUSE_MAKE_VERSION(3, 12)</span></div>
+<div class="line"><a name="l01995"></a><span class="lineno"> 1995</span>&#160;        <span class="keywordtype">int</span> fuse_session_loop_mt_32(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__loop__config.html">fuse_loop_config</a> *config);</div>
+<div class="line"><a name="l01996"></a><span class="lineno"> 1996</span>&#160;<span class="preprocessor">        #define fuse_session_loop_mt(se, config) fuse_session_loop_mt_32(se, config)</span></div>
+<div class="line"><a name="l01997"></a><span class="lineno"> 1997</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l01998"></a><span class="lineno"> 1998</span>&#160;<span class="preprocessor">        #if (!defined(__UCLIBC__) &amp;&amp; !defined(__APPLE__))</span></div>
+<div class="line"><a name="l02010"></a><span class="lineno"> 2010</span>&#160;                <span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#abf73f7cd9149b60f9635b8eac429fb1f">fuse_session_loop_mt</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__loop__config.html">fuse_loop_config</a> *config);</div>
+<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160;<span class="preprocessor">        #else</span></div>
+<div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160;                <span class="keywordtype">int</span> fuse_session_loop_mt_312(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__loop__config.html">fuse_loop_config</a> *config);</div>
+<div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;<span class="preprocessor">                #define fuse_session_loop_mt(se, config) fuse_session_loop_mt_312(se, config)</span></div>
+<div class="line"><a name="l02014"></a><span class="lineno"> 2014</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l02015"></a><span class="lineno"> 2015</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02016"></a><span class="lineno"> 2016</span>&#160; </div>
+<div class="line"><a name="l02026"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690"> 2026</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l02027"></a><span class="lineno"> 2027</span>&#160; </div>
+<div class="line"><a name="l02033"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434"> 2033</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ab3d015de77ae0edeb3157321e7a5c434">fuse_session_reset</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l02034"></a><span class="lineno"> 2034</span>&#160; </div>
+<div class="line"><a name="l02041"></a><span class="lineno"><a class="line" href="include_2fuse__lowlevel_8h.html#a41b12193fa1520ff658d65679f4e513c"> 2041</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a41b12193fa1520ff658d65679f4e513c">fuse_session_exited</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l02042"></a><span class="lineno"> 2042</span>&#160; </div>
+<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160; </div>
+<div class="line"><a name="l02074"></a><span class="lineno"> 2074</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(<span class="keyword">struct</span> fuse_session *se);</div>
+<div class="line"><a name="l02075"></a><span class="lineno"> 2075</span>&#160; </div>
+<div class="line"><a name="l02076"></a><span class="lineno"> 2076</span>&#160;<span class="comment">/* ----------------------------------------------------------- *</span></div>
+<div class="line"><a name="l02077"></a><span class="lineno"> 2077</span>&#160;<span class="comment"> * Custom event loop support                                   *</span></div>
+<div class="line"><a name="l02078"></a><span class="lineno"> 2078</span>&#160;<span class="comment"> * ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l02079"></a><span class="lineno"> 2079</span>&#160; </div>
+<div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a4bf19badb53d92d31d6b2fb131546a2d">fuse_session_fd</a>(<span class="keyword">struct</span> fuse_session *se);</div>
 <div class="line"><a name="l02095"></a><span class="lineno"> 2095</span>&#160; </div>
-<div class="line"><a name="l02096"></a><span class="lineno"> 2096</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l02097"></a><span class="lineno"> 2097</span>&#160;}</div>
-<div class="line"><a name="l02098"></a><span class="lineno"> 2098</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02099"></a><span class="lineno"> 2099</span>&#160; </div>
-<div class="line"><a name="l02100"></a><span class="lineno"> 2100</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUSE_LOWLEVEL_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l02104"></a><span class="lineno"> 2104</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a411ee86ec4657ea954402a9ca263e6d0">fuse_session_process_buf</a>(<span class="keyword">struct</span> fuse_session *se,</div>
+<div class="line"><a name="l02105"></a><span class="lineno"> 2105</span>&#160;                              <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structfuse__buf.html">fuse_buf</a> *buf);</div>
+<div class="line"><a name="l02106"></a><span class="lineno"> 2106</span>&#160; </div>
+<div class="line"><a name="l02118"></a><span class="lineno"> 2118</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#aa434f1c9e7d71c4ed219c4dc3b1deae7">fuse_session_receive_buf</a>(<span class="keyword">struct</span> fuse_session *se, <span class="keyword">struct</span> <a class="code" href="structfuse__buf.html">fuse_buf</a> *buf);</div>
+<div class="line"><a name="l02119"></a><span class="lineno"> 2119</span>&#160; </div>
+<div class="line"><a name="l02120"></a><span class="lineno"> 2120</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l02121"></a><span class="lineno"> 2121</span>&#160;}</div>
+<div class="line"><a name="l02122"></a><span class="lineno"> 2122</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02123"></a><span class="lineno"> 2123</span>&#160; </div>
+<div class="line"><a name="l02124"></a><span class="lineno"> 2124</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUSE_LOWLEVEL_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="afuse-3_810_84_2include_2fuse__common_8h_html_aec0ad71a3e8c357ebe7e87cdecbdbe18"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a></div><div class="ttdeci">fuse_buf_copy_flags</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00657">fuse_common.h:657</a></div></div>
 <div class="ttc" id="afuse-3_810_84_2include_2fuse__lowlevel_8h_html_a08b5503c4e9656f9c4bc88331233cc65"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a></div><div class="ttdeci">void fuse_session_destroy(struct fuse_session *se)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02708">fuse_lowlevel.c:2708</a></div></div>
 <div class="ttc" id="afuse-3_810_84_2include_2fuse__lowlevel_8h_html_a1242694fe0fb6e253a88b57795987302"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a1242694fe0fb6e253a88b57795987302">fuse_reply_data</a></div><div class="ttdeci">int fuse_reply_data(fuse_req_t req, struct fuse_bufvec *bufv, enum fuse_buf_copy_flags flags)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00851">fuse_lowlevel.c:851</a></div></div>
@@ -497,6 +516,7 @@ $(function() {
 <div class="ttc" id="astructfuse__bufvec_html"><div class="ttname"><a href="structfuse__bufvec.html">fuse_bufvec</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00743">fuse_common.h:743</a></div></div>
 <div class="ttc" id="astructfuse__bufvec_html_a0fbb583168d52562f0f848562ecf63bc"><div class="ttname"><a href="structfuse__bufvec.html#a0fbb583168d52562f0f848562ecf63bc">fuse_bufvec::off</a></div><div class="ttdeci">size_t off</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00757">fuse_common.h:757</a></div></div>
 <div class="ttc" id="astructfuse__bufvec_html_ac303661a9c39ade1feeb05d8238b4ed6"><div class="ttname"><a href="structfuse__bufvec.html#ac303661a9c39ade1feeb05d8238b4ed6">fuse_bufvec::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00747">fuse_common.h:747</a></div></div>
+<div class="ttc" id="astructfuse__cmdline__opts_html"><div class="ttname"><a href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l01871">fuse_lowlevel.h:1871</a></div></div>
 <div class="ttc" id="astructfuse__conn__info_html"><div class="ttname"><a href="structfuse__conn__info.html">fuse_conn_info</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00421">fuse_common.h:421</a></div></div>
 <div class="ttc" id="astructfuse__ctx_html"><div class="ttname"><a href="structfuse__ctx.html">fuse_ctx</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l00111">fuse_lowlevel.h:111</a></div></div>
 <div class="ttc" id="astructfuse__ctx_html_a056667c9ce324cb56b833e981aef8b5b"><div class="ttname"><a href="structfuse__ctx.html#a056667c9ce324cb56b833e981aef8b5b">fuse_ctx::pid</a></div><div class="ttdeci">pid_t pid</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l00119">fuse_lowlevel.h:119</a></div></div>

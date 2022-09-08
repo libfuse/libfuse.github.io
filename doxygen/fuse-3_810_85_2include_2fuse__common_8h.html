@@ -134,10 +134,13 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="fuse-3_810_85_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58ad67d5c6075febad0594f06d46d02bfa9">FUSE_BUF_FD_SEEK</a> = (1 &lt;&lt; 2)
 , <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58af89b4b00a2d4a06d8458b320c2cb28cf">FUSE_BUF_FD_RETRY</a> = (1 &lt;&lt; 3)
+, <a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58affd5b3b7e9cdd5f89b3126eea96e033b">FUSE_BUF_IS_FD</a> = (1 &lt;&lt; 1)
+, <a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58ad67d5c6075febad0594f06d46d02bfa9">FUSE_BUF_FD_SEEK</a> = (1 &lt;&lt; 2)
+, <br />
+&#160;&#160;<a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58af89b4b00a2d4a06d8458b320c2cb28cf">FUSE_BUF_FD_RETRY</a> = (1 &lt;&lt; 3)
 , <a class="el" href="include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58affd5b3b7e9cdd5f89b3126eea96e033b">FUSE_BUF_IS_FD</a> = (1 &lt;&lt; 1)
 , <a class="el" href="include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58ad67d5c6075febad0594f06d46d02bfa9">FUSE_BUF_FD_SEEK</a> = (1 &lt;&lt; 2)
-, <br />
-&#160;&#160;<a class="el" href="include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58af89b4b00a2d4a06d8458b320c2cb28cf">FUSE_BUF_FD_RETRY</a> = (1 &lt;&lt; 3)
+, <a class="el" href="include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58af89b4b00a2d4a06d8458b320c2cb28cf">FUSE_BUF_FD_RETRY</a> = (1 &lt;&lt; 3)
 <br />
  }</td></tr>
 <tr class="separator:a5e36b839c4dbf0439bd85b61c7213a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +154,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18a375767de945f5178e8949d284abf1f5b">FUSE_BUF_FORCE_SPLICE</a> = (1 &lt;&lt; 2)
 , <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18af239e556066a5d73b3ff542216b157b9">FUSE_BUF_SPLICE_MOVE</a> = (1 &lt;&lt; 3)
 , <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18a32ec833f1eb4b5cd9283cf9d93021037">FUSE_BUF_SPLICE_NONBLOCK</a> = (1 &lt;&lt; 4)
+, <br />
+&#160;&#160;<a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18adcef8052c48f314d4d9f9f05a5b4f838">FUSE_BUF_NO_SPLICE</a> = (1 &lt;&lt; 1)
+, <a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18a375767de945f5178e8949d284abf1f5b">FUSE_BUF_FORCE_SPLICE</a> = (1 &lt;&lt; 2)
+, <a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18af239e556066a5d73b3ff542216b157b9">FUSE_BUF_SPLICE_MOVE</a> = (1 &lt;&lt; 3)
+, <a class="el" href="fuse-3_811_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18a32ec833f1eb4b5cd9283cf9d93021037">FUSE_BUF_SPLICE_NONBLOCK</a> = (1 &lt;&lt; 4)
 , <br />
 &#160;&#160;<a class="el" href="include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18adcef8052c48f314d4d9f9f05a5b4f838">FUSE_BUF_NO_SPLICE</a> = (1 &lt;&lt; 1)
 , <a class="el" href="include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18a375767de945f5178e8949d284abf1f5b">FUSE_BUF_FORCE_SPLICE</a> = (1 &lt;&lt; 2)
@@ -702,6 +710,19 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aec0ad71a3e8c357ebe7e87cdecbdbe18a32ec833f1eb4b5cd9283cf9d93021037"></a>FUSE_BUF_SPLICE_NONBLOCK&#160;</td><td class="fielddoc"><p>Don't block on the pipe when copying data with splice</p>
 <p>Makes the operations on the pipe non-blocking (if the pipe is full or empty). See SPLICE_F_NONBLOCK in the splice(2) man page. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="aec0ad71a3e8c357ebe7e87cdecbdbe18adcef8052c48f314d4d9f9f05a5b4f838"></a>FUSE_BUF_NO_SPLICE&#160;</td><td class="fielddoc"><p>Don't use splice(2)</p>
+<p>Always fall back to using read and write instead of splice(2) to copy data from one file descriptor to another.</p>
+<p>If this flag is not set, then only fall back if splice is unavailable. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec0ad71a3e8c357ebe7e87cdecbdbe18a375767de945f5178e8949d284abf1f5b"></a>FUSE_BUF_FORCE_SPLICE&#160;</td><td class="fielddoc"><p>Force splice</p>
+<p>Always use splice(2) to copy data from one file descriptor to another. If splice is not available, return -EINVAL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec0ad71a3e8c357ebe7e87cdecbdbe18af239e556066a5d73b3ff542216b157b9"></a>FUSE_BUF_SPLICE_MOVE&#160;</td><td class="fielddoc"><p>Try to move data with splice.</p>
+<p>If splice is used, try to move pages from the source to the destination instead of copying. See documentation of SPLICE_F_MOVE in splice(2) man page. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec0ad71a3e8c357ebe7e87cdecbdbe18a32ec833f1eb4b5cd9283cf9d93021037"></a>FUSE_BUF_SPLICE_NONBLOCK&#160;</td><td class="fielddoc"><p>Don't block on the pipe when copying data with splice</p>
+<p>Makes the operations on the pipe non-blocking (if the pipe is full or empty). See SPLICE_F_NONBLOCK in the splice(2) man page. </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h_source.html#l00657">657</a> of file <a class="el" href="fuse-3_810_85_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
@@ -722,6 +743,15 @@ Functions</h2></td></tr>
 <p>Buffer flags </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5e36b839c4dbf0439bd85b61c7213a58affd5b3b7e9cdd5f89b3126eea96e033b"></a>FUSE_BUF_IS_FD&#160;</td><td class="fielddoc"><p>Buffer contains a file descriptor</p>
+<p>If this flag is set, the .fd field is valid, otherwise the .mem fields is valid. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5e36b839c4dbf0439bd85b61c7213a58ad67d5c6075febad0594f06d46d02bfa9"></a>FUSE_BUF_FD_SEEK&#160;</td><td class="fielddoc"><p>Seek on the file descriptor</p>
+<p>If this flag is set then the .pos field is valid and is used to seek to the given offset before performing operation on file descriptor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5e36b839c4dbf0439bd85b61c7213a58af89b4b00a2d4a06d8458b320c2cb28cf"></a>FUSE_BUF_FD_RETRY&#160;</td><td class="fielddoc"><p>Retry operation on file descriptor</p>
+<p>If this flag is set then retry operation on file descriptor until .size bytes have been copied or an error or EOF is detected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5e36b839c4dbf0439bd85b61c7213a58affd5b3b7e9cdd5f89b3126eea96e033b"></a>FUSE_BUF_IS_FD&#160;</td><td class="fielddoc"><p>Buffer contains a file descriptor</p>
 <p>If this flag is set, the .fd field is valid, otherwise the .mem fields is valid. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5e36b839c4dbf0439bd85b61c7213a58ad67d5c6075febad0594f06d46d02bfa9"></a>FUSE_BUF_FD_SEEK&#160;</td><td class="fielddoc"><p>Seek on the file descriptor</p>
@@ -882,7 +912,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
+<p>Compatibility ABI symbol for systems that do not support version symboling </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html#l00225">225</a> of file <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html">helper.c</a>.</p>
 

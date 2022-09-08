@@ -377,7 +377,7 @@ $(function() {
 <div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;<span class="comment"> * Filesystem setup &amp; teardown                                 *</span></div>
 <div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;<span class="comment"> * ----------------------------------------------------------- */</span></div>
 <div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160; </div>
-<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;<span class="keyword">struct </span>fuse_cmdline_opts {</div>
+<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;<span class="keyword">struct </span><a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> {</div>
 <div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        <span class="keywordtype">int</span> singlethread;</div>
 <div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;        <span class="keywordtype">int</span> foreground;</div>
 <div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;        <span class="keywordtype">int</span> debug;</div>
@@ -390,7 +390,7 @@ $(function() {
 <div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;};</div>
 <div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160; </div>
 <div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;                       <span class="keyword">struct</span> fuse_cmdline_opts *opts);</div>
+<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;                       <span class="keyword">struct</span> <a class="code" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts);</div>
 <div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160; </div>
 <div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;<span class="keyword">struct </span>fuse_session *<a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new</a>(<span class="keyword">struct</span> <a class="code" href="structfuse__args.html">fuse_args</a> *args,</div>
 <div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;                                      <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op,</div>
@@ -497,6 +497,7 @@ $(function() {
 <div class="ttc" id="astructfuse__bufvec_html"><div class="ttname"><a href="structfuse__bufvec.html">fuse_bufvec</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00743">fuse_common.h:743</a></div></div>
 <div class="ttc" id="astructfuse__bufvec_html_a0fbb583168d52562f0f848562ecf63bc"><div class="ttname"><a href="structfuse__bufvec.html#a0fbb583168d52562f0f848562ecf63bc">fuse_bufvec::off</a></div><div class="ttdeci">size_t off</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00757">fuse_common.h:757</a></div></div>
 <div class="ttc" id="astructfuse__bufvec_html_ac303661a9c39ade1feeb05d8238b4ed6"><div class="ttname"><a href="structfuse__bufvec.html#ac303661a9c39ade1feeb05d8238b4ed6">fuse_bufvec::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00747">fuse_common.h:747</a></div></div>
+<div class="ttc" id="astructfuse__cmdline__opts_html"><div class="ttname"><a href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l01871">fuse_lowlevel.h:1871</a></div></div>
 <div class="ttc" id="astructfuse__conn__info_html"><div class="ttname"><a href="structfuse__conn__info.html">fuse_conn_info</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__common_8h_source.html#l00421">fuse_common.h:421</a></div></div>
 <div class="ttc" id="astructfuse__ctx_html"><div class="ttname"><a href="structfuse__ctx.html">fuse_ctx</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l00111">fuse_lowlevel.h:111</a></div></div>
 <div class="ttc" id="astructfuse__ctx_html_a056667c9ce324cb56b833e981aef8b5b"><div class="ttname"><a href="structfuse__ctx.html#a056667c9ce324cb56b833e981aef8b5b">fuse_ctx::pid</a></div><div class="ttdeci">pid_t pid</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2include_2fuse__lowlevel_8h_source.html#l00119">fuse_lowlevel.h:119</a></div></div>
