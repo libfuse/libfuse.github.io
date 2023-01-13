@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libfuse: example/hello_ll.c File Reference</title>
+<title>libfuse: example/hello_ll_uds.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,10 +43,11 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">hello_ll.c File Reference</div>  </div>
+<div class="title">hello_ll_uds.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>&gt;</code><br />
+<code>#include &lt;fuse_kernel.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -54,12 +55,14 @@ $(function() {
 <code>#include &lt;fcntl.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;sys/un.h&gt;</code><br />
 </div>
-<p><a href="hello__ll_8c_source.html">Go to the source code of this file.</a></p>
+<p><a href="hello__ll__uds_8c_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>minimal example filesystem using low-level API</p>
-<p>Compile with: </p><pre class="fragment">gcc -Wall hello_ll.c `pkg-config fuse3 --cflags --libs` -o hello_ll
-</pre> <h2><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><p>minimal example filesystem using low-level API and a custom io. This custom io is implemented using UNIX domain sockets (of type SOCK_STREAM)</p>
+<p>Compile with: </p><pre class="fragment">gcc -Wall hello_ll_uds.c `pkg-config fuse3 --cflags --libs` -o hello_ll_uds
+</pre> <h2><a class="anchor" id="autotoc_md7"></a>
 Source code</h2>
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">  FUSE: Filesystem in Userspace</span></div>
@@ -309,7 +312,7 @@ Source code</h2>
 <div class="ttc" id="astructfuse__lowlevel__ops_html"><div class="ttname"><a href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse__lowlevel_8h_source.html#l00192">fuse_lowlevel.h:192</a></div></div>
 <div class="ttc" id="astructfuse__lowlevel__ops_html_a7f46abd7c2795cfcf7a3d8c5ee8f6c70"><div class="ttname"><a href="structfuse__lowlevel__ops.html#a7f46abd7c2795cfcf7a3d8c5ee8f6c70">fuse_lowlevel_ops::lookup</a></div><div class="ttdeci">void(* lookup)(fuse_req_t req, fuse_ino_t parent, const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="fuse__lowlevel_8h_source.html#l00235">fuse_lowlevel.h:235</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition in file <a class="el" href="hello__ll_8c_source.html">hello_ll.c</a>.</p>
+<p class="definition">Definition in file <a class="el" href="hello__ll__uds_8c_source.html">hello_ll_uds.c</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
