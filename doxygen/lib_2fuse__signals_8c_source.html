@@ -56,7 +56,7 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  See the file COPYING.LIB</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;config.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;fuse_config.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;fuse_lowlevel.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;fuse_i.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
@@ -70,9 +70,9 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> exit_handler(<span class="keywordtype">int</span> sig)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (fuse_instance) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(fuse_instance);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a>(fuse_instance);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">if</span>(sig &lt;= 0) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <a class="code" href="fuse-3_810_84_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;assertion error: signal value &lt;= 0\n&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <a class="code" href="fuse-3_813_80_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;assertion error: signal value &lt;= 0\n&quot;</span>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        abort();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                fuse_instance-&gt;error = sig;</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_810_84_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a>(<span class="keyword">struct</span> fuse_session *se)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fuse-3_813_80_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a>(<span class="keyword">struct</span> fuse_session *se)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">/* If we used SIG_IGN instead of the do_nothing function,</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">           then we would be unable to tell if we set SIG_IGN (and</span></div>
@@ -124,10 +124,10 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_810_84_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a>(<span class="keyword">struct</span> fuse_session *se)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fuse-3_813_80_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a>(<span class="keyword">struct</span> fuse_session *se)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (fuse_instance != se)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="fuse-3_810_84_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="fuse-3_813_80_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR,</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="stringliteral">&quot;fuse: fuse_remove_signal_handlers: unknown session\n&quot;</span>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                fuse_instance = NULL;</div>
@@ -137,10 +137,10 @@ $(function() {
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        set_one_signal_handler(SIGTERM, exit_handler, 1);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        set_one_signal_handler(SIGPIPE, do_nothing, 1);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="ttc" id="afuse-3_810_84_2include_2fuse__common_8h_html_a292dccc3c7b1799cb054efa2ba0c774b"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a></div><div class="ttdeci">int fuse_set_signal_handlers(struct fuse_session *se)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2fuse__signals_8c_source.html#l00062">fuse_signals.c:62</a></div></div>
-<div class="ttc" id="afuse-3_810_84_2include_2fuse__common_8h_html_aeb674bbc11074c4fe520b952d6bfdd30"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a></div><div class="ttdeci">void fuse_remove_signal_handlers(struct fuse_session *se)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2fuse__signals_8c_source.html#l00079">fuse_signals.c:79</a></div></div>
-<div class="ttc" id="afuse-3_810_84_2include_2fuse__log_8h_html_a4506ffd6ed3a631e01999b32b1eb8621"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a></div><div class="ttdeci">void fuse_log(enum fuse_log_level level, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2fuse__log_8c_source.html#l00033">fuse_log.c:33</a></div></div>
-<div class="ttc" id="afuse-3_810_84_2include_2fuse__lowlevel_8h_html_a198429f3fbc23ef29ef9971271827690"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a></div><div class="ttdeci">void fuse_session_exit(struct fuse_session *se)</div></div>
+<div class="ttc" id="afuse-3_813_80_2include_2fuse__common_8h_html_a292dccc3c7b1799cb054efa2ba0c774b"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a></div><div class="ttdeci">int fuse_set_signal_handlers(struct fuse_session *se)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2lib_2fuse__signals_8c_source.html#l00062">fuse_signals.c:62</a></div></div>
+<div class="ttc" id="afuse-3_813_80_2include_2fuse__common_8h_html_aeb674bbc11074c4fe520b952d6bfdd30"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a></div><div class="ttdeci">void fuse_remove_signal_handlers(struct fuse_session *se)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2lib_2fuse__signals_8c_source.html#l00079">fuse_signals.c:79</a></div></div>
+<div class="ttc" id="afuse-3_813_80_2include_2fuse__log_8h_html_a4506ffd6ed3a631e01999b32b1eb8621"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a></div><div class="ttdeci">void fuse_log(enum fuse_log_level level, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2lib_2fuse__log_8c_source.html#l00033">fuse_log.c:33</a></div></div>
+<div class="ttc" id="afuse-3_813_80_2include_2fuse__lowlevel_8h_html_a198429f3fbc23ef29ef9971271827690"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit</a></div><div class="ttdeci">void fuse_session_exit(struct fuse_session *se)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -45,7 +45,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -69,14 +69,14 @@ Data Fields</h2></td></tr>
 <tr class="separator:a2ce707ca8bfd6f6669557db7f37bb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a72f4702cf256e4861cc2b98486d08c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a0a72f4702cf256e4861cc2b98486d08c">time_gran</a></td></tr>
 <tr class="separator:a0a72f4702cf256e4861cc2b98486d08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b74a62be5ba5b4f4cf503dbfbd5a9f"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#a26b74a62be5ba5b4f4cf503dbfbd5a9f">reserved</a> [22]</td></tr>
-<tr class="separator:a26b74a62be5ba5b4f4cf503dbfbd5a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf11ab33c1240304127c9bcf555992d7"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__conn__info.html#aaf11ab33c1240304127c9bcf555992d7">reserved</a> [22]</td></tr>
+<tr class="separator:aaf11ab33c1240304127c9bcf555992d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Connection information, passed to the -&gt;init() method</p>
 <p>Some of the elements are read-write, these can be changed to indicate the value requested by the filesystem. The requested value must usually be smaller than the indicated value. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00451">451</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00451">451</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8a1c61f5d7cc14249fb6971165bb958e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a1c61f5d7cc14249fb6971165bb958e">&#9670;&nbsp;</a></span>capable</h2>
@@ -91,7 +91,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Capability flags that the kernel supports (read-only) </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00489">489</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00489">489</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -108,7 +108,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Kernel congestion threshold parameter. If the number of pending background requests exceeds this number, the FUSE kernel module will mark the filesystem as "congested". This instructs the kernel to expect that queued requests will take some time to complete, and to adjust its algorithms accordingly (e.g. by putting a waiting thread to sleep instead of using a busy-loop). </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00537">537</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00537">537</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -132,7 +132,7 @@ Data Fields</h2></td></tr>
 <p>Asynchronous direct I/O requests are generated if FUSE_CAP_ASYNC_DIO is enabled and userspace submits a large direct I/O request. In this case the kernel will internally split it up into multiple smaller requests and submit them to the filesystem concurrently.</p>
 <p>Note that the following requests are <em>not</em> background requests: writeback requests (limited by the kernel's flusher algorithm), regular (i.e., synchronous and buffered) userspace read/write requests (limited to one per thread), asynchronous read requests (Linux's io_submit(2) call actually blocks, so these are also limited to one per thread). </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00527">527</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00527">527</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -148,9 +148,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Maximum size of read requests. A value of zero indicates no limit. However, even if the filesystem does not specify a limit, the maximum size of read requests will still be limited by the kernel.</p>
-<p>NOTE: For the time being, the maximum size of read requests must be set both here <em>and</em> passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> using the <code>-o max_read=&lt;n&gt;</code> mount option. At some point in the future, specifying the mount option will no longer be necessary. </p>
+<p>NOTE: For the time being, the maximum size of read requests must be set both here <em>and</em> passed to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> using the <code>-o max_read=&lt;n&gt;</code> mount option. At some point in the future, specifying the mount option will no longer be necessary. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00479">479</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00479">479</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -167,7 +167,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Maximum readahead </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00484">484</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00484">484</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -184,7 +184,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Maximum size of the write buffer </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00465">465</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00465">465</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -201,7 +201,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Major version of the protocol (read-only) </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00455">455</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00455">455</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -218,24 +218,24 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Minor version of the protocol (read-only) </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00460">460</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00460">460</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
-<a id="a26b74a62be5ba5b4f4cf503dbfbd5a9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26b74a62be5ba5b4f4cf503dbfbd5a9f">&#9670;&nbsp;</a></span>reserved</h2>
+<a id="aaf11ab33c1240304127c9bcf555992d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf11ab33c1240304127c9bcf555992d7">&#9670;&nbsp;</a></span>reserved</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned fuse_conn_info::reserved[22]</td>
+          <td class="memname">unsigned fuse_conn_info::reserved</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>For future use. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00559">559</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00559">559</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +253,7 @@ Data Fields</h2></td></tr>
 <p>When FUSE_CAP_WRITEBACK_CACHE is enabled, the kernel is responsible for updating mtime and ctime when write requests are received. The updated values are passed to the filesystem with setattr() requests. However, if the filesystem does not support the full resolution of the kernel timestamps (nanoseconds), the mtime and ctime values used by kernel and filesystem will differ (and result in an apparent change of times after a cache flush).</p>
 <p>To prevent this problem, this variable can be used to inform the kernel about the timestamp granularity supported by the file-system. The value should be power of 10. The default is 1, i.e. full nano-second resolution. Filesystems supporting only second resolution should set this to 1000000000. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00554">554</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00554">554</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -271,12 +271,12 @@ Data Fields</h2></td></tr>
 <p>Capability flags that the filesystem wants to enable.</p>
 <p>libfuse attempts to initialize this field with reasonable default values before calling the init() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00497">497</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00497">497</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="fuse__common_8h_source.html">fuse_common.h</a></li>
+<li>fuse-3.13.0/include/<a class="el" href="fuse-3_813_80_2include_2fuse__common_8h_source.html">fuse_common.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

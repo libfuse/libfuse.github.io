@@ -46,6 +46,7 @@ $(function() {
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fuse_lowlevel.h File Reference</div>  </div>
@@ -83,76 +84,83 @@ Typedefs</h2></td></tr>
 <tr class="separator:ad119a72f00b4cd2e4a500fd3364ae1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e2aa4a8905a05397292ae047cd2257"><td class="memItemLeft" align="right" valign="top">typedef struct fuse_req *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a></td></tr>
 <tr class="separator:a33e2aa4a8905a05397292ae047cd2257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fe719ed24a713bb5d17e4e7a0dde730"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a1fe719ed24a713bb5d17e4e7a0dde730">fuse_interrupt_func_t</a>) (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *data)</td></tr>
+<tr class="memitem:a1fe719ed24a713bb5d17e4e7a0dde730"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a1fe719ed24a713bb5d17e4e7a0dde730">fuse_interrupt_func_t</a>) (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *data)</td></tr>
 <tr class="separator:a1fe719ed24a713bb5d17e4e7a0dde730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a0e3e2ebf20e6185c1963656353fb5c7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a0e3e2ebf20e6185c1963656353fb5c7e">fuse_expire_flags</a> </td></tr>
+<tr class="separator:a0e3e2ebf20e6185c1963656353fb5c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2553c03f9a63c75e609e67f90a3a5d88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a2553c03f9a63c75e609e67f90a3a5d88">fuse_reply_err</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int err)</td></tr>
+<tr class="memitem:a2553c03f9a63c75e609e67f90a3a5d88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a2553c03f9a63c75e609e67f90a3a5d88">fuse_reply_err</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int err)</td></tr>
 <tr class="separator:a2553c03f9a63c75e609e67f90a3a5d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ae91390a6704dc26f8d80fed7d5678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a85ae91390a6704dc26f8d80fed7d5678">fuse_reply_none</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
+<tr class="memitem:a85ae91390a6704dc26f8d80fed7d5678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a85ae91390a6704dc26f8d80fed7d5678">fuse_reply_none</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
 <tr class="separator:a85ae91390a6704dc26f8d80fed7d5678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a672c45e126cd240f4bcd59bf9b7e3708"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a672c45e126cd240f4bcd59bf9b7e3708">fuse_reply_entry</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e)</td></tr>
+<tr class="memitem:a672c45e126cd240f4bcd59bf9b7e3708"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a672c45e126cd240f4bcd59bf9b7e3708">fuse_reply_entry</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e)</td></tr>
 <tr class="separator:a672c45e126cd240f4bcd59bf9b7e3708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abea78d22349198f8370d7cb91fbf05ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#abea78d22349198f8370d7cb91fbf05ed">fuse_reply_create</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e, const struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="memitem:abea78d22349198f8370d7cb91fbf05ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#abea78d22349198f8370d7cb91fbf05ed">fuse_reply_create</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e, const struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
 <tr class="separator:abea78d22349198f8370d7cb91fbf05ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad28378dc569019c32acdb4995d70be18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct stat *attr, double attr_timeout)</td></tr>
+<tr class="memitem:ad28378dc569019c32acdb4995d70be18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct stat *attr, double attr_timeout)</td></tr>
 <tr class="separator:ad28378dc569019c32acdb4995d70be18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a5872d7f73f0bd593e00788a4c7bbb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a5a5872d7f73f0bd593e00788a4c7bbb7">fuse_reply_readlink</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *link)</td></tr>
+<tr class="memitem:a5a5872d7f73f0bd593e00788a4c7bbb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a5a5872d7f73f0bd593e00788a4c7bbb7">fuse_reply_readlink</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *link)</td></tr>
 <tr class="separator:a5a5872d7f73f0bd593e00788a4c7bbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a170f8c6b953d70928e83bcecee43bfdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a170f8c6b953d70928e83bcecee43bfdc">fuse_reply_open</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="memitem:a170f8c6b953d70928e83bcecee43bfdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a170f8c6b953d70928e83bcecee43bfdc">fuse_reply_open</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
 <tr class="separator:a170f8c6b953d70928e83bcecee43bfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3cfa73f61d6ef461ab5a3fbf859eb97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aa3cfa73f61d6ef461ab5a3fbf859eb97">fuse_reply_write</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count)</td></tr>
+<tr class="memitem:aa3cfa73f61d6ef461ab5a3fbf859eb97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aa3cfa73f61d6ef461ab5a3fbf859eb97">fuse_reply_write</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count)</td></tr>
 <tr class="separator:aa3cfa73f61d6ef461ab5a3fbf859eb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300a88b63ab7c8ca92853a97486448c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a300a88b63ab7c8ca92853a97486448c0">fuse_reply_buf</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *buf, size_t size)</td></tr>
+<tr class="memitem:a300a88b63ab7c8ca92853a97486448c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a300a88b63ab7c8ca92853a97486448c0">fuse_reply_buf</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *buf, size_t size)</td></tr>
 <tr class="separator:a300a88b63ab7c8ca92853a97486448c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1242694fe0fb6e253a88b57795987302"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a1242694fe0fb6e253a88b57795987302">fuse_reply_data</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, enum <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
+<tr class="memitem:a1242694fe0fb6e253a88b57795987302"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a1242694fe0fb6e253a88b57795987302">fuse_reply_data</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, enum <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
 <tr class="separator:a1242694fe0fb6e253a88b57795987302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fbbf591a55f09c02cd54d34bdbfe0e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a5fbbf591a55f09c02cd54d34bdbfe0e9">fuse_reply_iov</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct iovec *iov, int count)</td></tr>
+<tr class="memitem:a5fbbf591a55f09c02cd54d34bdbfe0e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a5fbbf591a55f09c02cd54d34bdbfe0e9">fuse_reply_iov</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct iovec *iov, int count)</td></tr>
 <tr class="separator:a5fbbf591a55f09c02cd54d34bdbfe0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1d95ec3ca674253baac3639ea10f0ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aa1d95ec3ca674253baac3639ea10f0ff">fuse_reply_statfs</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct statvfs *stbuf)</td></tr>
+<tr class="memitem:aa1d95ec3ca674253baac3639ea10f0ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aa1d95ec3ca674253baac3639ea10f0ff">fuse_reply_statfs</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct statvfs *stbuf)</td></tr>
 <tr class="separator:aa1d95ec3ca674253baac3639ea10f0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afed32e5d3e1f54d390103f79ebb8bd42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#afed32e5d3e1f54d390103f79ebb8bd42">fuse_reply_xattr</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count)</td></tr>
+<tr class="memitem:afed32e5d3e1f54d390103f79ebb8bd42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#afed32e5d3e1f54d390103f79ebb8bd42">fuse_reply_xattr</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count)</td></tr>
 <tr class="separator:afed32e5d3e1f54d390103f79ebb8bd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a135eda9b7d36fb4eaae2de58526d4f85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a135eda9b7d36fb4eaae2de58526d4f85">fuse_reply_lock</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct flock *lock)</td></tr>
+<tr class="memitem:a135eda9b7d36fb4eaae2de58526d4f85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a135eda9b7d36fb4eaae2de58526d4f85">fuse_reply_lock</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct flock *lock)</td></tr>
 <tr class="separator:a135eda9b7d36fb4eaae2de58526d4f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65431e8196e0533257acad767f7b074f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a65431e8196e0533257acad767f7b074f">fuse_reply_bmap</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, uint64_t idx)</td></tr>
+<tr class="memitem:a65431e8196e0533257acad767f7b074f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a65431e8196e0533257acad767f7b074f">fuse_reply_bmap</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, uint64_t idx)</td></tr>
 <tr class="separator:a65431e8196e0533257acad767f7b074f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1957bcc8ece8c90f16c42c4daf3053f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, char *buf, size_t bufsize, const char *name, const struct stat *stbuf, off_t off)</td></tr>
+<tr class="memitem:ad1957bcc8ece8c90f16c42c4daf3053f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, char *buf, size_t bufsize, const char *name, const struct stat *stbuf, off_t off)</td></tr>
 <tr class="separator:ad1957bcc8ece8c90f16c42c4daf3053f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f3f1beebacab5f717d95baf832a8a5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a34f3f1beebacab5f717d95baf832a8a5">fuse_add_direntry_plus</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, char *buf, size_t bufsize, const char *name, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e, off_t off)</td></tr>
+<tr class="memitem:a34f3f1beebacab5f717d95baf832a8a5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a34f3f1beebacab5f717d95baf832a8a5">fuse_add_direntry_plus</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, char *buf, size_t bufsize, const char *name, const struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a> *e, off_t off)</td></tr>
 <tr class="separator:a34f3f1beebacab5f717d95baf832a8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a940683d07df12c24f56b4363aed90e4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a940683d07df12c24f56b4363aed90e4d">fuse_reply_ioctl_retry</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct iovec *in_iov, size_t in_count, const struct iovec *out_iov, size_t out_count)</td></tr>
+<tr class="memitem:a940683d07df12c24f56b4363aed90e4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a940683d07df12c24f56b4363aed90e4d">fuse_reply_ioctl_retry</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const struct iovec *in_iov, size_t in_count, const struct iovec *out_iov, size_t out_count)</td></tr>
 <tr class="separator:a940683d07df12c24f56b4363aed90e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf7f34f470c04f276b7091ad3b3dcb31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#adf7f34f470c04f276b7091ad3b3dcb31">fuse_reply_ioctl</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int result, const void *buf, size_t size)</td></tr>
+<tr class="memitem:adf7f34f470c04f276b7091ad3b3dcb31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#adf7f34f470c04f276b7091ad3b3dcb31">fuse_reply_ioctl</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int result, const void *buf, size_t size)</td></tr>
 <tr class="separator:adf7f34f470c04f276b7091ad3b3dcb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37381eb84c39e5fe3af9f3ef507aeeb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a37381eb84c39e5fe3af9f3ef507aeeb7">fuse_reply_ioctl_iov</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int result, const struct iovec *iov, int count)</td></tr>
+<tr class="memitem:a37381eb84c39e5fe3af9f3ef507aeeb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a37381eb84c39e5fe3af9f3ef507aeeb7">fuse_reply_ioctl_iov</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int result, const struct iovec *iov, int count)</td></tr>
 <tr class="separator:a37381eb84c39e5fe3af9f3ef507aeeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2172d260d34c76c25cd601870aee4220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a2172d260d34c76c25cd601870aee4220">fuse_reply_poll</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, unsigned revents)</td></tr>
+<tr class="memitem:a2172d260d34c76c25cd601870aee4220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a2172d260d34c76c25cd601870aee4220">fuse_reply_poll</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, unsigned revents)</td></tr>
 <tr class="separator:a2172d260d34c76c25cd601870aee4220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5dd8e5a4639d232f904e6770e7fd244"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ac5dd8e5a4639d232f904e6770e7fd244">fuse_reply_lseek</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, off_t off)</td></tr>
+<tr class="memitem:ac5dd8e5a4639d232f904e6770e7fd244"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ac5dd8e5a4639d232f904e6770e7fd244">fuse_reply_lseek</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, off_t off)</td></tr>
 <tr class="separator:ac5dd8e5a4639d232f904e6770e7fd244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab078685b1f480188031fc40aa2e2fbca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab078685b1f480188031fc40aa2e2fbca">fuse_lowlevel_notify_poll</a> (struct fuse_pollhandle *ph)</td></tr>
 <tr class="separator:ab078685b1f480188031fc40aa2e2fbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb974af9745294ff446d11cba2422f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a9cb974af9745294ff446d11cba2422f1">fuse_lowlevel_notify_inval_inode</a> (struct fuse_session *se, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, off_t len)</td></tr>
+<tr class="memitem:a9cb974af9745294ff446d11cba2422f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a9cb974af9745294ff446d11cba2422f1">fuse_lowlevel_notify_inval_inode</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, off_t len)</td></tr>
 <tr class="separator:a9cb974af9745294ff446d11cba2422f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14032b74b0a57a2b3155dd6ba8d6095"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry</a> (struct fuse_session *se, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, size_t namelen)</td></tr>
+<tr class="memitem:ab14032b74b0a57a2b3155dd6ba8d6095"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, size_t namelen)</td></tr>
 <tr class="separator:ab14032b74b0a57a2b3155dd6ba8d6095"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399a43ff69a20ce42082a81eb1517992"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a399a43ff69a20ce42082a81eb1517992">fuse_lowlevel_notify_delete</a> (struct fuse_session *se, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> child, const char *name, size_t namelen)</td></tr>
+<tr class="memitem:aae8edfd99383ba375981724470bb647f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aae8edfd99383ba375981724470bb647f">fuse_lowlevel_notify_expire_entry</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, size_t namelen, enum <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a0e3e2ebf20e6185c1963656353fb5c7e">fuse_expire_flags</a> flags)</td></tr>
+<tr class="separator:aae8edfd99383ba375981724470bb647f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399a43ff69a20ce42082a81eb1517992"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a399a43ff69a20ce42082a81eb1517992">fuse_lowlevel_notify_delete</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> child, const char *name, size_t namelen)</td></tr>
 <tr class="separator:a399a43ff69a20ce42082a81eb1517992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af856725ed4a13ed7c17512554043edbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#af856725ed4a13ed7c17512554043edbc">fuse_lowlevel_notify_store</a> (struct fuse_session *se, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, enum <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
+<tr class="memitem:af856725ed4a13ed7c17512554043edbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#af856725ed4a13ed7c17512554043edbc">fuse_lowlevel_notify_store</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, enum <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
 <tr class="separator:af856725ed4a13ed7c17512554043edbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cb3543209d2c29dc2830f2503b5058"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve</a> (struct fuse_session *se, <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t offset, void *cookie)</td></tr>
+<tr class="memitem:a58cb3543209d2c29dc2830f2503b5058"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve</a> (struct fuse_session *se, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t offset, void *cookie)</td></tr>
 <tr class="separator:a58cb3543209d2c29dc2830f2503b5058"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab00273c65d124e44abcf2374f9c504b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aab00273c65d124e44abcf2374f9c504b">fuse_req_userdata</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
+<tr class="memitem:aab00273c65d124e44abcf2374f9c504b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aab00273c65d124e44abcf2374f9c504b">fuse_req_userdata</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
 <tr class="separator:aab00273c65d124e44abcf2374f9c504b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d1963190eb93ae5667d32d2b387ca1"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structfuse__ctx.html">fuse_ctx</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad1d1963190eb93ae5667d32d2b387ca1">fuse_req_ctx</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
+<tr class="memitem:ad1d1963190eb93ae5667d32d2b387ca1"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structfuse__ctx.html">fuse_ctx</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ad1d1963190eb93ae5667d32d2b387ca1">fuse_req_ctx</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
 <tr class="separator:ad1d1963190eb93ae5667d32d2b387ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f4dabcf044aafcdba6c4682b3a1869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a57f4dabcf044aafcdba6c4682b3a1869">fuse_req_getgroups</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int size, gid_t list[])</td></tr>
+<tr class="memitem:a57f4dabcf044aafcdba6c4682b3a1869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a57f4dabcf044aafcdba6c4682b3a1869">fuse_req_getgroups</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, int size, gid_t list[])</td></tr>
 <tr class="separator:a57f4dabcf044aafcdba6c4682b3a1869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3cdb9744f033e37a72984489343940f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab3cdb9744f033e37a72984489343940f">fuse_req_interrupt_func</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="include_2fuse__lowlevel_8h.html#a1fe719ed24a713bb5d17e4e7a0dde730">fuse_interrupt_func_t</a> func, void *data)</td></tr>
+<tr class="memitem:ab3cdb9744f033e37a72984489343940f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab3cdb9744f033e37a72984489343940f">fuse_req_interrupt_func</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="include_2fuse__lowlevel_8h.html#a1fe719ed24a713bb5d17e4e7a0dde730">fuse_interrupt_func_t</a> func, void *data)</td></tr>
 <tr class="separator:ab3cdb9744f033e37a72984489343940f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52674fc627647f33e63c74267f0f1f9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a52674fc627647f33e63c74267f0f1f9d">fuse_req_interrupted</a> (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
+<tr class="memitem:a52674fc627647f33e63c74267f0f1f9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a52674fc627647f33e63c74267f0f1f9d">fuse_req_interrupted</a> (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req)</td></tr>
 <tr class="separator:a52674fc627647f33e63c74267f0f1f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6e2d0fde62dcf4f0e57afeabeefd7b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ac6e2d0fde62dcf4f0e57afeabeefd7b1">fuse_lowlevel_version</a> (void)</td></tr>
 <tr class="separator:ac6e2d0fde62dcf4f0e57afeabeefd7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,10 +168,12 @@ Functions</h2></td></tr>
 <tr class="separator:a990af0becaba1b5e45781d399720f85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7235e3a2d1c780d5e0beaee13c81529f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a7235e3a2d1c780d5e0beaee13c81529f">fuse_cmdline_help</a> (void)</td></tr>
 <tr class="separator:a7235e3a2d1c780d5e0beaee13c81529f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8421a0cb3b6fb7013c7272c6997d1e08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args, struct <a class="el" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts)</td></tr>
-<tr class="separator:a8421a0cb3b6fb7013c7272c6997d1e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9dcc848ad0a0c052571fef2b8b706d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aaa9dcc848ad0a0c052571fef2b8b706d">fuse_parse_cmdline_30</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args, struct <a class="el" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> *opts)</td></tr>
+<tr class="separator:aaa9dcc848ad0a0c052571fef2b8b706d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee52f81d0c63d9bd46b11314ba596cf"><td class="memItemLeft" align="right" valign="top">struct fuse_session *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args, const struct <a class="el" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op, size_t op_size, void *userdata)</td></tr>
 <tr class="separator:a9ee52f81d0c63d9bd46b11314ba596cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab450be2d5b6a04c7effc3a9ece03d224"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#ab450be2d5b6a04c7effc3a9ece03d224">fuse_session_custom_io</a> (struct fuse_session *se, const struct fuse_custom_io *io, int fd)</td></tr>
+<tr class="separator:ab450be2d5b6a04c7effc3a9ece03d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6d77679a110582684e9ca2da623bbc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a> (struct fuse_session *se, const char *mountpoint)</td></tr>
 <tr class="separator:aa6d77679a110582684e9ca2da623bbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f1e538aa3287e251afbe985438c4249"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop</a> (struct fuse_session *se)</td></tr>
@@ -216,7 +226,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint64_t <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a></td>
+          <td class="memname">typedef uint64_t <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,7 +243,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* fuse_interrupt_func_t) (<a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *data)</td>
+          <td class="memname">typedef void(* fuse_interrupt_func_t) (<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,7 +256,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l01821">1821</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l01880">1880</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -257,13 +267,31 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct fuse_req* <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a></td>
+          <td class="memname">typedef struct fuse_req* <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Request pointer type </p>
 
 <p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l00049">49</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a0e3e2ebf20e6185c1963656353fb5c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3e2ebf20e6185c1963656353fb5c7e">&#9670;&nbsp;</a></span>fuse_expire_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a0e3e2ebf20e6185c1963656353fb5c7e">fuse_expire_flags</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flags for <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#aae8edfd99383ba375981724470bb647f">fuse_lowlevel_notify_expire_entry()</a> 0 = invalidate entry FUSE_LL_EXPIRE_ONLY = expire entry </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l00146">146</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -277,7 +305,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t fuse_add_direntry </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -334,7 +362,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the space needed for the entry </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00266">266</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00274">274</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -347,7 +375,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t fuse_add_direntry_plus </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -388,7 +416,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Add a directory entry to the buffer with the attributes</p>
-<p>See documentation of <code><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry()</a></code> for more details.</p>
+<p>See documentation of <code><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry()</a></code> for more details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>request handle </td></tr>
@@ -402,7 +430,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the space needed for the entry </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00356">356</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00364">364</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -421,9 +449,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Print available options for <code><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a8421a0cb3b6fb7013c7272c6997d1e08">fuse_parse_cmdline()</a></code>. </p>
+<p>Print available options for <code>fuse_parse_cmdline()</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html#l00129">129</a> of file <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2helper_8c_source.html#l00130">130</a> of file <a class="el" href="fuse-3_813_80_2lib_2helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -444,7 +472,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Print available low-level options to stdout. This is not an exhaustive list, but includes only those options that may be of interest to an end-user of a file system. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02698">2698</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02749">2749</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -463,13 +491,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>child</em>, </td>
         </tr>
         <tr>
@@ -491,9 +519,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function behaves like <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> with the following additional effect (at least as of Linux kernel 4.8):</p>
+<p>This function behaves like <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> with the following additional effect (at least as of Linux kernel 4.8):</p>
 <p>If the provided <em>child</em> inode matches the inode that is currently associated with the cached dentry, and if there are any inotify watches registered for the dentry, then the watchers are informed that the dentry has been deleted.</p>
-<p>To avoid a deadlock this function must not be called while executing a related filesytem operation or while holding a lock that could be needed to execute such an operation (see the description of <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> for more details).</p>
+<p>To avoid a deadlock this function must not be called while executing a related filesytem operation or while holding a lock that could be needed to execute such an operation (see the description of <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a> for more details).</p>
 <p>When called correctly, this function will never block.</p>
 <p>Added in FUSE protocol version 7.18. If the kernel does not support this (or a newer) version, the function will return -ENOSYS and do nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -508,7 +536,71 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02273">2273</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02324">2324</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+
+</div>
+</div>
+<a id="aae8edfd99383ba375981724470bb647f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8edfd99383ba375981724470bb647f">&#9670;&nbsp;</a></span>fuse_lowlevel_notify_expire_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_lowlevel_notify_expire_entry </td>
+          <td>(</td>
+          <td class="paramtype">struct fuse_session *&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>namelen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a0e3e2ebf20e6185c1963656353fb5c7e">fuse_expire_flags</a>&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Notify to expire or invalidate parent attributes and the dentry matching parent/name</p>
+<p>Underlying function for <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ab14032b74b0a57a2b3155dd6ba8d6095">fuse_lowlevel_notify_inval_entry()</a>.</p>
+<p>In addition to invalidating an entry, it also allows to expire an entry. In that case, the entry is not forcefully removed from kernel cache but instead the next access to it forces a lookup from the filesystem.</p>
+<p>This makes a difference for overmounted dentries, where plain invalidation would detach all submounts before dropping the dentry from the cache. If only expiry is set on the dentry, then any overmounts are left alone and until -&gt;d_revalidate() is called.</p>
+<p>Note: -&gt;d_revalidate() is not called for the case of following a submount, so invalidation will only be triggered for the non-overmounted case. The dentry could also be mounted in a different mount instance, in which case any submounts will still be detached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">se</td><td>the session object </td></tr>
+    <tr><td class="paramname">parent</td><td>inode number </td></tr>
+    <tr><td class="paramname">name</td><td>file name </td></tr>
+    <tr><td class="paramname">namelen</td><td>strlen() of file name </td></tr>
+    <tr><td class="paramname">flags</td><td>flags to control if the entry should be expired or invalidated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02290">2290</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -527,7 +619,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -564,7 +656,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02249">2249</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02317">2317</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -583,7 +675,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>ino</em>, </td>
         </tr>
         <tr>
@@ -620,7 +712,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02227">2227</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02268">2268</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -648,7 +740,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02210">2210</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02251">2251</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -667,7 +759,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>ino</em>, </td>
         </tr>
         <tr>
@@ -713,7 +805,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02379">2379</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02430">2430</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -732,7 +824,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a>&#160;</td>
           <td class="paramname"><em>ino</em>, </td>
         </tr>
         <tr>
@@ -750,7 +842,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
         <tr>
@@ -777,7 +869,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02299">2299</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02350">2350</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -798,18 +890,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Print low-level version information to stdout. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02691">2691</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02742">2742</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
-<a id="a8421a0cb3b6fb7013c7272c6997d1e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8421a0cb3b6fb7013c7272c6997d1e08">&#9670;&nbsp;</a></span>fuse_parse_cmdline()</h2>
+<a id="aaa9dcc848ad0a0c052571fef2b8b706d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa9dcc848ad0a0c052571fef2b8b706d">&#9670;&nbsp;</a></span>fuse_parse_cmdline_30()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fuse_parse_cmdline </td>
+          <td class="memname">int fuse_parse_cmdline_30 </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structfuse__args.html">fuse_args</a> *&#160;</td>
           <td class="paramname"><em>args</em>, </td>
@@ -837,9 +929,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
+<p>struct <a class="el" href="structfuse__cmdline__opts.html">fuse_cmdline_opts</a> got extended in libfuse-3.12 </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html#l00202">202</a> of file <a class="el" href="fuse-3_810_84_2lib_2helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2helper_8c_source.html#l00237">237</a> of file <a class="el" href="fuse-3_813_80_2lib_2helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -852,7 +945,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_attr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -886,7 +979,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00432">432</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00442">442</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -899,7 +992,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_bmap </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -926,7 +1019,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00912">912</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00928">928</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -939,7 +1032,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_buf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -973,7 +1066,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00471">471</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00481">481</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -986,7 +1079,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_create </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1022,7 +1115,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00416">416</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00426">426</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1035,7 +1128,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_data </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1047,7 +1140,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
         <tr>
@@ -1085,7 +1178,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00851">851</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00867">867</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1191,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_entry </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1126,7 +1219,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00400">400</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00410">410</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1139,7 +1232,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_err </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1169,7 +1262,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00311">311</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00319">319</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1275,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_ioctl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1222,7 +1315,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l01010">1010</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l01026">1026</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1235,7 +1328,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_ioctl_iov </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1275,7 +1368,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l01031">1031</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l01047">1047</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1288,7 +1381,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_ioctl_retry </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1336,7 +1429,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00940">940</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00956">956</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1349,7 +1442,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_iov </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1383,7 +1476,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00245">245</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00253">253</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1489,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_lock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1423,7 +1516,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00895">895</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00911">911</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1436,7 +1529,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_lseek </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1463,7 +1556,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l01065">1065</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l01081">1081</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1476,7 +1569,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void fuse_reply_none </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1491,7 +1584,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00316">316</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00324">324</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1504,7 +1597,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_open </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1532,7 +1625,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00452">452</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00462">462</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1545,7 +1638,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_poll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1570,7 +1663,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l01055">1055</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l01071">1071</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1583,7 +1676,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_readlink </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1610,7 +1703,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00447">447</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00457">457</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1623,7 +1716,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_statfs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1650,7 +1743,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00873">873</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00889">889</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1756,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1690,7 +1783,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00461">461</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00471">471</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1703,7 +1796,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_reply_xattr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1730,7 +1823,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero for success, -errno for failure to send reply </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l00885">885</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l00901">901</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1743,7 +1836,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">const struct <a class="el" href="structfuse__ctx.html">fuse_ctx</a>* fuse_req_ctx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1759,7 +1852,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the context structure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02429">2429</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02480">2480</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1772,7 +1865,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_req_getgroups </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1808,7 +1901,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of supplementary group IDs or -errno on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l03118">3118</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l03218">3218</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1821,7 +1914,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void fuse_req_interrupt_func </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
@@ -1854,7 +1947,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02434">2434</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02485">2485</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1867,7 +1960,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int fuse_req_interrupted </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1882,7 +1975,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the request has been interrupted, 0 otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02447">2447</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02498">2498</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1895,7 +1988,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void* fuse_req_userdata </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a>&#160;</td>
           <td class="paramname"><em>req</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1908,9 +2001,64 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the user data passed to <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the user data passed to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02424">2424</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02475">2475</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+
+</div>
+</div>
+<a id="ab450be2d5b6a04c7effc3a9ece03d224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab450be2d5b6a04c7effc3a9ece03d224">&#9670;&nbsp;</a></span>fuse_session_custom_io()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_session_custom_io </td>
+          <td>(</td>
+          <td class="paramtype">struct fuse_session *&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct fuse_custom_io *&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a file descriptor for the session.</p>
+<p>This function can be used if you want to have a custom communication interface instead of using a mountpoint. In practice, this means that instead of calling <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount()</a> and <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount()</a>, one could call <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ab450be2d5b6a04c7effc3a9ece03d224">fuse_session_custom_io()</a> where <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount()</a> would have otherwise been called.</p>
+<p>In <code>io</code>, implementations for read and writev MUST be provided. Otherwise -1 will be returned and <code>fd</code> will not be used. Implementations for <code>splice_send</code> and <code>splice_receive</code> are optional. If they are not provided splice will not be used for send or receive respectively.</p>
+<p>The provided file descriptor <code>fd</code> will be closed when <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">se</td><td>session object </td></tr>
+    <tr><td class="paramname">io</td><td>Custom io to use when retrieving/sending requests/responses </td></tr>
+    <tr><td class="paramname">fd</td><td>file descriptor for the session</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success </dd>
+<dd>
+-EINVAL if <code>io</code>, <code>io-&gt;read</code> or <code>ìo-&gt;writev</code> are NULL </dd>
+<dd>
+-EBADF if <code>fd</code> was smaller than 0 </dd>
+<dd>
+-errno if failed to allocate memory to store <code>io</code> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l03056">3056</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1937,7 +2085,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02708">2708</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02759">2759</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1957,7 +2105,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Flag a session as terminated.</p>
-<p>This function is invoked by the POSIX signal handlers, when registered using <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a>. It will cause any running event loops to terminate on the next opportunity.</p>
+<p>This function is invoked by the POSIX signal handlers, when registered using <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a>. It will cause any running event loops to terminate on the next opportunity.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
@@ -2019,7 +2167,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a file descriptor </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l03040">3040</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l03140">3140</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2041,7 +2189,7 @@ Functions</h2></td></tr>
 <p>Enter a single threaded, blocking event loop.</p>
 <p>When the event loop terminates because the connection to the FUSE kernel module has been closed, this function returns zero. This happens when the filesystem is unmounted regularly (by the filesystem owner or root running the umount(8) or fusermount(1) command), or if connection is explicitly severed by writing <code>1</code> to the<code>abort</code> file in <code>/sys/fs/fuse/connections/NNN</code>. The only way to distinguish between these two conditions is to check if the filesystem is still mounted after the session loop returns.</p>
 <p>When some error occurs during request processing, the function returns a negated errno(3) value.</p>
-<p>If the loop has been terminated because of a signal handler installed by <a class="el" href="fuse-3_810_84_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a>, this function returns the (positive) signal value that triggered the exit.</p>
+<p>If the loop has been terminated because of a signal handler installed by <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a>, this function returns the (positive) signal value that triggered the exit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session </td></tr>
@@ -2050,7 +2198,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0, -errno, or a signal value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__loop_8c_source.html#l00019">19</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__loop_8c_source.html">fuse_loop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__loop_8c_source.html#l00019">19</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__loop_8c_source.html">fuse_loop.c</a>.</p>
 
 </div>
 </div>
@@ -2089,7 +2237,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02990">2990</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l03090">3090</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2131,7 +2279,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Create a low level session.</p>
-<p>Returns a session structure suitable for passing to <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount()</a> and <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
+<p>Returns a session structure suitable for passing to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount()</a> and <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a5f1e538aa3287e251afbe985438c4249">fuse_session_loop()</a>.</p>
 <p>This function accepts most file-system independent mount options (like context, nodev, ro - see mount(8)), as well as the general fuse mount options listed in mount.fuse(8) (e.g. -o allow_root and -o default_permissions, but not <code>-o use_ino</code>). Instead of <code>-o debug</code>, debugging may also enabled with <code>-d</code> or <code>--debug</code>.</p>
 <p>If not all options are known, an error message is written to stderr and the function returns NULL.</p>
 <p>Option parsing skips argv[0], which is assumed to contain the program name. To prevent accidentally passing an option in argv[0], this element must always be present (even if no options are specified). It may be set to the empty string ('\0') if no reasonable value can be provided.</p>
@@ -2146,7 +2294,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the fuse session on success, NULL on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02894">2894</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02960">2960</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2185,7 +2333,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02535">2535</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02586">2586</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2225,7 +2373,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the actual size of the raw request, or -errno on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l02735">2735</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l02788">2788</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -2270,8 +2418,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Ensure that file system is unmounted.</p>
-<p>In regular operation, the file system is typically unmounted by the user calling umount(8) or fusermount(1), which then terminates the FUSE session loop. However, the session loop may also terminate as a result of an explicit call to <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a> (e.g. by a signal handler installed by fuse_set_signal_handler()). In this case the filesystem remains mounted, but any attempt to access it will block (while the filesystem process is still running) or give an ESHUTDOWN error (after the filesystem process has terminated).</p>
-<p>If the communication channel with the FUSE kernel module is still open (i.e., if the session loop was terminated by an explicit call to <a class="el" href="fuse-3_810_84_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>), this function will close it and unmount the filesystem. If the communication channel has been closed by the kernel, this method will do (almost) nothing.</p>
+<p>In regular operation, the file system is typically unmounted by the user calling umount(8) or fusermount(1), which then terminates the FUSE session loop. However, the session loop may also terminate as a result of an explicit call to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a> (e.g. by a signal handler installed by fuse_set_signal_handler()). In this case the filesystem remains mounted, but any attempt to access it will block (while the filesystem process is still running) or give an ESHUTDOWN error (after the filesystem process has terminated).</p>
+<p>If the communication channel with the FUSE kernel module is still open (i.e., if the session loop was terminated by an explicit call to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>), this function will close it and unmount the filesystem. If the communication channel has been closed by the kernel, this method will do (almost) nothing.</p>
 <p>NOTE: The above semantics mean that if the connection to the kernel is terminated via the <code>/sys/fs/fuse/connections/NNN/abort</code> file, this method will <em>not</em> unmount the filesystem.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2280,7 +2428,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html#l03045">3045</a> of file <a class="el" href="fuse-3_810_84_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html#l03145">3145</a> of file <a class="el" href="fuse-3_813_80_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>

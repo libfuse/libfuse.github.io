@@ -54,7 +54,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  See the file COPYING.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;config.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;fuse_config.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
@@ -169,7 +169,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        snprintf(options_copy, subtype_len, <span class="stringliteral">&quot;subtype=%s&quot;</span>, subtype);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        options_copy = add_option(options, options_copy);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        fuse_fd = <a class="code" href="fuse-3_810_84_2include_2fuse_8h.html#a9e8c9af40b22631f9f2636019cd073b6">fuse_open_channel</a>(mountpoint, options_copy);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        fuse_fd = <a class="code" href="fuse-3_813_80_2include_2fuse_8h.html#a9e8c9af40b22631f9f2636019cd073b6">fuse_open_channel</a>(mountpoint, options_copy);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (fuse_fd == -1) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                exit(1);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
@@ -496,7 +496,7 @@ $(function() {
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        free(command);</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;}</div>
-<div class="ttc" id="afuse-3_810_84_2include_2fuse_8h_html_a9e8c9af40b22631f9f2636019cd073b6"><div class="ttname"><a href="fuse-3_810_84_2include_2fuse_8h.html#a9e8c9af40b22631f9f2636019cd073b6">fuse_open_channel</a></div><div class="ttdeci">int fuse_open_channel(const char *mountpoint, const char *options)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_810_84_2lib_2helper_8c_source.html#l00424">helper.c:424</a></div></div>
+<div class="ttc" id="afuse-3_813_80_2include_2fuse_8h_html_a9e8c9af40b22631f9f2636019cd073b6"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse_8h.html#a9e8c9af40b22631f9f2636019cd073b6">fuse_open_channel</a></div><div class="ttdeci">int fuse_open_channel(const char *mountpoint, const char *options)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2lib_2helper_8c_source.html#l00461">helper.c:461</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
