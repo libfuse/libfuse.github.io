@@ -51,7 +51,8 @@ $(function() {
 <div class="title">fuse_common.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="fuse__opt_8h_source.html">fuse_opt.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;libfuse_config.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="fuse__opt_8h_source.html">fuse_opt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="fuse__log_8h_source.html">fuse_log.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
@@ -75,7 +76,7 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a2779d57c512b7b948992858653e95f0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a2779d57c512b7b948992858653e95f0e">FUSE_MAJOR_VERSION</a>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a2779d57c512b7b948992858653e95f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a8571aa4ec96e1685d31eeff07cb2f163">FUSE_MINOR_VERSION</a>&#160;&#160;&#160;13</td></tr>
+<tr class="memitem:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a8571aa4ec96e1685d31eeff07cb2f163">FUSE_MINOR_VERSION</a>&#160;&#160;&#160;14</td></tr>
 <tr class="separator:a8571aa4ec96e1685d31eeff07cb2f163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fuse__common_8h.html#a4e1bacbb44d6dca9a82255c8069c3d69">FUSE_CAP_ASYNC_READ</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,7 +192,7 @@ Functions</h2></td></tr>
 <p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read and one pending write request per direct I/O file-handle at any time.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00301">301</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00310">310</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -210,7 +211,7 @@ Functions</h2></td></tr>
 <p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read request per file-handle at any time, and will attempt to order read requests by increasing offset.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00155">155</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00164">164</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -228,7 +229,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem supports the O_TRUNC open flag. If disabled, and an application specifies O_TRUNC, fuse first calls truncate() and then open() with O_TRUNC filtered out.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00172">172</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00181">181</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +249,7 @@ Functions</h2></td></tr>
 <p>This flag should always be set when available. If all file changes go through the kernel, <em>attr_timeout</em> should be set to a very large number to avoid unnecessary getattr() calls.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00254">254</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00263">263</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +268,7 @@ Functions</h2></td></tr>
 <p>When this feature is enabled, symlink targets are saved in the page cache. You can invalidate a cached link by calling: <code>fuse_lowlevel_notify_inval_inode(se, ino, 0, 0);</code></p>
 <p>This feature is disabled by default. If the kernel supports it (&gt;= 4.20), you can enable this feature by setting this flag in the <code>want</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00374">374</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00383">383</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -285,7 +286,7 @@ Functions</h2></td></tr>
 <p>Indicates that the kernel should not apply the umask to the file mode on create operations.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00187">187</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00196">196</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +305,7 @@ Functions</h2></td></tr>
 <p>Expiring dentries, instead of invalidating them, makes a difference for overmounted dentries, where plain invalidation would detach all submounts before dropping the dentry from the cache. If only expiry is set on the dentry, then any overmounts are left alone and until -&gt;d_revalidate() is called.</p>
 <p>Note: -&gt;d_revalidate() is not called for the case of following a submount, so invalidation will only be triggered for the non-overmounted case. The dentry could also be mounted in a different mount instance, in which case any submounts will still be detached. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00425">425</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00434">434</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -326,7 +327,7 @@ Functions</h2></td></tr>
 <p>Note that if both FUSE_CAP_EXPLICIT_INVAL_DATA and FUSE_CAP_AUTO_INVAL_DATA are set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure then FUSE_CAP_AUTO_INVAL_DATA takes precedence.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00409">409</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00418">418</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -344,7 +345,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem supports lookups of "." and "..".</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00179">179</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00188">188</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -363,7 +364,7 @@ Functions</h2></td></tr>
 <p>If not set, flock(2) calls will be handled by the FUSE kernel module internally (so any access that does not go through the kernel cannot be taken into account).</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a flock() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00225">225</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00234">234</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +382,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem is responsible for unsetting setuid and setgid bits when a file is written, truncated, or its owner is changed.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00361">361</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00370">370</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +400,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem supports ioctl's on directories.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00232">232</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00241">241</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -417,7 +418,7 @@ Functions</h2></td></tr>
 <p>Indicates support for zero-message opens. If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the filesystem may return <code>ENOSYS</code> from the open() handler to indicate success. Further attempts to open files will be handled in the kernel. (If this flag is not set, returning ENOSYS will be treated as an error and signaled to the caller).</p>
 <p>Setting (or unsetting) this flag in the <code>want</code> field has <em>no effect</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00323">323</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00332">332</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -435,7 +436,7 @@ Functions</h2></td></tr>
 <p>Indicates support for zero-message opendirs. If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the filesystem may return <code>ENOSYS</code> from the opendir() handler to indicate success. Further opendir and releasedir messages will be handled in the kernel. (If this flag is not set, returning ENOSYS will be treated as an error and signalled to the caller.)</p>
 <p>Setting (or unsetting) this flag in the <code>want</code> field has <em>no effect</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00386">386</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00395">395</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -453,7 +454,7 @@ Functions</h2></td></tr>
 <p>Indicates support for parallel directory operations. If this flag is unset, the FUSE kernel module will ensure that lookup() and readdir() requests are never issued concurrently for the same directory.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00333">333</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00342">342</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -473,7 +474,7 @@ Functions</h2></td></tr>
 <p>Enabling this feature implicitly turns on the <code>default_permissions</code> mount option (even if it was not passed to mount(2)).</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00352">352</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00361">361</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +492,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem supports "remote" locking.</p>
 <p>This feature is enabled by default when supported by the kernel, and if getlk() and setlk() handlers are implemented. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00163">163</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00172">172</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -509,7 +510,7 @@ Functions</h2></td></tr>
 <p>Indicates that the filesystem supports readdirplus.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a readdirplus() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00262">262</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00271">271</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -531,7 +532,7 @@ Functions</h2></td></tr>
 <p>As of Linux 4.20, the algorithm is as follows: when userspace starts to read directory entries, issue a READDIRPLUS request to the filesystem. If any entry attributes have been looked up by the time userspace requests the next batch of entries continue with READDIRPLUS, otherwise switch to plain READDIR. This will reasult in eg plain "ls" triggering READDIRPLUS first then READDIR after that because it doesn't do lookups. "ls -l" should result in all READDIRPLUS, except if dentries are already cached.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements both a readdirplus() and a readdir() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00290">290</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00299">299</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -549,7 +550,7 @@ Functions</h2></td></tr>
 <p>Indicates that libfuse should try to move pages instead of copying when writing to / reading from the fuse device. This may improve performance.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00203">203</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00212">212</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -567,7 +568,7 @@ Functions</h2></td></tr>
 <p>Indicates that libfuse should try to use splice() when reading from the fuse device. This may improve performance.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a write_buf() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00212">212</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00221">221</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -585,7 +586,7 @@ Functions</h2></td></tr>
 <p>Indicates that libfuse should try to use splice() when writing to the fuse device. This may improve performance.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00195">195</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00204">204</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +604,7 @@ Functions</h2></td></tr>
 <p>Indicates that writeback caching should be enabled. This means that individual write request may be buffered and merged in the kernel before they are send to the filesystem.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00310">310</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00319">319</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -622,7 +623,7 @@ Functions</h2></td></tr>
 <p>FUSE_IOCTL_COMPAT: 32bit compat ioctl on 64bit machine FUSE_IOCTL_UNRESTRICTED: not restricted to well-formed ioctls, retry allowed FUSE_IOCTL_RETRY: retry with new iovecs FUSE_IOCTL_DIR: is a directory</p>
 <p>FUSE_IOCTL_MAX_IOV: maximum of in_iovecs + out_iovecs </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00437">437</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00446">446</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -639,7 +640,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Major version of FUSE library interface </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00023">23</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00029">29</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -650,13 +651,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_MINOR_VERSION&#160;&#160;&#160;13</td>
+          <td class="memname">#define FUSE_MINOR_VERSION&#160;&#160;&#160;14</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Minor version of FUSE library interface </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00026">26</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00032">32</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -689,7 +690,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00687">687</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00696">696</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -717,7 +718,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00656">656</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__common_8h_source.html#l00665">665</a> of file <a class="el" href="fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -851,7 +852,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helper_8c_source.html#l00254">254</a> of file <a class="el" href="helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helper_8c_source.html#l00253">253</a> of file <a class="el" href="helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -963,7 +964,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="structfuse__loop__config.html">fuse_loop_config</a> setter to enable the clone_fd feature </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__loop__mt_8c_source.html#l00480">480</a> of file <a class="el" href="fuse__loop__mt_8c_source.html">fuse_loop_mt.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__loop__mt_8c_source.html#l00482">482</a> of file <a class="el" href="fuse__loop__mt_8c_source.html">fuse_loop_mt.c</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1026,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="structfuse__loop__config.html">fuse_loop_config</a> setter to set the number of max threads. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse__loop__mt_8c_source.html#l00474">474</a> of file <a class="el" href="fuse__loop__mt_8c_source.html">fuse_loop_mt.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__loop__mt_8c_source.html#l00476">476</a> of file <a class="el" href="fuse__loop__mt_8c_source.html">fuse_loop_mt.c</a>.</p>
 
 </div>
 </div>
@@ -1079,7 +1080,7 @@ Functions</h2></td></tr>
 <p>Get the full package version string of the library</p>
 <dl class="section return"><dt>Returns</dt><dd>the package version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l05106">5106</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l05113">5113</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1107,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01832">1832</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8c_source.html#l01836">1836</a> of file <a class="el" href="fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1188,7 +1189,7 @@ Functions</h2></td></tr>
 <p>Get the version of the library</p>
 <dl class="section return"><dt>Returns</dt><dd>the version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l05101">5101</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8c_source.html#l05108">5108</a> of file <a class="el" href="fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>

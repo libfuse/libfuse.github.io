@@ -45,124 +45,124 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ab6fa0b9edb5b002cd1502c969c887329"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab6fa0b9edb5b002cd1502c969c887329">init</a> )(void *userdata, struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td></tr>
-<tr class="separator:ab6fa0b9edb5b002cd1502c969c887329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963181c33f58859fd060b0ccde2f5ec3"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a963181c33f58859fd060b0ccde2f5ec3">destroy</a> )(void *userdata)</td></tr>
-<tr class="separator:a963181c33f58859fd060b0ccde2f5ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a2850c71bec355ad347413fa73f7c2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ae8a2850c71bec355ad347413fa73f7c2">lookup</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
-<tr class="separator:ae8a2850c71bec355ad347413fa73f7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97de3962fc55f136c6bd48183705dbe8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a97de3962fc55f136c6bd48183705dbe8">forget</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, uint64_t nlookup)</td></tr>
-<tr class="separator:a97de3962fc55f136c6bd48183705dbe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a994c316fa7a1ca33525a4540675f6b47"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a994c316fa7a1ca33525a4540675f6b47">getattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a994c316fa7a1ca33525a4540675f6b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a95408dd79575df7f6c64e55f1e973b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a6a95408dd79575df7f6c64e55f1e973b">setattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct stat *attr, int to_set, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a6a95408dd79575df7f6c64e55f1e973b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1032649069ae28d46bde76a40743fcf"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ae1032649069ae28d46bde76a40743fcf">readlink</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td></tr>
-<tr class="separator:ae1032649069ae28d46bde76a40743fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cd44aa96291fa366d4ef40e2d1d1d76"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a5cd44aa96291fa366d4ef40e2d1d1d76">mknod</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, dev_t rdev)</td></tr>
-<tr class="separator:a5cd44aa96291fa366d4ef40e2d1d1d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23af0f6683447112848d9f1731e021d7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a23af0f6683447112848d9f1731e021d7">mkdir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode)</td></tr>
-<tr class="separator:a23af0f6683447112848d9f1731e021d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb6e186f5cbe806d3838a51c112a97ee"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#afb6e186f5cbe806d3838a51c112a97ee">unlink</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
-<tr class="separator:afb6e186f5cbe806d3838a51c112a97ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cbf1eaf4366aed47fa5d991ea5ff0d5"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a3cbf1eaf4366aed47fa5d991ea5ff0d5">rmdir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
-<tr class="separator:a3cbf1eaf4366aed47fa5d991ea5ff0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30455cc58397c5a45434492d93a71af4"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a30455cc58397c5a45434492d93a71af4">symlink</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *<a class="el" href="structfuse__lowlevel__ops.html#a406798b81f44a8b54f188455c31b9be8">link</a>, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
-<tr class="separator:a30455cc58397c5a45434492d93a71af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d76dee9cf1741c364e5be955885248"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a46d76dee9cf1741c364e5be955885248">rename</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname, unsigned int flags)</td></tr>
-<tr class="separator:a46d76dee9cf1741c364e5be955885248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a406798b81f44a8b54f188455c31b9be8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a406798b81f44a8b54f188455c31b9be8">link</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname)</td></tr>
-<tr class="separator:a406798b81f44a8b54f188455c31b9be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2f5186ecaa817e75ed443165288218"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:aab2f5186ecaa817e75ed443165288218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b740dccdc6ddc388cdcd7897e4c2e3"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab7b740dccdc6ddc388cdcd7897e4c2e3">read</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:ab7b740dccdc6ddc388cdcd7897e4c2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09cc5c1078cfb909513b5ca27464f53a"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a09cc5c1078cfb909513b5ca27464f53a">write</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *buf, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a09cc5c1078cfb909513b5ca27464f53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6c2540969d60626f1c18e0012de393a"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#af6c2540969d60626f1c18e0012de393a">flush</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:af6c2540969d60626f1c18e0012de393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc49c6310cd0eaddf116988426ca21d2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#abc49c6310cd0eaddf116988426ca21d2">release</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:abc49c6310cd0eaddf116988426ca21d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81ff5a93a2edd71b063c2e827e0fd8d8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a81ff5a93a2edd71b063c2e827e0fd8d8">fsync</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a81ff5a93a2edd71b063c2e827e0fd8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57a2c2d826fe11dd005d3275c3028d5e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a57a2c2d826fe11dd005d3275c3028d5e">opendir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a57a2c2d826fe11dd005d3275c3028d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ef8e59e0cb0b02dc0e406898aeaa51"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:af1ef8e59e0cb0b02dc0e406898aeaa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfc54ffe5fa5778fc273a6666494d802"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#abfc54ffe5fa5778fc273a6666494d802">releasedir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:abfc54ffe5fa5778fc273a6666494d802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2e3a9ad8b264daec4c254f5b064dfb3"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab2e3a9ad8b264daec4c254f5b064dfb3">fsyncdir</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:ab2e3a9ad8b264daec4c254f5b064dfb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea156121a28b519e284451721fb7d25"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aeea156121a28b519e284451721fb7d25">statfs</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td></tr>
-<tr class="separator:aeea156121a28b519e284451721fb7d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab80c4081204c07a423c3c88b116f3086"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab80c4081204c07a423c3c88b116f3086">setxattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, const char *value, size_t size, int flags)</td></tr>
-<tr class="separator:ab80c4081204c07a423c3c88b116f3086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaed65c2801391c35ad0c60e73a0c43d9"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aaed65c2801391c35ad0c60e73a0c43d9">getxattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, size_t size)</td></tr>
-<tr class="separator:aaed65c2801391c35ad0c60e73a0c43d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f084e779f3fbd407bb5d0890bf0ef6b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a0f084e779f3fbd407bb5d0890bf0ef6b">listxattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size)</td></tr>
-<tr class="separator:a0f084e779f3fbd407bb5d0890bf0ef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15be6632986e6be8660071e1d71ffe51"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a15be6632986e6be8660071e1d71ffe51">removexattr</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name)</td></tr>
-<tr class="separator:a15be6632986e6be8660071e1d71ffe51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdfcb8249b126f95bc33ba23e78f1916"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">access</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mask)</td></tr>
-<tr class="separator:abdfcb8249b126f95bc33ba23e78f1916"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226ce8b472150dd91977cb6c191ff792"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a226ce8b472150dd91977cb6c191ff792">create</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a226ce8b472150dd91977cb6c191ff792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a709d41ca0cde37dbd4d4d06c89f6906a"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a709d41ca0cde37dbd4d4d06c89f6906a">getlk</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a01b103e34d751d0456add93d9c34e711">flock</a> *lock)</td></tr>
-<tr class="separator:a709d41ca0cde37dbd4d4d06c89f6906a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af290d78441583d1d6ba02da01904f328"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#af290d78441583d1d6ba02da01904f328">setlk</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a01b103e34d751d0456add93d9c34e711">flock</a> *lock, int sleep)</td></tr>
-<tr class="separator:af290d78441583d1d6ba02da01904f328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb295e706897d7ada3249d8b027fde7b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#adb295e706897d7ada3249d8b027fde7b">bmap</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t blocksize, uint64_t idx)</td></tr>
-<tr class="separator:adb295e706897d7ada3249d8b027fde7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac954bd3cfab3c8d6000089a6fbb799"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a9ac954bd3cfab3c8d6000089a6fbb799">ioctl</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td></tr>
-<tr class="separator:a9ac954bd3cfab3c8d6000089a6fbb799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50abf8a54b6c73a5a40123b6cf63c71e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a50abf8a54b6c73a5a40123b6cf63c71e">poll</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct fuse_pollhandle *ph)</td></tr>
-<tr class="separator:a50abf8a54b6c73a5a40123b6cf63c71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b40ed06d1297f244363a8dcd40d44aa"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a3b40ed06d1297f244363a8dcd40d44aa">write_buf</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a3b40ed06d1297f244363a8dcd40d44aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1d7ad0c1fb40d7180660e7f3f7f089"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a1c1d7ad0c1fb40d7180660e7f3f7f089">retrieve_reply</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *cookie, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td></tr>
-<tr class="separator:a1c1d7ad0c1fb40d7180660e7f3f7f089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17808183820bb58dcc17db639511a2cb"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a17808183820bb58dcc17db639511a2cb">forget_multi</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count, struct fuse_forget_data *forgets)</td></tr>
-<tr class="separator:a17808183820bb58dcc17db639511a2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b103e34d751d0456add93d9c34e711"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a01b103e34d751d0456add93d9c34e711">flock</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, int op)</td></tr>
-<tr class="separator:a01b103e34d751d0456add93d9c34e711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0ddef3583d645ccf957bdef9291047"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a5d0ddef3583d645ccf957bdef9291047">fallocate</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mode, off_t offset, off_t length, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a5d0ddef3583d645ccf957bdef9291047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af621ef96ffc2a71af8c7768c109b880e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#af621ef96ffc2a71af8c7768c109b880e">readdirplus</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:af621ef96ffc2a71af8c7768c109b880e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a2e044849baf612bf54ea983f2c61a8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a4a2e044849baf612bf54ea983f2c61a8">copy_file_range</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td></tr>
-<tr class="separator:a4a2e044849baf612bf54ea983f2c61a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da4080ebdb822f300e5d227924daf9b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a0da4080ebdb822f300e5d227924daf9b">lseek</a> )(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, int whence, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
-<tr class="separator:a0da4080ebdb822f300e5d227924daf9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ed20e1d06c42a386404fba0d3e56b5"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aa8ed20e1d06c42a386404fba0d3e56b5">init</a> )(void *userdata, struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td></tr>
+<tr class="separator:aa8ed20e1d06c42a386404fba0d3e56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4eb554489467eaafa152d102cdac97d"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab4eb554489467eaafa152d102cdac97d">destroy</a> )(void *userdata)</td></tr>
+<tr class="separator:ab4eb554489467eaafa152d102cdac97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f46abd7c2795cfcf7a3d8c5ee8f6c70"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a7f46abd7c2795cfcf7a3d8c5ee8f6c70">lookup</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
+<tr class="separator:a7f46abd7c2795cfcf7a3d8c5ee8f6c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fca05bcb3594ccd68d288ebd37a8467"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a9fca05bcb3594ccd68d288ebd37a8467">forget</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, uint64_t nlookup)</td></tr>
+<tr class="separator:a9fca05bcb3594ccd68d288ebd37a8467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863ccafbcdd07a55835c4e82c4854155"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a863ccafbcdd07a55835c4e82c4854155">getattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a863ccafbcdd07a55835c4e82c4854155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fce08ae0d6a4f289bffbf9a9defe926"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a8fce08ae0d6a4f289bffbf9a9defe926">setattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct stat *attr, int to_set, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a8fce08ae0d6a4f289bffbf9a9defe926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc02a9a897f917f69295c011bebc6fd1"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#adc02a9a897f917f69295c011bebc6fd1">readlink</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td></tr>
+<tr class="separator:adc02a9a897f917f69295c011bebc6fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4bdf5bac31f832125c76ee3b8e055f8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ad4bdf5bac31f832125c76ee3b8e055f8">mknod</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, dev_t rdev)</td></tr>
+<tr class="separator:ad4bdf5bac31f832125c76ee3b8e055f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6304d15b02fe536646d6671784169eb"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab6304d15b02fe536646d6671784169eb">mkdir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode)</td></tr>
+<tr class="separator:ab6304d15b02fe536646d6671784169eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1661bb4e3a4e689ff479fdd83b59deff"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a1661bb4e3a4e689ff479fdd83b59deff">unlink</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
+<tr class="separator:a1661bb4e3a4e689ff479fdd83b59deff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa713229657659b76e6ecf2e8515e2219"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aa713229657659b76e6ecf2e8515e2219">rmdir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
+<tr class="separator:aa713229657659b76e6ecf2e8515e2219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f37006d0cd3fb33dd96cb1b11087e17"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a3f37006d0cd3fb33dd96cb1b11087e17">symlink</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *<a class="el" href="structfuse__lowlevel__ops.html#a771fc9da703b4c6544954844684914fd">link</a>, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td></tr>
+<tr class="separator:a3f37006d0cd3fb33dd96cb1b11087e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177134df979e38c73600636b05ddf7d8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a177134df979e38c73600636b05ddf7d8">rename</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname, unsigned int flags)</td></tr>
+<tr class="separator:a177134df979e38c73600636b05ddf7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771fc9da703b4c6544954844684914fd"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a771fc9da703b4c6544954844684914fd">link</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname)</td></tr>
+<tr class="separator:a771fc9da703b4c6544954844684914fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9407639babe9be1523009820a09a3628"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a9407639babe9be1523009820a09a3628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd81057f639eec4b08927fc4c95dd41"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#addd81057f639eec4b08927fc4c95dd41">read</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:addd81057f639eec4b08927fc4c95dd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79487b4a8480b105b4e5125434806808"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a79487b4a8480b105b4e5125434806808">write</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *buf, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a79487b4a8480b105b4e5125434806808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69315421ba606590fed75353ec5d7ff"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ae69315421ba606590fed75353ec5d7ff">flush</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:ae69315421ba606590fed75353ec5d7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b606c5500d84572f3daa39e6178fe64"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a5b606c5500d84572f3daa39e6178fe64">release</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a5b606c5500d84572f3daa39e6178fe64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11cc8076319d4784ed316b433840b81d"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a11cc8076319d4784ed316b433840b81d">fsync</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a11cc8076319d4784ed316b433840b81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa15612c68f7971cadfe3d3ec0a8b70e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#afa15612c68f7971cadfe3d3ec0a8b70e">opendir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:afa15612c68f7971cadfe3d3ec0a8b70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b7d7fc14d3958d7fb7d215fda20301"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a65b7d7fc14d3958d7fb7d215fda20301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300ad176ae0d87ab97bd1783e05e4841"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a300ad176ae0d87ab97bd1783e05e4841">releasedir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a300ad176ae0d87ab97bd1783e05e4841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cf3177aa816446553363dbb51e696d"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ab4cf3177aa816446553363dbb51e696d">fsyncdir</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:ab4cf3177aa816446553363dbb51e696d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f448bb238f0b490af7980a0af1e486"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a49f448bb238f0b490af7980a0af1e486">statfs</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td></tr>
+<tr class="separator:a49f448bb238f0b490af7980a0af1e486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f085ab232e7beeb7f83e458103afad"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a31f085ab232e7beeb7f83e458103afad">setxattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, const char *value, size_t size, int flags)</td></tr>
+<tr class="separator:a31f085ab232e7beeb7f83e458103afad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17214333ecd23875c07cbbfc072ce322"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a17214333ecd23875c07cbbfc072ce322">getxattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, size_t size)</td></tr>
+<tr class="separator:a17214333ecd23875c07cbbfc072ce322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af181f938a15cc314775173ef4744c0b1"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#af181f938a15cc314775173ef4744c0b1">listxattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size)</td></tr>
+<tr class="separator:af181f938a15cc314775173ef4744c0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ea8297d13b020f7129c362f92fb0e5"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a94ea8297d13b020f7129c362f92fb0e5">removexattr</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name)</td></tr>
+<tr class="separator:a94ea8297d13b020f7129c362f92fb0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fec3156389a36345dbbb76161641c7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ac9fec3156389a36345dbbb76161641c7">access</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mask)</td></tr>
+<tr class="separator:ac9fec3156389a36345dbbb76161641c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5462b231d9e4af6e3b7dd288992603"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a6d5462b231d9e4af6e3b7dd288992603">create</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a6d5462b231d9e4af6e3b7dd288992603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cdd0ad2881d6893671ff8d7929afea"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ad5cdd0ad2881d6893671ff8d7929afea">getlk</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a840ce0b71db19ed4607fe444d2d4c14e">flock</a> *lock)</td></tr>
+<tr class="separator:ad5cdd0ad2881d6893671ff8d7929afea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa5d0b2dd7f3ba02c5cd514a470fbd35"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aaa5d0b2dd7f3ba02c5cd514a470fbd35">setlk</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a840ce0b71db19ed4607fe444d2d4c14e">flock</a> *lock, int sleep)</td></tr>
+<tr class="separator:aaa5d0b2dd7f3ba02c5cd514a470fbd35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1494daeb570415261a157e714b6875f2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a1494daeb570415261a157e714b6875f2">bmap</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t blocksize, uint64_t idx)</td></tr>
+<tr class="separator:a1494daeb570415261a157e714b6875f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b213948a593cc85bb0e51cf05004c3"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aa3b213948a593cc85bb0e51cf05004c3">ioctl</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td></tr>
+<tr class="separator:aa3b213948a593cc85bb0e51cf05004c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa018e55c9f36451cdeabcd1e044b3015"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aa018e55c9f36451cdeabcd1e044b3015">poll</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct fuse_pollhandle *ph)</td></tr>
+<tr class="separator:aa018e55c9f36451cdeabcd1e044b3015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367c8976fafade9584f65f04592b6980"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a367c8976fafade9584f65f04592b6980">write_buf</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a367c8976fafade9584f65f04592b6980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcc4e0721c891ec31b5e18185fe83c7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#aabcc4e0721c891ec31b5e18185fe83c7">retrieve_reply</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *cookie, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td></tr>
+<tr class="separator:aabcc4e0721c891ec31b5e18185fe83c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afccc9bbfa0b3d4f8d5f8d4522b7f68f1"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#afccc9bbfa0b3d4f8d5f8d4522b7f68f1">forget_multi</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count, struct fuse_forget_data *forgets)</td></tr>
+<tr class="separator:afccc9bbfa0b3d4f8d5f8d4522b7f68f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840ce0b71db19ed4607fe444d2d4c14e"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a840ce0b71db19ed4607fe444d2d4c14e">flock</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, int op)</td></tr>
+<tr class="separator:a840ce0b71db19ed4607fe444d2d4c14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66727384614c3fa8d44b4ad1fc9da36b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a66727384614c3fa8d44b4ad1fc9da36b">fallocate</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mode, off_t offset, off_t length, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a66727384614c3fa8d44b4ad1fc9da36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c19a8b50f0520d3857cf0af4c9b1a7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a83c19a8b50f0520d3857cf0af4c9b1a7">readdirplus</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:a83c19a8b50f0520d3857cf0af4c9b1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871740861ba7ea9d3198cc6b81485b4b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td></tr>
+<tr class="separator:a871740861ba7ea9d3198cc6b81485b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51ee6da03a2bca6ee18e0be59303ed2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfuse__lowlevel__ops.html#ad51ee6da03a2bca6ee18e0be59303ed2">lseek</a> )(<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, int whence, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td></tr>
+<tr class="separator:ad51ee6da03a2bca6ee18e0be59303ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low level filesystem operations</p>
 <p>Most of the methods (with the exception of init and destroy) receive a request handle (fuse_req_t) as their first argument. This handle must be passed to one of the specified reply functions.</p>
 <p>This may be done inside the method invocation, or after the call has returned. The request handle is valid until one of the reply functions is called.</p>
 <p>Other pointer arguments (name, <a class="el" href="structfuse__file__info.html">fuse_file_info</a>, etc) are not valid after the call has returned, so if they are needed later, their contents have to be copied.</p>
-<p>In general, all methods are expected to perform any necessary permission checking. However, a filesystem may delegate this task to the kernel by passing the <code>default_permissions</code> mount option to <code><a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a></code>. In this case, methods will only be called if the kernel's permission check has succeeded.</p>
-<p>The filesystem sometimes needs to handle a return value of -ENOENT from the reply function, which means, that the request was interrupted, and the reply discarded. For example if <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a170f8c6b953d70928e83bcecee43bfdc">fuse_reply_open()</a> return -ENOENT means, that the release method for this file will not be called. </p>
+<p>In general, all methods are expected to perform any necessary permission checking. However, a filesystem may delegate this task to the kernel by passing the <code>default_permissions</code> mount option to <code><a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a></code>. In this case, methods will only be called if the kernel's permission check has succeeded.</p>
+<p>The filesystem sometimes needs to handle a return value of -ENOENT from the reply function, which means, that the request was interrupted, and the reply discarded. For example if <a class="el" href="fuse__lowlevel_8h.html#a170f8c6b953d70928e83bcecee43bfdc">fuse_reply_open()</a> return -ENOENT means, that the release method for this file will not be called. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00192">192</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00200">200</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="abdfcb8249b126f95bc33ba23e78f1916"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdfcb8249b126f95bc33ba23e78f1916">&#9670;&nbsp;</a></span>access</h2>
+<a id="ac9fec3156389a36345dbbb76161641c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9fec3156389a36345dbbb76161641c7">&#9670;&nbsp;</a></span>access</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::access)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mask)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::access) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mask)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Check file access permissions</p>
-<p>This will be called for the <a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">access()</a> and chdir() system calls. If the 'default_permissions' mount option is given, this method is not called.</p>
+<p>This will be called for the <a class="el" href="structfuse__lowlevel__ops.html#ac9fec3156389a36345dbbb76161641c7">access()</a> and chdir() system calls. If the 'default_permissions' mount option is given, this method is not called.</p>
 <p>This method is not called under Linux kernel versions 2.4.x</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent success, i.e. this and all future <a class="el" href="structfuse__lowlevel__ops.html#abdfcb8249b126f95bc33ba23e78f1916">access()</a> requests will succeed without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent success, i.e. this and all future <a class="el" href="structfuse__lowlevel__ops.html#ac9fec3156389a36345dbbb76161641c7">access()</a> requests will succeed without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -173,24 +173,24 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00917">917</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00925">925</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="adb295e706897d7ada3249d8b027fde7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb295e706897d7ada3249d8b027fde7b">&#9670;&nbsp;</a></span>bmap</h2>
+<a id="a1494daeb570415261a157e714b6875f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1494daeb570415261a157e714b6875f2">&#9670;&nbsp;</a></span>bmap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::bmap)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t blocksize, uint64_t idx)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::bmap) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t blocksize, uint64_t idx)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Map block index within file to block index within device</p>
 <p>Note: This makes sense only for block device backed filesystems mounted with the 'blkdev' option</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#adb295e706897d7ada3249d8b027fde7b">bmap()</a> requests will fail with the same error code without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a1494daeb570415261a157e714b6875f2">bmap()</a> requests will fail with the same error code without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_bmap fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -202,25 +202,25 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01010">1010</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01018">1018</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a4a2e044849baf612bf54ea983f2c61a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a2e044849baf612bf54ea983f2c61a8">&#9670;&nbsp;</a></span>copy_file_range</h2>
+<a id="a871740861ba7ea9d3198cc6b81485b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871740861ba7ea9d3198cc6b81485b4b">&#9670;&nbsp;</a></span>copy_file_range</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::copy_file_range)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::copy_file_range) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_in, off_t off_in, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_in, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino_out, off_t off_out, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi_out, size_t len, int flags)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Copy a range of data from one file to another</p>
 <p>Performs an optimized copy between two file descriptors without the additional cost of transferring data through the FUSE kernel module to user space (glibc) and then back into the FUSE filesystem again.</p>
 <p>In case this method is not implemented, glibc falls back to reading data from the source and writing to the destination. Effectively doing an inefficient copy of the data.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a4a2e044849baf612bf54ea983f2c61a8">copy_file_range()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_write fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -232,31 +232,31 @@ Data Fields</h2></td></tr>
     <tr><td class="paramname">off_out</td><td>starting point where the data should be written </td></tr>
     <tr><td class="paramname">fi_out</td><td>file information of the destination file </td></tr>
     <tr><td class="paramname">len</td><td>maximum size of the data to copy </td></tr>
-    <tr><td class="paramname">flags</td><td>passed along with the <a class="el" href="structfuse__lowlevel__ops.html#a4a2e044849baf612bf54ea983f2c61a8">copy_file_range()</a> syscall </td></tr>
+    <tr><td class="paramname">flags</td><td>passed along with the <a class="el" href="structfuse__lowlevel__ops.html#a871740861ba7ea9d3198cc6b81485b4b">copy_file_range()</a> syscall </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01242">1242</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01250">1250</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a226ce8b472150dd91977cb6c191ff792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a226ce8b472150dd91977cb6c191ff792">&#9670;&nbsp;</a></span>create</h2>
+<a id="a6d5462b231d9e4af6e3b7dd288992603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5462b231d9e4af6e3b7dd288992603">&#9670;&nbsp;</a></span>create</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::create)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::create) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Create and open a file</p>
 <p>If the file does not exist, first create it with the specified mode, and then open it.</p>
 <p>See the description of the open handler for more information.</p>
-<p>If this method is not implemented or under Linux kernel versions earlier than 2.6.15, the <a class="el" href="structfuse__lowlevel__ops.html#a5cd44aa96291fa366d4ef40e2d1d1d76">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a> methods will be called instead.</p>
-<p>If this request is answered with an error code of ENOSYS, the handler is treated as not implemented (i.e., for this and future requests the <a class="el" href="structfuse__lowlevel__ops.html#a5cd44aa96291fa366d4ef40e2d1d1d76">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a> handlers will be called instead).</p>
+<p>If this method is not implemented or under Linux kernel versions earlier than 2.6.15, the <a class="el" href="structfuse__lowlevel__ops.html#ad4bdf5bac31f832125c76ee3b8e055f8">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> methods will be called instead.</p>
+<p>If this request is answered with an error code of ENOSYS, the handler is treated as not implemented (i.e., for this and future requests the <a class="el" href="structfuse__lowlevel__ops.html#ad4bdf5bac31f832125c76ee3b8e055f8">mknod()</a> and <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> handlers will be called instead).</p>
 <p>Valid replies: fuse_reply_create fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -269,18 +269,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00946">946</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00954">954</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a963181c33f58859fd060b0ccde2f5ec3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a963181c33f58859fd060b0ccde2f5ec3">&#9670;&nbsp;</a></span>destroy</h2>
+<a id="ab4eb554489467eaafa152d102cdac97d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4eb554489467eaafa152d102cdac97d">&#9670;&nbsp;</a></span>destroy</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::destroy)(void *userdata)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::destroy) (void *userdata)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -289,28 +289,28 @@ Data Fields</h2></td></tr>
 <p>There's no reply to this function</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">userdata</td><td>the user data passed to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </td></tr>
+    <tr><td class="paramname">userdata</td><td>the user data passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00222">222</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00230">230</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a5d0ddef3583d645ccf957bdef9291047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d0ddef3583d645ccf957bdef9291047">&#9670;&nbsp;</a></span>fallocate</h2>
+<a id="a66727384614c3fa8d44b4ad1fc9da36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66727384614c3fa8d44b4ad1fc9da36b">&#9670;&nbsp;</a></span>fallocate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::fallocate)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mode, off_t offset, off_t length, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::fallocate) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int mode, off_t offset, off_t length, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Allocate requested space. If this function returns success then subsequent writes to the specified range shall not fail due to the lack of free space on the file system storage media.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a5d0ddef3583d645ccf957bdef9291047">fallocate()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a66727384614c3fa8d44b4ad1fc9da36b">fallocate()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -323,18 +323,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01181">1181</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01189">1189</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a01b103e34d751d0456add93d9c34e711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b103e34d751d0456add93d9c34e711">&#9670;&nbsp;</a></span>flock</h2>
+<a id="a840ce0b71db19ed4607fe444d2d4c14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840ce0b71db19ed4607fe444d2d4c14e">&#9670;&nbsp;</a></span>flock</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::flock)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, int op)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::flock) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, int op)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,18 +351,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01158">1158</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01166">1166</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="af6c2540969d60626f1c18e0012de393a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6c2540969d60626f1c18e0012de393a">&#9670;&nbsp;</a></span>flush</h2>
+<a id="ae69315421ba606590fed75353ec5d7ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69315421ba606590fed75353ec5d7ff">&#9670;&nbsp;</a></span>flush</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::flush)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::flush) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -373,7 +373,7 @@ Data Fields</h2></td></tr>
 <p>fi-&gt;fh will contain the value set by the open method, or will be undefined if the open method didn't set any value.</p>
 <p>NOTE: the name of the method is misleading, since (unlike fsync) the filesystem is not forced to flush pending writes. One reason to flush data is if the filesystem wants to return write errors during close. However, such use is non-portable because POSIX does not require <a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/close.html">close</a> to wait for delayed I/O to complete.</p>
 <p>If the filesystem supports file locking operations (setlk, getlk) it should remove all locks belonging to 'fi-&gt;owner'.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#af6c2540969d60626f1c18e0012de393a">flush()</a> will succeed automatically without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#ae69315421ba606590fed75353ec5d7ff">flush()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -384,18 +384,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00625">625</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00633">633</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a97de3962fc55f136c6bd48183705dbe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97de3962fc55f136c6bd48183705dbe8">&#9670;&nbsp;</a></span>forget</h2>
+<a id="a9fca05bcb3594ccd68d288ebd37a8467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fca05bcb3594ccd68d288ebd37a8467">&#9670;&nbsp;</a></span>forget</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::forget)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, uint64_t nlookup)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::forget) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, uint64_t nlookup)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -415,18 +415,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00273">273</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00281">281</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a17808183820bb58dcc17db639511a2cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17808183820bb58dcc17db639511a2cb">&#9670;&nbsp;</a></span>forget_multi</h2>
+<a id="afccc9bbfa0b3d4f8d5f8d4522b7f68f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afccc9bbfa0b3d4f8d5f8d4522b7f68f1">&#9670;&nbsp;</a></span>forget_multi</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::forget_multi)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count, struct fuse_forget_data *forgets)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::forget_multi) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, size_t count, struct fuse_forget_data *forgets)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -440,24 +440,24 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01140">1140</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01148">1148</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a81ff5a93a2edd71b063c2e827e0fd8d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81ff5a93a2edd71b063c2e827e0fd8d8">&#9670;&nbsp;</a></span>fsync</h2>
+<a id="a11cc8076319d4784ed316b433840b81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11cc8076319d4784ed316b433840b81d">&#9670;&nbsp;</a></span>fsync</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::fsync)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::fsync) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Synchronize file contents</p>
 <p>If the datasync parameter is non-zero, then only the user data should be flushed, not the meta data.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#a81ff5a93a2edd71b063c2e827e0fd8d8">fsync()</a> will succeed automatically without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#a11cc8076319d4784ed316b433840b81d">fsync()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -469,25 +469,25 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00675">675</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00683">683</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ab2e3a9ad8b264daec4c254f5b064dfb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2e3a9ad8b264daec4c254f5b064dfb3">&#9670;&nbsp;</a></span>fsyncdir</h2>
+<a id="ab4cf3177aa816446553363dbb51e696d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4cf3177aa816446553363dbb51e696d">&#9670;&nbsp;</a></span>fsyncdir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::fsyncdir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::fsyncdir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, int datasync, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Synchronize directory contents</p>
 <p>If the datasync parameter is non-zero, then only the directory contents should be flushed, not the meta data.</p>
 <p>fi-&gt;fh will contain the value set by the opendir method, or will be undefined if the opendir method didn't set any value.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#ab2e3a9ad8b264daec4c254f5b064dfb3">fsyncdir()</a> will succeed automatically without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as success and future calls to <a class="el" href="structfuse__lowlevel__ops.html#ab4cf3177aa816446553363dbb51e696d">fsyncdir()</a> will succeed automatically without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -499,18 +499,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00790">790</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00798">798</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a994c316fa7a1ca33525a4540675f6b47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a994c316fa7a1ca33525a4540675f6b47">&#9670;&nbsp;</a></span>getattr</h2>
+<a id="a863ccafbcdd07a55835c4e82c4854155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a863ccafbcdd07a55835c4e82c4854155">&#9670;&nbsp;</a></span>getattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::getattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::getattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -527,18 +527,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00294">294</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00302">302</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a709d41ca0cde37dbd4d4d06c89f6906a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a709d41ca0cde37dbd4d4d06c89f6906a">&#9670;&nbsp;</a></span>getlk</h2>
+<a id="ad5cdd0ad2881d6893671ff8d7929afea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cdd0ad2881d6893671ff8d7929afea">&#9670;&nbsp;</a></span>getlk</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::getlk)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a01b103e34d751d0456add93d9c34e711">flock</a> *lock)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::getlk) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a840ce0b71db19ed4607fe444d2d4c14e">flock</a> *lock)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -554,18 +554,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00961">961</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00969">969</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="aaed65c2801391c35ad0c60e73a0c43d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed65c2801391c35ad0c60e73a0c43d9">&#9670;&nbsp;</a></span>getxattr</h2>
+<a id="a17214333ecd23875c07cbbfc072ce322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17214333ecd23875c07cbbfc072ce322">&#9670;&nbsp;</a></span>getxattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::getxattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, size_t size)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::getxattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, size_t size)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -573,7 +573,7 @@ Data Fields</h2></td></tr>
 <p>If size is zero, the size of the value should be sent with fuse_reply_xattr.</p>
 <p>If the size is non-zero, and the value fits in the buffer, the value should be sent with fuse_reply_buf.</p>
 <p>If the size is too small for the value, the ERANGE error should be sent.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#aaed65c2801391c35ad0c60e73a0c43d9">getxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a17214333ecd23875c07cbbfc072ce322">getxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_xattr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -585,44 +585,44 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00847">847</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00855">855</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ab6fa0b9edb5b002cd1502c969c887329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6fa0b9edb5b002cd1502c969c887329">&#9670;&nbsp;</a></span>init</h2>
+<a id="aa8ed20e1d06c42a386404fba0d3e56b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ed20e1d06c42a386404fba0d3e56b5">&#9670;&nbsp;</a></span>init</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::init)(void *userdata, struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::init) (void *userdata, struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Initialize filesystem</p>
 <p>This function is called when libfuse establishes communication with the FUSE kernel module. The file system should use this module to inspect and/or modify the connection parameters provided in the <code>conn</code> structure.</p>
-<p>Note that some parameters may be overwritten by options passed to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> which take precedence over the values set in this handler.</p>
+<p>Note that some parameters may be overwritten by options passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> which take precedence over the values set in this handler.</p>
 <p>There's no reply to this function</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">userdata</td><td>the user data passed to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </td></tr>
+    <tr><td class="paramname">userdata</td><td>the user data passed to <a class="el" href="fuse__lowlevel_8h.html#a9ee52f81d0c63d9bd46b11314ba596cf">fuse_session_new()</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00209">209</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00217">217</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a9ac954bd3cfab3c8d6000089a6fbb799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac954bd3cfab3c8d6000089a6fbb799">&#9670;&nbsp;</a></span>ioctl</h2>
+<a id="aa3b213948a593cc85bb0e51cf05004c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b213948a593cc85bb0e51cf05004c3">&#9670;&nbsp;</a></span>ioctl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::ioctl)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::ioctl) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, unsigned int cmd, void *arg, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, unsigned flags, const void *in_buf, size_t in_bufsz, size_t out_bufsz)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -645,18 +645,18 @@ Data Fields</h2></td></tr>
 </dl>
 <p>Note : the unsigned long request submitted by the application is truncated to 32 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01046">1046</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01054">1054</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a406798b81f44a8b54f188455c31b9be8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a406798b81f44a8b54f188455c31b9be8">&#9670;&nbsp;</a></span>link</h2>
+<a id="a771fc9da703b4c6544954844684914fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771fc9da703b4c6544954844684914fd">&#9670;&nbsp;</a></span>link</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::link)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::link) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -672,18 +672,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00468">468</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00476">476</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a0f084e779f3fbd407bb5d0890bf0ef6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f084e779f3fbd407bb5d0890bf0ef6b">&#9670;&nbsp;</a></span>listxattr</h2>
+<a id="af181f938a15cc314775173ef4744c0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af181f938a15cc314775173ef4744c0b1">&#9670;&nbsp;</a></span>listxattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::listxattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::listxattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -691,7 +691,7 @@ Data Fields</h2></td></tr>
 <p>If size is zero, the total size of the attribute list should be sent with fuse_reply_xattr.</p>
 <p>If the size is non-zero, and the null character separated attribute list fits in the buffer, the list should be sent with fuse_reply_buf.</p>
 <p>If the size is too small for the list, the ERANGE error should be sent.</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a0f084e779f3fbd407bb5d0890bf0ef6b">listxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#af181f938a15cc314775173ef4744c0b1">listxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_xattr fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -702,18 +702,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00878">878</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00886">886</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ae8a2850c71bec355ad347413fa73f7c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8a2850c71bec355ad347413fa73f7c2">&#9670;&nbsp;</a></span>lookup</h2>
+<a id="a7f46abd7c2795cfcf7a3d8c5ee8f6c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f46abd7c2795cfcf7a3d8c5ee8f6c70">&#9670;&nbsp;</a></span>lookup</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::lookup)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::lookup) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -728,23 +728,23 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00235">235</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00243">243</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a0da4080ebdb822f300e5d227924daf9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da4080ebdb822f300e5d227924daf9b">&#9670;&nbsp;</a></span>lseek</h2>
+<a id="ad51ee6da03a2bca6ee18e0be59303ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51ee6da03a2bca6ee18e0be59303ed2">&#9670;&nbsp;</a></span>lseek</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::lseek)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, int whence, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::lseek) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t off, int whence, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Find next data or hole after the specified offset</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a0da4080ebdb822f300e5d227924daf9b">lseek()</a> requests will fail with the same error code without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#ad51ee6da03a2bca6ee18e0be59303ed2">lseek()</a> requests will fail with the same error code without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_lseek fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -757,18 +757,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01266">1266</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01274">1274</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a23af0f6683447112848d9f1731e021d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23af0f6683447112848d9f1731e021d7">&#9670;&nbsp;</a></span>mkdir</h2>
+<a id="ab6304d15b02fe536646d6671784169eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6304d15b02fe536646d6671784169eb">&#9670;&nbsp;</a></span>mkdir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::mkdir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::mkdir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -784,18 +784,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00371">371</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00379">379</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a5cd44aa96291fa366d4ef40e2d1d1d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cd44aa96291fa366d4ef40e2d1d1d76">&#9670;&nbsp;</a></span>mknod</h2>
+<a id="ad4bdf5bac31f832125c76ee3b8e055f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4bdf5bac31f832125c76ee3b8e055f8">&#9670;&nbsp;</a></span>mknod</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::mknod)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, dev_t rdev)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::mknod) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, mode_t mode, dev_t rdev)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -813,18 +813,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00356">356</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00364">364</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="aab2f5186ecaa817e75ed443165288218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab2f5186ecaa817e75ed443165288218">&#9670;&nbsp;</a></span>open</h2>
+<a id="a9407639babe9be1523009820a09a3628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9407639babe9be1523009820a09a3628">&#9670;&nbsp;</a></span>open</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::open)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::open) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -832,14 +832,14 @@ Data Fields</h2></td></tr>
 <p>Open flags are available in fi-&gt;flags. The following rules apply.</p>
 <ul>
 <li>Creation (O_CREAT, O_EXCL, O_NOCTTY) flags will be filtered out / handled by the kernel.</li>
-<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__lowlevel__ops.html#aab2f5186ecaa817e75ed443165288218">open()</a> and may thus be omitted by the filesystem.</li>
+<li>Access modes (O_RDONLY, O_WRONLY, O_RDWR) should be used by the filesystem to check if the operation is permitted. If the <code>-o default_permissions</code> mount option is given, this check is already done by the kernel before calling <a class="el" href="structfuse__lowlevel__ops.html#a9407639babe9be1523009820a09a3628">open()</a> and may thus be omitted by the filesystem.</li>
 <li>When writeback caching is enabled, the kernel may send read requests even for files opened with O_WRONLY. The filesystem should be prepared to handle this.</li>
 <li>When writeback caching is disabled, the filesystem is expected to properly handle the O_APPEND flag and ensure that each write is appending to the end of the file.</li>
 <li>When writeback caching is enabled, the kernel will handle O_APPEND. However, unless all changes to the file come through the kernel this will not work reliably. The filesystem should thus either ignore the O_APPEND flag (and let the kernel handle it), or return an error (indicating that reliably O_APPEND is not available).</li>
 </ul>
 <p>Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p>Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
-<p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;fuse_common.h&gt; for more details.</p>
+<p>There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
 <p>If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open and release will also succeed without being sent to the filesystem process.</p>
 <p>Valid replies: fuse_reply_open fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -851,18 +851,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00527">527</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00535">535</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a57a2c2d826fe11dd005d3275c3028d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57a2c2d826fe11dd005d3275c3028d5e">&#9670;&nbsp;</a></span>opendir</h2>
+<a id="afa15612c68f7971cadfe3d3ec0a8b70e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa15612c68f7971cadfe3d3ec0a8b70e">&#9670;&nbsp;</a></span>opendir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::opendir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::opendir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -879,25 +879,25 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00700">700</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00708">708</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a50abf8a54b6c73a5a40123b6cf63c71e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50abf8a54b6c73a5a40123b6cf63c71e">&#9670;&nbsp;</a></span>poll</h2>
+<a id="aa018e55c9f36451cdeabcd1e044b3015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa018e55c9f36451cdeabcd1e044b3015">&#9670;&nbsp;</a></span>poll</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::poll)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct fuse_pollhandle *ph)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::poll) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct fuse_pollhandle *ph)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Poll for IO readiness</p>
-<p>Note: If ph is non-NULL, the client should notify when IO readiness events occur by calling <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ab078685b1f480188031fc40aa2e2fbca">fuse_lowlevel_notify_poll()</a> with the specified ph.</p>
+<p>Note: If ph is non-NULL, the client should notify when IO readiness events occur by calling <a class="el" href="fuse__lowlevel_8h.html#ab078685b1f480188031fc40aa2e2fbca">fuse_lowlevel_notify_poll()</a> with the specified ph.</p>
 <p>Regardless of the number of times poll with a non-NULL ph is received, single notification is enough to clear all. Notifying more times incurs overhead but doesn't harm correctness.</p>
-<p>The callee is responsible for destroying ph with <a class="el" href="fuse-3_813_80_2include_2fuse__common_8h.html#adf5027f8a38b2efc03858efd7fdc756a">fuse_pollhandle_destroy()</a> when no longer in use.</p>
+<p>The callee is responsible for destroying ph with <a class="el" href="fuse__common_8h.html#adf5027f8a38b2efc03858efd7fdc756a">fuse_pollhandle_destroy()</a> when no longer in use.</p>
 <p>If this request is answered with an error code of ENOSYS, this is treated as success (with a kernel-defined default poll-mask) and future calls to pull() will succeed the same way without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_poll fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -910,18 +910,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01080">1080</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01088">1088</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ab7b740dccdc6ddc388cdcd7897e4c2e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b740dccdc6ddc388cdcd7897e4c2e3">&#9670;&nbsp;</a></span>read</h2>
+<a id="addd81057f639eec4b08927fc4c95dd41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd81057f639eec4b08927fc4c95dd41">&#9670;&nbsp;</a></span>read</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::read)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::read) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -940,26 +940,26 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00555">555</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00563">563</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="af1ef8e59e0cb0b02dc0e406898aeaa51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1ef8e59e0cb0b02dc0e406898aeaa51">&#9670;&nbsp;</a></span>readdir</h2>
+<a id="a65b7d7fc14d3958d7fb7d215fda20301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b7d7fc14d3958d7fb7d215fda20301">&#9670;&nbsp;</a></span>readdir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::readdir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::readdir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Read directory</p>
-<p>Send a buffer filled using <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry()</a>, with size not exceeding the requested size. Send an empty buffer on end of stream.</p>
+<p>Send a buffer filled using <a class="el" href="fuse__lowlevel_8h.html#ad1957bcc8ece8c90f16c42c4daf3053f">fuse_add_direntry()</a>, with size not exceeding the requested size. Send an empty buffer on end of stream.</p>
 <p>fi-&gt;fh will contain the value set by the opendir method, or will be undefined if the opendir method didn't set any value.</p>
-<p>Returning a directory entry from <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir()</a> does not affect its lookup count.</p>
-<p>If off_t is non-zero, then it will correspond to one of the off_t values that was previously returned by <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir()</a> for the same directory handle. In this case, <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir()</a> should skip over entries coming before the position defined by the off_t value. If entries are added or removed while the directory handle is open, the filesystem may still include the entries that have been removed, and may not report the entries that have been created. However, addition or removal of entries must never cause <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir()</a> to skip over unrelated entries or to report them more than once. This means that off_t can not be a simple index that enumerates the entries that have been returned but must contain sufficient information to uniquely determine the next directory entry to return even when the set of entries is changing.</p>
+<p>Returning a directory entry from <a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir()</a> does not affect its lookup count.</p>
+<p>If off_t is non-zero, then it will correspond to one of the off_t values that was previously returned by <a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir()</a> for the same directory handle. In this case, <a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir()</a> should skip over entries coming before the position defined by the off_t value. If entries are added or removed while the directory handle is open, the filesystem may still include the entries that have been removed, and may not report the entries that have been created. However, addition or removal of entries must never cause <a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir()</a> to skip over unrelated entries or to report them more than once. This means that off_t can not be a simple index that enumerates the entries that have been returned but must contain sufficient information to uniquely determine the next directory entry to return even when the set of entries is changing.</p>
 <p>The function does not have to report the '.' and '..' entries, but is allowed to do so. Note that, if readdir does not return '.' or '..', they will not be implicitly returned, and this behavior is observable by the caller.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -973,25 +973,25 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00746">746</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00754">754</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="af621ef96ffc2a71af8c7768c109b880e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af621ef96ffc2a71af8c7768c109b880e">&#9670;&nbsp;</a></span>readdirplus</h2>
+<a id="a83c19a8b50f0520d3857cf0af4c9b1a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c19a8b50f0520d3857cf0af4c9b1a7">&#9670;&nbsp;</a></span>readdirplus</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::readdirplus)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::readdirplus) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Read directory with attributes</p>
-<p>Send a buffer filled using <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a34f3f1beebacab5f717d95baf832a8a5">fuse_add_direntry_plus()</a>, with size not exceeding the requested size. Send an empty buffer on end of stream.</p>
+<p>Send a buffer filled using <a class="el" href="fuse__lowlevel_8h.html#a34f3f1beebacab5f717d95baf832a8a5">fuse_add_direntry_plus()</a>, with size not exceeding the requested size. Send an empty buffer on end of stream.</p>
 <p>fi-&gt;fh will contain the value set by the opendir method, or will be undefined if the opendir method didn't set any value.</p>
-<p>In contrast to <a class="el" href="structfuse__lowlevel__ops.html#af1ef8e59e0cb0b02dc0e406898aeaa51">readdir()</a> (which does not affect the lookup counts), the lookup count of every entry returned by <a class="el" href="structfuse__lowlevel__ops.html#af621ef96ffc2a71af8c7768c109b880e">readdirplus()</a>, except "." and "..", is incremented by one.</p>
+<p>In contrast to <a class="el" href="structfuse__lowlevel__ops.html#a65b7d7fc14d3958d7fb7d215fda20301">readdir()</a> (which does not affect the lookup counts), the lookup count of every entry returned by <a class="el" href="structfuse__lowlevel__ops.html#a83c19a8b50f0520d3857cf0af4c9b1a7">readdirplus()</a>, except "." and "..", is incremented by one.</p>
 <p>Valid replies: fuse_reply_buf fuse_reply_data fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1004,18 +1004,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01209">1209</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01217">1217</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ae1032649069ae28d46bde76a40743fcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1032649069ae28d46bde76a40743fcf">&#9670;&nbsp;</a></span>readlink</h2>
+<a id="adc02a9a897f917f69295c011bebc6fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc02a9a897f917f69295c011bebc6fd1">&#9670;&nbsp;</a></span>readlink</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::readlink)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::readlink) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1029,18 +1029,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00338">338</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00346">346</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="abc49c6310cd0eaddf116988426ca21d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc49c6310cd0eaddf116988426ca21d2">&#9670;&nbsp;</a></span>release</h2>
+<a id="a5b606c5500d84572f3daa39e6178fe64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b606c5500d84572f3daa39e6178fe64">&#9670;&nbsp;</a></span>release</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::release)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::release) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1059,18 +1059,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00653">653</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00661">661</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="abfc54ffe5fa5778fc273a6666494d802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfc54ffe5fa5778fc273a6666494d802">&#9670;&nbsp;</a></span>releasedir</h2>
+<a id="a300ad176ae0d87ab97bd1783e05e4841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300ad176ae0d87ab97bd1783e05e4841">&#9670;&nbsp;</a></span>releasedir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::releasedir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::releasedir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1087,23 +1087,23 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00765">765</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00773">773</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a15be6632986e6be8660071e1d71ffe51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15be6632986e6be8660071e1d71ffe51">&#9670;&nbsp;</a></span>removexattr</h2>
+<a id="a94ea8297d13b020f7129c362f92fb0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ea8297d13b020f7129c362f92fb0e5">&#9670;&nbsp;</a></span>removexattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::removexattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::removexattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Remove an extended attribute</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a15be6632986e6be8660071e1d71ffe51">removexattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a94ea8297d13b020f7129c362f92fb0e5">removexattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1114,18 +1114,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00895">895</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00903">903</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a46d76dee9cf1741c364e5be955885248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46d76dee9cf1741c364e5be955885248">&#9670;&nbsp;</a></span>rename</h2>
+<a id="a177134df979e38c73600636b05ddf7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177134df979e38c73600636b05ddf7d8">&#9670;&nbsp;</a></span>rename</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::rename)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname, unsigned int flags)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::rename) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> newparent, const char *newname, unsigned int flags)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1145,18 +1145,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00452">452</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00460">460</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a1c1d7ad0c1fb40d7180660e7f3f7f089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c1d7ad0c1fb40d7180660e7f3f7f089">&#9670;&nbsp;</a></span>retrieve_reply</h2>
+<a id="aabcc4e0721c891ec31b5e18185fe83c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabcc4e0721c891ec31b5e18185fe83c7">&#9670;&nbsp;</a></span>retrieve_reply</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::retrieve_reply)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *cookie, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::retrieve_reply) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, void *cookie, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, off_t offset, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1165,26 +1165,26 @@ Data Fields</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>request handle </td></tr>
-    <tr><td class="paramname">cookie</td><td>user data supplied to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
-    <tr><td class="paramname">ino</td><td>the inode number supplied to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
-    <tr><td class="paramname">offset</td><td>the offset supplied to <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
+    <tr><td class="paramname">cookie</td><td>user data supplied to <a class="el" href="fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
+    <tr><td class="paramname">ino</td><td>the inode number supplied to <a class="el" href="fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset supplied to <a class="el" href="fuse__lowlevel_8h.html#a58cb3543209d2c29dc2830f2503b5058">fuse_lowlevel_notify_retrieve()</a> </td></tr>
     <tr><td class="paramname">bufv</td><td>the buffer containing the returned data </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01126">1126</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01134">1134</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a3cbf1eaf4366aed47fa5d991ea5ff0d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cbf1eaf4366aed47fa5d991ea5ff0d5">&#9670;&nbsp;</a></span>rmdir</h2>
+<a id="aa713229657659b76e6ecf2e8515e2219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa713229657659b76e6ecf2e8515e2219">&#9670;&nbsp;</a></span>rmdir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::rmdir)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::rmdir) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1200,18 +1200,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00406">406</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00414">414</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a6a95408dd79575df7f6c64e55f1e973b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a95408dd79575df7f6c64e55f1e973b">&#9670;&nbsp;</a></span>setattr</h2>
+<a id="a8fce08ae0d6a4f289bffbf9a9defe926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fce08ae0d6a4f289bffbf9a9defe926">&#9670;&nbsp;</a></span>setattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::setattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct stat *attr, int to_set, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::setattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct stat *attr, int to_set, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1231,23 +1231,23 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00325">325</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00333">333</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="af290d78441583d1d6ba02da01904f328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af290d78441583d1d6ba02da01904f328">&#9670;&nbsp;</a></span>setlk</h2>
+<a id="aaa5d0b2dd7f3ba02c5cd514a470fbd35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5d0b2dd7f3ba02c5cd514a470fbd35">&#9670;&nbsp;</a></span>setlk</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::setlk)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a01b103e34d751d0456add93d9c34e711">flock</a> *lock, int sleep)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::setlk) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi, struct <a class="el" href="structfuse__lowlevel__ops.html#a840ce0b71db19ed4607fe444d2d4c14e">flock</a> *lock, int sleep)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Acquire, modify or release a POSIX file lock</p>
-<p>For POSIX threads (NPTL) there's a 1-1 relation between pid and owner, but otherwise this is not always the case. For checking lock ownership, 'fi-&gt;owner' must be used. The l_pid field in 'struct flock' should only be used to fill in this field in <a class="el" href="structfuse__lowlevel__ops.html#a709d41ca0cde37dbd4d4d06c89f6906a">getlk()</a>.</p>
+<p>For POSIX threads (NPTL) there's a 1-1 relation between pid and owner, but otherwise this is not always the case. For checking lock ownership, 'fi-&gt;owner' must be used. The l_pid field in 'struct flock' should only be used to fill in this field in <a class="el" href="structfuse__lowlevel__ops.html#ad5cdd0ad2881d6893671ff8d7929afea">getlk()</a>.</p>
 <p>Note: if the locking methods are not implemented, the kernel will still allow file locking to work locally. Hence these are only interesting for network filesystems and similar.</p>
 <p>Valid replies: fuse_reply_err</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1261,37 +1261,37 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00986">986</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00994">994</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="ab80c4081204c07a423c3c88b116f3086"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab80c4081204c07a423c3c88b116f3086">&#9670;&nbsp;</a></span>setxattr</h2>
+<a id="a31f085ab232e7beeb7f83e458103afad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f085ab232e7beeb7f83e458103afad">&#9670;&nbsp;</a></span>setxattr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::setxattr)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, const char *value, size_t size, int flags)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::setxattr) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *name, const char *value, size_t size, int flags)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Set an extended attribute</p>
-<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#ab80c4081204c07a423c3c88b116f3086">setxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
+<p>If this request is answered with an error code of ENOSYS, this is treated as a permanent failure with error code EOPNOTSUPP, i.e. all future <a class="el" href="structfuse__lowlevel__ops.html#a31f085ab232e7beeb7f83e458103afad">setxattr()</a> requests will fail with EOPNOTSUPP without being send to the filesystem process.</p>
 <p>Valid replies: fuse_reply_err </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00816">816</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00824">824</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="aeea156121a28b519e284451721fb7d25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeea156121a28b519e284451721fb7d25">&#9670;&nbsp;</a></span>statfs</h2>
+<a id="a49f448bb238f0b490af7980a0af1e486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f448bb238f0b490af7980a0af1e486">&#9670;&nbsp;</a></span>statfs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::statfs)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::statfs) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1305,18 +1305,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00803">803</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00811">811</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a30455cc58397c5a45434492d93a71af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30455cc58397c5a45434492d93a71af4">&#9670;&nbsp;</a></span>symlink</h2>
+<a id="a3f37006d0cd3fb33dd96cb1b11087e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f37006d0cd3fb33dd96cb1b11087e17">&#9670;&nbsp;</a></span>symlink</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::symlink)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *<a class="el" href="structfuse__lowlevel__ops.html#a406798b81f44a8b54f188455c31b9be8">link</a>, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::symlink) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, const char *<a class="el" href="structfuse__lowlevel__ops.html#a771fc9da703b4c6544954844684914fd">link</a>, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1332,18 +1332,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00420">420</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00428">428</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="afb6e186f5cbe806d3838a51c112a97ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb6e186f5cbe806d3838a51c112a97ee">&#9670;&nbsp;</a></span>unlink</h2>
+<a id="a1661bb4e3a4e689ff479fdd83b59deff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1661bb4e3a4e689ff479fdd83b59deff">&#9670;&nbsp;</a></span>unlink</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::unlink)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::unlink) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> parent, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1359,18 +1359,18 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00389">389</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00397">397</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a09cc5c1078cfb909513b5ca27464f53a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09cc5c1078cfb909513b5ca27464f53a">&#9670;&nbsp;</a></span>write</h2>
+<a id="a79487b4a8480b105b4e5125434806808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79487b4a8480b105b4e5125434806808">&#9670;&nbsp;</a></span>write</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::write)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *buf, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::write) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, const char *buf, size_t size, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1391,23 +1391,23 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l00584">584</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l00592">592</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
-<a id="a3b40ed06d1297f244363a8dcd40d44aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b40ed06d1297f244363a8dcd40d44aa">&#9670;&nbsp;</a></span>write_buf</h2>
+<a id="a367c8976fafade9584f65f04592b6980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367c8976fafade9584f65f04592b6980">&#9670;&nbsp;</a></span>write_buf</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* fuse_lowlevel_ops::write_buf)(<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
+          <td class="memname">void(* fuse_lowlevel_ops::write_buf) (<a class="el" href="fuse__lowlevel_8h.html#a33e2aa4a8905a05397292ae047cd2257">fuse_req_t</a> req, <a class="el" href="fuse__lowlevel_8h.html#ad119a72f00b4cd2e4a500fd3364ae1e2">fuse_ino_t</a> ino, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv, off_t off, struct <a class="el" href="structfuse__file__info.html">fuse_file_info</a> *fi)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Write data made available in a buffer</p>
-<p>This is a more generic version of the -&gt;<a class="el" href="structfuse__lowlevel__ops.html#a09cc5c1078cfb909513b5ca27464f53a">write()</a> method. If FUSE_CAP_SPLICE_READ is set in <a class="el" href="structfuse__conn__info.html#af45de81548b591f3004353a324e4e04d">fuse_conn_info.want</a> and the kernel supports splicing from the fuse device, then the data will be made available in pipe for supporting zero copy data transfer.</p>
+<p>This is a more generic version of the -&gt;<a class="el" href="structfuse__lowlevel__ops.html#a79487b4a8480b105b4e5125434806808">write()</a> method. If FUSE_CAP_SPLICE_READ is set in <a class="el" href="structfuse__conn__info.html#af45de81548b591f3004353a324e4e04d">fuse_conn_info.want</a> and the kernel supports splicing from the fuse device, then the data will be made available in pipe for supporting zero copy data transfer.</p>
 <p>buf-&gt;count is guaranteed to be one (and thus buf-&gt;idx is always zero). The write_buf handler must ensure that bufv-&gt;off is correctly updated (reflecting the number of bytes read from bufv-&gt;buf[0]).</p>
 <p>Unless FUSE_CAP_HANDLE_KILLPRIV is disabled, this method is expected to reset the setuid and setgid bits.</p>
 <p>Valid replies: fuse_reply_write fuse_reply_err</p>
@@ -1422,12 +1422,12 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html#l01110">1110</a> of file <a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse__lowlevel_8h_source.html#l01118">1118</a> of file <a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>fuse-3.13.0/include/<a class="el" href="fuse-3_813_80_2include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a></li>
+<li>include/<a class="el" href="fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
