@@ -218,9 +218,9 @@ Source code</h2>
 <div class="line">        <span class="keywordflow">return</span> fioc_resize(size);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> fioc_readdir(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">void</span> *buf, <a class="code" href="fuse-3_813_80_2include_2fuse_8h.html#a7dd132de66a5cc2add2a4eff5d435660">fuse_fill_dir_t</a> filler,</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> fioc_readdir(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">void</span> *buf, <a class="code" href="fuse-3_814_81_2include_2fuse_8h.html#a7dd132de66a5cc2add2a4eff5d435660">fuse_fill_dir_t</a> filler,</div>
 <div class="line">                        off_t offset, <span class="keyword">struct</span> <a class="code" href="structfuse__file__info.html">fuse_file_info</a> *fi,</div>
-<div class="line">                        <span class="keyword">enum</span> <a class="code" href="fuse-3_813_80_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074">fuse_readdir_flags</a> flags)</div>
+<div class="line">                        <span class="keyword">enum</span> <a class="code" href="fuse-3_814_81_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074">fuse_readdir_flags</a> flags)</div>
 <div class="line">{</div>
 <div class="line">        (void) fi;</div>
 <div class="line">        (void) offset;</div>
@@ -246,7 +246,7 @@ Source code</h2>
 <div class="line">        <span class="keywordflow">if</span> (fioc_file_type(path) != FIOC_FILE)</div>
 <div class="line">                <span class="keywordflow">return</span> -EINVAL;</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> (flags &amp; <a class="code" href="fuse-3_813_80_2include_2fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a>)</div>
+<div class="line">        <span class="keywordflow">if</span> (flags &amp; <a class="code" href="fuse-3_814_81_2include_2fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a>)</div>
 <div class="line">                <span class="keywordflow">return</span> -ENOSYS;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">switch</span> (cmd) {</div>
@@ -274,15 +274,15 @@ Source code</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
 <div class="line">{</div>
-<div class="line">        <span class="keywordflow">return</span> <a class="code" href="fuse-3_813_80_2include_2fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main</a>(argc, argv, &amp;fioc_oper, NULL);</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="fuse-3_814_81_2include_2fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main</a>(argc, argv, &amp;fioc_oper, NULL);</div>
 <div class="line">}</div>
-<div class="ttc" id="afuse-3_813_80_2include_2fuse_8h_html_a7dd132de66a5cc2add2a4eff5d435660"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse_8h.html#a7dd132de66a5cc2add2a4eff5d435660">fuse_fill_dir_t</a></div><div class="ttdeci">int(* fuse_fill_dir_t)(void *buf, const char *name, const struct stat *stbuf, off_t off, enum fuse_fill_dir_flags flags)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse_8h_source.html#l00085">fuse.h:85</a></div></div>
-<div class="ttc" id="afuse-3_813_80_2include_2fuse_8h_html_ac99b844cee7aaa8fb4e35df5b5488d82"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main</a></div><div class="ttdeci">#define fuse_main(argc, argv, op, private_data)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse_8h_source.html#l00899">fuse.h:899</a></div></div>
-<div class="ttc" id="afuse-3_813_80_2include_2fuse_8h_html_af2bcf2a473b41b3cc8da8c079656a074"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074">fuse_readdir_flags</a></div><div class="ttdeci">fuse_readdir_flags</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse_8h_source.html#l00042">fuse.h:42</a></div></div>
-<div class="ttc" id="afuse-3_813_80_2include_2fuse__common_8h_html_ade38f8e8c463cd40af5bfeeebfa99486"><div class="ttname"><a href="fuse-3_813_80_2include_2fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a></div><div class="ttdeci">#define FUSE_IOCTL_COMPAT</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00437">fuse_common.h:437</a></div></div>
-<div class="ttc" id="astructfuse__file__info_html"><div class="ttname"><a href="structfuse__file__info.html">fuse_file_info</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse__common_8h_source.html#l00044">fuse_common.h:44</a></div></div>
-<div class="ttc" id="astructfuse__operations_html"><div class="ttname"><a href="structfuse__operations.html">fuse_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse_8h_source.html#l00310">fuse.h:310</a></div></div>
-<div class="ttc" id="astructfuse__operations_html_a60144dbd1a893008d9112e949300eb77"><div class="ttname"><a href="structfuse__operations.html#a60144dbd1a893008d9112e949300eb77">fuse_operations::getattr</a></div><div class="ttdeci">int(* getattr)(const char *, struct stat *, struct fuse_file_info *fi)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_813_80_2include_2fuse_8h_source.html#l00322">fuse.h:322</a></div></div>
+<div class="ttc" id="afuse-3_814_81_2include_2fuse_8h_html_a7dd132de66a5cc2add2a4eff5d435660"><div class="ttname"><a href="fuse-3_814_81_2include_2fuse_8h.html#a7dd132de66a5cc2add2a4eff5d435660">fuse_fill_dir_t</a></div><div class="ttdeci">int(* fuse_fill_dir_t)(void *buf, const char *name, const struct stat *stbuf, off_t off, enum fuse_fill_dir_flags flags)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse_8h_source.html#l00085">fuse.h:85</a></div></div>
+<div class="ttc" id="afuse-3_814_81_2include_2fuse_8h_html_ac99b844cee7aaa8fb4e35df5b5488d82"><div class="ttname"><a href="fuse-3_814_81_2include_2fuse_8h.html#ac99b844cee7aaa8fb4e35df5b5488d82">fuse_main</a></div><div class="ttdeci">#define fuse_main(argc, argv, op, private_data)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse_8h_source.html#l00913">fuse.h:913</a></div></div>
+<div class="ttc" id="afuse-3_814_81_2include_2fuse_8h_html_af2bcf2a473b41b3cc8da8c079656a074"><div class="ttname"><a href="fuse-3_814_81_2include_2fuse_8h.html#af2bcf2a473b41b3cc8da8c079656a074">fuse_readdir_flags</a></div><div class="ttdeci">fuse_readdir_flags</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse_8h_source.html#l00042">fuse.h:42</a></div></div>
+<div class="ttc" id="afuse-3_814_81_2include_2fuse__common_8h_html_ade38f8e8c463cd40af5bfeeebfa99486"><div class="ttname"><a href="fuse-3_814_81_2include_2fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a></div><div class="ttdeci">#define FUSE_IOCTL_COMPAT</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse__common_8h_source.html#l00446">fuse_common.h:446</a></div></div>
+<div class="ttc" id="astructfuse__file__info_html"><div class="ttname"><a href="structfuse__file__info.html">fuse_file_info</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse__common_8h_source.html#l00050">fuse_common.h:50</a></div></div>
+<div class="ttc" id="astructfuse__operations_html"><div class="ttname"><a href="structfuse__operations.html">fuse_operations</a></div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse_8h_source.html#l00324">fuse.h:324</a></div></div>
+<div class="ttc" id="astructfuse__operations_html_a60144dbd1a893008d9112e949300eb77"><div class="ttname"><a href="structfuse__operations.html#a60144dbd1a893008d9112e949300eb77">fuse_operations::getattr</a></div><div class="ttdeci">int(* getattr)(const char *, struct stat *, struct fuse_file_info *fi)</div><div class="ttdef"><b>Definition:</b> <a href="fuse-3_814_81_2include_2fuse_8h_source.html#l00336">fuse.h:336</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="example_2ioctl_8c_source.html">ioctl.c</a>.</p>
 </div></div><!-- contents -->
