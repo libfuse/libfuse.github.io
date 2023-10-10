@@ -578,7 +578,7 @@ Data Fields</h2></td></tr>
 <p >Filesystem may store an arbitrary file handle (pointer, index, etc) in fi-&gt;fh, and use this in other all other file operations (read, write, flush, release, fsync).</p>
 <p >Filesystem may also implement stateless file I/O and not store anything in fi-&gt;fh.</p>
 <p >There are also some flags (direct_io, keep_cache) which the filesystem may set in fi, to change the way the file is opened. See <a class="el" href="structfuse__file__info.html">fuse_file_info</a> structure in &lt;<a class="el" href="fuse__common_8h.html">fuse_common.h</a>&gt; for more details.</p>
-<p >If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open will also succeed without being send to the filesystem process. </p>
+<p >If this request is answered with an error code of ENOSYS and FUSE_CAP_NO_OPEN_SUPPORT is set in <code><a class="el" href="structfuse__conn__info.html#a8a1c61f5d7cc14249fb6971165bb958e">fuse_conn_info.capable</a></code>, this is treated as success and future calls to open will also succeed without being sent to the filesystem process. </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse_8h_source.html#l00461">461</a> of file <a class="el" href="fuse_8h_source.html">fuse.h</a>.</p>
 
