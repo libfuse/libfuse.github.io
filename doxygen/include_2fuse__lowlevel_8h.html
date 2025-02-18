@@ -255,7 +255,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l01946">1946</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__lowlevel_8h_source.html#l01948">1948</a> of file <a class="el" href="include_2fuse__lowlevel_8h_source.html">fuse_lowlevel.h</a>.</p>
 
 </div>
 </div>
@@ -954,6 +954,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Setup passthrough backing file for open reply</p>
+<p>Currently there should be only one backing id per node / backing file.</p>
+<p>Possible requests: open, opendir, create</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>request handle </td></tr>
+    <tr><td class="paramname">fd</td><td>backing file descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>positive backing id for success, 0 for failure</dd></dl>
 <p>Setup passthrough backing file for open reply</p>
 <p>Possible requests: open, opendir, create</p>
 <dl class="params"><dt>Parameters</dt><dd>

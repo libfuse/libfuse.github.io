@@ -4977,301 +4977,292 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l04924" name="l04924"></a><span class="lineno"> 4924</span><span class="comment"> * through the fuse_new macro</span></div>
 <div class="line"><a id="l04925" name="l04925"></a><span class="lineno"> 4925</span><span class="comment"> */</span></div>
 <div class="line"><a id="l04926" name="l04926"></a><span class="lineno"> 4926</span><span class="keyword">struct </span>fuse *_fuse_new_31(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a id="l04927" name="l04927"></a><span class="lineno"> 4927</span>                           <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l04928" name="l04928"></a><span class="lineno"> 4928</span>                           <span class="keywordtype">size_t</span> op_size, <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
-<div class="line"><a id="l04929" name="l04929"></a><span class="lineno"> 4929</span>                           <span class="keywordtype">void</span> *user_data);</div>
-<div class="line"><a id="l04930" name="l04930"></a><span class="lineno"> 4930</span><span class="keyword">struct </span>fuse *_fuse_new_31(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a id="l04931" name="l04931"></a><span class="lineno"> 4931</span>                           <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l04932" name="l04932"></a><span class="lineno"> 4932</span>                           <span class="keywordtype">size_t</span> op_size, <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
-<div class="line"><a id="l04933" name="l04933"></a><span class="lineno"> 4933</span>                           <span class="keywordtype">void</span> *user_data)</div>
-<div class="line"><a id="l04934" name="l04934"></a><span class="lineno"> 4934</span>{</div>
-<div class="line"><a id="l04935" name="l04935"></a><span class="lineno"> 4935</span>        <span class="keyword">struct </span>fuse *f;</div>
-<div class="line"><a id="l04936" name="l04936"></a><span class="lineno"> 4936</span>        <span class="keyword">struct </span>node *root;</div>
-<div class="line"><a id="l04937" name="l04937"></a><span class="lineno"> 4937</span>        <span class="keyword">struct </span>fuse_fs *fs;</div>
-<div class="line"><a id="l04938" name="l04938"></a><span class="lineno"> 4938</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> llop = fuse_path_ops;</div>
-<div class="line"><a id="l04939" name="l04939"></a><span class="lineno"> 4939</span> </div>
-<div class="line"><a id="l04940" name="l04940"></a><span class="lineno"> 4940</span>        f = (<span class="keyword">struct </span>fuse *) calloc(1, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> fuse));</div>
-<div class="line"><a id="l04941" name="l04941"></a><span class="lineno"> 4941</span>        <span class="keywordflow">if</span> (f == NULL) {</div>
-<div class="line"><a id="l04942" name="l04942"></a><span class="lineno"> 4942</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;fuse: failed to allocate fuse object\n&quot;</span>);</div>
-<div class="line"><a id="l04943" name="l04943"></a><span class="lineno"> 4943</span>                <span class="keywordflow">goto</span> out;</div>
-<div class="line"><a id="l04944" name="l04944"></a><span class="lineno"> 4944</span>        }</div>
+<div class="line"><a id="l04927" name="l04927"></a><span class="lineno"> 4927</span>                          <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op, <span class="keywordtype">size_t</span> op_size,</div>
+<div class="line"><a id="l04928" name="l04928"></a><span class="lineno"> 4928</span>                          <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version, <span class="keywordtype">void</span> *user_data)</div>
+<div class="line"><a id="l04929" name="l04929"></a><span class="lineno"> 4929</span>{</div>
+<div class="line"><a id="l04930" name="l04930"></a><span class="lineno"> 4930</span>        <span class="keyword">struct </span>fuse *f;</div>
+<div class="line"><a id="l04931" name="l04931"></a><span class="lineno"> 4931</span>        <span class="keyword">struct </span>node *root;</div>
+<div class="line"><a id="l04932" name="l04932"></a><span class="lineno"> 4932</span>        <span class="keyword">struct </span>fuse_fs *fs;</div>
+<div class="line"><a id="l04933" name="l04933"></a><span class="lineno"> 4933</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> llop = fuse_path_ops;</div>
+<div class="line"><a id="l04934" name="l04934"></a><span class="lineno"> 4934</span> </div>
+<div class="line"><a id="l04935" name="l04935"></a><span class="lineno"> 4935</span>        f = (<span class="keyword">struct </span>fuse *) calloc(1, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> fuse));</div>
+<div class="line"><a id="l04936" name="l04936"></a><span class="lineno"> 4936</span>        <span class="keywordflow">if</span> (f == NULL) {</div>
+<div class="line"><a id="l04937" name="l04937"></a><span class="lineno"> 4937</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;fuse: failed to allocate fuse object\n&quot;</span>);</div>
+<div class="line"><a id="l04938" name="l04938"></a><span class="lineno"> 4938</span>                <span class="keywordflow">goto</span> out;</div>
+<div class="line"><a id="l04939" name="l04939"></a><span class="lineno"> 4939</span>        }</div>
+<div class="line"><a id="l04940" name="l04940"></a><span class="lineno"> 4940</span> </div>
+<div class="line"><a id="l04941" name="l04941"></a><span class="lineno"> 4941</span>        f-&gt;conf.entry_timeout = 1.0;</div>
+<div class="line"><a id="l04942" name="l04942"></a><span class="lineno"> 4942</span>        f-&gt;conf.attr_timeout = 1.0;</div>
+<div class="line"><a id="l04943" name="l04943"></a><span class="lineno"> 4943</span>        f-&gt;conf.negative_timeout = 0.0;</div>
+<div class="line"><a id="l04944" name="l04944"></a><span class="lineno"> 4944</span>        f-&gt;conf.intr_signal = FUSE_DEFAULT_INTR_SIGNAL;</div>
 <div class="line"><a id="l04945" name="l04945"></a><span class="lineno"> 4945</span> </div>
-<div class="line"><a id="l04946" name="l04946"></a><span class="lineno"> 4946</span>        f-&gt;conf.entry_timeout = 1.0;</div>
-<div class="line"><a id="l04947" name="l04947"></a><span class="lineno"> 4947</span>        f-&gt;conf.attr_timeout = 1.0;</div>
-<div class="line"><a id="l04948" name="l04948"></a><span class="lineno"> 4948</span>        f-&gt;conf.negative_timeout = 0.0;</div>
-<div class="line"><a id="l04949" name="l04949"></a><span class="lineno"> 4949</span>        f-&gt;conf.intr_signal = FUSE_DEFAULT_INTR_SIGNAL;</div>
+<div class="line"><a id="l04946" name="l04946"></a><span class="lineno"> 4946</span>        <span class="comment">/* Parse options */</span></div>
+<div class="line"><a id="l04947" name="l04947"></a><span class="lineno"> 4947</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;f-&gt;conf, fuse_lib_opts,</div>
+<div class="line"><a id="l04948" name="l04948"></a><span class="lineno"> 4948</span>                           fuse_lib_opt_proc) == -1)</div>
+<div class="line"><a id="l04949" name="l04949"></a><span class="lineno"> 4949</span>                <span class="keywordflow">goto</span> out_free;</div>
 <div class="line"><a id="l04950" name="l04950"></a><span class="lineno"> 4950</span> </div>
-<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>        <span class="comment">/* Parse options */</span></div>
-<div class="line"><a id="l04952" name="l04952"></a><span class="lineno"> 4952</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;f-&gt;conf, fuse_lib_opts,</div>
-<div class="line"><a id="l04953" name="l04953"></a><span class="lineno"> 4953</span>                           fuse_lib_opt_proc) == -1)</div>
-<div class="line"><a id="l04954" name="l04954"></a><span class="lineno"> 4954</span>                <span class="keywordflow">goto</span> out_free;</div>
-<div class="line"><a id="l04955" name="l04955"></a><span class="lineno"> 4955</span> </div>
-<div class="line"><a id="l04956" name="l04956"></a><span class="lineno"> 4956</span>        pthread_mutex_lock(&amp;fuse_context_lock);</div>
-<div class="line"><a id="l04957" name="l04957"></a><span class="lineno"> 4957</span>        <span class="keyword">static</span> <span class="keywordtype">int</span> builtin_modules_registered = 0;</div>
-<div class="line"><a id="l04958" name="l04958"></a><span class="lineno"> 4958</span>        <span class="comment">/* Have the builtin modules already been registered? */</span></div>
-<div class="line"><a id="l04959" name="l04959"></a><span class="lineno"> 4959</span>        <span class="keywordflow">if</span> (builtin_modules_registered == 0) {</div>
-<div class="line"><a id="l04960" name="l04960"></a><span class="lineno"> 4960</span>                <span class="comment">/* If not, register them. */</span></div>
-<div class="line"><a id="l04961" name="l04961"></a><span class="lineno"> 4961</span>                fuse_register_module(<span class="stringliteral">&quot;subdir&quot;</span>, fuse_module_subdir_factory, NULL);</div>
-<div class="line"><a id="l04962" name="l04962"></a><span class="lineno"> 4962</span><span class="preprocessor">#ifdef HAVE_ICONV</span></div>
-<div class="line"><a id="l04963" name="l04963"></a><span class="lineno"> 4963</span>                fuse_register_module(<span class="stringliteral">&quot;iconv&quot;</span>, fuse_module_iconv_factory, NULL);</div>
-<div class="line"><a id="l04964" name="l04964"></a><span class="lineno"> 4964</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l04965" name="l04965"></a><span class="lineno"> 4965</span>                builtin_modules_registered= 1;</div>
-<div class="line"><a id="l04966" name="l04966"></a><span class="lineno"> 4966</span>        }</div>
-<div class="line"><a id="l04967" name="l04967"></a><span class="lineno"> 4967</span>        pthread_mutex_unlock(&amp;fuse_context_lock);</div>
-<div class="line"><a id="l04968" name="l04968"></a><span class="lineno"> 4968</span> </div>
-<div class="line"><a id="l04969" name="l04969"></a><span class="lineno"> 4969</span>        <span class="keywordflow">if</span> (fuse_create_context_key() == -1)</div>
-<div class="line"><a id="l04970" name="l04970"></a><span class="lineno"> 4970</span>                <span class="keywordflow">goto</span> out_free;</div>
-<div class="line"><a id="l04971" name="l04971"></a><span class="lineno"> 4971</span> </div>
-<div class="line"><a id="l04972" name="l04972"></a><span class="lineno"> 4972</span>        fs = <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#abbc860c33bf7205c964626a83771a107">fuse_fs_new</a>(op, op_size, user_data);</div>
-<div class="line"><a id="l04973" name="l04973"></a><span class="lineno"> 4973</span>        <span class="keywordflow">if</span> (!fs)</div>
-<div class="line"><a id="l04974" name="l04974"></a><span class="lineno"> 4974</span>                <span class="keywordflow">goto</span> out_delete_context_key;</div>
-<div class="line"><a id="l04975" name="l04975"></a><span class="lineno"> 4975</span> </div>
-<div class="line"><a id="l04976" name="l04976"></a><span class="lineno"> 4976</span>        f-&gt;fs = fs;</div>
-<div class="line"><a id="l04977" name="l04977"></a><span class="lineno"> 4977</span> </div>
-<div class="line"><a id="l04978" name="l04978"></a><span class="lineno"> 4978</span>        <span class="comment">/* Oh f**k, this is ugly! */</span></div>
-<div class="line"><a id="l04979" name="l04979"></a><span class="lineno"> 4979</span>        <span class="keywordflow">if</span> (!fs-&gt;op.lock) {</div>
-<div class="line"><a id="l04980" name="l04980"></a><span class="lineno"> 4980</span>                llop.<a class="code hl_variable" href="structfuse__lowlevel__ops.html#a709d41ca0cde37dbd4d4d06c89f6906a">getlk</a> = NULL;</div>
-<div class="line"><a id="l04981" name="l04981"></a><span class="lineno"> 4981</span>                llop.<a class="code hl_variable" href="structfuse__lowlevel__ops.html#af290d78441583d1d6ba02da01904f328">setlk</a> = NULL;</div>
-<div class="line"><a id="l04982" name="l04982"></a><span class="lineno"> 4982</span>        }</div>
+<div class="line"><a id="l04951" name="l04951"></a><span class="lineno"> 4951</span>        pthread_mutex_lock(&amp;fuse_context_lock);</div>
+<div class="line"><a id="l04952" name="l04952"></a><span class="lineno"> 4952</span>        <span class="keyword">static</span> <span class="keywordtype">int</span> builtin_modules_registered = 0;</div>
+<div class="line"><a id="l04953" name="l04953"></a><span class="lineno"> 4953</span>        <span class="comment">/* Have the builtin modules already been registered? */</span></div>
+<div class="line"><a id="l04954" name="l04954"></a><span class="lineno"> 4954</span>        <span class="keywordflow">if</span> (builtin_modules_registered == 0) {</div>
+<div class="line"><a id="l04955" name="l04955"></a><span class="lineno"> 4955</span>                <span class="comment">/* If not, register them. */</span></div>
+<div class="line"><a id="l04956" name="l04956"></a><span class="lineno"> 4956</span>                fuse_register_module(<span class="stringliteral">&quot;subdir&quot;</span>, fuse_module_subdir_factory, NULL);</div>
+<div class="line"><a id="l04957" name="l04957"></a><span class="lineno"> 4957</span><span class="preprocessor">#ifdef HAVE_ICONV</span></div>
+<div class="line"><a id="l04958" name="l04958"></a><span class="lineno"> 4958</span>                fuse_register_module(<span class="stringliteral">&quot;iconv&quot;</span>, fuse_module_iconv_factory, NULL);</div>
+<div class="line"><a id="l04959" name="l04959"></a><span class="lineno"> 4959</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l04960" name="l04960"></a><span class="lineno"> 4960</span>                builtin_modules_registered= 1;</div>
+<div class="line"><a id="l04961" name="l04961"></a><span class="lineno"> 4961</span>        }</div>
+<div class="line"><a id="l04962" name="l04962"></a><span class="lineno"> 4962</span>        pthread_mutex_unlock(&amp;fuse_context_lock);</div>
+<div class="line"><a id="l04963" name="l04963"></a><span class="lineno"> 4963</span> </div>
+<div class="line"><a id="l04964" name="l04964"></a><span class="lineno"> 4964</span>        <span class="keywordflow">if</span> (fuse_create_context_key() == -1)</div>
+<div class="line"><a id="l04965" name="l04965"></a><span class="lineno"> 4965</span>                <span class="keywordflow">goto</span> out_free;</div>
+<div class="line"><a id="l04966" name="l04966"></a><span class="lineno"> 4966</span> </div>
+<div class="line"><a id="l04967" name="l04967"></a><span class="lineno"> 4967</span>        fs = <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#abbc860c33bf7205c964626a83771a107">fuse_fs_new</a>(op, op_size, user_data);</div>
+<div class="line"><a id="l04968" name="l04968"></a><span class="lineno"> 4968</span>        <span class="keywordflow">if</span> (!fs)</div>
+<div class="line"><a id="l04969" name="l04969"></a><span class="lineno"> 4969</span>                <span class="keywordflow">goto</span> out_delete_context_key;</div>
+<div class="line"><a id="l04970" name="l04970"></a><span class="lineno"> 4970</span> </div>
+<div class="line"><a id="l04971" name="l04971"></a><span class="lineno"> 4971</span>        f-&gt;fs = fs;</div>
+<div class="line"><a id="l04972" name="l04972"></a><span class="lineno"> 4972</span> </div>
+<div class="line"><a id="l04973" name="l04973"></a><span class="lineno"> 4973</span>        <span class="comment">/* Oh f**k, this is ugly! */</span></div>
+<div class="line"><a id="l04974" name="l04974"></a><span class="lineno"> 4974</span>        <span class="keywordflow">if</span> (!fs-&gt;op.lock) {</div>
+<div class="line"><a id="l04975" name="l04975"></a><span class="lineno"> 4975</span>                llop.<a class="code hl_variable" href="structfuse__lowlevel__ops.html#a709d41ca0cde37dbd4d4d06c89f6906a">getlk</a> = NULL;</div>
+<div class="line"><a id="l04976" name="l04976"></a><span class="lineno"> 4976</span>                llop.<a class="code hl_variable" href="structfuse__lowlevel__ops.html#af290d78441583d1d6ba02da01904f328">setlk</a> = NULL;</div>
+<div class="line"><a id="l04977" name="l04977"></a><span class="lineno"> 4977</span>        }</div>
+<div class="line"><a id="l04978" name="l04978"></a><span class="lineno"> 4978</span> </div>
+<div class="line"><a id="l04979" name="l04979"></a><span class="lineno"> 4979</span>        f-&gt;pagesize = getpagesize();</div>
+<div class="line"><a id="l04980" name="l04980"></a><span class="lineno"> 4980</span>        init_list_head(&amp;f-&gt;partial_slabs);</div>
+<div class="line"><a id="l04981" name="l04981"></a><span class="lineno"> 4981</span>        init_list_head(&amp;f-&gt;full_slabs);</div>
+<div class="line"><a id="l04982" name="l04982"></a><span class="lineno"> 4982</span>        init_list_head(&amp;f-&gt;lru_table);</div>
 <div class="line"><a id="l04983" name="l04983"></a><span class="lineno"> 4983</span> </div>
-<div class="line"><a id="l04984" name="l04984"></a><span class="lineno"> 4984</span>        f-&gt;pagesize = getpagesize();</div>
-<div class="line"><a id="l04985" name="l04985"></a><span class="lineno"> 4985</span>        init_list_head(&amp;f-&gt;partial_slabs);</div>
-<div class="line"><a id="l04986" name="l04986"></a><span class="lineno"> 4986</span>        init_list_head(&amp;f-&gt;full_slabs);</div>
-<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span>        init_list_head(&amp;f-&gt;lru_table);</div>
-<div class="line"><a id="l04988" name="l04988"></a><span class="lineno"> 4988</span> </div>
-<div class="line"><a id="l04989" name="l04989"></a><span class="lineno"> 4989</span>        <span class="keywordflow">if</span> (f-&gt;conf.modules) {</div>
-<div class="line"><a id="l04990" name="l04990"></a><span class="lineno"> 4990</span>                <span class="keywordtype">char</span> *<span class="keyword">module</span>;</div>
-<div class="line"><a id="l04991" name="l04991"></a><span class="lineno"> 4991</span>                <span class="keywordtype">char</span> *next;</div>
-<div class="line"><a id="l04992" name="l04992"></a><span class="lineno"> 4992</span> </div>
-<div class="line"><a id="l04993" name="l04993"></a><span class="lineno"> 4993</span>                <span class="keywordflow">for</span> (module = f-&gt;conf.modules; <span class="keyword">module</span>; <span class="keyword">module</span> = next) {</div>
-<div class="line"><a id="l04994" name="l04994"></a><span class="lineno"> 4994</span>                        char *p;</div>
-<div class="line"><a id="l04995" name="l04995"></a><span class="lineno"> 4995</span>                        <span class="keywordflow">for</span> (p = module; *p &amp;&amp; *p != <span class="charliteral">&#39;:&#39;</span>; p++);</div>
-<div class="line"><a id="l04996" name="l04996"></a><span class="lineno"> 4996</span>                        next = *p ? p + 1 : NULL;</div>
-<div class="line"><a id="l04997" name="l04997"></a><span class="lineno"> 4997</span>                        *p = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a id="l04998" name="l04998"></a><span class="lineno"> 4998</span>                        <span class="keywordflow">if</span> (module[0] &amp;&amp;</div>
-<div class="line"><a id="l04999" name="l04999"></a><span class="lineno"> 4999</span>                            fuse_push_module(f, module, args) == -1)</div>
-<div class="line"><a id="l05000" name="l05000"></a><span class="lineno"> 5000</span>                                <span class="keywordflow">goto</span> out_free_fs;</div>
-<div class="line"><a id="l05001" name="l05001"></a><span class="lineno"> 5001</span>                }</div>
-<div class="line"><a id="l05002" name="l05002"></a><span class="lineno"> 5002</span>        }</div>
-<div class="line"><a id="l05003" name="l05003"></a><span class="lineno"> 5003</span> </div>
-<div class="line"><a id="l05004" name="l05004"></a><span class="lineno"> 5004</span>        <span class="keywordflow">if</span> (!f-&gt;conf.ac_attr_timeout_set)</div>
-<div class="line"><a id="l05005" name="l05005"></a><span class="lineno"> 5005</span>                f-&gt;conf.ac_attr_timeout = f-&gt;conf.attr_timeout;</div>
-<div class="line"><a id="l05006" name="l05006"></a><span class="lineno"> 5006</span> </div>
-<div class="line"><a id="l05007" name="l05007"></a><span class="lineno"> 5007</span><span class="preprocessor">#if defined(__FreeBSD__) || defined(__NetBSD__)</span></div>
-<div class="line"><a id="l05008" name="l05008"></a><span class="lineno"> 5008</span>        <span class="comment">/*</span></div>
-<div class="line"><a id="l05009" name="l05009"></a><span class="lineno"> 5009</span><span class="comment">         * In FreeBSD, we always use these settings as inode numbers</span></div>
-<div class="line"><a id="l05010" name="l05010"></a><span class="lineno"> 5010</span><span class="comment">         * are needed to make getcwd(3) work.</span></div>
-<div class="line"><a id="l05011" name="l05011"></a><span class="lineno"> 5011</span><span class="comment">         */</span></div>
-<div class="line"><a id="l05012" name="l05012"></a><span class="lineno"> 5012</span>        f-&gt;conf.readdir_ino = 1;</div>
-<div class="line"><a id="l05013" name="l05013"></a><span class="lineno"> 5013</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l05014" name="l05014"></a><span class="lineno"> 5014</span> </div>
-<div class="line"><a id="l05015" name="l05015"></a><span class="lineno"> 5015</span>        <span class="comment">/* not declared globally, to restrict usage of this function */</span></div>
-<div class="line"><a id="l05016" name="l05016"></a><span class="lineno"> 5016</span>        <span class="keyword">struct </span>fuse_session *fuse_session_new_versioned(</div>
-<div class="line"><a id="l05017" name="l05017"></a><span class="lineno"> 5017</span>                <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op,</div>
-<div class="line"><a id="l05018" name="l05018"></a><span class="lineno"> 5018</span>                <span class="keywordtype">size_t</span> op_size, <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
-<div class="line"><a id="l05019" name="l05019"></a><span class="lineno"> 5019</span>                <span class="keywordtype">void</span> *userdata);</div>
-<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>        f-&gt;se = fuse_session_new_versioned(args, &amp;llop, <span class="keyword">sizeof</span>(llop), version,</div>
-<div class="line"><a id="l05021" name="l05021"></a><span class="lineno"> 5021</span>                                           f);</div>
-<div class="line"><a id="l05022" name="l05022"></a><span class="lineno"> 5022</span>        <span class="keywordflow">if</span> (f-&gt;se == NULL)</div>
-<div class="line"><a id="l05023" name="l05023"></a><span class="lineno"> 5023</span>                <span class="keywordflow">goto</span> out_free_fs;</div>
-<div class="line"><a id="l05024" name="l05024"></a><span class="lineno"> 5024</span> </div>
-<div class="line"><a id="l05025" name="l05025"></a><span class="lineno"> 5025</span>        <span class="keywordflow">if</span> (f-&gt;conf.debug) {</div>
-<div class="line"><a id="l05026" name="l05026"></a><span class="lineno"> 5026</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_DEBUG, <span class="stringliteral">&quot;nullpath_ok: %i\n&quot;</span>, f-&gt;conf.nullpath_ok);</div>
-<div class="line"><a id="l05027" name="l05027"></a><span class="lineno"> 5027</span>        }</div>
-<div class="line"><a id="l05028" name="l05028"></a><span class="lineno"> 5028</span> </div>
-<div class="line"><a id="l05029" name="l05029"></a><span class="lineno"> 5029</span>        <span class="comment">/* Trace topmost layer by default */</span></div>
-<div class="line"><a id="l05030" name="l05030"></a><span class="lineno"> 5030</span>        f-&gt;fs-&gt;debug = f-&gt;conf.debug;</div>
-<div class="line"><a id="l05031" name="l05031"></a><span class="lineno"> 5031</span>        f-&gt;ctr = 0;</div>
-<div class="line"><a id="l05032" name="l05032"></a><span class="lineno"> 5032</span>        f-&gt;generation = 0;</div>
-<div class="line"><a id="l05033" name="l05033"></a><span class="lineno"> 5033</span>        <span class="keywordflow">if</span> (node_table_init(&amp;f-&gt;name_table) == -1)</div>
-<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span>                <span class="keywordflow">goto</span> out_free_session;</div>
+<div class="line"><a id="l04984" name="l04984"></a><span class="lineno"> 4984</span>        <span class="keywordflow">if</span> (f-&gt;conf.modules) {</div>
+<div class="line"><a id="l04985" name="l04985"></a><span class="lineno"> 4985</span>                <span class="keywordtype">char</span> *<span class="keyword">module</span>;</div>
+<div class="line"><a id="l04986" name="l04986"></a><span class="lineno"> 4986</span>                <span class="keywordtype">char</span> *next;</div>
+<div class="line"><a id="l04987" name="l04987"></a><span class="lineno"> 4987</span> </div>
+<div class="line"><a id="l04988" name="l04988"></a><span class="lineno"> 4988</span>                <span class="keywordflow">for</span> (module = f-&gt;conf.modules; <span class="keyword">module</span>; <span class="keyword">module</span> = next) {</div>
+<div class="line"><a id="l04989" name="l04989"></a><span class="lineno"> 4989</span>                        char *p;</div>
+<div class="line"><a id="l04990" name="l04990"></a><span class="lineno"> 4990</span>                        <span class="keywordflow">for</span> (p = module; *p &amp;&amp; *p != <span class="charliteral">&#39;:&#39;</span>; p++);</div>
+<div class="line"><a id="l04991" name="l04991"></a><span class="lineno"> 4991</span>                        next = *p ? p + 1 : NULL;</div>
+<div class="line"><a id="l04992" name="l04992"></a><span class="lineno"> 4992</span>                        *p = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l04993" name="l04993"></a><span class="lineno"> 4993</span>                        <span class="keywordflow">if</span> (module[0] &amp;&amp;</div>
+<div class="line"><a id="l04994" name="l04994"></a><span class="lineno"> 4994</span>                            fuse_push_module(f, module, args) == -1)</div>
+<div class="line"><a id="l04995" name="l04995"></a><span class="lineno"> 4995</span>                                <span class="keywordflow">goto</span> out_free_fs;</div>
+<div class="line"><a id="l04996" name="l04996"></a><span class="lineno"> 4996</span>                }</div>
+<div class="line"><a id="l04997" name="l04997"></a><span class="lineno"> 4997</span>        }</div>
+<div class="line"><a id="l04998" name="l04998"></a><span class="lineno"> 4998</span> </div>
+<div class="line"><a id="l04999" name="l04999"></a><span class="lineno"> 4999</span>        <span class="keywordflow">if</span> (!f-&gt;conf.ac_attr_timeout_set)</div>
+<div class="line"><a id="l05000" name="l05000"></a><span class="lineno"> 5000</span>                f-&gt;conf.ac_attr_timeout = f-&gt;conf.attr_timeout;</div>
+<div class="line"><a id="l05001" name="l05001"></a><span class="lineno"> 5001</span> </div>
+<div class="line"><a id="l05002" name="l05002"></a><span class="lineno"> 5002</span><span class="preprocessor">#if defined(__FreeBSD__) || defined(__NetBSD__)</span></div>
+<div class="line"><a id="l05003" name="l05003"></a><span class="lineno"> 5003</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l05004" name="l05004"></a><span class="lineno"> 5004</span><span class="comment">         * In FreeBSD, we always use these settings as inode numbers</span></div>
+<div class="line"><a id="l05005" name="l05005"></a><span class="lineno"> 5005</span><span class="comment">         * are needed to make getcwd(3) work.</span></div>
+<div class="line"><a id="l05006" name="l05006"></a><span class="lineno"> 5006</span><span class="comment">         */</span></div>
+<div class="line"><a id="l05007" name="l05007"></a><span class="lineno"> 5007</span>        f-&gt;conf.readdir_ino = 1;</div>
+<div class="line"><a id="l05008" name="l05008"></a><span class="lineno"> 5008</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l05009" name="l05009"></a><span class="lineno"> 5009</span> </div>
+<div class="line"><a id="l05010" name="l05010"></a><span class="lineno"> 5010</span>        <span class="comment">/* not declared globally, to restrict usage of this function */</span></div>
+<div class="line"><a id="l05011" name="l05011"></a><span class="lineno"> 5011</span>        <span class="keyword">struct </span>fuse_session *fuse_session_new_versioned(</div>
+<div class="line"><a id="l05012" name="l05012"></a><span class="lineno"> 5012</span>                <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__lowlevel__ops.html">fuse_lowlevel_ops</a> *op,</div>
+<div class="line"><a id="l05013" name="l05013"></a><span class="lineno"> 5013</span>                <span class="keywordtype">size_t</span> op_size, <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
+<div class="line"><a id="l05014" name="l05014"></a><span class="lineno"> 5014</span>                <span class="keywordtype">void</span> *userdata);</div>
+<div class="line"><a id="l05015" name="l05015"></a><span class="lineno"> 5015</span>        f-&gt;se = fuse_session_new_versioned(args, &amp;llop, <span class="keyword">sizeof</span>(llop), version,</div>
+<div class="line"><a id="l05016" name="l05016"></a><span class="lineno"> 5016</span>                                           f);</div>
+<div class="line"><a id="l05017" name="l05017"></a><span class="lineno"> 5017</span>        <span class="keywordflow">if</span> (f-&gt;se == NULL)</div>
+<div class="line"><a id="l05018" name="l05018"></a><span class="lineno"> 5018</span>                <span class="keywordflow">goto</span> out_free_fs;</div>
+<div class="line"><a id="l05019" name="l05019"></a><span class="lineno"> 5019</span> </div>
+<div class="line"><a id="l05020" name="l05020"></a><span class="lineno"> 5020</span>        <span class="keywordflow">if</span> (f-&gt;conf.debug) {</div>
+<div class="line"><a id="l05021" name="l05021"></a><span class="lineno"> 5021</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_DEBUG, <span class="stringliteral">&quot;nullpath_ok: %i\n&quot;</span>, f-&gt;conf.nullpath_ok);</div>
+<div class="line"><a id="l05022" name="l05022"></a><span class="lineno"> 5022</span>        }</div>
+<div class="line"><a id="l05023" name="l05023"></a><span class="lineno"> 5023</span> </div>
+<div class="line"><a id="l05024" name="l05024"></a><span class="lineno"> 5024</span>        <span class="comment">/* Trace topmost layer by default */</span></div>
+<div class="line"><a id="l05025" name="l05025"></a><span class="lineno"> 5025</span>        f-&gt;fs-&gt;debug = f-&gt;conf.debug;</div>
+<div class="line"><a id="l05026" name="l05026"></a><span class="lineno"> 5026</span>        f-&gt;ctr = 0;</div>
+<div class="line"><a id="l05027" name="l05027"></a><span class="lineno"> 5027</span>        f-&gt;generation = 0;</div>
+<div class="line"><a id="l05028" name="l05028"></a><span class="lineno"> 5028</span>        <span class="keywordflow">if</span> (node_table_init(&amp;f-&gt;name_table) == -1)</div>
+<div class="line"><a id="l05029" name="l05029"></a><span class="lineno"> 5029</span>                <span class="keywordflow">goto</span> out_free_session;</div>
+<div class="line"><a id="l05030" name="l05030"></a><span class="lineno"> 5030</span> </div>
+<div class="line"><a id="l05031" name="l05031"></a><span class="lineno"> 5031</span>        <span class="keywordflow">if</span> (node_table_init(&amp;f-&gt;id_table) == -1)</div>
+<div class="line"><a id="l05032" name="l05032"></a><span class="lineno"> 5032</span>                <span class="keywordflow">goto</span> out_free_name_table;</div>
+<div class="line"><a id="l05033" name="l05033"></a><span class="lineno"> 5033</span> </div>
+<div class="line"><a id="l05034" name="l05034"></a><span class="lineno"> 5034</span>        pthread_mutex_init(&amp;f-&gt;lock, NULL);</div>
 <div class="line"><a id="l05035" name="l05035"></a><span class="lineno"> 5035</span> </div>
-<div class="line"><a id="l05036" name="l05036"></a><span class="lineno"> 5036</span>        <span class="keywordflow">if</span> (node_table_init(&amp;f-&gt;id_table) == -1)</div>
-<div class="line"><a id="l05037" name="l05037"></a><span class="lineno"> 5037</span>                <span class="keywordflow">goto</span> out_free_name_table;</div>
-<div class="line"><a id="l05038" name="l05038"></a><span class="lineno"> 5038</span> </div>
-<div class="line"><a id="l05039" name="l05039"></a><span class="lineno"> 5039</span>        pthread_mutex_init(&amp;f-&gt;lock, NULL);</div>
-<div class="line"><a id="l05040" name="l05040"></a><span class="lineno"> 5040</span> </div>
-<div class="line"><a id="l05041" name="l05041"></a><span class="lineno"> 5041</span>        root = alloc_node(f);</div>
-<div class="line"><a id="l05042" name="l05042"></a><span class="lineno"> 5042</span>        <span class="keywordflow">if</span> (root == NULL) {</div>
-<div class="line"><a id="l05043" name="l05043"></a><span class="lineno"> 5043</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;fuse: memory allocation failed\n&quot;</span>);</div>
-<div class="line"><a id="l05044" name="l05044"></a><span class="lineno"> 5044</span>                <span class="keywordflow">goto</span> out_free_id_table;</div>
-<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span>        }</div>
-<div class="line"><a id="l05046" name="l05046"></a><span class="lineno"> 5046</span>        <span class="keywordflow">if</span> (lru_enabled(f)) {</div>
-<div class="line"><a id="l05047" name="l05047"></a><span class="lineno"> 5047</span>                <span class="keyword">struct </span>node_lru *lnode = node_lru(root);</div>
-<div class="line"><a id="l05048" name="l05048"></a><span class="lineno"> 5048</span>                init_list_head(&amp;lnode-&gt;lru);</div>
-<div class="line"><a id="l05049" name="l05049"></a><span class="lineno"> 5049</span>        }</div>
-<div class="line"><a id="l05050" name="l05050"></a><span class="lineno"> 5050</span> </div>
-<div class="line"><a id="l05051" name="l05051"></a><span class="lineno"> 5051</span>        strcpy(root-&gt;inline_name, <span class="stringliteral">&quot;/&quot;</span>);</div>
-<div class="line"><a id="l05052" name="l05052"></a><span class="lineno"> 5052</span>        root-&gt;name = root-&gt;inline_name;</div>
-<div class="line"><a id="l05053" name="l05053"></a><span class="lineno"> 5053</span>        root-&gt;parent = NULL;</div>
-<div class="line"><a id="l05054" name="l05054"></a><span class="lineno"> 5054</span>        root-&gt;nodeid = FUSE_ROOT_ID;</div>
-<div class="line"><a id="l05055" name="l05055"></a><span class="lineno"> 5055</span>        inc_nlookup(root);</div>
-<div class="line"><a id="l05056" name="l05056"></a><span class="lineno"> 5056</span>        hash_id(f, root);</div>
-<div class="line"><a id="l05057" name="l05057"></a><span class="lineno"> 5057</span> </div>
-<div class="line"><a id="l05058" name="l05058"></a><span class="lineno"> 5058</span>        <span class="keywordflow">return</span> f;</div>
-<div class="line"><a id="l05059" name="l05059"></a><span class="lineno"> 5059</span> </div>
-<div class="line"><a id="l05060" name="l05060"></a><span class="lineno"> 5060</span>out_free_id_table:</div>
-<div class="line"><a id="l05061" name="l05061"></a><span class="lineno"> 5061</span>        free(f-&gt;id_table.array);</div>
-<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span>out_free_name_table:</div>
-<div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span>        free(f-&gt;name_table.array);</div>
-<div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span>out_free_session:</div>
-<div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(f-&gt;se);</div>
-<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>out_free_fs:</div>
-<div class="line"><a id="l05067" name="l05067"></a><span class="lineno"> 5067</span>        free(f-&gt;fs);</div>
-<div class="line"><a id="l05068" name="l05068"></a><span class="lineno"> 5068</span>        free(f-&gt;conf.modules);</div>
-<div class="line"><a id="l05069" name="l05069"></a><span class="lineno"> 5069</span>out_delete_context_key:</div>
-<div class="line"><a id="l05070" name="l05070"></a><span class="lineno"> 5070</span>        fuse_delete_context_key();</div>
-<div class="line"><a id="l05071" name="l05071"></a><span class="lineno"> 5071</span>out_free:</div>
-<div class="line"><a id="l05072" name="l05072"></a><span class="lineno"> 5072</span>        free(f);</div>
-<div class="line"><a id="l05073" name="l05073"></a><span class="lineno"> 5073</span>out:</div>
-<div class="line"><a id="l05074" name="l05074"></a><span class="lineno"> 5074</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l05075" name="l05075"></a><span class="lineno"> 5075</span>}</div>
-<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span> </div>
-<div class="line"><a id="l05077" name="l05077"></a><span class="lineno"> 5077</span><span class="comment">/* Emulates 3.0-style fuse_new(), which processes --help */</span></div>
-<div class="line"><a id="l05078" name="l05078"></a><span class="lineno"> 5078</span><span class="keyword">struct </span>fuse *_fuse_new_30(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05079" name="l05079"></a><span class="lineno"> 5079</span>                         <span class="keywordtype">size_t</span> op_size,</div>
-<div class="line"><a id="l05080" name="l05080"></a><span class="lineno"> 5080</span>                         <span class="keyword">struct</span> <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
-<div class="line"><a id="l05081" name="l05081"></a><span class="lineno"> 5081</span>                         <span class="keywordtype">void</span> *user_data);</div>
-<div class="line"><a id="l05082" name="l05082"></a><span class="lineno"> 5082</span>FUSE_SYMVER(<span class="stringliteral">&quot;_fuse_new_30&quot;</span>, <span class="stringliteral">&quot;_fuse_new@FUSE_3.0&quot;</span>)</div>
-<div class="line"><a id="l05083" name="l05083"></a><span class="lineno"> 5083</span>struct fuse *_fuse_new_30(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a id="l05084" name="l05084"></a><span class="lineno"> 5084</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05085" name="l05085"></a><span class="lineno"> 5085</span>                         <span class="keywordtype">size_t</span> op_size,</div>
-<div class="line"><a id="l05086" name="l05086"></a><span class="lineno"> 5086</span>                         struct <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
-<div class="line"><a id="l05087" name="l05087"></a><span class="lineno"> 5087</span>                         <span class="keywordtype">void</span> *user_data)</div>
-<div class="line"><a id="l05088" name="l05088"></a><span class="lineno"> 5088</span>{</div>
-<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__config.html">fuse_config</a> conf = {0};</div>
-<div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span> </div>
-<div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span>        <span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__opt.html">fuse_opt</a> opts[] = {</div>
-<div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;-h&quot;</span>, show_help, 1),</div>
-<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;--help&quot;</span>, show_help, 1),</div>
-<div class="line"><a id="l05094" name="l05094"></a><span class="lineno"> 5094</span>                <a class="code hl_define" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#aca35962e17d189ceb5447f8eea11bd33">FUSE_OPT_END</a></div>
-<div class="line"><a id="l05095" name="l05095"></a><span class="lineno"> 5095</span>        };</div>
-<div class="line"><a id="l05096" name="l05096"></a><span class="lineno"> 5096</span> </div>
-<div class="line"><a id="l05097" name="l05097"></a><span class="lineno"> 5097</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;conf, opts,</div>
-<div class="line"><a id="l05098" name="l05098"></a><span class="lineno"> 5098</span>                           fuse_lib_opt_proc) == -1)</div>
-<div class="line"><a id="l05099" name="l05099"></a><span class="lineno"> 5099</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l05100" name="l05100"></a><span class="lineno"> 5100</span> </div>
-<div class="line"><a id="l05101" name="l05101"></a><span class="lineno"> 5101</span>        <span class="keywordflow">if</span> (conf.<a class="code hl_variable" href="structfuse__config.html#a0f4fff78450a567ceb7814a8f7bc362a">show_help</a>) {</div>
-<div class="line"><a id="l05102" name="l05102"></a><span class="lineno"> 5102</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a9cef8443ae22c4bcc800d7c45f1496fe">fuse_lib_help</a>(args);</div>
-<div class="line"><a id="l05103" name="l05103"></a><span class="lineno"> 5103</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l05104" name="l05104"></a><span class="lineno"> 5104</span>        } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l05105" name="l05105"></a><span class="lineno"> 5105</span>                <span class="keywordflow">return</span> _fuse_new_31(args, op, op_size, version, user_data);</div>
-<div class="line"><a id="l05106" name="l05106"></a><span class="lineno"> 5106</span>}</div>
-<div class="line"><a id="l05107" name="l05107"></a><span class="lineno"> 5107</span> </div>
-<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span><span class="comment">/* ABI compat version */</span></div>
-<div class="line"><a id="l05109" name="l05109"></a><span class="lineno"> 5109</span><span class="keyword">struct </span>fuse *fuse_new_31(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data);</div>
-<div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span>FUSE_SYMVER(<span class="stringliteral">&quot;fuse_new_31&quot;</span>, <span class="stringliteral">&quot;fuse_new@FUSE_3.1&quot;</span>)</div>
-<div class="line"><a id="l05112" name="l05112"></a><span class="lineno"> 5112</span>struct fuse *fuse_new_31(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05114" name="l05114"></a><span class="lineno"> 5114</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data)</div>
-<div class="line"><a id="l05115" name="l05115"></a><span class="lineno"> 5115</span>{</div>
-<div class="line"><a id="l05116" name="l05116"></a><span class="lineno"> 5116</span>                <span class="comment">/* unknown version */</span></div>
-<div class="line"><a id="l05117" name="l05117"></a><span class="lineno"> 5117</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> version = { 0 };</div>
-<div class="line"><a id="l05118" name="l05118"></a><span class="lineno"> 5118</span> </div>
-<div class="line"><a id="l05119" name="l05119"></a><span class="lineno"> 5119</span>        <span class="keywordflow">return</span> _fuse_new_31(args, op, op_size, &amp;version, user_data);</div>
-<div class="line"><a id="l05120" name="l05120"></a><span class="lineno"> 5120</span>}</div>
-<div class="line"><a id="l05121" name="l05121"></a><span class="lineno"> 5121</span> </div>
-<div class="line"><a id="l05122" name="l05122"></a><span class="lineno"> 5122</span><span class="comment">/*</span></div>
-<div class="line"><a id="l05123" name="l05123"></a><span class="lineno"> 5123</span><span class="comment"> * ABI compat version</span></div>
-<div class="line"><a id="l05124" name="l05124"></a><span class="lineno"> 5124</span><span class="comment"> * Emulates 3.0-style fuse_new(), which processes --help</span></div>
-<div class="line"><a id="l05125" name="l05125"></a><span class="lineno"> 5125</span><span class="comment"> */</span></div>
-<div class="line"><a id="l05126" name="l05126"></a><span class="lineno"> 5126</span><span class="keyword">struct </span>fuse *fuse_new_30(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05127" name="l05127"></a><span class="lineno"> 5127</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data);</div>
-<div class="line"><a id="l05128" name="l05128"></a><span class="lineno"> 5128</span>FUSE_SYMVER(<span class="stringliteral">&quot;fuse_new_30&quot;</span>, <span class="stringliteral">&quot;fuse_new@FUSE_3.0&quot;</span>)</div>
-<div class="line"><a id="l05129" name="l05129"></a><span class="lineno"> 5129</span>struct fuse *fuse_new_30(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
-<div class="line"><a id="l05130" name="l05130"></a><span class="lineno"> 5130</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
-<div class="line"><a id="l05131" name="l05131"></a><span class="lineno"> 5131</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data)</div>
-<div class="line"><a id="l05132" name="l05132"></a><span class="lineno"> 5132</span>{</div>
-<div class="line"><a id="l05133" name="l05133"></a><span class="lineno"> 5133</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__config.html">fuse_config</a> conf = {0};</div>
-<div class="line"><a id="l05134" name="l05134"></a><span class="lineno"> 5134</span> </div>
-<div class="line"><a id="l05135" name="l05135"></a><span class="lineno"> 5135</span>        <span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__opt.html">fuse_opt</a> opts[] = {</div>
-<div class="line"><a id="l05136" name="l05136"></a><span class="lineno"> 5136</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;-h&quot;</span>, show_help, 1),</div>
-<div class="line"><a id="l05137" name="l05137"></a><span class="lineno"> 5137</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;--help&quot;</span>, show_help, 1),</div>
-<div class="line"><a id="l05138" name="l05138"></a><span class="lineno"> 5138</span>                <a class="code hl_define" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#aca35962e17d189ceb5447f8eea11bd33">FUSE_OPT_END</a></div>
-<div class="line"><a id="l05139" name="l05139"></a><span class="lineno"> 5139</span>        };</div>
-<div class="line"><a id="l05140" name="l05140"></a><span class="lineno"> 5140</span> </div>
-<div class="line"><a id="l05141" name="l05141"></a><span class="lineno"> 5141</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;conf, opts,</div>
-<div class="line"><a id="l05142" name="l05142"></a><span class="lineno"> 5142</span>                           fuse_lib_opt_proc) == -1)</div>
-<div class="line"><a id="l05143" name="l05143"></a><span class="lineno"> 5143</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l05144" name="l05144"></a><span class="lineno"> 5144</span> </div>
-<div class="line"><a id="l05145" name="l05145"></a><span class="lineno"> 5145</span>        <span class="keywordflow">if</span> (conf.<a class="code hl_variable" href="structfuse__config.html#a0f4fff78450a567ceb7814a8f7bc362a">show_help</a>) {</div>
-<div class="line"><a id="l05146" name="l05146"></a><span class="lineno"> 5146</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a9cef8443ae22c4bcc800d7c45f1496fe">fuse_lib_help</a>(args);</div>
-<div class="line"><a id="l05147" name="l05147"></a><span class="lineno"> 5147</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l05148" name="l05148"></a><span class="lineno"> 5148</span>        } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l05149" name="l05149"></a><span class="lineno"> 5149</span>                <span class="keywordflow">return</span> fuse_new_31(args, op, op_size, user_data);</div>
-<div class="line"><a id="l05150" name="l05150"></a><span class="lineno"> 5150</span>}</div>
-<div class="line"><a id="l05151" name="l05151"></a><span class="lineno"> 5151</span> </div>
-<div class="line"><a id="l05152" name="l05152"></a><span class="lineno"> 5152</span> </div>
-<div class="line"><a id="l05153" name="l05153"></a><span class="lineno"> 5153</span><span class="keywordtype">void</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a0d47cac8a295efd5370d7af059e4d14f">fuse_destroy</a>(<span class="keyword">struct</span> fuse *f)</div>
-<div class="line"><a id="l05154" name="l05154"></a><span class="lineno"> 5154</span>{</div>
-<div class="line"><a id="l05155" name="l05155"></a><span class="lineno"> 5155</span>        <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a id="l05036" name="l05036"></a><span class="lineno"> 5036</span>        root = alloc_node(f);</div>
+<div class="line"><a id="l05037" name="l05037"></a><span class="lineno"> 5037</span>        <span class="keywordflow">if</span> (root == NULL) {</div>
+<div class="line"><a id="l05038" name="l05038"></a><span class="lineno"> 5038</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__log_8h.html#a4506ffd6ed3a631e01999b32b1eb8621">fuse_log</a>(FUSE_LOG_ERR, <span class="stringliteral">&quot;fuse: memory allocation failed\n&quot;</span>);</div>
+<div class="line"><a id="l05039" name="l05039"></a><span class="lineno"> 5039</span>                <span class="keywordflow">goto</span> out_free_id_table;</div>
+<div class="line"><a id="l05040" name="l05040"></a><span class="lineno"> 5040</span>        }</div>
+<div class="line"><a id="l05041" name="l05041"></a><span class="lineno"> 5041</span>        <span class="keywordflow">if</span> (lru_enabled(f)) {</div>
+<div class="line"><a id="l05042" name="l05042"></a><span class="lineno"> 5042</span>                <span class="keyword">struct </span>node_lru *lnode = node_lru(root);</div>
+<div class="line"><a id="l05043" name="l05043"></a><span class="lineno"> 5043</span>                init_list_head(&amp;lnode-&gt;lru);</div>
+<div class="line"><a id="l05044" name="l05044"></a><span class="lineno"> 5044</span>        }</div>
+<div class="line"><a id="l05045" name="l05045"></a><span class="lineno"> 5045</span> </div>
+<div class="line"><a id="l05046" name="l05046"></a><span class="lineno"> 5046</span>        strcpy(root-&gt;inline_name, <span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><a id="l05047" name="l05047"></a><span class="lineno"> 5047</span>        root-&gt;name = root-&gt;inline_name;</div>
+<div class="line"><a id="l05048" name="l05048"></a><span class="lineno"> 5048</span>        root-&gt;parent = NULL;</div>
+<div class="line"><a id="l05049" name="l05049"></a><span class="lineno"> 5049</span>        root-&gt;nodeid = FUSE_ROOT_ID;</div>
+<div class="line"><a id="l05050" name="l05050"></a><span class="lineno"> 5050</span>        inc_nlookup(root);</div>
+<div class="line"><a id="l05051" name="l05051"></a><span class="lineno"> 5051</span>        hash_id(f, root);</div>
+<div class="line"><a id="l05052" name="l05052"></a><span class="lineno"> 5052</span> </div>
+<div class="line"><a id="l05053" name="l05053"></a><span class="lineno"> 5053</span>        <span class="keywordflow">return</span> f;</div>
+<div class="line"><a id="l05054" name="l05054"></a><span class="lineno"> 5054</span> </div>
+<div class="line"><a id="l05055" name="l05055"></a><span class="lineno"> 5055</span>out_free_id_table:</div>
+<div class="line"><a id="l05056" name="l05056"></a><span class="lineno"> 5056</span>        free(f-&gt;id_table.array);</div>
+<div class="line"><a id="l05057" name="l05057"></a><span class="lineno"> 5057</span>out_free_name_table:</div>
+<div class="line"><a id="l05058" name="l05058"></a><span class="lineno"> 5058</span>        free(f-&gt;name_table.array);</div>
+<div class="line"><a id="l05059" name="l05059"></a><span class="lineno"> 5059</span>out_free_session:</div>
+<div class="line"><a id="l05060" name="l05060"></a><span class="lineno"> 5060</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(f-&gt;se);</div>
+<div class="line"><a id="l05061" name="l05061"></a><span class="lineno"> 5061</span>out_free_fs:</div>
+<div class="line"><a id="l05062" name="l05062"></a><span class="lineno"> 5062</span>        free(f-&gt;fs);</div>
+<div class="line"><a id="l05063" name="l05063"></a><span class="lineno"> 5063</span>        free(f-&gt;conf.modules);</div>
+<div class="line"><a id="l05064" name="l05064"></a><span class="lineno"> 5064</span>out_delete_context_key:</div>
+<div class="line"><a id="l05065" name="l05065"></a><span class="lineno"> 5065</span>        fuse_delete_context_key();</div>
+<div class="line"><a id="l05066" name="l05066"></a><span class="lineno"> 5066</span>out_free:</div>
+<div class="line"><a id="l05067" name="l05067"></a><span class="lineno"> 5067</span>        free(f);</div>
+<div class="line"><a id="l05068" name="l05068"></a><span class="lineno"> 5068</span>out:</div>
+<div class="line"><a id="l05069" name="l05069"></a><span class="lineno"> 5069</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l05070" name="l05070"></a><span class="lineno"> 5070</span>}</div>
+<div class="line"><a id="l05071" name="l05071"></a><span class="lineno"> 5071</span> </div>
+<div class="line"><a id="l05072" name="l05072"></a><span class="lineno"> 5072</span><span class="comment">/* Emulates 3.0-style fuse_new(), which processes --help */</span></div>
+<div class="line"><a id="l05073" name="l05073"></a><span class="lineno"> 5073</span>FUSE_SYMVER(<span class="stringliteral">&quot;_fuse_new_30&quot;</span>, <span class="stringliteral">&quot;_fuse_new@FUSE_3.0&quot;</span>)</div>
+<div class="line"><a id="l05074" name="l05074"></a><span class="lineno"> 5074</span>struct fuse *_fuse_new_30(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a id="l05075" name="l05075"></a><span class="lineno"> 5075</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
+<div class="line"><a id="l05076" name="l05076"></a><span class="lineno"> 5076</span>                         <span class="keywordtype">size_t</span> op_size,</div>
+<div class="line"><a id="l05077" name="l05077"></a><span class="lineno"> 5077</span>                         struct <a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> *version,</div>
+<div class="line"><a id="l05078" name="l05078"></a><span class="lineno"> 5078</span>                         <span class="keywordtype">void</span> *user_data)</div>
+<div class="line"><a id="l05079" name="l05079"></a><span class="lineno"> 5079</span>{</div>
+<div class="line"><a id="l05080" name="l05080"></a><span class="lineno"> 5080</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__config.html">fuse_config</a> conf = {0};</div>
+<div class="line"><a id="l05081" name="l05081"></a><span class="lineno"> 5081</span> </div>
+<div class="line"><a id="l05082" name="l05082"></a><span class="lineno"> 5082</span>        <span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__opt.html">fuse_opt</a> opts[] = {</div>
+<div class="line"><a id="l05083" name="l05083"></a><span class="lineno"> 5083</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;-h&quot;</span>, show_help, 1),</div>
+<div class="line"><a id="l05084" name="l05084"></a><span class="lineno"> 5084</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;--help&quot;</span>, show_help, 1),</div>
+<div class="line"><a id="l05085" name="l05085"></a><span class="lineno"> 5085</span>                <a class="code hl_define" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#aca35962e17d189ceb5447f8eea11bd33">FUSE_OPT_END</a></div>
+<div class="line"><a id="l05086" name="l05086"></a><span class="lineno"> 5086</span>        };</div>
+<div class="line"><a id="l05087" name="l05087"></a><span class="lineno"> 5087</span> </div>
+<div class="line"><a id="l05088" name="l05088"></a><span class="lineno"> 5088</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;conf, opts,</div>
+<div class="line"><a id="l05089" name="l05089"></a><span class="lineno"> 5089</span>                           fuse_lib_opt_proc) == -1)</div>
+<div class="line"><a id="l05090" name="l05090"></a><span class="lineno"> 5090</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l05091" name="l05091"></a><span class="lineno"> 5091</span> </div>
+<div class="line"><a id="l05092" name="l05092"></a><span class="lineno"> 5092</span>        <span class="keywordflow">if</span> (conf.<a class="code hl_variable" href="structfuse__config.html#a0f4fff78450a567ceb7814a8f7bc362a">show_help</a>) {</div>
+<div class="line"><a id="l05093" name="l05093"></a><span class="lineno"> 5093</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a9cef8443ae22c4bcc800d7c45f1496fe">fuse_lib_help</a>(args);</div>
+<div class="line"><a id="l05094" name="l05094"></a><span class="lineno"> 5094</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l05095" name="l05095"></a><span class="lineno"> 5095</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l05096" name="l05096"></a><span class="lineno"> 5096</span>                <span class="keywordflow">return</span> _fuse_new_31(args, op, op_size, version, user_data);</div>
+<div class="line"><a id="l05097" name="l05097"></a><span class="lineno"> 5097</span>}</div>
+<div class="line"><a id="l05098" name="l05098"></a><span class="lineno"> 5098</span> </div>
+<div class="line"><a id="l05099" name="l05099"></a><span class="lineno"> 5099</span><span class="comment">/* ABI compat version */</span></div>
+<div class="line"><a id="l05100" name="l05100"></a><span class="lineno"> 5100</span><span class="keyword">struct </span>fuse *fuse_new_31(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
+<div class="line"><a id="l05101" name="l05101"></a><span class="lineno"> 5101</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data);</div>
+<div class="line"><a id="l05102" name="l05102"></a><span class="lineno"> 5102</span>FUSE_SYMVER(<span class="stringliteral">&quot;fuse_new_31&quot;</span>, <span class="stringliteral">&quot;fuse_new@FUSE_3.1&quot;</span>)</div>
+<div class="line"><a id="l05103" name="l05103"></a><span class="lineno"> 5103</span>struct fuse *fuse_new_31(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a id="l05104" name="l05104"></a><span class="lineno"> 5104</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
+<div class="line"><a id="l05105" name="l05105"></a><span class="lineno"> 5105</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data)</div>
+<div class="line"><a id="l05106" name="l05106"></a><span class="lineno"> 5106</span>{</div>
+<div class="line"><a id="l05107" name="l05107"></a><span class="lineno"> 5107</span>                <span class="comment">/* unknown version */</span></div>
+<div class="line"><a id="l05108" name="l05108"></a><span class="lineno"> 5108</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structlibfuse__version.html">libfuse_version</a> version = { 0 };</div>
+<div class="line"><a id="l05109" name="l05109"></a><span class="lineno"> 5109</span> </div>
+<div class="line"><a id="l05110" name="l05110"></a><span class="lineno"> 5110</span>        <span class="keywordflow">return</span> _fuse_new_31(args, op, op_size, &amp;version, user_data);</div>
+<div class="line"><a id="l05111" name="l05111"></a><span class="lineno"> 5111</span>}</div>
+<div class="line"><a id="l05112" name="l05112"></a><span class="lineno"> 5112</span> </div>
+<div class="line"><a id="l05113" name="l05113"></a><span class="lineno"> 5113</span><span class="comment">/*</span></div>
+<div class="line"><a id="l05114" name="l05114"></a><span class="lineno"> 5114</span><span class="comment"> * ABI compat version</span></div>
+<div class="line"><a id="l05115" name="l05115"></a><span class="lineno"> 5115</span><span class="comment"> * Emulates 3.0-style fuse_new(), which processes --help</span></div>
+<div class="line"><a id="l05116" name="l05116"></a><span class="lineno"> 5116</span><span class="comment"> */</span></div>
+<div class="line"><a id="l05117" name="l05117"></a><span class="lineno"> 5117</span><span class="keyword">struct </span>fuse *fuse_new_30(<span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
+<div class="line"><a id="l05118" name="l05118"></a><span class="lineno"> 5118</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data);</div>
+<div class="line"><a id="l05119" name="l05119"></a><span class="lineno"> 5119</span>FUSE_SYMVER(<span class="stringliteral">&quot;fuse_new_30&quot;</span>, <span class="stringliteral">&quot;fuse_new@FUSE_3.0&quot;</span>)</div>
+<div class="line"><a id="l05120" name="l05120"></a><span class="lineno"> 5120</span>struct fuse *fuse_new_30(struct <a class="code hl_struct" href="structfuse__args.html">fuse_args</a> *args,</div>
+<div class="line"><a id="l05121" name="l05121"></a><span class="lineno"> 5121</span>                         const struct <a class="code hl_struct" href="structfuse__operations.html">fuse_operations</a> *op,</div>
+<div class="line"><a id="l05122" name="l05122"></a><span class="lineno"> 5122</span>                         <span class="keywordtype">size_t</span> op_size, <span class="keywordtype">void</span> *user_data)</div>
+<div class="line"><a id="l05123" name="l05123"></a><span class="lineno"> 5123</span>{</div>
+<div class="line"><a id="l05124" name="l05124"></a><span class="lineno"> 5124</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__config.html">fuse_config</a> conf = {0};</div>
+<div class="line"><a id="l05125" name="l05125"></a><span class="lineno"> 5125</span> </div>
+<div class="line"><a id="l05126" name="l05126"></a><span class="lineno"> 5126</span>        <span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfuse__opt.html">fuse_opt</a> opts[] = {</div>
+<div class="line"><a id="l05127" name="l05127"></a><span class="lineno"> 5127</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;-h&quot;</span>, show_help, 1),</div>
+<div class="line"><a id="l05128" name="l05128"></a><span class="lineno"> 5128</span>                FUSE_LIB_OPT(<span class="stringliteral">&quot;--help&quot;</span>, show_help, 1),</div>
+<div class="line"><a id="l05129" name="l05129"></a><span class="lineno"> 5129</span>                <a class="code hl_define" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#aca35962e17d189ceb5447f8eea11bd33">FUSE_OPT_END</a></div>
+<div class="line"><a id="l05130" name="l05130"></a><span class="lineno"> 5130</span>        };</div>
+<div class="line"><a id="l05131" name="l05131"></a><span class="lineno"> 5131</span> </div>
+<div class="line"><a id="l05132" name="l05132"></a><span class="lineno"> 5132</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse</a>(args, &amp;conf, opts,</div>
+<div class="line"><a id="l05133" name="l05133"></a><span class="lineno"> 5133</span>                           fuse_lib_opt_proc) == -1)</div>
+<div class="line"><a id="l05134" name="l05134"></a><span class="lineno"> 5134</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l05135" name="l05135"></a><span class="lineno"> 5135</span> </div>
+<div class="line"><a id="l05136" name="l05136"></a><span class="lineno"> 5136</span>        <span class="keywordflow">if</span> (conf.<a class="code hl_variable" href="structfuse__config.html#a0f4fff78450a567ceb7814a8f7bc362a">show_help</a>) {</div>
+<div class="line"><a id="l05137" name="l05137"></a><span class="lineno"> 5137</span>                <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a9cef8443ae22c4bcc800d7c45f1496fe">fuse_lib_help</a>(args);</div>
+<div class="line"><a id="l05138" name="l05138"></a><span class="lineno"> 5138</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l05139" name="l05139"></a><span class="lineno"> 5139</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l05140" name="l05140"></a><span class="lineno"> 5140</span>                <span class="keywordflow">return</span> fuse_new_31(args, op, op_size, user_data);</div>
+<div class="line"><a id="l05141" name="l05141"></a><span class="lineno"> 5141</span>}</div>
+<div class="line"><a id="l05142" name="l05142"></a><span class="lineno"> 5142</span> </div>
+<div class="line"><a id="l05143" name="l05143"></a><span class="lineno"> 5143</span> </div>
+<div class="line"><a id="l05144" name="l05144"></a><span class="lineno"> 5144</span><span class="keywordtype">void</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a0d47cac8a295efd5370d7af059e4d14f">fuse_destroy</a>(<span class="keyword">struct</span> fuse *f)</div>
+<div class="line"><a id="l05145" name="l05145"></a><span class="lineno"> 5145</span>{</div>
+<div class="line"><a id="l05146" name="l05146"></a><span class="lineno"> 5146</span>        <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a id="l05147" name="l05147"></a><span class="lineno"> 5147</span> </div>
+<div class="line"><a id="l05148" name="l05148"></a><span class="lineno"> 5148</span>        <span class="keywordflow">if</span> (f-&gt;conf.intr &amp;&amp; f-&gt;intr_installed)</div>
+<div class="line"><a id="l05149" name="l05149"></a><span class="lineno"> 5149</span>                fuse_restore_intr_signal(f-&gt;conf.intr_signal);</div>
+<div class="line"><a id="l05150" name="l05150"></a><span class="lineno"> 5150</span> </div>
+<div class="line"><a id="l05151" name="l05151"></a><span class="lineno"> 5151</span>        <span class="keywordflow">if</span> (f-&gt;fs) {</div>
+<div class="line"><a id="l05152" name="l05152"></a><span class="lineno"> 5152</span>                fuse_create_context(f);</div>
+<div class="line"><a id="l05153" name="l05153"></a><span class="lineno"> 5153</span> </div>
+<div class="line"><a id="l05154" name="l05154"></a><span class="lineno"> 5154</span>                <span class="keywordflow">for</span> (i = 0; i &lt; f-&gt;id_table.size; i++) {</div>
+<div class="line"><a id="l05155" name="l05155"></a><span class="lineno"> 5155</span>                        <span class="keyword">struct </span>node *node;</div>
 <div class="line"><a id="l05156" name="l05156"></a><span class="lineno"> 5156</span> </div>
-<div class="line"><a id="l05157" name="l05157"></a><span class="lineno"> 5157</span>        <span class="keywordflow">if</span> (f-&gt;conf.intr &amp;&amp; f-&gt;intr_installed)</div>
-<div class="line"><a id="l05158" name="l05158"></a><span class="lineno"> 5158</span>                fuse_restore_intr_signal(f-&gt;conf.intr_signal);</div>
-<div class="line"><a id="l05159" name="l05159"></a><span class="lineno"> 5159</span> </div>
-<div class="line"><a id="l05160" name="l05160"></a><span class="lineno"> 5160</span>        <span class="keywordflow">if</span> (f-&gt;fs) {</div>
-<div class="line"><a id="l05161" name="l05161"></a><span class="lineno"> 5161</span>                fuse_create_context(f);</div>
-<div class="line"><a id="l05162" name="l05162"></a><span class="lineno"> 5162</span> </div>
-<div class="line"><a id="l05163" name="l05163"></a><span class="lineno"> 5163</span>                <span class="keywordflow">for</span> (i = 0; i &lt; f-&gt;id_table.size; i++) {</div>
-<div class="line"><a id="l05164" name="l05164"></a><span class="lineno"> 5164</span>                        <span class="keyword">struct </span>node *node;</div>
-<div class="line"><a id="l05165" name="l05165"></a><span class="lineno"> 5165</span> </div>
-<div class="line"><a id="l05166" name="l05166"></a><span class="lineno"> 5166</span>                        <span class="keywordflow">for</span> (node = f-&gt;id_table.array[i]; node != NULL;</div>
-<div class="line"><a id="l05167" name="l05167"></a><span class="lineno"> 5167</span>                             node = node-&gt;id_next) {</div>
-<div class="line"><a id="l05168" name="l05168"></a><span class="lineno"> 5168</span>                                <span class="keywordflow">if</span> (node-&gt;is_hidden) {</div>
-<div class="line"><a id="l05169" name="l05169"></a><span class="lineno"> 5169</span>                                        <span class="keywordtype">char</span> *path;</div>
-<div class="line"><a id="l05170" name="l05170"></a><span class="lineno"> 5170</span>                                        <span class="keywordflow">if</span> (try_get_path(f, node-&gt;nodeid, NULL, &amp;path, NULL, <span class="keyword">false</span>) == 0) {</div>
-<div class="line"><a id="l05171" name="l05171"></a><span class="lineno"> 5171</span>                                                fuse_fs_unlink(f-&gt;fs, path);</div>
-<div class="line"><a id="l05172" name="l05172"></a><span class="lineno"> 5172</span>                                                free(path);</div>
-<div class="line"><a id="l05173" name="l05173"></a><span class="lineno"> 5173</span>                                        }</div>
-<div class="line"><a id="l05174" name="l05174"></a><span class="lineno"> 5174</span>                                }</div>
-<div class="line"><a id="l05175" name="l05175"></a><span class="lineno"> 5175</span>                        }</div>
-<div class="line"><a id="l05176" name="l05176"></a><span class="lineno"> 5176</span>                }</div>
-<div class="line"><a id="l05177" name="l05177"></a><span class="lineno"> 5177</span>        }</div>
-<div class="line"><a id="l05178" name="l05178"></a><span class="lineno"> 5178</span>        <span class="keywordflow">for</span> (i = 0; i &lt; f-&gt;id_table.size; i++) {</div>
-<div class="line"><a id="l05179" name="l05179"></a><span class="lineno"> 5179</span>                <span class="keyword">struct </span>node *node;</div>
-<div class="line"><a id="l05180" name="l05180"></a><span class="lineno"> 5180</span>                <span class="keyword">struct </span>node *next;</div>
+<div class="line"><a id="l05157" name="l05157"></a><span class="lineno"> 5157</span>                        <span class="keywordflow">for</span> (node = f-&gt;id_table.array[i]; node != NULL;</div>
+<div class="line"><a id="l05158" name="l05158"></a><span class="lineno"> 5158</span>                             node = node-&gt;id_next) {</div>
+<div class="line"><a id="l05159" name="l05159"></a><span class="lineno"> 5159</span>                                <span class="keywordflow">if</span> (node-&gt;is_hidden) {</div>
+<div class="line"><a id="l05160" name="l05160"></a><span class="lineno"> 5160</span>                                        <span class="keywordtype">char</span> *path;</div>
+<div class="line"><a id="l05161" name="l05161"></a><span class="lineno"> 5161</span>                                        <span class="keywordflow">if</span> (try_get_path(f, node-&gt;nodeid, NULL, &amp;path, NULL, <span class="keyword">false</span>) == 0) {</div>
+<div class="line"><a id="l05162" name="l05162"></a><span class="lineno"> 5162</span>                                                fuse_fs_unlink(f-&gt;fs, path);</div>
+<div class="line"><a id="l05163" name="l05163"></a><span class="lineno"> 5163</span>                                                free(path);</div>
+<div class="line"><a id="l05164" name="l05164"></a><span class="lineno"> 5164</span>                                        }</div>
+<div class="line"><a id="l05165" name="l05165"></a><span class="lineno"> 5165</span>                                }</div>
+<div class="line"><a id="l05166" name="l05166"></a><span class="lineno"> 5166</span>                        }</div>
+<div class="line"><a id="l05167" name="l05167"></a><span class="lineno"> 5167</span>                }</div>
+<div class="line"><a id="l05168" name="l05168"></a><span class="lineno"> 5168</span>        }</div>
+<div class="line"><a id="l05169" name="l05169"></a><span class="lineno"> 5169</span>        <span class="keywordflow">for</span> (i = 0; i &lt; f-&gt;id_table.size; i++) {</div>
+<div class="line"><a id="l05170" name="l05170"></a><span class="lineno"> 5170</span>                <span class="keyword">struct </span>node *node;</div>
+<div class="line"><a id="l05171" name="l05171"></a><span class="lineno"> 5171</span>                <span class="keyword">struct </span>node *next;</div>
+<div class="line"><a id="l05172" name="l05172"></a><span class="lineno"> 5172</span> </div>
+<div class="line"><a id="l05173" name="l05173"></a><span class="lineno"> 5173</span>                <span class="keywordflow">for</span> (node = f-&gt;id_table.array[i]; node != NULL; node = next) {</div>
+<div class="line"><a id="l05174" name="l05174"></a><span class="lineno"> 5174</span>                        next = node-&gt;id_next;</div>
+<div class="line"><a id="l05175" name="l05175"></a><span class="lineno"> 5175</span>                        free_node(f, node);</div>
+<div class="line"><a id="l05176" name="l05176"></a><span class="lineno"> 5176</span>                        f-&gt;id_table.use--;</div>
+<div class="line"><a id="l05177" name="l05177"></a><span class="lineno"> 5177</span>                }</div>
+<div class="line"><a id="l05178" name="l05178"></a><span class="lineno"> 5178</span>        }</div>
+<div class="line"><a id="l05179" name="l05179"></a><span class="lineno"> 5179</span>        assert(list_empty(&amp;f-&gt;partial_slabs));</div>
+<div class="line"><a id="l05180" name="l05180"></a><span class="lineno"> 5180</span>        assert(list_empty(&amp;f-&gt;full_slabs));</div>
 <div class="line"><a id="l05181" name="l05181"></a><span class="lineno"> 5181</span> </div>
-<div class="line"><a id="l05182" name="l05182"></a><span class="lineno"> 5182</span>                <span class="keywordflow">for</span> (node = f-&gt;id_table.array[i]; node != NULL; node = next) {</div>
-<div class="line"><a id="l05183" name="l05183"></a><span class="lineno"> 5183</span>                        next = node-&gt;id_next;</div>
-<div class="line"><a id="l05184" name="l05184"></a><span class="lineno"> 5184</span>                        free_node(f, node);</div>
-<div class="line"><a id="l05185" name="l05185"></a><span class="lineno"> 5185</span>                        f-&gt;id_table.use--;</div>
-<div class="line"><a id="l05186" name="l05186"></a><span class="lineno"> 5186</span>                }</div>
-<div class="line"><a id="l05187" name="l05187"></a><span class="lineno"> 5187</span>        }</div>
-<div class="line"><a id="l05188" name="l05188"></a><span class="lineno"> 5188</span>        assert(list_empty(&amp;f-&gt;partial_slabs));</div>
-<div class="line"><a id="l05189" name="l05189"></a><span class="lineno"> 5189</span>        assert(list_empty(&amp;f-&gt;full_slabs));</div>
-<div class="line"><a id="l05190" name="l05190"></a><span class="lineno"> 5190</span> </div>
-<div class="line"><a id="l05191" name="l05191"></a><span class="lineno"> 5191</span>        <span class="keywordflow">while</span> (fuse_modules) {</div>
-<div class="line"><a id="l05192" name="l05192"></a><span class="lineno"> 5192</span>                fuse_put_module(fuse_modules);</div>
-<div class="line"><a id="l05193" name="l05193"></a><span class="lineno"> 5193</span>        }</div>
-<div class="line"><a id="l05194" name="l05194"></a><span class="lineno"> 5194</span>        free(f-&gt;id_table.array);</div>
-<div class="line"><a id="l05195" name="l05195"></a><span class="lineno"> 5195</span>        free(f-&gt;name_table.array);</div>
-<div class="line"><a id="l05196" name="l05196"></a><span class="lineno"> 5196</span>        pthread_mutex_destroy(&amp;f-&gt;lock);</div>
-<div class="line"><a id="l05197" name="l05197"></a><span class="lineno"> 5197</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(f-&gt;se);</div>
-<div class="line"><a id="l05198" name="l05198"></a><span class="lineno"> 5198</span>        free(f-&gt;fs);</div>
-<div class="line"><a id="l05199" name="l05199"></a><span class="lineno"> 5199</span>        free(f-&gt;conf.modules);</div>
-<div class="line"><a id="l05200" name="l05200"></a><span class="lineno"> 5200</span>        free(f);</div>
-<div class="line"><a id="l05201" name="l05201"></a><span class="lineno"> 5201</span>        fuse_delete_context_key();</div>
+<div class="line"><a id="l05182" name="l05182"></a><span class="lineno"> 5182</span>        <span class="keywordflow">while</span> (fuse_modules) {</div>
+<div class="line"><a id="l05183" name="l05183"></a><span class="lineno"> 5183</span>                fuse_put_module(fuse_modules);</div>
+<div class="line"><a id="l05184" name="l05184"></a><span class="lineno"> 5184</span>        }</div>
+<div class="line"><a id="l05185" name="l05185"></a><span class="lineno"> 5185</span>        free(f-&gt;id_table.array);</div>
+<div class="line"><a id="l05186" name="l05186"></a><span class="lineno"> 5186</span>        free(f-&gt;name_table.array);</div>
+<div class="line"><a id="l05187" name="l05187"></a><span class="lineno"> 5187</span>        pthread_mutex_destroy(&amp;f-&gt;lock);</div>
+<div class="line"><a id="l05188" name="l05188"></a><span class="lineno"> 5188</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a08b5503c4e9656f9c4bc88331233cc65">fuse_session_destroy</a>(f-&gt;se);</div>
+<div class="line"><a id="l05189" name="l05189"></a><span class="lineno"> 5189</span>        free(f-&gt;fs);</div>
+<div class="line"><a id="l05190" name="l05190"></a><span class="lineno"> 5190</span>        free(f-&gt;conf.modules);</div>
+<div class="line"><a id="l05191" name="l05191"></a><span class="lineno"> 5191</span>        free(f);</div>
+<div class="line"><a id="l05192" name="l05192"></a><span class="lineno"> 5192</span>        fuse_delete_context_key();</div>
+<div class="line"><a id="l05193" name="l05193"></a><span class="lineno"> 5193</span>}</div>
+<div class="line"><a id="l05194" name="l05194"></a><span class="lineno"> 5194</span> </div>
+<div class="line"><a id="l05195" name="l05195"></a><span class="lineno"> 5195</span><span class="keywordtype">int</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a04baffd979b06663ae9590e34a48b55f">fuse_mount</a>(<span class="keyword">struct</span> fuse *f, <span class="keyword">const</span> <span class="keywordtype">char</span> *mountpoint) {</div>
+<div class="line"><a id="l05196" name="l05196"></a><span class="lineno"> 5196</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a>(<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aa89d206b1b9716781af4fdc01d39ea97">fuse_get_session</a>(f), mountpoint);</div>
+<div class="line"><a id="l05197" name="l05197"></a><span class="lineno"> 5197</span>}</div>
+<div class="line"><a id="l05198" name="l05198"></a><span class="lineno"> 5198</span> </div>
+<div class="line"><a id="l05199" name="l05199"></a><span class="lineno"> 5199</span> </div>
+<div class="line"><a id="l05200" name="l05200"></a><span class="lineno"> 5200</span><span class="keywordtype">void</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aade4d93e323c341fe2859d759e9cb8d8">fuse_unmount</a>(<span class="keyword">struct</span> fuse *f) {</div>
+<div class="line"><a id="l05201" name="l05201"></a><span class="lineno"> 5201</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount</a>(<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aa89d206b1b9716781af4fdc01d39ea97">fuse_get_session</a>(f));</div>
 <div class="line"><a id="l05202" name="l05202"></a><span class="lineno"> 5202</span>}</div>
 <div class="line"><a id="l05203" name="l05203"></a><span class="lineno"> 5203</span> </div>
-<div class="line"><a id="l05204" name="l05204"></a><span class="lineno"> 5204</span><span class="keywordtype">int</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a04baffd979b06663ae9590e34a48b55f">fuse_mount</a>(<span class="keyword">struct</span> fuse *f, <span class="keyword">const</span> <span class="keywordtype">char</span> *mountpoint) {</div>
-<div class="line"><a id="l05205" name="l05205"></a><span class="lineno"> 5205</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#aa6d77679a110582684e9ca2da623bbc2">fuse_session_mount</a>(<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aa89d206b1b9716781af4fdc01d39ea97">fuse_get_session</a>(f), mountpoint);</div>
-<div class="line"><a id="l05206" name="l05206"></a><span class="lineno"> 5206</span>}</div>
-<div class="line"><a id="l05207" name="l05207"></a><span class="lineno"> 5207</span> </div>
+<div class="line"><a id="l05204" name="l05204"></a><span class="lineno"> 5204</span><span class="keywordtype">int</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__common_8h.html#ae04b2f721003f5540c71be65396c53c8">fuse_version</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l05205" name="l05205"></a><span class="lineno"> 5205</span>{</div>
+<div class="line"><a id="l05206" name="l05206"></a><span class="lineno"> 5206</span>        <span class="keywordflow">return</span> FUSE_VERSION;</div>
+<div class="line"><a id="l05207" name="l05207"></a><span class="lineno"> 5207</span>}</div>
 <div class="line"><a id="l05208" name="l05208"></a><span class="lineno"> 5208</span> </div>
-<div class="line"><a id="l05209" name="l05209"></a><span class="lineno"> 5209</span><span class="keywordtype">void</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aade4d93e323c341fe2859d759e9cb8d8">fuse_unmount</a>(<span class="keyword">struct</span> fuse *f) {</div>
-<div class="line"><a id="l05210" name="l05210"></a><span class="lineno"> 5210</span>        <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__lowlevel_8h.html#a6c10d942751ddb214863a8b5e53de5e8">fuse_session_unmount</a>(<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse_8h.html#aa89d206b1b9716781af4fdc01d39ea97">fuse_get_session</a>(f));</div>
-<div class="line"><a id="l05211" name="l05211"></a><span class="lineno"> 5211</span>}</div>
-<div class="line"><a id="l05212" name="l05212"></a><span class="lineno"> 5212</span> </div>
-<div class="line"><a id="l05213" name="l05213"></a><span class="lineno"> 5213</span><span class="keywordtype">int</span> <a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__common_8h.html#ae04b2f721003f5540c71be65396c53c8">fuse_version</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l05214" name="l05214"></a><span class="lineno"> 5214</span>{</div>
-<div class="line"><a id="l05215" name="l05215"></a><span class="lineno"> 5215</span>        <span class="keywordflow">return</span> FUSE_VERSION;</div>
-<div class="line"><a id="l05216" name="l05216"></a><span class="lineno"> 5216</span>}</div>
-<div class="line"><a id="l05217" name="l05217"></a><span class="lineno"> 5217</span> </div>
-<div class="line"><a id="l05218" name="l05218"></a><span class="lineno"> 5218</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__common_8h.html#ad8962ec2b8ac91cc2cb9ef8da7c004aa">fuse_pkgversion</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l05219" name="l05219"></a><span class="lineno"> 5219</span>{</div>
-<div class="line"><a id="l05220" name="l05220"></a><span class="lineno"> 5220</span>        <span class="keywordflow">return</span> PACKAGE_VERSION;</div>
-<div class="line"><a id="l05221" name="l05221"></a><span class="lineno"> 5221</span>}</div>
+<div class="line"><a id="l05209" name="l05209"></a><span class="lineno"> 5209</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="fuse-3_817_81-rc0_2include_2fuse__common_8h.html#ad8962ec2b8ac91cc2cb9ef8da7c004aa">fuse_pkgversion</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l05210" name="l05210"></a><span class="lineno"> 5210</span>{</div>
+<div class="line"><a id="l05211" name="l05211"></a><span class="lineno"> 5211</span>        <span class="keywordflow">return</span> PACKAGE_VERSION;</div>
+<div class="line"><a id="l05212" name="l05212"></a><span class="lineno"> 5212</span>}</div>
 <div class="ttc" id="afuse-3_817_81-rc0_2include_2fuse_8h_html_a04273db088e57d8242caa388193b6958"><div class="ttname"><a href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a04273db088e57d8242caa388193b6958">fuse_getgroups</a></div><div class="ttdeci">int fuse_getgroups(int size, gid_t list[])</div><div class="ttdef"><b>Definition</b> <a href="fuse-3_817_81-rc0_2lib_2fuse_8c_source.html#l04654">fuse.c:4654</a></div></div>
 <div class="ttc" id="afuse-3_817_81-rc0_2include_2fuse_8h_html_a04baffd979b06663ae9590e34a48b55f"><div class="ttname"><a href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a04baffd979b06663ae9590e34a48b55f">fuse_mount</a></div><div class="ttdeci">int fuse_mount(struct fuse *f, const char *mountpoint)</div><div class="ttdef"><b>Definition</b> <a href="fuse-3_817_81-rc0_2lib_2fuse_8c_source.html#l05204">fuse.c:5204</a></div></div>
 <div class="ttc" id="afuse-3_817_81-rc0_2include_2fuse_8h_html_a0514ca828e6a02a330dcf037292c8803"><div class="ttname"><a href="fuse-3_817_81-rc0_2include_2fuse_8h.html#a0514ca828e6a02a330dcf037292c8803">fuse_interrupted</a></div><div class="ttdeci">int fuse_interrupted(void)</div><div class="ttdef"><b>Definition</b> <a href="fuse-3_817_81-rc0_2lib_2fuse_8c_source.html#l04663">fuse.c:4663</a></div></div>

@@ -96,6 +96,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2ef2c47ae866fb4e464153015a5eadc4" id="r_a2ef2c47ae866fb4e464153015a5eadc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse_8h.html#a2ef2c47ae866fb4e464153015a5eadc4">fuse_main_real_versioned</a> (int argc, char *argv[], const struct <a class="el" href="structfuse__operations.html">fuse_operations</a> *op, size_t op_size, struct <a class="el" href="structlibfuse__version.html">libfuse_version</a> *version, void *user_data)</td></tr>
+<tr class="separator:a2ef2c47ae866fb4e464153015a5eadc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cef8443ae22c4bcc800d7c45f1496fe" id="r_a9cef8443ae22c4bcc800d7c45f1496fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse_8h.html#a9cef8443ae22c4bcc800d7c45f1496fe">fuse_lib_help</a> (struct <a class="el" href="structfuse__args.html">fuse_args</a> *args)</td></tr>
 <tr class="separator:a9cef8443ae22c4bcc800d7c45f1496fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04baffd979b06663ae9590e34a48b55f" id="r_a04baffd979b06663ae9590e34a48b55f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse_8h.html#a04baffd979b06663ae9590e34a48b55f">fuse_mount</a> (struct fuse *f, const char *mountpoint)</td></tr>
@@ -170,7 +172,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse_8h_source.html#l01415">1415</a> of file <a class="el" href="include_2fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse_8h_source.html#l01398">1398</a> of file <a class="el" href="include_2fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +229,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the new filesystem object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse_8h_source.html#l01386">1386</a> of file <a class="el" href="include_2fuse_8h_source.html">fuse.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse_8h_source.html#l01369">1369</a> of file <a class="el" href="include_2fuse_8h_source.html">fuse.h</a>.</p>
 
 </div>
 </div>
@@ -607,6 +609,88 @@ Functions</h2></td></tr>
 <p>See also: fuse_loop_mt() </p>
 
 <p class="definition">Definition at line <a class="el" href="fuse-3_817_81-rc0_2lib_2fuse_8c_source.html#l04577">4577</a> of file <a class="el" href="fuse-3_817_81-rc0_2lib_2fuse_8c_source.html">fuse.c</a>.</p>
+
+</div>
+</div>
+<a id="a2ef2c47ae866fb4e464153015a5eadc4" name="a2ef2c47ae866fb4e464153015a5eadc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef2c47ae866fb4e464153015a5eadc4">&#9670;&#160;</a></span>fuse_main_real_versioned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_main_real_versioned </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structfuse__operations.html">fuse_operations</a> *&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>op_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structlibfuse__version.html">libfuse_version</a> *&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The real main function</p>
+<p>Do not call this directly, use fuse_main()</p>
+<p>Main function of FUSE.</p>
+<p>This is for the lazy. This is all that has to be called from the main() function.</p>
+<p>This function does the following:</p><ul>
+<li>parses command line options, and handles &ndash;help and &ndash;version</li>
+<li>installs signal handlers for INT, HUP, TERM and PIPE</li>
+<li>registers an exit handler to unmount the filesystem on program exit</li>
+<li>creates a fuse handle</li>
+<li>registers the operations</li>
+<li>calls either the single-threaded or the multi-threaded event loop</li>
+</ul>
+<p>Most file systems will have to parse some file-system specific arguments before calling this function. It is recommended to do this with <a class="el" href="fuse-3_817_81-rc0_2include_2fuse__opt_8h.html#a539ef1f571c34f516c60c4cbe2901c0e">fuse_opt_parse()</a> and a processing function that passes through any unknown options (this can also be achieved by just passing NULL as the processing function). That way, the remaining options can be passed directly to fuse_main().</p>
+<p>fuse_main() accepts all options that can be passed to fuse_parse_cmdline(), fuse_new(), or fuse_session_new().</p>
+<p>Option parsing skips argv[0], which is assumed to contain the program name. This element must always be present and is used to construct a basic <code>usage:</code> message for the &ndash;help output. argv[0] may also be set to the empty string. In this case the usage message is suppressed. This can be used by file systems to print their own usage line first. See hello.c for an example of how to do this.</p>
+<p>Note: this is currently implemented as a macro.</p>
+<p>The following error codes may be returned from fuse_main(): 1: Invalid option arguments 2: No mount point specified 3: FUSE setup failed 4: Mounting failed 5: Failed to daemonize (detach from session) 6: Failed to set up signal handlers 7: An error occurred during the life of the file system</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>the argument counter passed to the main() function </td></tr>
+    <tr><td class="paramname">argv</td><td>the argument vector passed to the main() function </td></tr>
+    <tr><td class="paramname">op</td><td>the file system operation </td></tr>
+    <tr><td class="paramname">private_data</td><td>Initial value for the <code>private_data</code> field of <code>struct <a class="el" href="structfuse__context.html">fuse_context</a></code>. May be overridden by the <code>struct <a class="el" href="structfuse__operations.html#a3a1f9562a38871caaf4fc2de7ea5b470">fuse_operations.init</a></code> handler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, nonzero on failure</dd></dl>
+<p>Example usage, see hello.c </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_81-rc0_2lib_2helper_8c_source.html#l00311">311</a> of file <a class="el" href="fuse-3_817_81-rc0_2lib_2helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
