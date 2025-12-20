@@ -51,11 +51,11 @@ $(function() {
   <div class="headertitle"><div class="title">fuse_common.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
-<code>#include &quot;libfuse_config.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;libfuse_config.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="include_2fuse__opt_8h_source.html">fuse_opt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="include_2fuse__log_8h_source.html">fuse_log.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 </div>
@@ -78,62 +78,64 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4e1bacbb44d6dca9a82255c8069c3d69" id="r_a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4e1bacbb44d6dca9a82255c8069c3d69">FUSE_CAP_ASYNC_READ</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memitem:a4e1bacbb44d6dca9a82255c8069c3d69" id="r_a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4e1bacbb44d6dca9a82255c8069c3d69">FUSE_CAP_ASYNC_READ</a>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
 <tr class="separator:a4e1bacbb44d6dca9a82255c8069c3d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f6b481e6a7c519fea9250daef6177a" id="r_a76f6b481e6a7c519fea9250daef6177a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a76f6b481e6a7c519fea9250daef6177a">FUSE_CAP_POSIX_LOCKS</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memitem:a76f6b481e6a7c519fea9250daef6177a" id="r_a76f6b481e6a7c519fea9250daef6177a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a76f6b481e6a7c519fea9250daef6177a">FUSE_CAP_POSIX_LOCKS</a>&#160;&#160;&#160;(1UL &lt;&lt; 1)</td></tr>
 <tr class="separator:a76f6b481e6a7c519fea9250daef6177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c81f2838716f43fe493a61c87a62816" id="r_a4c81f2838716f43fe493a61c87a62816"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4c81f2838716f43fe493a61c87a62816">FUSE_CAP_ATOMIC_O_TRUNC</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="memitem:a4c81f2838716f43fe493a61c87a62816" id="r_a4c81f2838716f43fe493a61c87a62816"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4c81f2838716f43fe493a61c87a62816">FUSE_CAP_ATOMIC_O_TRUNC</a>&#160;&#160;&#160;(1UL &lt;&lt; 3)</td></tr>
 <tr class="separator:a4c81f2838716f43fe493a61c87a62816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7686c11aaf80382189927b10b848d8c8" id="r_a7686c11aaf80382189927b10b848d8c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a7686c11aaf80382189927b10b848d8c8">FUSE_CAP_EXPORT_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="memitem:a7686c11aaf80382189927b10b848d8c8" id="r_a7686c11aaf80382189927b10b848d8c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a7686c11aaf80382189927b10b848d8c8">FUSE_CAP_EXPORT_SUPPORT</a>&#160;&#160;&#160;(1UL &lt;&lt; 4)</td></tr>
 <tr class="separator:a7686c11aaf80382189927b10b848d8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cd4cebf7ec784886836aa061a1612fe" id="r_a0cd4cebf7ec784886836aa061a1612fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a0cd4cebf7ec784886836aa061a1612fe">FUSE_CAP_DONT_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="memitem:a0cd4cebf7ec784886836aa061a1612fe" id="r_a0cd4cebf7ec784886836aa061a1612fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a0cd4cebf7ec784886836aa061a1612fe">FUSE_CAP_DONT_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; 6)</td></tr>
 <tr class="separator:a0cd4cebf7ec784886836aa061a1612fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f8815e0f48c60c3d9cd6e72be5a84e4" id="r_a4f8815e0f48c60c3d9cd6e72be5a84e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4f8815e0f48c60c3d9cd6e72be5a84e4">FUSE_CAP_SPLICE_WRITE</a>&#160;&#160;&#160;(1 &lt;&lt; 7)</td></tr>
+<tr class="memitem:a4f8815e0f48c60c3d9cd6e72be5a84e4" id="r_a4f8815e0f48c60c3d9cd6e72be5a84e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4f8815e0f48c60c3d9cd6e72be5a84e4">FUSE_CAP_SPLICE_WRITE</a>&#160;&#160;&#160;(1UL &lt;&lt; 7)</td></tr>
 <tr class="separator:a4f8815e0f48c60c3d9cd6e72be5a84e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef5da823dc5f202bbe033c7a5a3de9c4" id="r_aef5da823dc5f202bbe033c7a5a3de9c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aef5da823dc5f202bbe033c7a5a3de9c4">FUSE_CAP_SPLICE_MOVE</a>&#160;&#160;&#160;(1 &lt;&lt; 8)</td></tr>
+<tr class="memitem:aef5da823dc5f202bbe033c7a5a3de9c4" id="r_aef5da823dc5f202bbe033c7a5a3de9c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aef5da823dc5f202bbe033c7a5a3de9c4">FUSE_CAP_SPLICE_MOVE</a>&#160;&#160;&#160;(1UL &lt;&lt; 8)</td></tr>
 <tr class="separator:aef5da823dc5f202bbe033c7a5a3de9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f8a51bc70841ab691660413836a9a14" id="r_a2f8a51bc70841ab691660413836a9a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2f8a51bc70841ab691660413836a9a14">FUSE_CAP_SPLICE_READ</a>&#160;&#160;&#160;(1 &lt;&lt; 9)</td></tr>
+<tr class="memitem:a2f8a51bc70841ab691660413836a9a14" id="r_a2f8a51bc70841ab691660413836a9a14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2f8a51bc70841ab691660413836a9a14">FUSE_CAP_SPLICE_READ</a>&#160;&#160;&#160;(1UL &lt;&lt; 9)</td></tr>
 <tr class="separator:a2f8a51bc70841ab691660413836a9a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd06393448dbb60668f5a3bf0006f536" id="r_afd06393448dbb60668f5a3bf0006f536"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#afd06393448dbb60668f5a3bf0006f536">FUSE_CAP_FLOCK_LOCKS</a>&#160;&#160;&#160;(1 &lt;&lt; 10)</td></tr>
+<tr class="memitem:afd06393448dbb60668f5a3bf0006f536" id="r_afd06393448dbb60668f5a3bf0006f536"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#afd06393448dbb60668f5a3bf0006f536">FUSE_CAP_FLOCK_LOCKS</a>&#160;&#160;&#160;(1UL &lt;&lt; 10)</td></tr>
 <tr class="separator:afd06393448dbb60668f5a3bf0006f536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bfb2ecd448cb5659679df690e75581a" id="r_a0bfb2ecd448cb5659679df690e75581a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a0bfb2ecd448cb5659679df690e75581a">FUSE_CAP_IOCTL_DIR</a>&#160;&#160;&#160;(1 &lt;&lt; 11)</td></tr>
+<tr class="memitem:a0bfb2ecd448cb5659679df690e75581a" id="r_a0bfb2ecd448cb5659679df690e75581a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a0bfb2ecd448cb5659679df690e75581a">FUSE_CAP_IOCTL_DIR</a>&#160;&#160;&#160;(1UL &lt;&lt; 11)</td></tr>
 <tr class="separator:a0bfb2ecd448cb5659679df690e75581a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2568c799f5f90ad2f0c353d48d8b8780" id="r_a2568c799f5f90ad2f0c353d48d8b8780"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2568c799f5f90ad2f0c353d48d8b8780">FUSE_CAP_AUTO_INVAL_DATA</a>&#160;&#160;&#160;(1 &lt;&lt; 12)</td></tr>
+<tr class="memitem:a2568c799f5f90ad2f0c353d48d8b8780" id="r_a2568c799f5f90ad2f0c353d48d8b8780"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2568c799f5f90ad2f0c353d48d8b8780">FUSE_CAP_AUTO_INVAL_DATA</a>&#160;&#160;&#160;(1UL &lt;&lt; 12)</td></tr>
 <tr class="separator:a2568c799f5f90ad2f0c353d48d8b8780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad808b93c66a58d1b4cd738af7ddcf37f" id="r_ad808b93c66a58d1b4cd738af7ddcf37f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ad808b93c66a58d1b4cd738af7ddcf37f">FUSE_CAP_READDIRPLUS</a>&#160;&#160;&#160;(1 &lt;&lt; 13)</td></tr>
+<tr class="memitem:ad808b93c66a58d1b4cd738af7ddcf37f" id="r_ad808b93c66a58d1b4cd738af7ddcf37f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ad808b93c66a58d1b4cd738af7ddcf37f">FUSE_CAP_READDIRPLUS</a>&#160;&#160;&#160;(1UL &lt;&lt; 13)</td></tr>
 <tr class="separator:ad808b93c66a58d1b4cd738af7ddcf37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b90333ad08d0e1c2ed0134d9305ee87" id="r_a9b90333ad08d0e1c2ed0134d9305ee87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a9b90333ad08d0e1c2ed0134d9305ee87">FUSE_CAP_READDIRPLUS_AUTO</a>&#160;&#160;&#160;(1 &lt;&lt; 14)</td></tr>
+<tr class="memitem:a9b90333ad08d0e1c2ed0134d9305ee87" id="r_a9b90333ad08d0e1c2ed0134d9305ee87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a9b90333ad08d0e1c2ed0134d9305ee87">FUSE_CAP_READDIRPLUS_AUTO</a>&#160;&#160;&#160;(1UL &lt;&lt; 14)</td></tr>
 <tr class="separator:a9b90333ad08d0e1c2ed0134d9305ee87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac172aaeb6d27e2fdcafd086f9f3c0cf" id="r_aac172aaeb6d27e2fdcafd086f9f3c0cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aac172aaeb6d27e2fdcafd086f9f3c0cf">FUSE_CAP_ASYNC_DIO</a>&#160;&#160;&#160;(1 &lt;&lt; 15)</td></tr>
+<tr class="memitem:aac172aaeb6d27e2fdcafd086f9f3c0cf" id="r_aac172aaeb6d27e2fdcafd086f9f3c0cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aac172aaeb6d27e2fdcafd086f9f3c0cf">FUSE_CAP_ASYNC_DIO</a>&#160;&#160;&#160;(1UL &lt;&lt; 15)</td></tr>
 <tr class="separator:aac172aaeb6d27e2fdcafd086f9f3c0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4839fce31097f4b4da7a1f01169228fa" id="r_a4839fce31097f4b4da7a1f01169228fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4839fce31097f4b4da7a1f01169228fa">FUSE_CAP_WRITEBACK_CACHE</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="memitem:a4839fce31097f4b4da7a1f01169228fa" id="r_a4839fce31097f4b4da7a1f01169228fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4839fce31097f4b4da7a1f01169228fa">FUSE_CAP_WRITEBACK_CACHE</a>&#160;&#160;&#160;(1UL &lt;&lt; 16)</td></tr>
 <tr class="separator:a4839fce31097f4b4da7a1f01169228fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4477fe76f57e8b726d0357a637d7aaf" id="r_ad4477fe76f57e8b726d0357a637d7aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ad4477fe76f57e8b726d0357a637d7aaf">FUSE_CAP_NO_OPEN_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 17)</td></tr>
+<tr class="memitem:ad4477fe76f57e8b726d0357a637d7aaf" id="r_ad4477fe76f57e8b726d0357a637d7aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ad4477fe76f57e8b726d0357a637d7aaf">FUSE_CAP_NO_OPEN_SUPPORT</a>&#160;&#160;&#160;(1UL &lt;&lt; 17)</td></tr>
 <tr class="separator:ad4477fe76f57e8b726d0357a637d7aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3311a7f569e9fbf55b3f0bcaadbe4ad0" id="r_a3311a7f569e9fbf55b3f0bcaadbe4ad0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a3311a7f569e9fbf55b3f0bcaadbe4ad0">FUSE_CAP_PARALLEL_DIROPS</a>&#160;&#160;&#160;(1 &lt;&lt; 18)</td></tr>
+<tr class="memitem:a3311a7f569e9fbf55b3f0bcaadbe4ad0" id="r_a3311a7f569e9fbf55b3f0bcaadbe4ad0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a3311a7f569e9fbf55b3f0bcaadbe4ad0">FUSE_CAP_PARALLEL_DIROPS</a>&#160;&#160;&#160;(1UL &lt;&lt; 18)</td></tr>
 <tr class="separator:a3311a7f569e9fbf55b3f0bcaadbe4ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3ef5b12be33295311d6b751846c263" id="r_a5b3ef5b12be33295311d6b751846c263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a5b3ef5b12be33295311d6b751846c263">FUSE_CAP_POSIX_ACL</a>&#160;&#160;&#160;(1 &lt;&lt; 19)</td></tr>
+<tr class="memitem:a5b3ef5b12be33295311d6b751846c263" id="r_a5b3ef5b12be33295311d6b751846c263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a5b3ef5b12be33295311d6b751846c263">FUSE_CAP_POSIX_ACL</a>&#160;&#160;&#160;(1UL &lt;&lt; 19)</td></tr>
 <tr class="separator:a5b3ef5b12be33295311d6b751846c263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a4a980dff3f7a4ba771a92bb59a4bd" id="r_a24a4a980dff3f7a4ba771a92bb59a4bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a24a4a980dff3f7a4ba771a92bb59a4bd">FUSE_CAP_HANDLE_KILLPRIV</a>&#160;&#160;&#160;(1 &lt;&lt; 20)</td></tr>
+<tr class="memitem:a24a4a980dff3f7a4ba771a92bb59a4bd" id="r_a24a4a980dff3f7a4ba771a92bb59a4bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a24a4a980dff3f7a4ba771a92bb59a4bd">FUSE_CAP_HANDLE_KILLPRIV</a>&#160;&#160;&#160;(1UL &lt;&lt; 20)</td></tr>
 <tr class="separator:a24a4a980dff3f7a4ba771a92bb59a4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f5543da08a947ffda41a45b94a735d6" id="r_a2f5543da08a947ffda41a45b94a735d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2f5543da08a947ffda41a45b94a735d6">FUSE_CAP_HANDLE_KILLPRIV_V2</a>&#160;&#160;&#160;(1 &lt;&lt; 21)</td></tr>
+<tr class="memitem:a2f5543da08a947ffda41a45b94a735d6" id="r_a2f5543da08a947ffda41a45b94a735d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2f5543da08a947ffda41a45b94a735d6">FUSE_CAP_HANDLE_KILLPRIV_V2</a>&#160;&#160;&#160;(1UL &lt;&lt; 21)</td></tr>
 <tr class="separator:a2f5543da08a947ffda41a45b94a735d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5521dfe5392929ca8e241b1d3c50cbf1" id="r_a5521dfe5392929ca8e241b1d3c50cbf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a5521dfe5392929ca8e241b1d3c50cbf1">FUSE_CAP_CACHE_SYMLINKS</a>&#160;&#160;&#160;(1 &lt;&lt; 23)</td></tr>
+<tr class="memitem:a5521dfe5392929ca8e241b1d3c50cbf1" id="r_a5521dfe5392929ca8e241b1d3c50cbf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a5521dfe5392929ca8e241b1d3c50cbf1">FUSE_CAP_CACHE_SYMLINKS</a>&#160;&#160;&#160;(1UL &lt;&lt; 23)</td></tr>
 <tr class="separator:a5521dfe5392929ca8e241b1d3c50cbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa573f7b730ea608463d8399659c38ca6" id="r_aa573f7b730ea608463d8399659c38ca6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aa573f7b730ea608463d8399659c38ca6">FUSE_CAP_NO_OPENDIR_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 24)</td></tr>
+<tr class="memitem:aa573f7b730ea608463d8399659c38ca6" id="r_aa573f7b730ea608463d8399659c38ca6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aa573f7b730ea608463d8399659c38ca6">FUSE_CAP_NO_OPENDIR_SUPPORT</a>&#160;&#160;&#160;(1UL &lt;&lt; 24)</td></tr>
 <tr class="separator:aa573f7b730ea608463d8399659c38ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7efed2731a9d7006dd13bcf962667f1f" id="r_a7efed2731a9d7006dd13bcf962667f1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a7efed2731a9d7006dd13bcf962667f1f">FUSE_CAP_EXPLICIT_INVAL_DATA</a>&#160;&#160;&#160;(1 &lt;&lt; 25)</td></tr>
+<tr class="memitem:a7efed2731a9d7006dd13bcf962667f1f" id="r_a7efed2731a9d7006dd13bcf962667f1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a7efed2731a9d7006dd13bcf962667f1f">FUSE_CAP_EXPLICIT_INVAL_DATA</a>&#160;&#160;&#160;(1UL &lt;&lt; 25)</td></tr>
 <tr class="separator:a7efed2731a9d7006dd13bcf962667f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48c8f01fc9e586e57e50659ce6d13130" id="r_a48c8f01fc9e586e57e50659ce6d13130"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a48c8f01fc9e586e57e50659ce6d13130">FUSE_CAP_EXPIRE_ONLY</a>&#160;&#160;&#160;(1 &lt;&lt; 26)</td></tr>
+<tr class="memitem:a48c8f01fc9e586e57e50659ce6d13130" id="r_a48c8f01fc9e586e57e50659ce6d13130"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a48c8f01fc9e586e57e50659ce6d13130">FUSE_CAP_EXPIRE_ONLY</a>&#160;&#160;&#160;(1UL &lt;&lt; 26)</td></tr>
 <tr class="separator:a48c8f01fc9e586e57e50659ce6d13130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf64b87d3d222715468740e03f43f75" id="r_aecf64b87d3d222715468740e03f43f75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aecf64b87d3d222715468740e03f43f75">FUSE_CAP_SETXATTR_EXT</a>&#160;&#160;&#160;(1 &lt;&lt; 27)</td></tr>
+<tr class="memitem:aecf64b87d3d222715468740e03f43f75" id="r_aecf64b87d3d222715468740e03f43f75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aecf64b87d3d222715468740e03f43f75">FUSE_CAP_SETXATTR_EXT</a>&#160;&#160;&#160;(1UL &lt;&lt; 27)</td></tr>
 <tr class="separator:aecf64b87d3d222715468740e03f43f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6af79eae4f032a563600e4aa090c6fa" id="r_ac6af79eae4f032a563600e4aa090c6fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ac6af79eae4f032a563600e4aa090c6fa">FUSE_CAP_DIRECT_IO_ALLOW_MMAP</a>&#160;&#160;&#160;(1 &lt;&lt; 28)</td></tr>
+<tr class="memitem:ac6af79eae4f032a563600e4aa090c6fa" id="r_ac6af79eae4f032a563600e4aa090c6fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ac6af79eae4f032a563600e4aa090c6fa">FUSE_CAP_DIRECT_IO_ALLOW_MMAP</a>&#160;&#160;&#160;(1UL &lt;&lt; 28)</td></tr>
 <tr class="separator:ac6af79eae4f032a563600e4aa090c6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab645a372186b1713b7ce0dfaaa0fefd5" id="r_ab645a372186b1713b7ce0dfaaa0fefd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ab645a372186b1713b7ce0dfaaa0fefd5">FUSE_CAP_PASSTHROUGH</a>&#160;&#160;&#160;(1 &lt;&lt; 29)</td></tr>
+<tr class="memitem:ab645a372186b1713b7ce0dfaaa0fefd5" id="r_ab645a372186b1713b7ce0dfaaa0fefd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ab645a372186b1713b7ce0dfaaa0fefd5">FUSE_CAP_PASSTHROUGH</a>&#160;&#160;&#160;(1UL &lt;&lt; 29)</td></tr>
 <tr class="separator:ab645a372186b1713b7ce0dfaaa0fefd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa936577e5fa697e458284e61cd4658e" id="r_afa936577e5fa697e458284e61cd4658e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#afa936577e5fa697e458284e61cd4658e">FUSE_CAP_NO_EXPORT_SUPPORT</a>&#160;&#160;&#160;(1 &lt;&lt; 30)</td></tr>
+<tr class="memitem:afa936577e5fa697e458284e61cd4658e" id="r_afa936577e5fa697e458284e61cd4658e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#afa936577e5fa697e458284e61cd4658e">FUSE_CAP_NO_EXPORT_SUPPORT</a>&#160;&#160;&#160;(1UL &lt;&lt; 30)</td></tr>
 <tr class="separator:afa936577e5fa697e458284e61cd4658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacffa2265e57a45724ded713140533e2" id="r_aacffa2265e57a45724ded713140533e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aacffa2265e57a45724ded713140533e2">FUSE_CAP_OVER_IO_URING</a>&#160;&#160;&#160;(1UL &lt;&lt; 31)</td></tr>
+<tr class="separator:aacffa2265e57a45724ded713140533e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade38f8e8c463cd40af5bfeeebfa99486" id="r_ade38f8e8c463cd40af5bfeeebfa99486"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ade38f8e8c463cd40af5bfeeebfa99486">FUSE_IOCTL_COMPAT</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:ade38f8e8c463cd40af5bfeeebfa99486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabcf6528f7433d511f98dca35669bdd4" id="r_aabcf6528f7433d511f98dca35669bdd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aabcf6528f7433d511f98dca35669bdd4">FUSE_BACKING_STACKED_UNDER</a>&#160;&#160;&#160;(0)</td></tr>
@@ -169,7 +171,7 @@ Functions</h2></td></tr>
 <tr class="separator:adf5027f8a38b2efc03858efd7fdc756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4327f41b2fe1ca84151b407169bd86c0" id="r_a4327f41b2fe1ca84151b407169bd86c0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a4327f41b2fe1ca84151b407169bd86c0">fuse_buf_size</a> (const struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *bufv)</td></tr>
 <tr class="separator:a4327f41b2fe1ca84151b407169bd86c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ca301390fb5e85b85153abb1891a3f7" id="r_a9ca301390fb5e85b85153abb1891a3f7"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a9ca301390fb5e85b85153abb1891a3f7">fuse_buf_copy</a> (struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *dst, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *src, enum <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
+<tr class="memitem:a9ca301390fb5e85b85153abb1891a3f7" id="r_a9ca301390fb5e85b85153abb1891a3f7"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a9ca301390fb5e85b85153abb1891a3f7">fuse_buf_copy</a> (struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *dst, struct <a class="el" href="structfuse__bufvec.html">fuse_bufvec</a> *src, enum <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a> flags)</td></tr>
 <tr class="separator:a9ca301390fb5e85b85153abb1891a3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a292dccc3c7b1799cb054efa2ba0c774b" id="r_a292dccc3c7b1799cb054efa2ba0c774b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:a292dccc3c7b1799cb054efa2ba0c774b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,6 +179,14 @@ Functions</h2></td></tr>
 <tr class="separator:a15830cd29289a75894e21f6a3ff573fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb674bbc11074c4fe520b952d6bfdd30" id="r_aeb674bbc11074c4fe520b952d6bfdd30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers</a> (struct fuse_session *se)</td></tr>
 <tr class="separator:aeb674bbc11074c4fe520b952d6bfdd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2051128e455a60d49dc9b6c55fc0e4a1" id="r_a2051128e455a60d49dc9b6c55fc0e4a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a2051128e455a60d49dc9b6c55fc0e4a1">fuse_set_feature_flag</a> (struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn, uint64_t flag)</td></tr>
+<tr class="separator:a2051128e455a60d49dc9b6c55fc0e4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f4cae131ab44bac126923635a03543" id="r_a10f4cae131ab44bac126923635a03543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a10f4cae131ab44bac126923635a03543">fuse_unset_feature_flag</a> (struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn, uint64_t flag)</td></tr>
+<tr class="separator:a10f4cae131ab44bac126923635a03543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56c60f07f805f678bec129f663db908" id="r_ab56c60f07f805f678bec129f663db908"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#ab56c60f07f805f678bec129f663db908">fuse_get_feature_flag</a> (struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn, uint64_t flag)</td></tr>
+<tr class="separator:ab56c60f07f805f678bec129f663db908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135fdd589d761bdaefb030d44852cfe6" id="r_a135fdd589d761bdaefb030d44852cfe6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2fuse__common_8h.html#a135fdd589d761bdaefb030d44852cfe6">fuse_convert_to_conn_want_ext</a> (struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *conn)</td></tr>
+<tr class="separator:a135fdd589d761bdaefb030d44852cfe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aabcf6528f7433d511f98dca35669bdd4" name="aabcf6528f7433d511f98dca35669bdd4"></a>
@@ -194,7 +204,7 @@ Functions</h2></td></tr>
 <p>The default is FUSE_BACKING_STACKED_UNDER (0), meaning that the backing files cannot be on a stacked filesystem, but another stacked filesystem can be stacked over this FUSE passthrough filesystem.</p>
 <p>Set this to FUSE_BACKING_STACKED_OVER (1) if backing files may be on a stacked filesystem, such as overlayfs or another FUSE passthrough. In this configuration, another stacked filesystem cannot be stacked over this FUSE passthrough filesystem. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00673">673</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00670">670</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -205,7 +215,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_ASYNC_DIO&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
+          <td class="memname">#define FUSE_CAP_ASYNC_DIO&#160;&#160;&#160;(1UL &lt;&lt; 15)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,7 +223,7 @@ Functions</h2></td></tr>
 <p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read and one pending write request per direct I/O file-handle at any time.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00336">336</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00328">328</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +234,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_ASYNC_READ&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+          <td class="memname">#define FUSE_CAP_ASYNC_READ&#160;&#160;&#160;(1UL &lt;&lt; 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,7 +242,7 @@ Functions</h2></td></tr>
 <p>If this capability is not requested/available, the kernel will ensure that there is at most one pending read request per file-handle at any time, and will attempt to order read requests by increasing offset.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00185">185</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00177">177</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -243,14 +253,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_ATOMIC_O_TRUNC&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+          <td class="memname">#define FUSE_CAP_ATOMIC_O_TRUNC&#160;&#160;&#160;(1UL &lt;&lt; 3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports the O_TRUNC open flag. If disabled, and an application specifies O_TRUNC, fuse first calls truncate() and then open() with O_TRUNC filtered out.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00202">202</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00194">194</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -261,16 +271,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_AUTO_INVAL_DATA&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
+          <td class="memname">#define FUSE_CAP_AUTO_INVAL_DATA&#160;&#160;&#160;(1UL &lt;&lt; 12)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Traditionally, while a file is open the FUSE kernel module only asks the filesystem for an update of the file's attributes when a client attempts to read beyond EOF. This is unsuitable for e.g. network filesystems, where the file contents may change without the kernel knowing about it.</p>
-<p>If this flag is set, FUSE will check the validity of the attributes on every read. If the attributes are no longer valid (i.e., if the <em>attr_timeout</em> passed to <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr()</a> or set in <code>struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a></code> has passed), it will first issue a <code>getattr</code> request. If the new mtime differs from the previous value, any cached file <em>contents</em> will be invalidated as well.</p>
+<p>If this flag is set, FUSE will check the validity of the attributes on every read. If the attributes are no longer valid (i.e., if the <em>attr_timeout</em> passed to <a class="el" href="fuse-3_817_83_2include_2fuse__lowlevel_8h.html#ad28378dc569019c32acdb4995d70be18">fuse_reply_attr()</a> or set in <code>struct <a class="el" href="structfuse__entry__param.html">fuse_entry_param</a></code> has passed), it will first issue a <code>getattr</code> request. If the new mtime differs from the previous value, any cached file <em>contents</em> will be invalidated as well.</p>
 <p>This flag should always be set when available. If all file changes go through the kernel, <em>attr_timeout</em> should be set to a very large number to avoid unnecessary getattr() calls.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00289">289</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00281">281</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +291,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_CACHE_SYMLINKS&#160;&#160;&#160;(1 &lt;&lt; 23)</td>
+          <td class="memname">#define FUSE_CAP_CACHE_SYMLINKS&#160;&#160;&#160;(1UL &lt;&lt; 23)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -289,7 +299,7 @@ Functions</h2></td></tr>
 <p>When this feature is enabled, symlink targets are saved in the page cache. You can invalidate a cached link by calling: <code>fuse_lowlevel_notify_inval_inode(se, ino, 0, 0);</code></p>
 <p>This feature is disabled by default. If the kernel supports it (&gt;= 4.20), you can enable this feature by setting this flag in the <code>want</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00426">426</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00418">418</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -300,13 +310,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_DIRECT_IO_ALLOW_MMAP&#160;&#160;&#160;(1 &lt;&lt; 28)</td>
+          <td class="memname">#define FUSE_CAP_DIRECT_IO_ALLOW_MMAP&#160;&#160;&#160;(1UL &lt;&lt; 28)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Files opened with FUSE_DIRECT_IO do not support MAP_SHARED mmap. This restriction is relaxed through FUSE_CAP_DIRECT_IO_RELAX (kernel flag: FUSE_DIRECT_IO_RELAX). MAP_SHARED is disabled by default for FUSE_DIRECT_IO, as this flag can be used to ensure coherency between mount points (or network clients) and with kernel page cache as enforced by mmap that cannot be guaranteed anymore. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00496">496</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00488">488</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -317,14 +327,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_DONT_MASK&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+          <td class="memname">#define FUSE_CAP_DONT_MASK&#160;&#160;&#160;(1UL &lt;&lt; 6)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the kernel should not apply the umask to the file mode on create operations.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00222">222</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00214">214</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -335,7 +345,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_EXPIRE_ONLY&#160;&#160;&#160;(1 &lt;&lt; 26)</td>
+          <td class="memname">#define FUSE_CAP_EXPIRE_ONLY&#160;&#160;&#160;(1UL &lt;&lt; 26)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -343,7 +353,7 @@ Functions</h2></td></tr>
 <p>Expiring dentries, instead of invalidating them, makes a difference for overmounted dentries, where plain invalidation would detach all submounts before dropping the dentry from the cache. If only expiry is set on the dentry, then any overmounts are left alone and until -&gt;d_revalidate() is called.</p>
 <p>Note: -&gt;d_revalidate() is not called for the case of following a submount, so invalidation will only be triggered for the non-overmounted case. The dentry could also be mounted in a different mount instance, in which case any submounts will still be detached. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00480">480</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00472">472</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -354,18 +364,18 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_EXPLICIT_INVAL_DATA&#160;&#160;&#160;(1 &lt;&lt; 25)</td>
+          <td class="memname">#define FUSE_CAP_EXPLICIT_INVAL_DATA&#160;&#160;&#160;(1UL &lt;&lt; 25)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates support for invalidating cached pages only on explicit request.</p>
-<p>If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the FUSE kernel module supports invalidating cached pages only on explicit request by the filesystem through <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__lowlevel_8h.html#a9cb974af9745294ff446d11cba2422f1">fuse_lowlevel_notify_inval_inode()</a> or <a class="el" href="fuse-3_817_81_8dir_2include_2fuse_8h.html#a56c1dfbdfaf10818dbc6c2ca6264f19a">fuse_invalidate_path()</a>.</p>
+<p>If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the FUSE kernel module supports invalidating cached pages only on explicit request by the filesystem through <a class="el" href="fuse-3_817_83_2include_2fuse__lowlevel_8h.html#a9cb974af9745294ff446d11cba2422f1">fuse_lowlevel_notify_inval_inode()</a> or <a class="el" href="fuse-3_817_83_2include_2fuse_8h.html#a56c1dfbdfaf10818dbc6c2ca6264f19a">fuse_invalidate_path()</a>.</p>
 <p>By setting this flag in the <code>want</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, the filesystem is responsible for invalidating cached pages through explicit requests to the kernel.</p>
 <p>Note that setting this flag does not prevent the cached pages from being flushed by OS itself and/or through user actions.</p>
 <p>Note that if both FUSE_CAP_EXPLICIT_INVAL_DATA and FUSE_CAP_AUTO_INVAL_DATA are set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure then FUSE_CAP_AUTO_INVAL_DATA takes precedence.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00464">464</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00456">456</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -376,7 +386,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_EXPORT_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+          <td class="memname">#define FUSE_CAP_EXPORT_SUPPORT&#160;&#160;&#160;(1UL &lt;&lt; 4)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -384,7 +394,7 @@ Functions</h2></td></tr>
 <p>When this flag is set, the filesystem must be prepared to receive requests for invalid inodes (i.e., for which a FORGET request was received or which have been used in a previous instance of the filesystem daemon) and must not reuse node-ids (even when setting generation numbers).</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00214">214</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00206">206</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -395,7 +405,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_FLOCK_LOCKS&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
+          <td class="memname">#define FUSE_CAP_FLOCK_LOCKS&#160;&#160;&#160;(1UL &lt;&lt; 10)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,7 +413,7 @@ Functions</h2></td></tr>
 <p>If not set, flock(2) calls will be handled by the FUSE kernel module internally (so any access that does not go through the kernel cannot be taken into account).</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a flock() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00260">260</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00252">252</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -414,14 +424,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_HANDLE_KILLPRIV&#160;&#160;&#160;(1 &lt;&lt; 20)</td>
+          <td class="memname">#define FUSE_CAP_HANDLE_KILLPRIV&#160;&#160;&#160;(1UL &lt;&lt; 20)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem is responsible for unsetting setuid and setgid bits when a file is written, truncated, or its owner is changed.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00396">396</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00388">388</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -432,7 +442,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_HANDLE_KILLPRIV_V2&#160;&#160;&#160;(1 &lt;&lt; 21)</td>
+          <td class="memname">#define FUSE_CAP_HANDLE_KILLPRIV_V2&#160;&#160;&#160;(1UL &lt;&lt; 21)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -443,7 +453,7 @@ Functions</h2></td></tr>
 </ul>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00413">413</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00405">405</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -454,14 +464,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_IOCTL_DIR&#160;&#160;&#160;(1 &lt;&lt; 11)</td>
+          <td class="memname">#define FUSE_CAP_IOCTL_DIR&#160;&#160;&#160;(1UL &lt;&lt; 11)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports ioctl's on directories.</p>
 <p>This feature is enabled by default when supported by the kernel. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00267">267</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00259">259</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -472,14 +482,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_NO_EXPORT_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 30)</td>
+          <td class="memname">#define FUSE_CAP_NO_EXPORT_SUPPORT&#160;&#160;&#160;(1UL &lt;&lt; 30)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the file system cannot handle NFS export</p>
 <p>If this flag is set NFS export and name_to_handle_at is not going to work at all and will fail with EOPNOTSUPP. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00516">516</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00508">508</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -490,14 +500,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_NO_OPEN_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
+          <td class="memname">#define FUSE_CAP_NO_OPEN_SUPPORT&#160;&#160;&#160;(1UL &lt;&lt; 17)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates support for zero-message opens. If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the filesystem may return <code>ENOSYS</code> from the open() handler to indicate success. Further attempts to open files will be handled in the kernel. (If this flag is not set, returning ENOSYS will be treated as an error and signaled to the caller).</p>
 <p>Setting this flag in the <code>want</code> field enables this behavior automatically within libfuse for low level API users. If non-low level users wish to have this behavior you must return <code>ENOSYS</code> from the open() handler on supporting kernels. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00360">360</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00352">352</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -508,14 +518,31 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_NO_OPENDIR_SUPPORT&#160;&#160;&#160;(1 &lt;&lt; 24)</td>
+          <td class="memname">#define FUSE_CAP_NO_OPENDIR_SUPPORT&#160;&#160;&#160;(1UL &lt;&lt; 24)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates support for zero-message opendirs. If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the filesystem may return <code>ENOSYS</code> from the opendir() handler to indicate success. Further opendir and releasedir messages will be handled in the kernel. (If this flag is not set, returning ENOSYS will be treated as an error and signalled to the caller.)</p>
 <p>Setting this flag in the <code>want</code> field enables this behavior automatically within libfuse for low level API users. If non-low level users with to have this behavior you must return <code>ENOSYS</code> from the opendir() handler on supporting kernels. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00441">441</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00433">433</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+
+</div>
+</div>
+<a id="aacffa2265e57a45724ded713140533e2" name="aacffa2265e57a45724ded713140533e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacffa2265e57a45724ded713140533e2">&#9670;&#160;</a></span>FUSE_CAP_OVER_IO_URING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSE_CAP_OVER_IO_URING&#160;&#160;&#160;(1UL &lt;&lt; 31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicates support for io-uring between fuse-server and fuse-client </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00513">513</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -526,13 +553,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_PARALLEL_DIROPS&#160;&#160;&#160;(1 &lt;&lt; 18)</td>
+          <td class="memname">#define FUSE_CAP_PARALLEL_DIROPS&#160;&#160;&#160;(1UL &lt;&lt; 18)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates support for parallel directory operations. If this flag is unset, the FUSE kernel module will ensure that lookup() and readdir() requests are never issued concurrently for the same directory. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00368">368</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00360">360</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -543,7 +570,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_PASSTHROUGH&#160;&#160;&#160;(1 &lt;&lt; 29)</td>
+          <td class="memname">#define FUSE_CAP_PASSTHROUGH&#160;&#160;&#160;(1UL &lt;&lt; 29)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -551,7 +578,7 @@ Functions</h2></td></tr>
 <p>If this flag is set in the <code>capable</code> field of the <code><a class="el" href="structfuse__conn__info.html">fuse_conn_info</a></code> structure, then the FUSE kernel module supports redirecting read/write operations to the backing file instead of letting them to be handled by the FUSE daemon.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00508">508</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00500">500</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -562,7 +589,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_POSIX_ACL&#160;&#160;&#160;(1 &lt;&lt; 19)</td>
+          <td class="memname">#define FUSE_CAP_POSIX_ACL&#160;&#160;&#160;(1UL &lt;&lt; 19)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -571,7 +598,7 @@ Functions</h2></td></tr>
 <p>Enabling this feature implicitly turns on the <code>default_permissions</code> mount option (even if it was not passed to mount(2)).</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00387">387</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00379">379</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -582,14 +609,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_POSIX_LOCKS&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+          <td class="memname">#define FUSE_CAP_POSIX_LOCKS&#160;&#160;&#160;(1UL &lt;&lt; 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports "remote" locking.</p>
 <p>This feature is enabled by default when supported by the kernel, and if getlk() and setlk() handlers are implemented. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00193">193</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00185">185</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -600,14 +627,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_READDIRPLUS&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
+          <td class="memname">#define FUSE_CAP_READDIRPLUS&#160;&#160;&#160;(1UL &lt;&lt; 13)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that the filesystem supports readdirplus.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a readdirplus() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00297">297</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00289">289</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -618,7 +645,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_READDIRPLUS_AUTO&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+          <td class="memname">#define FUSE_CAP_READDIRPLUS_AUTO&#160;&#160;&#160;(1UL &lt;&lt; 14)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -629,7 +656,7 @@ Functions</h2></td></tr>
 <p>As of Linux 4.20, the algorithm is as follows: when userspace starts to read directory entries, issue a READDIRPLUS request to the filesystem. If any entry attributes have been looked up by the time userspace requests the next batch of entries continue with READDIRPLUS, otherwise switch to plain READDIR. This will reasult in eg plain "ls" triggering READDIRPLUS first then READDIR after that because it doesn't do lookups. "ls -l" should result in all READDIRPLUS, except if dentries are already cached.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements both a readdirplus() and a readdir() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00325">325</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00317">317</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -640,13 +667,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_SETXATTR_EXT&#160;&#160;&#160;(1 &lt;&lt; 27)</td>
+          <td class="memname">#define FUSE_CAP_SETXATTR_EXT&#160;&#160;&#160;(1UL &lt;&lt; 27)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that an extended 'struct fuse_setxattr' is used by the kernel side - extra_flags are passed, which are used (as of now by acl) processing. For example FUSE_SETXATTR_ACL_KILL_SGID might be set. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00487">487</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00479">479</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -657,14 +684,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_SPLICE_MOVE&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
+          <td class="memname">#define FUSE_CAP_SPLICE_MOVE&#160;&#160;&#160;(1UL &lt;&lt; 8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that libfuse should try to move pages instead of copying when writing to / reading from the fuse device. This may improve performance.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00238">238</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00230">230</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -675,14 +702,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_SPLICE_READ&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
+          <td class="memname">#define FUSE_CAP_SPLICE_READ&#160;&#160;&#160;(1UL &lt;&lt; 9)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that libfuse should try to use splice() when reading from the fuse device. This may improve performance.</p>
 <p>This feature is enabled by default when supported by the kernel and if the filesystem implements a write_buf() handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00247">247</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00239">239</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -693,14 +720,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_SPLICE_WRITE&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+          <td class="memname">#define FUSE_CAP_SPLICE_WRITE&#160;&#160;&#160;(1UL &lt;&lt; 7)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that libfuse should try to use splice() when writing to the fuse device. This may improve performance.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00230">230</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00222">222</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -711,14 +738,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FUSE_CAP_WRITEBACK_CACHE&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+          <td class="memname">#define FUSE_CAP_WRITEBACK_CACHE&#160;&#160;&#160;(1UL &lt;&lt; 16)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Indicates that writeback caching should be enabled. This means that individual write request may be buffered and merged in the kernel before they are send to the filesystem.</p>
 <p>This feature is disabled by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00345">345</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00337">337</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -737,7 +764,7 @@ Functions</h2></td></tr>
 <p>FUSE_IOCTL_COMPAT: 32bit compat ioctl on 64bit machine FUSE_IOCTL_UNRESTRICTED: not restricted to well-formed ioctls, retry allowed FUSE_IOCTL_RETRY: retry with new iovecs FUSE_IOCTL_DIR: is a directory</p>
 <p>FUSE_IOCTL_MAX_IOV: maximum of in_iovecs + out_iovecs </p>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00528">528</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00525">525</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -749,7 +776,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a></td>
+          <td class="memname">enum <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -770,7 +797,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00839">839</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00840">840</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -781,7 +808,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58">fuse_buf_flags</a></td>
+          <td class="memname">enum <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#a5e36b839c4dbf0439bd85b61c7213a58">fuse_buf_flags</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -798,7 +825,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00808">808</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="include_2fuse__common_8h_source.html#l00809">809</a> of file <a class="el" href="include_2fuse__common_8h_source.html">fuse_common.h</a>.</p>
 
 </div>
 </div>
@@ -830,7 +857,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This function applies the (parsed) parameters in <em>opts</em> to the <em>conn</em> pointer. It may modify the following fields: wants, max_write, max_readahead, congestion_threshold, max_background, time_gran. A field is only set (or unset) if the corresponding option has been explicitly set. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html#l00412">412</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html#l00412">412</a> of file <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -855,7 +882,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aec0ad71a3e8c357ebe7e87cdecbdbe18">fuse_buf_copy_flags</a>&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
         <tr>
@@ -876,7 +903,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>actual number of bytes copied or -errno on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2buffer_8c_source.html#l00284">284</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2buffer_8c_source.html">buffer.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2buffer_8c_source.html#l00284">284</a> of file <a class="el" href="fuse-3_817_83_2lib_2buffer_8c_source.html">buffer.c</a>.</p>
 
 </div>
 </div>
@@ -904,7 +931,28 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size of data </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2buffer_8c_source.html#l00022">22</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2buffer_8c_source.html">buffer.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2buffer_8c_source.html#l00022">22</a> of file <a class="el" href="fuse-3_817_83_2lib_2buffer_8c_source.html">buffer.c</a>.</p>
+
+</div>
+</div>
+<a id="a135fdd589d761bdaefb030d44852cfe6" name="a135fdd589d761bdaefb030d44852cfe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135fdd589d761bdaefb030d44852cfe6">&#9670;&#160;</a></span>fuse_convert_to_conn_want_ext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fuse_convert_to_conn_want_ext </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *&#160;</td>
+          <td class="paramname"><em>conn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the wanted capability flags, converting from old format if necessary </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html#l02000">2000</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -932,7 +980,46 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html#l00253">253</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html#l00253">253</a> of file <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html">helper.c</a>.</p>
+
+</div>
+</div>
+<a id="ab56c60f07f805f678bec129f663db908" name="ab56c60f07f805f678bec129f663db908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56c60f07f805f678bec129f663db908">&#9670;&#160;</a></span>fuse_get_feature_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fuse_get_feature_flag </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the value of a feature flag in the want_ext field of <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection information </td></tr>
+    <tr><td class="paramname">flag</td><td>feature flag to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the flag is set, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html#l02061">2061</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -951,7 +1038,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function parses several command-line options that can be used to override elements of struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>. The pointer returned by this function should be passed to the <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#a55cf81fd313a39a171275360960b0471">fuse_apply_conn_info_opts()</a> method by the file system's init() handler.</p>
+<p>This function parses several command-line options that can be used to override elements of struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>. The pointer returned by this function should be passed to the <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#a55cf81fd313a39a171275360960b0471">fuse_apply_conn_info_opts()</a> method by the file system's init() handler.</p>
 <p>Before using this function, think twice if you really want these parameters to be adjustable from the command line. In most cases, they should be determined by the file system internally.</p>
 <p>The following options are recognized:</p>
 <p>-o max_write=N sets conn-&gt;max_write -o max_readahead=N sets conn-&gt;max_readahead -o max_background=N sets conn-&gt;max_background -o congestion_threshold=N sets conn-&gt;congestion_threshold -o async_read sets FUSE_CAP_ASYNC_READ in conn-&gt;want -o sync_read unsets FUSE_CAP_ASYNC_READ in conn-&gt;want -o atomic_o_trunc sets FUSE_CAP_ATOMIC_O_TRUNC in conn-&gt;want -o no_remote_lock Equivalent to -o no_remote_flock,no_remote_posix_lock -o no_remote_flock Unsets FUSE_CAP_FLOCK_LOCKS in conn-&gt;want -o no_remote_posix_lock Unsets FUSE_CAP_POSIX_LOCKS in conn-&gt;want -o [no_]splice_write (un-)sets FUSE_CAP_SPLICE_WRITE in conn-&gt;want -o [no_]splice_move (un-)sets FUSE_CAP_SPLICE_MOVE in conn-&gt;want -o [no_]splice_read (un-)sets FUSE_CAP_SPLICE_READ in conn-&gt;want -o [no_]auto_inval_data (un-)sets FUSE_CAP_AUTO_INVAL_DATA in conn-&gt;want -o readdirplus=no unsets FUSE_CAP_READDIRPLUS in conn-&gt;want -o readdirplus=yes sets FUSE_CAP_READDIRPLUS and unsets FUSE_CAP_READDIRPLUS_AUTO in conn-&gt;want -o readdirplus=auto sets FUSE_CAP_READDIRPLUS and FUSE_CAP_READDIRPLUS_AUTO in conn-&gt;want -o [no_]async_dio (un-)sets FUSE_CAP_ASYNC_DIO in conn-&gt;want -o [no_]writeback_cache (un-)sets FUSE_CAP_WRITEBACK_CACHE in conn-&gt;want -o time_gran=N sets conn-&gt;time_gran</p>
@@ -964,7 +1051,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>parsed options </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html#l00459">459</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2helper_8c_source.html">helper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html#l00466">466</a> of file <a class="el" href="fuse-3_817_83_2lib_2helper_8c_source.html">helper.c</a>.</p>
 
 </div>
 </div>
@@ -986,7 +1073,7 @@ Functions</h2></td></tr>
 <p>Get the full package version string of the library</p>
 <dl class="section return"><dt>Returns</dt><dd>the package version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse_8c_source.html#l05234">5234</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse_8c_source.html#l05211">5211</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
@@ -1013,7 +1100,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__lowlevel_8c_source.html#l01907">1907</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html#l01903">1903</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1033,16 +1120,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Restore default signal handlers</p>
-<p>Resets global session. After this <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> may be called again.</p>
+<p>Resets global session. After this <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> may be called again.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">se</td><td>the same session as given in <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a></td></tr>
+    <tr><td class="paramname">se</td><td>the same session as given in <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a></td></tr>
   </table>
   </dd>
 </dl>
-<p>See also: <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> </p>
+<p>See also: <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#a292dccc3c7b1799cb054efa2ba0c774b">fuse_set_signal_handlers()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html#l00180">180</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html#l00185">185</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
 
 </div>
 </div>
@@ -1062,8 +1149,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Print a stack backtrace diagnostic on critical signals ()</p>
-<p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
-<p>Once either of the POSIX signals arrives, the signal handler calls <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>.</p>
+<p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
+<p>Once either of the POSIX signals arrives, the signal handler calls <a class="el" href="fuse-3_817_83_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session to exit </td></tr>
@@ -1071,9 +1158,48 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
-<p>See also: <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
+<p>See also: <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html#l00158">158</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html#l00163">163</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+
+</div>
+</div>
+<a id="a2051128e455a60d49dc9b6c55fc0e4a1" name="a2051128e455a60d49dc9b6c55fc0e4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2051128e455a60d49dc9b6c55fc0e4a1">&#9670;&#160;</a></span>fuse_set_feature_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fuse_set_feature_flag </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Config operations. These APIs are introduced in version 312 (FUSE_MAKE_VERSION(3, 12)). Using them in earlier versions will result in errors. Set a feature flag in the want_ext field of <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection information </td></tr>
+    <tr><td class="paramname">flag</td><td>feature flag to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the flag was set, false if the flag is not supported </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html#l02035">2035</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1093,8 +1219,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Exit session on HUP, TERM and INT signals and ignore PIPE signal</p>
-<p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
-<p>Once either of the POSIX signals arrives, the signal handler calls <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>.</p>
+<p>Stores session in a global variable. May only be called once per process until <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> is called.</p>
+<p>Once either of the POSIX signals arrives, the signal handler calls <a class="el" href="fuse-3_817_83_2include_2fuse__lowlevel_8h.html#a198429f3fbc23ef29ef9971271827690">fuse_session_exit()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">se</td><td>the session to exit </td></tr>
@@ -1102,9 +1228,47 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure</dd></dl>
-<p>See also: <a class="el" href="fuse-3_817_81_8dir_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
+<p>See also: <a class="el" href="fuse-3_817_83_2include_2fuse__common_8h.html#aeb674bbc11074c4fe520b952d6bfdd30">fuse_remove_signal_handlers()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html#l00138">138</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html#l00138">138</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__signals_8c_source.html">fuse_signals.c</a>.</p>
+
+</div>
+</div>
+<a id="a10f4cae131ab44bac126923635a03543" name="a10f4cae131ab44bac126923635a03543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f4cae131ab44bac126923635a03543">&#9670;&#160;</a></span>fuse_unset_feature_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fuse_unset_feature_flag </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a> *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Unset a feature flag in the want_ext field of <a class="el" href="structfuse__conn__info.html">fuse_conn_info</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection information </td></tr>
+    <tr><td class="paramname">flag</td><td>feature flag to be unset </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html#l02050">2050</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse__lowlevel_8c_source.html">fuse_lowlevel.c</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1290,7 @@ Functions</h2></td></tr>
 <p>Get the version of the library</p>
 <dl class="section return"><dt>Returns</dt><dd>the version </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse_8c_source.html#l05229">5229</a> of file <a class="el" href="fuse-3_817_81_8dir_2lib_2fuse_8c_source.html">fuse.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse-3_817_83_2lib_2fuse_8c_source.html#l05206">5206</a> of file <a class="el" href="fuse-3_817_83_2lib_2fuse_8c_source.html">fuse.c</a>.</p>
 
 </div>
 </div>
